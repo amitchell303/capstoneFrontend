@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-const API_URL = 'http://localhost:3000/api/';
+const API_URL = 'https://fsa-capstone-backend.onrender.com';
 const api = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({
@@ -12,7 +12,7 @@ const api = createApi({
             return headers;
         }
     }),
-    tagTypes: ["Books","Users"],
+    tagTypes: ["User"],
     endpoints: () => ({}),
 });
 export default api;
