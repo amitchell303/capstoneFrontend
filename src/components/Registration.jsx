@@ -1,15 +1,11 @@
 import { useState } from "react";
-import "./App.css";
+import "../App.css";
 
 function Registration() {
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  function goHome() {}
-  function goRegister() {}
-  function goLogIn() {}
 
   async function submit(event) {
     event.preventDefault();

@@ -3,10 +3,10 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import "./App.css";
 
-import Registration from "./Registration.jsx";
-import Home from "./Home.jsx";
-import SingleUser from "./SingleUser.jsx";
-import LogIn from "./Login.jsx";
+import Registration from "./components/Registration.jsx";
+import Home from "./components/Home.jsx";
+import SingleUser from "./components/SingleUser.jsx";
+import LogIn from "./components/Login.jsx";
 
 function App() {
   return (
