@@ -12,7 +12,7 @@ const api = createApi({
       return headers;
     },
   }),
-  tagTypes: ["User"],
+  tagTypes: ["User", "Auth"],
   endpoints: () => ({}),
 });
 export default api;
