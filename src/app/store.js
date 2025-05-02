@@ -1,3 +1,4 @@
+export default store;
 import { configureStore } from "@reduxjs/toolkit";
 import api from "./api";
 import reducer from "../components/AccountSlice";

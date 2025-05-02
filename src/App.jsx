@@ -46,6 +46,7 @@ function App() {
       </Router>
     </Provider>
   );
+
 }
 
 export default App;
