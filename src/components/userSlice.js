@@ -9,7 +9,7 @@ const UserApi = api.injectEndpoints({
         method: "POST",
         body: {userId}
       }),
-      invalidatesTags: ["User"],
+      invalidatesTags: ["Auth"],
     }),
     loginUser: build.mutation({
       query: ({ email, password }) => ({
@@ -20,14 +20,14 @@ const UserApi = api.injectEndpoints({
           password,
         },
       }),
-      invalidatesTags: ["User"],
+      invalidatesTags: ["Auth"],
     }),
     aboutMe: build.query({
         query:()=>({
             url: `/auth/me`,
             method: "GET",
         }), 
-        providesTags: ["User"],
+        providesTags: ["Auth"],
         
       }),
     updateUser: build.mutation({
