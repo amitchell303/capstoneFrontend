@@ -6,7 +6,6 @@ import "./App.css";
 import Registration from "./Registration.jsx";
 import Home from "./Home.jsx";
 import SingleUser from "./SingleUser.jsx";
-import Login from "./Login.jsx";
 import LogIn from "./Login.jsx";
 
 function App() {
@@ -15,18 +14,30 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">
+              <button>Home</button>
+            </Link>
           </li>
           <li>
-            <Link to="/register">Register</Link>
+            <Link to="/user">
+              <button>SingleUser</button>
+            </Link>
           </li>
           <li>
-            <Link to="/login">LogIn</Link>
+            <Link to="/register">
+              <button>Register</button>
+            </Link>
+          </li>
+          <li>
+            <Link to="/login">
+              <button>LogIn</button>
+            </Link>
           </li>
         </ul>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/user" element={<SingleUser />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/login" element={<LogIn />} />
       </Routes>

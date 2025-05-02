@@ -38,19 +38,6 @@ function Registration() {
 
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <button onClick={() => goHome()}>Home</button>
-          </li>
-          <li>
-            <button onClick={() => goRegister()}>Register</button>
-          </li>
-          <li>
-            <button onClick={() => goLogIn()}>LogIn</button>
-          </li>
-        </ul>
-      </nav>
       <main>
         <div className="page">
           <h1>Registration</h1>
