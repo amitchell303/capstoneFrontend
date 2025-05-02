@@ -21,7 +21,7 @@ function App() {
               </Link>
             </li>
             <li>
-              <Link to="/user">
+              <Link to="/user/:id">
                 <button>SingleUser</button>
               </Link>
             </li>

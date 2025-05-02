@@ -24,7 +24,12 @@ function Registration() {
     // });
     // const json = await response.json();
     try {
-      const response = await addUser({ firstname, lastname, email, password });
+      const response = await addUser({
+        firstname,
+        lastname,
+        email,
+        password,
+      }).unwrap();
       console.log("response: ", response);
       try {
         localStorage.setItem("token", response.data.token);
