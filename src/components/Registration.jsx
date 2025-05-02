@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useAddAccountMutation } from "./AccountSlice";
 import "../App.css";
 
 function Registration() {
@@ -6,6 +7,7 @@ function Registration() {
   const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [addUser] = useAddAccountMutation();
 
   async function submit(event) {
     event.preventDefault();
@@ -13,22 +15,28 @@ function Registration() {
     console.log(", Last Name: ", lastname);
     console.log(", Email: ", email);
     console.log(", Password: ", password);
-    const response = await fetch("/api/auth/register", {
-      method: "POST",
-      body: JSON.stringify({ firstname, lastname, email, password }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const json = await response.json();
-    if (response.ok) {
-      window.localStorage.setItem("token", json.token);
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setPassword("");
-    } else {
-      console.log(json);
+    // const response = await fetch("/api/auth/register", {
+    //   method: "POST",
+    //   body: JSON.stringify({ firstname, lastname, email, password }),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
+    // const json = await response.json();
+    try {
+      const response = await addUser({ firstname, lastname, email, password });
+      console.log("response: ", response);
+      try {
+        localStorage.setItem("token", response.data.token);
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setPassword("");
+      } catch (error) {
+        console.error(error.message);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
