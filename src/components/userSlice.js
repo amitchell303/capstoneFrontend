@@ -4,10 +4,10 @@ import api from "../app/api";
 const UserApi = api.injectEndpoints({
   endpoints: (build) => ({
     registerUser: build.mutation({
-        query: (userId)=> ({
+      query: (userId) => ({
         url: `/auth/register`,
         method: "POST",
-        body: {userId}
+        body: { userId },
       }),
       invalidatesTags: ["User"],
     }),
@@ -23,54 +23,54 @@ const UserApi = api.injectEndpoints({
       invalidatesTags: ["User"],
     }),
     aboutMe: build.query({
-        query:()=>({
-            url: `/auth/me`,
-            method: "GET",
-        }), 
-        providesTags: ["User"],
-        
+      query: () => ({
+        url: `/auth/me`,
+        method: "GET",
       }),
+      providesTags: ["User"],
+    }),
     updateUser: build.mutation({
-      query: (userId) =>({
+      query: (userId) => ({
         url: `/user/update/${userId}`,
         method: "PUT",
         body: {
-            userId
-        }
+          userId,
+        },
       }),
-      invalidatesTags:["User"]
+      invalidatesTags: ["User"],
     }),
     deleteUser: build.mutation({
-        query: (userId)=>({
-          url: `/user/delete/${userId}`,
-          method: "DELETE",
-        }),
-        invalidatesTags:["User"]
+      query: (userId) => ({
+        url: `/user/delete/${userId}`,
+        method: "DELETE",
       }),
-      
-      getAllUsers: build.query({
-        query:() => ({
-            url: `/user/all`,
-            method: "GET",
-        }), 
-        providesTags: ["User"],
-      }),
+      invalidatesTags: ["User"],
+    }),
 
-      searchUser: build.query({
-        query:()=>({
-            url: `/user/${userId}`,
-            method: "GET",
-        }), 
-        providesTags: ["User"],
-        
+    getAllUsers: build.query({
+      query: () => ({
+        url: `/user/all`,
+        method: "GET",
       }),
-  })
+      providesTags: ["User"],
+    }),
+
+    searchUser: build.query({
+      query: () => ({
+        url: `/user/${userId}`,
+        method: "GET",
+      }),
+      providesTags: ["User"],
+    }),
+  }),
 });
 
-export const { useRegisterUserMutation,
-    useSearchUserQuery,
-    useLoginUserMutation,
-    useUpdateUserMutation,
-    useDeleteUserMutation, 
-    useGetAllUsersQuery,
-    useAboutMeQuery } = UserApi;
+export const {
+  useRegisterUserMutation,
+  useSearchUserQuery,
+  useLoginUserMutation,
+  useUpdateUserMutation,
+  useDeleteUserMutation,
+  useGetAllUsersQuery,
+  useAboutMeQuery,
+} = UserApi;
