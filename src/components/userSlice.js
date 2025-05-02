@@ -9,7 +9,7 @@ const UserApi = api.injectEndpoints({
         method: "POST",
         body: { userId },
       }),
-      invalidatesTags: ["User"],
+      invalidatesTags: ["Auth"],
     }),
     loginUser: build.mutation({
       query: ({ email, password }) => ({
@@ -20,15 +20,16 @@ const UserApi = api.injectEndpoints({
           password,
         },
       }),
-      invalidatesTags: ["User"],
+      invalidatesTags: ["Auth"],
     }),
     aboutMe: build.query({
-      query: () => ({
-        url: `/auth/me`,
-        method: "GET",
+        query:()=>({
+            url: `/auth/me`,
+            method: "GET",
+        }), 
+        providesTags: ["Auth"],
+        
       }),
-      providesTags: ["User"],
-    }),
     updateUser: build.mutation({
       query: (userId) => ({
         url: `/user/update/${userId}`,
@@ -64,6 +65,20 @@ const UserApi = api.injectEndpoints({
     }),
   }),
 });
+
+const storeToken = (state, { payload }) => {
+    localStorage.setItem("token", payload.token);
+};
+  
+const userSlice = createSlice({
+    name: "user",
+    initialState: {},
+    reducers: {},
+    extraReducers: (build) => {
+      if (api.endpoints?.RegisterUser?.matchFulfilled) build.addMatcher(api.endpoints.user.matchFulfilled, storeToken);
+    },
+});
+export default userSlice.reducer;
 
 export const {
   useRegisterUserMutation,
