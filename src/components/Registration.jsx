@@ -15,14 +15,6 @@ function Registration() {
     console.log(", Last Name: ", lastname);
     console.log(", Email: ", email);
     console.log(", Password: ", password);
-    // const response = await fetch("/api/auth/register", {
-    //   method: "POST",
-    //   body: JSON.stringify({ firstname, lastname, email, password }),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // });
-    // const json = await response.json();
     try {
       const response = await addUser({
         firstname,
@@ -30,9 +22,8 @@ function Registration() {
         email,
         password,
       }).unwrap();
-      console.log("response: ", response);
       try {
-        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("token", response.token);
         setFirstName("");
         setLastName("");
         setEmail("");
