@@ -9,11 +9,10 @@ import Home from "./components/Home.jsx";
 import SingleUser from "./components/SingleUser.jsx";
 import LogIn from "./components/Login.jsx";
 
-function logout() {
-  localStorage.removeItem("token");
-}
-
 function App() {
+  function logout() {
+    localStorage.removeItem("token");
+  }
   return (
     <Provider store={store}>
       <Router>

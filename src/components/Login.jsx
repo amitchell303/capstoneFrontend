@@ -14,7 +14,7 @@ function Login() {
       console.log("response: ", response);
 
       // stores login credentials
-      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("token", response.token);
       setEmail("");
       setPassword("");
     } catch (err) {
