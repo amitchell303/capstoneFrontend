@@ -9,6 +9,10 @@ import Home from "./components/Home.jsx";
 import SingleUser from "./components/SingleUser.jsx";
 import LogIn from "./components/Login.jsx";
 
+function logout() {
+  localStorage.removeItem("token");
+}
+
 function App() {
   return (
     <Provider store={store}>
@@ -35,6 +39,9 @@ function App() {
                 <button>LogIn</button>
               </Link>
             </li>
+            <li>
+              <button onClick={() => logout()}>LogOut</button>
+            </li>
           </ul>
         </nav>
         <Routes>
@@ -46,7 +53,6 @@ function App() {
       </Router>
     </Provider>
   );
-
 }
 
 export default App;

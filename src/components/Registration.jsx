@@ -38,7 +38,7 @@ function Registration() {
 
   return (
     <>
-      <main>
+      <main id="registerPage">
         <div className="page">
           <h1>Registration</h1>
           <form onSubmit={submit}>
