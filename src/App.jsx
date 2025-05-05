@@ -39,7 +39,7 @@ function App() {
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/user/:userId" element={<SingleUser />} />
+          <Route path="/user/:id" element={<SingleUser />} />
           <Route path="/register" element={<Registration />} />
           <Route path="/login" element={<LogIn />} />
         </Routes>

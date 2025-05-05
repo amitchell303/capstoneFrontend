@@ -4,17 +4,17 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const UserApi = api.injectEndpoints({
   endpoints: (build) => ({
-    registerUser: build.mutation({
-      query: (firstname, lastname, email, password) => ({
-        url: `/auth/register`,
-        method: "POST",
-        body: { userId },
-      }),
-      invalidatesTags: ["Auth"],
-    }),
+    // registerUser: build.mutation({
+    //   query: (firstname, lastname, email, password) => ({
+    //     url: `/api/auth/register`,
+    //     method: "POST",
+    //     body: { userId },
+    //   }),
+    //   invalidatesTags: ["Auth"],
+    // }),
     loginUser: build.mutation({
       query: ({ email, password }) => ({
-        url: `/auth/login`,
+        url: `api/auth/login`,
         method: "POST",
         body: {
           email,
@@ -25,7 +25,7 @@ const UserApi = api.injectEndpoints({
     }),
     aboutMe: build.query({
         query:()=>({
-            url: `/auth/me`,
+            url: `/api/auth/me`,
             method: "GET",
         }), 
         providesTags: ["Auth"],
@@ -33,7 +33,7 @@ const UserApi = api.injectEndpoints({
       }),
     updateUser: build.mutation({
       query: (firstname, lastname, email, password) => ({
-        url: `/user/update/${userId}`,
+        url: `/api/user/update/${userId}`,
         method: "PUT",
         body: {
           firstname, 
@@ -46,7 +46,7 @@ const UserApi = api.injectEndpoints({
     }),
     deleteUser: build.mutation({
       query: (id) => ({
-        url: `/user/delete/${id}`,
+        url: `/api/user/delete/${id}`,
         method: "DELETE",
       }),
       invalidatesTags: ["User"],
@@ -54,15 +54,15 @@ const UserApi = api.injectEndpoints({
 
     getAllUsers: build.query({
       query: () => ({
-        url: `/user/all`,
+        url: `/api/user/all`,
         method: "GET",
       }),
       providesTags: ["User"],
     }),
 
     getUser: build.query({
-      query: () => ({
-        url: `/user/:userId`,
+      query: (userId) => ({
+        url: `/api/user/${userId}`,
         method: "GET",
       }),
       providesTags: ["User"],
@@ -79,7 +79,7 @@ const userSlice = createSlice({
     initialState: {},
     reducers: {},
     extraReducers: (build) => {
-      if (api.endpoints?.RegisterUser?.matchFulfilled) build.addMatcher(api.endpoints.user.matchFulfilled, storeToken);
+      if (api.endpoints?.AddUser?.matchFulfilled) build.addMatcher(api.endpoints.user.matchFulfilled, storeToken);
     },
 });
 export default userSlice.reducer;

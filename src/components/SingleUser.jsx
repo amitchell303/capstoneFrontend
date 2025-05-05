@@ -6,55 +6,48 @@ import {
 } from "./userSlice";
 import { useNavigate, useParams } from "react-router-dom";
 
-
 export default function SingleUser() {
-  
   const { id } = useParams();
   const navigate = useNavigate();
-
-  
   const {
-    data: user, 
+    data: user,
     isLoading,
     isSuccess,
     isError,
-    error: getUserError, 
+    error: getUserError,
   } = useGetUserQuery(id);
-
-  // const { data: loggedInUserInfo } = useAboutMeQuery(); // Keep if needed for comparison/authorization
 
   const [update] = useUpdateUserMutation();
   const [deleteUser] = useDeleteUserMutation();
 
-  
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      console.log("No token found, redirecting to login.");
-      navigate("/login");
-    }
-  }, [navigate]);
+  console.log(user);
+  // useEffect(() => {
+  //   const token = localStorage.getItem("token");
+  //   if (!token) {
+  //     console.log("No token found, redirecting to login.");
+  //     navigate("/login");
+  //   }
+  // }, [navigate]);
 
   async function handleUpdateUser() {
-   
     const updatedData = { firstname, lastname, email, password };
     try {
       await update({ id, ...updatedData }).unwrap();
       alert("User updated successfully!");
     } catch (error) {
       console.error("Failed to update user:", error);
-      alert("Failed to update user."); 
+      alert("Failed to update user.");
     }
   }
 
   async function handleDeleteUser() {
     try {
-      await deleteUser(id).unwrap(); 
-      alert('User deleted Successfully!'); 
-      navigate('/'); 
+      await deleteUser(id).unwrap();
+      alert("User deleted Successfully!");
+      navigate("/");
     } catch (error) {
       console.error("Failed to delete user:", error);
-      alert("Failed to delete user."); 
+      alert("Failed to delete user.");
     }
   }
 
@@ -70,11 +63,13 @@ export default function SingleUser() {
   }
 
   // Only render details if fetching was successful and user data exists
-  let $details = <p>User not found.</p>; 
+  let $details = <p>User not found.</p>;
   if (isSuccess && user) {
     $details = (
       <div className="aboutMe">
-        <h3>Name: "{user.firstname} {user.lastname}"</h3>
+        <h3>
+          Name: "{user.firstname} {user.lastname}"
+        </h3>
         <h4>Id: #{user.id}</h4>
         <h5>Email: {user.email}</h5>
         <div className="update-user">
