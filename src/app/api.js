@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-const API_URL = "https://fsa-capstone-backend-9b3e597200f5.herokuapp.com";
+const API_URL = "https://fsa-capstone-backend-9b3e597200f5.herokuapp.com/";
 const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({

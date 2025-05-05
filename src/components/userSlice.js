@@ -1,11 +1,11 @@
-import React from "react";
+
 import api from "../app/api";
 import { createSlice } from "@reduxjs/toolkit";
 
 const UserApi = api.injectEndpoints({
   endpoints: (build) => ({
     registerUser: build.mutation({
-      query: (userId) => ({
+      query: (firstname, lastname, email, password) => ({
         url: `/auth/register`,
         method: "POST",
         body: { userId },
@@ -32,18 +32,21 @@ const UserApi = api.injectEndpoints({
         
       }),
     updateUser: build.mutation({
-      query: (userId) => ({
+      query: (firstname, lastname, email, password) => ({
         url: `/user/update/${userId}`,
         method: "PUT",
         body: {
-          userId,
+          firstname, 
+          lastname, 
+          email, 
+          password
         },
       }),
       invalidatesTags: ["User"],
     }),
     deleteUser: build.mutation({
-      query: (userId) => ({
-        url: `/user/delete/${userId}`,
+      query: (id) => ({
+        url: `/user/delete/${id}`,
         method: "DELETE",
       }),
       invalidatesTags: ["User"],
@@ -57,9 +60,9 @@ const UserApi = api.injectEndpoints({
       providesTags: ["User"],
     }),
 
-    searchUser: build.query({
+    getUser: build.query({
       query: () => ({
-        url: `/user/${userId}`,
+        url: `/user/:userId`,
         method: "GET",
       }),
       providesTags: ["User"],
@@ -83,7 +86,7 @@ export default userSlice.reducer;
 
 export const {
   useRegisterUserMutation,
-  useSearchUserQuery,
+  useGetUserQuery,
   useLoginUserMutation,
   useUpdateUserMutation,
   useDeleteUserMutation,
