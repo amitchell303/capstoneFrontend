@@ -30,7 +30,7 @@ function Login() {
         <h1>Login</h1>
         {/* <div className="login-form"> */}
         <form onSubmit={submit}>
-          <div className="login-form-content">
+          <div className="login-form-field">
             <label>Email</label>
             <input
               value={email}
@@ -38,7 +38,7 @@ function Login() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="login-form-content">
+          <div className="login-form-field">
             <label>Password</label>
             <input
               value={password}
