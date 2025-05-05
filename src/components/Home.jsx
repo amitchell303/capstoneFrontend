@@ -1,7 +1,8 @@
+import "../App.css";
+
 function Home() {
   return (
     <>
-      <h1>H O M E</h1>
     </>
   );
 }

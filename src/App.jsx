@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import store from "./app/store";
 import "./App.css";
+import "./components/login.css";
 
 import Registration from "./components/Registration.jsx";
 import Home from "./components/Home.jsx";
@@ -22,7 +23,7 @@ function App() {
             </li>
             <li>
               <Link to="/user/:id">
-                <button>SingleUser</button>
+                <button>Account</button>
               </Link>
             </li>
             <li>
@@ -32,7 +33,7 @@ function App() {
             </li>
             <li>
               <Link to="/login">
-                <button>LogIn</button>
+                <button>Login</button>
               </Link>
             </li>
           </ul>
@@ -46,7 +47,6 @@ function App() {
       </Router>
     </Provider>
   );
-
 }
 
 export default App;
