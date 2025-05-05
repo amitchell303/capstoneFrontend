@@ -21,13 +21,13 @@ export default function SingleUser() {
   const [deleteUser] = useDeleteUserMutation();
 
   console.log(user);
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (!token) {
-  //     console.log("No token found, redirecting to login.");
-  //     navigate("/login");
-  //   }
-  // }, [navigate]);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      console.log("No token found, redirecting to login.");
+      navigate("/login");
+    }
+  }, [navigate]);
 
   async function handleUpdateUser() {
     const updatedData = { firstname, lastname, email, password };
