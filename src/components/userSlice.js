@@ -31,19 +31,36 @@ const UserApi = api.injectEndpoints({
       providesTags: ["Auth"],
     }),
     updateUser: build.mutation({
-      query: (userId) => ({
-        url: `/user/update/${userId}`,
+      query: ({
+        userId,
+        firstname,
+        lastname,
+        email,
+        password,
+        activated,
+        deactivatedOn,
+      }) => ({
+        url: `/api/user/update/${userId}`,
         method: "PUT",
         body: {
-          userId,
+          firstname,
+          lastname,
+          email,
+          password,
+          activated,
+          deactivatedOn,
         },
       }),
       invalidatesTags: ["User"],
     }),
     deleteUser: build.mutation({
       query: (userId) => ({
-        url: `/user/delete/${userId}`,
-        method: "DELETE",
+        url: `/api/user/delete/${userId}`,
+        method: "PUT",
+        body: {
+          activated: false,
+          deactivatedOn: Date.now(),
+        },
       }),
       invalidatesTags: ["User"],
     }),
