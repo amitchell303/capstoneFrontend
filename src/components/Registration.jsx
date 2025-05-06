@@ -42,7 +42,7 @@ function Registration() {
       <main className="main-content">
         <GridBackground />
         <div className="page">
-          <h1>Registration</h1>
+          <h1>Register</h1>
           <form onSubmit={submit}>
             <div className="form-group">
               <label>First Name</label>

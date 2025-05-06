@@ -34,7 +34,24 @@ nav button {
   background-color: #181818;
   border-radius: 20px;
 }
-
+/* Home Page*/
+.homePage {
+  position: relative;
+  z-index: 1;
+  background-color: #111;
+  box-shadow: 0 15px 35px #8d2de274;
+  width: 50vw;
+  height: 100vh;
+  padding: 3rem;
+  margin: 0 auto;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.homePage h1 {
+  color: white;
+}
 /*  Register  */
 .main-content {
   background-image: url(https://wallpaperaccess.com/full/3933109.jpg);
@@ -73,6 +90,10 @@ nav button {
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+}
+.page button:hover {
+  background-color: #4a00e0;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 form {
   margin: 0 auto;
@@ -115,4 +136,3 @@ form {
   background-color: #8e2de2;
   transition: 0s;
 }
-
