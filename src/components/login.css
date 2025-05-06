@@ -1,9 +1,9 @@
 html,
 body {
-  margin: 0;
-  padding: 0;
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
 }
 main {
@@ -29,8 +29,8 @@ nav ul {
   list-style: none;
 }
 nav li {
-  display: inline-block;
   margin: 20px;
+  display: inline-block;
 }
 nav button {
   color: rgb(255, 255, 255);
@@ -39,16 +39,11 @@ nav button {
   border-radius: 20px;
 }
 nav button:hover {
-  color: rgb(255, 255, 255);
-  padding: 0.75rem;
   background-color: #44166c76;
-  border-radius: 20px;
 }
 
 /*  Login  */
 .content-container {
-  position: relative;
-  z-index: 1;
   color: #fff;
   background-color: #111;
   box-shadow: 0 15px 35px #8d2de274;
@@ -60,6 +55,8 @@ nav button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 .content-container h1 {
   text-align: center;
@@ -67,16 +64,15 @@ nav button:hover {
 }
 .content-container button {
   color: white;
-  background-color: #8e2de2;
-  border: none;
   padding: 15px 30px;
   margin-left: 4rem; /*i cant center this thing for the life of me, idk why, this is a bandaid solution */
+  background-color: #8e2de2;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  cursor: pointer;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 .content-container button:hover {
@@ -101,18 +97,16 @@ nav button:hover {
 
 /* Background */
 .grid-background {
+  width: 100%;
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   z-index: 0;
 }
 .grid {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
-  width: 100vw;
-  height: 100vh;
 }
 .square {
   background: #111111;
