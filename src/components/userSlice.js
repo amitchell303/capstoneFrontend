@@ -14,7 +14,7 @@ const UserApi = api.injectEndpoints({
     }),
     loginUser: build.mutation({
       query: ({ email, password }) => ({
-        url: `/auth/login`,
+        url: `/api/auth/login`,
         method: "POST",
         body: {
           email,
@@ -24,13 +24,12 @@ const UserApi = api.injectEndpoints({
       invalidatesTags: ["Auth"],
     }),
     aboutMe: build.query({
-        query:()=>({
-            url: `/auth/me`,
-            method: "GET",
-        }), 
-        providesTags: ["Auth"],
-        
+      query: () => ({
+        url: `/auth/me`,
+        method: "GET",
       }),
+      providesTags: ["Auth"],
+    }),
     updateUser: build.mutation({
       query: (userId) => ({
         url: `/user/update/${userId}`,
@@ -51,7 +50,7 @@ const UserApi = api.injectEndpoints({
 
     getAllUsers: build.query({
       query: () => ({
-        url: `/user/all`,
+        url: `/api/user/all`,
         method: "GET",
       }),
       providesTags: ["User"],
@@ -68,16 +67,17 @@ const UserApi = api.injectEndpoints({
 });
 
 const storeToken = (state, { payload }) => {
-    localStorage.setItem("token", payload.token);
+  localStorage.setItem("token", payload.token);
 };
-  
+
 const userSlice = createSlice({
-    name: "user",
-    initialState: {},
-    reducers: {},
-    extraReducers: (build) => {
-      if (api.endpoints?.RegisterUser?.matchFulfilled) build.addMatcher(api.endpoints.user.matchFulfilled, storeToken);
-    },
+  name: "user",
+  initialState: {},
+  reducers: {},
+  extraReducers: (build) => {
+    if (api.endpoints?.RegisterUser?.matchFulfilled)
+      build.addMatcher(api.endpoints.user.matchFulfilled, storeToken);
+  },
 });
 export default userSlice.reducer;
 
