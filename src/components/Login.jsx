@@ -27,7 +27,7 @@ function Login() {
     <main>
       <GridBackground />
       <div className="content-container">
-        <h1>Login</h1>
+        <h1>Welcome</h1>
         {/* <div className="login-form"> */}
         <form onSubmit={submit}>
           <div className="login-form-field">
@@ -46,7 +46,7 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button className="login-formBtn" type="submit">
+          <button type="submit">
             Login
           </button>
         </form>

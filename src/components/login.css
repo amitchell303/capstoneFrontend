@@ -8,7 +8,7 @@ body {
 }
 main {
   width: 100%;
-  height: 80%;
+  height: 75%;
   margin: 0 auto;
   align-content: center;
 }
@@ -40,7 +40,7 @@ nav button {
 .content-container {
   color: rgb(255, 255, 255);
   background-color: #111111;
-  box-shadow: 0 8px 12px #8d2de274;
+  box-shadow: 0 6px 12px #8d2de274;
   width: 50rem;
   height: auto;
   padding: 2rem;
@@ -50,7 +50,7 @@ nav button {
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-items: center;
 }
 .content-container h1 {
   text-align: center;
@@ -58,19 +58,25 @@ nav button {
 }
 .login-form-field {
   margin: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.login-form-field label {
+  padding: 0.3rem;
+  font-size: 1rem;
 }
 .login-form-field input {
   padding: 10px;
   margin-bottom: 15px;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
-.login-formBtn {
+.content-container button {
   color: white;
   background-color: #8e2de2;
   border: none;
-  padding: 15px 32px;
+  padding: 15px 30px;
+  margin-left: 4rem; /*i cant center this thing for the life of me, idk why, this is a bandaid solution */
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -79,7 +85,7 @@ nav button {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
-.login-formBtn:hover {
+.content-container button:hover {
   background-color: #4a00e0;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
@@ -101,7 +107,7 @@ nav button {
 }
 .square {
   background: #111111;
-  border: 1px solid rgba(0, 0, 0, 0.378);
+  border: 1px solid rgba(0, 0, 0, 0.277);
   aspect-ratio: 1/1;
   transition: background-color 1.5s;
 }
