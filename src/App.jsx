@@ -11,6 +11,9 @@ import LogIn from "./components/Login.jsx";
 import Navigations from "./components/Navigations.jsx";
 
 function App() {
+  function logout() {
+    localStorage.removeItem("token");
+  }
   return (
     <Provider store={store}>
       <Router>
