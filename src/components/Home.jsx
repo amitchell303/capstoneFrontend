@@ -21,6 +21,20 @@ function Home() {
     }
   }, [token, navigate, data]);
 
+  if (!token) {
+    return (
+      <main id="homePage">
+        <GridBackground />
+        <div className="homePage">
+          <h1>
+            Please <NavLink to="/login">Sign-in</NavLink> or{" "}
+            <NavLink to="/register">Register</NavLink> to view users.
+          </h1>
+        </div>
+      </main>
+    );
+  }
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -30,12 +44,6 @@ function Home() {
   return (
     <main id="homePage">
       <GridBackground />
-      <div className="homePage">
-        <h1>
-          Please <NavLink to="/login">Sign-in</NavLink> or{" "}
-          <NavLink to="/register">Register</NavLink> to view users.
-        </h1>
-      </div>
       <div className="page">
         <h1>U S E R S</h1>
         <ul>
