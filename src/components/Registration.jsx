@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAddAccountMutation } from "./AccountSlice";
+import { GridBackground } from "../assets/grid";
 import "../App.css";
 
 function Registration() {
@@ -38,9 +39,10 @@ function Registration() {
 
   return (
     <>
-      <main id="registerPage">
+      <main>
+        <GridBackground />
         <div className="page">
-          <h1>Registration</h1>
+          <h1>Register</h1>
           <form onSubmit={submit}>
             <div className="form-group">
               <label>First Name</label>
