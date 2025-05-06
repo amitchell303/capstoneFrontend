@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { getToken } from "./tokenService";
 
-const API_URL = "https://fsa-capstone-backend-9b3e597200f5.herokuapp.com";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const api = createApi({
   reducerPath: "api",
