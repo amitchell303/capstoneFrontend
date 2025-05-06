@@ -8,6 +8,7 @@ import Registration from "./components/Registration.jsx";
 import Home from "./components/Home.jsx";
 import SingleUser from "./components/SingleUser.jsx";
 import LogIn from "./components/Login.jsx";
+import AboutMe from "./components/AboutMe.jsx";
 
 function App() {
   function logout() {
@@ -39,6 +40,11 @@ function App() {
               </Link>
             </li>
             <li>
+              <Link to="/me">
+                <button>My Profile</button>
+              </Link>
+            </li>
+            <li>
               <button onClick={() => logout()}>LogOut</button>
             </li>
           </ul>
@@ -48,6 +54,7 @@ function App() {
           <Route path="/user/:id" element={<SingleUser />} />
           <Route path="/register" element={<Registration />} />
           <Route path="/login" element={<LogIn />} />
+          <Route path="/me" element={<AboutMe />} />
         </Routes>
       </Router>
     </Provider>

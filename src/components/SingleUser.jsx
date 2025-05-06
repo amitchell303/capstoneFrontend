@@ -4,7 +4,7 @@ import {
   useUpdateUserMutation,
   useGetUserQuery,
 } from "./userSlice";
-import { useNavigate, useParams } from "react-router-dom";
+import { data, useNavigate, useParams } from "react-router-dom";
 
 export default function SingleUser() {
   const { id } = useParams();
@@ -41,9 +41,9 @@ export default function SingleUser() {
     }
   }
 }
-  async function handleDeleteUser() {
+  async function handleDeleteUser(user) {
     try {
-      await deleteUser(id).unwrap();
+      await deleteUser(user).unwrap();
       alert("User deleted Successfully!");
       navigate("/");
     } catch (error) {
@@ -64,15 +64,19 @@ export default function SingleUser() {
   }
 
   // Only render details if fetching was successful and user data exists
-  let $details = <p>User not found.</p>;
+ 
   if (isSuccess && user) {
-    $details = (
+    return (
       <div className="selectedUser">
-        <h3>
-          Name: "{user.firstname} {user.lastname}"
-        </h3>
-        <h4>Id: #{user.id}</h4>
-        <h5>Email: {user.email}</h5>
+        <div> 
+        <h1>User Details</h1>
+        </div>
+        <div>
+        <p>First Name: {user.firstname}</p>
+        <p>Last Name: {user.lastname}</p>
+        <p>Email: {user.email}</p>
+        <p>Id: {user.id}</p>
+      </div>        
         <div className="update-user">
           <button
             className="update-button"
@@ -91,16 +95,18 @@ export default function SingleUser() {
             Delete
           </button>
         </div>
+        <ul>
+          {user?.map((user) => {
+            <div key={user.id}>
+              <li>{user.firstname}</li>
+              <li>{user.lastname}</li>
+              <li>{user.email}</li>
+
+            </div>
+          })}
+        </ul>
       </div>
     );
   }
-
-  return (
-    <>
-      <aside>
-        <h2>Selected User</h2>
-        {$details}
-      </aside>
-    </>
-  );
+  
 }
