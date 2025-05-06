@@ -1,5 +1,5 @@
 import React from "react";
-import { useAboutMeQuery } from "./userSlice";
+import { useAboutMeQuery } from "../app/userSlice";
 import { useNavigate } from "react-router-dom";
 
 export default function User() {
