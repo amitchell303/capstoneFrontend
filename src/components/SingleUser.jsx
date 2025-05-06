@@ -16,30 +16,31 @@ export default function SingleUser() {
     isError,
     error: getUserError,
   } = useGetUserQuery(id);
-
   const [update] = useUpdateUserMutation();
   const [deleteUser] = useDeleteUserMutation();
 
   console.log(user);
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      console.log("No token found, redirecting to login.");
-      navigate("/login");
-    }
-  }, [navigate]);
-
+  
+   
+  
   async function handleUpdateUser() {
     const updatedData = { firstname, lastname, email, password };
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login");
+      console.log("No token found, redirecting to login.");
+    }else{ 
     try {
-      await update({ id, ...updatedData }).unwrap();
+     const response = await update({ id, ...updatedData }).unwrap();
+     if (response){
       alert("User updated successfully!");
+     }
     } catch (error) {
       console.error("Failed to update user:", error);
       alert("Failed to update user.");
     }
   }
-
+}
   async function handleDeleteUser() {
     try {
       await deleteUser(id).unwrap();
@@ -66,7 +67,7 @@ export default function SingleUser() {
   let $details = <p>User not found.</p>;
   if (isSuccess && user) {
     $details = (
-      <div className="aboutMe">
+      <div className="selectedUser">
         <h3>
           Name: "{user.firstname} {user.lastname}"
         </h3>
