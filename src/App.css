@@ -43,19 +43,36 @@ nav button {
   background-repeat: no-repeat;
 }
 .page {
-  background-color: rgba(52, 52, 52, 0.65);
-  height: 60%;
-  width: 60%;
-  max-width: 650px;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  background-color: #111;
+  box-shadow: 0 15px 35px #8d2de274;
+  width: 100%;
+  max-width: 400px;
+  padding: 3rem;
   margin: 0 auto;
-  border: 1.25px solid white;
-  border-radius: 4%;
-  color: rgb(255, 235, 217);
-  text-shadow: 1px 1px 1px black;
-
-  h1 {
-    text-align: center;
-  }
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.page button {
+  color: white;
+  background-color: #8e2de2;
+  border: none;
+  padding: 15px 30px;
+  margin-left: 4rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 form {
   margin: 0 auto;
@@ -72,56 +89,30 @@ form {
     padding: 5px 0px;
   }
 }
-.formBtn {
-  padding: 6px 20px;
-  margin: 12px 35%;
-  width: 30%;
+
+/* Background */
+.grid-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  width: 100vw;
+  height: 100vh;
+}
+.square {
+  background: #111111;
+  border: 1px solid rgba(0, 0, 0, 0.277);
+  aspect-ratio: 1/1;
+  transition: background-color 1.5s;
+}
+.square:hover {
+  background-color: #8e2de2;
+  transition: 0s;
 }
 
-/*  Login  */
-/* .content-container {
-  color: rgb(255, 255, 255);
-  background-color: rgba(24, 24, 24, 0.8);
-  width: 50rem;
-  height: auto;
-  padding: 2rem;
-  margin: 0 auto;
-  border: 2px solid white;
-  border-radius: 30px;
-  box-shadow: rgba(24, 24, 24, 0.8);
-  max-width: 400px;
-  z-index: 1;
-}
-.content-container h1 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-.login-form-content {
-  margin: 10px 0;
-  display: flex;
-  flex-direction: column;
-}
-.login-form-content input {
-  padding: 10px;
-  margin-bottom: 15px; */
-/* border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-.login-formBtn {
-  color: white;
-  background-color: #8e2de2;
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-.login-formBtn:hover {
-  background-color: #4a00e0;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-} */

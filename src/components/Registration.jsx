@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAddAccountMutation } from "./AccountSlice";
+import { GridBackground } from "../assets/grid";
 import "../App.css";
 
 function Registration() {
@@ -39,6 +40,7 @@ function Registration() {
   return (
     <>
       <main className="main-content">
+        <GridBackground />
         <div className="page">
           <h1>Registration</h1>
           <form onSubmit={submit}>
