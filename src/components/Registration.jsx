@@ -39,7 +39,7 @@ function Registration() {
 
   return (
     <>
-      <main className="main-content">
+      <main>
         <GridBackground />
         <div className="page">
           <h1>Register</h1>

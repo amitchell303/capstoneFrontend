@@ -5,10 +5,10 @@ import "../app.css";
 export default function Navigations() {
   return (
     <nav className="navbar">
-      <NavLink to="/">
-        <h1>MyMoto</h1>
+      <NavLink className="nav-title" to="/">
+        <h1>Title/Home</h1>
       </NavLink>
-      <div>
+      <div className="nav-links">
         <NavLink to="/register">Register</NavLink>
         <NavLink to="/login">Login</NavLink>
         <NavLink to="/user/:userId">My Account</NavLink>

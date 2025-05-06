@@ -12,12 +12,30 @@ main {
   margin: 0 auto;
   align-content: center;
 }
+
 /* Nav Bar */
-.navbar a {
-  position: relative;
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-title {
+  color: white;
+  padding: 0 15px;
+  font-size: x-large;
+  text-decoration: none;
+}
+.nav-links {
   padding: 0 15px;
   margin-right: 20px;
+  font-size: x-large;
+  text-decoration: none;
+  position: relative;
+}
+.nav-links a {
   color: white;
+  margin: 10px;
   font-size: x-large;
   text-decoration: none;
 }
@@ -41,12 +59,6 @@ main {
   color: white;
 }
 /*  Register  */
-.main-content {
-  background-image: url(https://wallpaperaccess.com/full/3933109.jpg);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
 .page {
   position: relative;
   z-index: 1;
