@@ -25,7 +25,7 @@ const UserApi = api.injectEndpoints({
     }),
     aboutMe: build.query({
         query:()=>({
-            url: `/api/auth/me`,
+            url: `/auth/me`,
             method: "GET",
         }), 
         providesTags: ["Auth"],
@@ -71,15 +71,15 @@ const UserApi = api.injectEndpoints({
 });
 
 const storeToken = (state, { payload }) => {
-    localStorage.setItem("token", payload.token);
+  localStorage.setItem("token", payload.token);
 };
-  
+
 const userSlice = createSlice({
     name: "user",
     initialState: {},
     reducers: {},
     extraReducers: (build) => {
-      if (api.endpoints?.AddUser?.matchFulfilled) build.addMatcher(api.endpoints.user.matchFulfilled, storeToken);
+      if (api.endpoints?.RegisterUser?.matchFulfilled) build.addMatcher(api.endpoints.user.matchFulfilled, storeToken);
     },
 });
 export default userSlice.reducer;
