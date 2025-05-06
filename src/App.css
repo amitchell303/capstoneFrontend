@@ -1,42 +1,47 @@
 #root {
   height: 100vh;
 }
+html,
 body {
-  width: 100%;
-  height: 100vh;
   margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 main {
   width: 100%;
   height: 92%;
   margin: 0 auto;
+  align-content: center;
+}
+nav {
+  height: 5rem;
+  background: #181818;
+}
+nav ul {
+  margin: 0;
+  text-align: right;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  margin: 8px;
+}
+nav button {
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  background-color: #181818;
+  border-radius: 20px;
+}
+
+/*  Register  */
+.main-content {
   background-image: url(https://wallpaperaccess.com/full/3933109.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  align-content: center;
 }
-nav {
-  height: 8%;
-  background: linear-gradient(90deg, rgb(72, 72, 193), rgb(128, 47, 128));
-  ul {
-    margin: 0;
-    text-align: right;
-    list-style: none;
-    li {
-      display: inline-block;
-      margin: 8px;
-      button {
-        padding: 10px;
-        background-color: rgba(81, 102, 102, 0.314);
-        border-radius: 12%;
-        color: snow;
-      }
-    }
-  }
-}
-
-/*  Register  */
 .page {
   background-color: rgba(52, 52, 52, 0.65);
   height: 60%;
@@ -47,6 +52,7 @@ nav {
   border-radius: 4%;
   color: rgb(255, 235, 217);
   text-shadow: 1px 1px 1px black;
+
   h1 {
     text-align: center;
   }
@@ -73,7 +79,7 @@ form {
 }
 
 /*  Login  */
-.content-container {
+/* .content-container {
   color: rgb(255, 255, 255);
   background-color: rgba(24, 24, 24, 0.8);
   width: 50rem;
@@ -84,6 +90,7 @@ form {
   border-radius: 30px;
   box-shadow: rgba(24, 24, 24, 0.8);
   max-width: 400px;
+  z-index: 1;
 }
 .content-container h1 {
   text-align: center;
@@ -96,8 +103,8 @@ form {
 }
 .login-form-content input {
   padding: 10px;
-  margin-bottom: 15px;
-  border: none;
+  margin-bottom: 15px; */
+/* border: none;
   border-radius: 8px;
   font-size: 1rem;
 }
@@ -117,4 +124,4 @@ form {
 .login-formBtn:hover {
   background-color: #4a00e0;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
+} */
