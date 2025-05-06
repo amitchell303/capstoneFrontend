@@ -28,15 +28,7 @@ function Home() {
     const response = await updateAUser({ id });
     console.log(response);
   }
-  async function deleteUser(
-    id,
-    firstname,
-    lastname,
-    email,
-    password,
-    activated,
-    deactivatedOn
-  ) {
+  async function deleteUser(id, firstname, lastname, email, password) {
     const response = await updateAUser({
       userId: id,
       firstname,
@@ -44,9 +36,8 @@ function Home() {
       email,
       password,
       activated: false,
-      deactivatedOn: Date.now(),
+      deactivatedOn: new Date(),
     });
-    console.log(Date.now());
     console.log(response);
   }
 
