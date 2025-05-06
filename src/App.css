@@ -1,6 +1,3 @@
-#root {
-  height: 100vh;
-}
 html,
 body {
   margin: 0;
@@ -15,25 +12,16 @@ main {
   margin: 0 auto;
   align-content: center;
 }
-nav {
-  height: 5rem;
-  background: #181818;
+/* Nav Bar */
+.navbar a {
+  position: relative;
+  padding: 0 15px;
+  margin-right: 20px;
+  color: white;
+  font-size: x-large;
+  text-decoration: none;
 }
-nav ul {
-  margin: 0;
-  text-align: right;
-  list-style: none;
-}
-nav li {
-  display: inline-block;
-  margin: 8px;
-}
-nav button {
-  color: rgb(255, 255, 255);
-  padding: 10px;
-  background-color: #181818;
-  border-radius: 20px;
-}
+
 /* Home Page*/
 .homePage {
   position: relative;
