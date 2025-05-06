@@ -1,17 +1,23 @@
-import React from "react";
-import api from "../app/api";
 import { createSlice } from "@reduxjs/toolkit";
+import api from "./api";
+import { storeToken } from "./tokenService";
 
 const UserApi = api.injectEndpoints({
   endpoints: (build) => ({
     registerUser: build.mutation({
-      query: (userId) => ({
-        url: `/auth/register`,
+      query: ({ firstname, lastname, email, password }) => ({
+        url: `/api/auth/register`,
         method: "POST",
-        body: { userId },
+        body: {
+          firstname,
+          lastname,
+          email,
+          password,
+        },
       }),
-      invalidatesTags: ["Auth"],
+      invalidatesTags: ["User"],
     }),
+
     loginUser: build.mutation({
       query: ({ email, password }) => ({
         url: `/api/auth/login`,
@@ -21,15 +27,17 @@ const UserApi = api.injectEndpoints({
           password,
         },
       }),
-      invalidatesTags: ["Auth"],
+      invalidatesTags: ["User"],
     }),
+
     aboutMe: build.query({
       query: () => ({
-        url: `/auth/me`,
+        url: `/api/auth/me`,
         method: "GET",
       }),
-      providesTags: ["Auth"],
+      providesTags: ["User"],
     }),
+
     updateUser: build.mutation({
       query: ({
         userId,
@@ -53,6 +61,7 @@ const UserApi = api.injectEndpoints({
       }),
       invalidatesTags: ["User"],
     }),
+
     deleteUser: build.mutation({
       query: (userId) => ({
         url: `/api/user/delete/${userId}`,
@@ -75,7 +84,7 @@ const UserApi = api.injectEndpoints({
 
     searchUser: build.query({
       query: () => ({
-        url: `/user/${userId}`,
+        url: `/api/user/${userId}`,
         method: "GET",
       }),
       providesTags: ["User"],
@@ -83,21 +92,28 @@ const UserApi = api.injectEndpoints({
   }),
 });
 
-const storeToken = (state, { payload }) => {
-  localStorage.setItem("token", payload.token);
-};
-
-const userSlice = createSlice({
-  name: "user",
+// stores the token from register api call
+const registerSlice = createSlice({
+  name: "registerUser",
   initialState: {},
   reducers: {},
-  extraReducers: (build) => {
-    if (api.endpoints?.RegisterUser?.matchFulfilled)
-      build.addMatcher(api.endpoints.user.matchFulfilled, storeToken);
+  extraReducers: (builder) => {
+    builder.addMatcher(api.endpoints.registerUser.matchFulfilled, storeToken);
   },
 });
-export default userSlice.reducer;
 
+// stores the token from login api call
+const loginSlice = createSlice({
+  name: "loginUser",
+  initialState: {},
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addMatcher(api.endpoints.loginUser.matchFulfilled, storeToken);
+  },
+});
+
+export const registerReducer = registerSlice.reducer;
+export const loginReducer = loginSlice.reducer;
 export const {
   useRegisterUserMutation,
   useSearchUserQuery,

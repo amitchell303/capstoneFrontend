@@ -1,8 +1,8 @@
 import { GridBackground } from "../assets/grid";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useGetAllUsersQuery } from "./userSlice";
-import { useUpdateUserMutation, useDeleteUserMutation } from "./userSlice";
+import { useGetAllUsersQuery } from "../app/userSlice";
+import { useUpdateUserMutation, useDeleteUserMutation } from "../app/userSlice";
 import "../App.css";
 
 function Home() {
