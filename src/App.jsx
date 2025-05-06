@@ -22,7 +22,7 @@ function App() {
             </li>
             <li>
               <Link to="/user/:id">
-                <button>SingleUser</button>
+                <button>Account</button>
               </Link>
             </li>
             <li>
@@ -32,7 +32,7 @@ function App() {
             </li>
             <li>
               <Link to="/login">
-                <button>LogIn</button>
+                <button>Login</button>
               </Link>
             </li>
           </ul>
@@ -46,7 +46,6 @@ function App() {
       </Router>
     </Provider>
   );
-
 }
 
 export default App;

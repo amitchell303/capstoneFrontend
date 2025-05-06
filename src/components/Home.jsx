@@ -1,7 +1,13 @@
+import "../App.css";
+import { GridBackground } from "../assets/grid";
+
 function Home() {
   return (
     <>
-      <h1>H O M E</h1>
+      <GridBackground />
+      <div className="homePage">
+        <h1>Please sign in</h1>
+      </div>
     </>
   );
 }
