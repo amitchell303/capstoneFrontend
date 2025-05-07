@@ -22,8 +22,13 @@ export default function SingleUser() {
   console.log(user);
   
    
+  const [firstname, setFirstname] = useState("");
+      const [lastname, setLastname] = useState("");
+      const [email, setEmail] = useState("");
+      const [password, setPassword] = useState("");
   
-  async function handleUpdateUser() {
+      async function handleUpdateUser(e) {
+          e.preventDefault();
     const updatedData = { firstname, lastname, email, password };
     const token = localStorage.getItem("token");
     if (!token) {
@@ -31,7 +36,8 @@ export default function SingleUser() {
       console.log("No token found, redirecting to login.");
     }else{ 
     try {
-     const response = await update({ id, ...updatedData }).unwrap();
+      const userId=user.id;
+     const response = await update({ userId, ...updatedData }).unwrap();
      if (response){
       alert("User updated successfully!");
      }
@@ -41,9 +47,10 @@ export default function SingleUser() {
     }
   }
 }
-  async function handleDeleteUser(user) {
+  async function handleDeleteUser() {
     try {
-      await deleteUser(user).unwrap();
+      const userId=user.id;
+      await deleteUser({userId}).unwrap();
       alert("User deleted Successfully!");
       navigate("/");
     } catch (error) {
@@ -78,13 +85,13 @@ export default function SingleUser() {
         <p>Id: {user.id}</p>
       </div>        
         <div className="update-user">
-          <button
-            className="update-button"
-            type="submit"
-            onClick={handleUpdateUser}
-          >
-            Update
-          </button>
+        <form onSubmit={handleUpdateUser}>
+                <input type="submit" value="Update User" />
+                <input type="text" value = {firstname} onChange={(e) => setFirstname(e.target.value)}/>
+                <input type="text" value={lastname} onChange={(e) => setLastname(e.target.value)}/>
+                <input type="text" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                <input type="text" value={password} onChange={(e) => setPassword(e.target.value)}/>
+            </form>
         </div>
         <div className="delete-user">
           <button
