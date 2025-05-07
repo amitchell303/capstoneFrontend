@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useAboutMeQuery, useUpdateUserMutation, useDeleteUserMutation } from "../app/userSlice";
 import { useState } from "react";
+import "../aboutMe.css";
+
 
 export default function AboutMe() {
     const {error, isLoading, data: me } = useAboutMeQuery();
@@ -63,12 +65,12 @@ export default function AboutMe() {
           <p>Id: {me.user.id}</p>
         </div>
         <div className="update-user">
-            <form onSubmit={handleUpdateUser}>
+            <form className="update-form" onSubmit={handleUpdateUser}>
                 <input type="submit" value="Update User" />
-                <input type="text" value = {firstname} onChange={(e) => setFirstname(e.target.value)}/>
-                <input type="text" value={lastname} onChange={(e) => setLastname(e.target.value)}/>
-                <input type="text" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                <input type="text" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <input type="text" placeholder="First Name" value = {firstname} onChange={(e) => setFirstname(e.target.value)}/>
+                <input type="text" placeholder="Last Name" value={lastname} onChange={(e) => setLastname(e.target.value)}/>
+                <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                <input type="text" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                 
             </form>
         
