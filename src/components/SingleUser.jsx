@@ -3,7 +3,7 @@ import {
   useDeleteUserMutation,
   useUpdateUserMutation,
   useGetUserQuery,
-} from "./userSlice";
+} from "../app/userSlice";
 import { data, useNavigate, useParams } from "react-router-dom";
 
 export default function SingleUser() {

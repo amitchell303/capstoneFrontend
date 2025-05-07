@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useAboutMeQuery, useUpdateUserMutation, useDeleteUserMutation } from "./userSlice";
+import { useAboutMeQuery, useUpdateUserMutation, useDeleteUserMutation } from "../app/userSlice";
 import { useState } from "react";
 
 export default function AboutMe() {
