@@ -71,6 +71,7 @@ function Registration() {
             <div className="form-group">
               <label>Password</label>
               <input
+                type="password"
                 value={password}
                 placeholder="password"
                 onChange={(ev) => setPassword(ev.target.value)}
