@@ -83,7 +83,8 @@ main {
   background-color: #8e2de2;
   border: none;
   padding: 15px 30px;
-  margin-left: 4rem;
+  /* margin-left: 4rem; */
+  margin: 4px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;

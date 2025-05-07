@@ -1,7 +1,8 @@
 import { GridBackground } from "../assets/grid";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useGetAllUsersQuery } from "./userSlice";
+import { useGetAllUsersQuery } from "../app/userSlice";
+import { useUpdateUserMutation, useDeleteUserMutation } from "../app/userSlice";
 import "../App.css";
 
 function Home() {
@@ -9,6 +10,8 @@ function Home() {
   const token = localStorage.getItem("token");
 
   const { data, error, isLoading } = useGetAllUsersQuery();
+  const [updateAUser] = useUpdateUserMutation();
+  const [deleteAUser] = useDeleteUserMutation();
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -21,11 +24,28 @@ function Home() {
     }
   }, [token, navigate, data]);
 
+  async function updateUser(id) {
+    const response = await updateAUser({ id });
+    console.log(response);
+  }
+  async function deleteUser(id, firstname, lastname, email, password) {
+    const response = await updateAUser({
+      userId: id,
+      firstname,
+      lastname,
+      email,
+      password,
+      activated: false,
+      deactivatedOn: new Date(),
+    });
+    console.log(response);
+  }
+
   if (!token) {
     return (
       <main id="homePage">
         <GridBackground />
-        <div className="homePage">
+        <div className="page">
           <h1>
             Please <NavLink to="/login">Sign-in</NavLink> or{" "}
             <NavLink to="/register">Register</NavLink> to view users.
@@ -34,29 +54,58 @@ function Home() {
       </main>
     );
   }
-
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <main id="homePage">
+        <GridBackground />
+        <div className="page">
+          <div>Loading...</div>
+        </div>
+      </main>
+    );
   }
   if (error) {
-    return <div>Error fetching users: {error.message}</div>;
+    return (
+      <main id="homePage">
+        <GridBackground />
+        <div className="page">
+          <div>Error fetching users: {error.message}</div>
+        </div>
+      </main>
+    );
   }
   return (
     <main id="homePage">
       <GridBackground />
       <div className="page">
         <h1>U S E R S</h1>
-        <ul>
+        <ol>
           {users.length > 0 ? (
             users.map((user) => (
               <li key={user.id}>
-                {user.firstname} {user.lastname}{" "}
+                <label onClick={() => navigate(`/user/${user.id}`)}>
+                  {user.firstname} {user.lastname}{" "}
+                </label>
+                <button onClick={() => updateUser(user.id)}>update</button>
+                <button
+                  onClick={() =>
+                    deleteUser(
+                      user.id,
+                      user.firstname,
+                      user.lastname,
+                      user.email,
+                      user.password
+                    )
+                  }
+                >
+                  delete
+                </button>
               </li>
             ))
           ) : (
             <li>No users found</li>
           )}
-        </ul>
+        </ol>
       </div>
     </main>
   );

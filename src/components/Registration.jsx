@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAddAccountMutation } from "./AccountSlice";
+import { useRegisterUserMutation } from "../app/userSlice";
 import { GridBackground } from "../assets/grid";
 import "../App.css";
 
@@ -8,7 +8,7 @@ function Registration() {
   const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [addUser] = useAddAccountMutation();
+  const [addUser] = useRegisterUserMutation();
 
   async function submit(event) {
     event.preventDefault();
