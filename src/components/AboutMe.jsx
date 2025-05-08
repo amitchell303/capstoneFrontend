@@ -22,14 +22,16 @@ export default function AboutMe() {
         e.preventDefault();
         const updatedData = { firstname, lastname, email, password };
         const token = localStorage.getItem("token");
+        console.log(token);
         if (!token) {
           navigate("/login");
           console.log("No token found, redirecting to login.");
         }else{ 
             console.log(updatedData);
         try {
-            const userId=user.id;
-         const response = await update({ userId, ...updatedData }).unwrap();
+            const userId=me.user.id;
+            console.log(userId);
+         const response = await update({userId, ...updatedData }).unwrap();
          if (response){
           alert("User updated successfully!");
          }
@@ -65,7 +67,7 @@ export default function AboutMe() {
         </div>
         <div className="update-user">
             <form className="update-form" onSubmit={handleUpdateUser}>
-                <input className="submitt-button" type="submit" value="Update User" />
+                <button className="submitt-button" type="submit" value="Update User"> Submitt </button>
                 <input type="text" placeholder="First Name" value = {firstname} onChange={(e) => setFirstname(e.target.value)}/>
                 <input type="text" placeholder="Last Name" value={lastname} onChange={(e) => setLastname(e.target.value)}/>
                 <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
