@@ -9,7 +9,6 @@ import "../aboutMe.css";
 
 export default function AboutMe() {
   const { error, isLoading, data: me } = useAboutMeQuery();
-  const { id } = useParams();
   const [update] = useUpdateUserMutation();
   const [deleteUser] = useDeleteUserMutation();
 
