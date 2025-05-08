@@ -110,6 +110,7 @@ function Login() {
             <div className="login-form-field">
               <label>Email</label>
               <input
+                type="email"
                 value={email}
                 placeholder="email"
                 onChange={(e) => setEmail(e.target.value)}

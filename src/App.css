@@ -41,6 +41,10 @@ main {
   font-size: x-large;
   text-decoration: none;
 }
+.nav-links a:hover {
+  text-decoration: underline 3px solid #8d2de2;
+  color: #ffffff;
+}
 
 /* Home Page*/
 .homePage {

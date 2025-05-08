@@ -63,6 +63,7 @@ function Registration() {
             <div className="form-group">
               <label>Email</label>
               <input
+                type="email"
                 value={email}
                 placeholder="email"
                 onChange={(ev) => setEmail(ev.target.value)}
