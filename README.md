@@ -1,12 +1,12 @@
-# React + Vite
+#Capstone Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Deployed site: https://fsa-capstone-frontend-5a11747f8eba.herokuapp.com/login
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- DONE: Create a new repository on Github and add all the team members.
+- DONE: Create a new Vite react project and create components folder, in the folder add four .jsx files, Registration, Login, Single User, and Home.
+- ~~For registration .jsx file where the user enters in a form their email, first name, last name, and password. Use redux tool kit to send the data to the backend and use windows.sessionstorage or localstorage to save the token.~~ Once the user is done, redirect to the home page.
+- ~~For login .jsx file where the user enters their email and password into a form. Save the token used by redux tool kit and~~ redirect to the home page.
+- Create a protected route for the home page. If there is no JSON web token, redirect to the login page. The home page should display a list of all the users. Each user should have two buttons by it, one for delete and one for update.
+- The delete button should delete the user. You should not be able to delete the user that is signed in. Use tags so the file will update when you delete the user.
+- Create an update page so when the user clicks on the update button, they go to a page that displays all that user’s information in a form. Then they can update that user's information. Once done, redirect to the home page.
+- DONE: Deploy the front end.

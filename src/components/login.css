@@ -8,58 +8,45 @@ body {
 }
 main {
   width: 100%;
-  height: 92%;
+  height: 75%;
   margin: 0 auto;
   align-content: center;
 }
 
-/* Nav Bar */
-.navbar {
+/* Navbar */
+nav {
+  height: 5rem;
+  background: none;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-}
-.nav-title {
-  color: white;
-  padding: 0 15px;
-  font-size: x-large;
-  text-decoration: none;
-}
-.nav-links {
-  padding: 0 15px;
-  margin-right: 20px;
-  font-size: x-large;
-  text-decoration: none;
+  justify-content: right;
   position: relative;
+  z-index: 2;
 }
-.nav-links a {
-  color: white;
-  margin: 10px;
-  font-size: x-large;
-  text-decoration: none;
+nav ul {
+  margin: 1.5rem;
+  text-align: right;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  margin: 20px;
+}
+nav button {
+  color: rgb(255, 255, 255);
+  padding: 0.75rem;
+  background-color: #181818;
+  border-radius: 20px;
+}
+nav button:hover {
+  color: rgb(255, 255, 255);
+  padding: 0.75rem;
+  background-color: #44166c76;
+  border-radius: 20px;
 }
 
-/* Home Page*/
-.homePage {
-  position: relative;
-  z-index: 1;
-  background-color: #111;
-  box-shadow: 0 15px 35px #8d2de274;
-  width: 50vw;
-  height: 100vh;
-  padding: 3rem;
-  margin: 0 auto;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.homePage h1 {
-  color: white;
-}
-/*  Register  */
-.page {
+/*  Login  */
+.content-container {
   position: relative;
   z-index: 1;
   color: #fff;
@@ -74,17 +61,16 @@ main {
   flex-direction: column;
   align-items: center;
 }
-.page h1 {
+.content-container h1 {
   text-align: center;
   margin-bottom: 1rem;
 }
-.page button {
+.content-container button {
   color: white;
   background-color: #8e2de2;
   border: none;
   padding: 15px 30px;
-  /* margin-left: 4rem; */
-  margin: 4px;
+  margin-left: 4rem; /*i cant center this thing for the life of me, idk why, this is a bandaid solution */
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -92,24 +78,24 @@ main {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
-.page button:hover {
+.content-container button:hover {
   background-color: #4a00e0;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
-form {
-  margin: 0 auto;
-  width: 60%;
-  div {
-    margin: 0 auto;
-  }
+.login-form-field {
+  margin: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1%;
-  input {
-    padding: 5px 0px;
-  }
+.login-form-field label {
+  padding: 0.3rem;
+  font-size: 1rem;
+}
+.login-form-field input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
 }
 
 /* Background */
