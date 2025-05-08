@@ -11,7 +11,7 @@ export default function Navigations() {
       <div className="nav-links">
         <NavLink to="/register">Register</NavLink>
         <NavLink to="/login">Login</NavLink>
-        <NavLink to="/user/:userId">My Account</NavLink>
+        <NavLink to="/me">My Account</NavLink>
       </div>
     </nav>
   );

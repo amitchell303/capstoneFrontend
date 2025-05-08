@@ -8,6 +8,7 @@ import Registration from "./components/Registration.jsx";
 import Home from "./components/Home.jsx";
 import SingleUser from "./components/SingleUser.jsx";
 import LogIn from "./components/Login.jsx";
+import AboutMe from "./components/AboutMe.jsx";
 import Navigations from "./components/Navigations.jsx";
 
 function App() {
@@ -20,9 +21,10 @@ function App() {
         <Navigations />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/user/:userId" element={<SingleUser />} />
+          <Route path="/user/:id" element={<SingleUser />} />
           <Route path="/register" element={<Registration />} />
           <Route path="/login" element={<LogIn />} />
+          <Route path="/me" element={<AboutMe />} />
         </Routes>
       </Router>
     </Provider>

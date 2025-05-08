@@ -82,7 +82,7 @@ const UserApi = api.injectEndpoints({
       providesTags: ["User"],
     }),
 
-    searchUser: build.query({
+    getUser: build.query({
       query: () => ({
         url: `/api/user/${userId}`,
         method: "GET",
@@ -116,7 +116,7 @@ export const registerReducer = registerSlice.reducer;
 export const loginReducer = loginSlice.reducer;
 export const {
   useRegisterUserMutation,
-  useSearchUserQuery,
+  useGetUserQuery,
   useLoginUserMutation,
   useUpdateUserMutation,
   useDeleteUserMutation,
