@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useAboutMeQuery, useUpdateUserMutation, useDeleteUserMutation } from "../app/userSlice";
 import { useState } from "react";
+import "../aboutMe.css";
+
 
 export default function AboutMe() {
     const {error, isLoading, data: me } = useAboutMeQuery();
@@ -20,14 +22,16 @@ export default function AboutMe() {
         e.preventDefault();
         const updatedData = { firstname, lastname, email, password };
         const token = localStorage.getItem("token");
+        console.log(token);
         if (!token) {
           navigate("/login");
           console.log("No token found, redirecting to login.");
         }else{ 
             console.log(updatedData);
         try {
-            const userId=user.id;
-         const response = await update({ userId, ...updatedData }).unwrap();
+            const userId=me.user.id;
+            console.log(userId);
+         const response = await update({userId, ...updatedData }).unwrap();
          if (response){
           alert("User updated successfully!");
          }
@@ -37,9 +41,9 @@ export default function AboutMe() {
         }
       }
     }
-    async function handleDeleteUser(user) {
+    async function handleDeleteUser() {
         try {
-          await deleteUser(user).unwrap();
+          await deleteUser().unwrap();
           alert("User deleted Successfully!");
           navigate("/");
         } catch (error) {
@@ -60,15 +64,14 @@ export default function AboutMe() {
           <p>First Name: {me.user.firstname}</p>
           <p>Last Name: {me.user.lastname}</p>
           <p>Email: {me.user.email}</p>
-          <p>Id: {me.user.id}</p>
         </div>
         <div className="update-user">
-            <form onSubmit={handleUpdateUser}>
-                <input type="submit" value="Update User" />
-                <input type="text" value = {firstname} onChange={(e) => setFirstname(e.target.value)}/>
-                <input type="text" value={lastname} onChange={(e) => setLastname(e.target.value)}/>
-                <input type="text" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                <input type="text" value={password} onChange={(e) => setPassword(e.target.value)}/>
+            <form className="update-form" onSubmit={handleUpdateUser}>
+                <button className="submitt-button" type="submit" value="Update User"> Submitt </button>
+                <input type="text" placeholder="First Name" value = {firstname} onChange={(e) => setFirstname(e.target.value)}/>
+                <input type="text" placeholder="Last Name" value={lastname} onChange={(e) => setLastname(e.target.value)}/>
+                <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                <input type="text" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                 
             </form>
         
