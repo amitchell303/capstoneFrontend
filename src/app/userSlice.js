@@ -83,7 +83,7 @@ const UserApi = api.injectEndpoints({
     }),
 
     getUser: build.query({
-      query: () => ({
+      query: (userId) => ({
         url: `/api/user/${userId}`,
         method: "GET",
       }),
