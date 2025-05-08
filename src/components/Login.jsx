@@ -76,6 +76,7 @@
 // }
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useLoginUserMutation } from "../app/userSlice";
 import { GridBackground } from "../assets/grid";
 import "./login.css";
@@ -84,6 +85,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login] = useLoginUserMutation();
+  const navigate = useNavigate();
 
   async function submit(e) {
     e.preventDefault();
@@ -95,6 +97,7 @@ function Login() {
       localStorage.setItem("token", response.token);
       setEmail("");
       setPassword("");
+      navigate("/");
     } catch (err) {
       console.error("Login failed", err);
     }
