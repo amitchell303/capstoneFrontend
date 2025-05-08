@@ -39,9 +39,9 @@ export default function AboutMe() {
         }
       }
     }
-    async function handleDeleteUser(user) {
+    async function handleDeleteUser() {
         try {
-          await deleteUser(user).unwrap();
+          await deleteUser().unwrap();
           alert("User deleted Successfully!");
           navigate("/");
         } catch (error) {
@@ -62,11 +62,10 @@ export default function AboutMe() {
           <p>First Name: {me.user.firstname}</p>
           <p>Last Name: {me.user.lastname}</p>
           <p>Email: {me.user.email}</p>
-          <p>Id: {me.user.id}</p>
         </div>
         <div className="update-user">
             <form className="update-form" onSubmit={handleUpdateUser}>
-                <input type="submit" value="Update User" />
+                <input className="submitt-button" type="submit" value="Update User" />
                 <input type="text" placeholder="First Name" value = {firstname} onChange={(e) => setFirstname(e.target.value)}/>
                 <input type="text" placeholder="Last Name" value={lastname} onChange={(e) => setLastname(e.target.value)}/>
                 <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
