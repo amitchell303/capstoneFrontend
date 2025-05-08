@@ -65,7 +65,7 @@ function Registration() {
               <input
                 type="email"
                 value={email}
-                placeholder="email"
+                placeholder="Email"
                 onChange={(ev) => setEmail(ev.target.value)}
               />
             </div>
@@ -74,7 +74,7 @@ function Registration() {
               <input
                 type="password"
                 value={password}
-                placeholder="password"
+                placeholder="Password"
                 onChange={(ev) => setPassword(ev.target.value)}
               />
             </div>
