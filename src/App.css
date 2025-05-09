@@ -175,3 +175,40 @@ form {
   border-radius: 8px;
   font-size: 0.9rem;
 }
+
+/* About Me Page */
+/* Import Google Fonts (e.g., in your HTML or here if preferred) */
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap'); */
+
+body {
+  
+  color: #f0f0f0;
+  line-height: 1.7;
+  background: linear-gradient(-45deg, #295eff, #6b0064, #23a6d5, #0e0158);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.update-user{
+  font-family: 'Playfair Display', serif; 
+  font-size: 2.2em;
+  color: #fff; 
+  text-align: center;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.25);
+}
+
+.update-user {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; 
+  max-width: 850px; 
+  margin: 0 auto; 
+}
+
+
