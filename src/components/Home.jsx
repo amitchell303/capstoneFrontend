@@ -1,4 +1,4 @@
-import { GridBackground } from "../assets/grid";
+//import { GridBackground } from "../assets/grid";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 //import { useGetAllUsersQuery } from "../app/userSlice";
@@ -47,7 +47,7 @@ function Home() {
   if (!token) {
     return (
       <main id="homePage">
-        <GridBackground />
+        {/* <GridBackground /> */}
         <div className="page">
           <h1>
             Please <NavLink to="/login">Sign-in</NavLink> or{" "}
@@ -60,7 +60,7 @@ function Home() {
   if (isLoading) {
     return (
       <main id="homePage">
-        <GridBackground />
+        {/* <GridBackground /> */}
         <div className="page">
           <div>Loading...</div>
         </div>
@@ -70,7 +70,7 @@ function Home() {
   if (error) {
     return (
       <main id="homePage">
-        <GridBackground />
+        {/* <GridBackground /> */}
         <div className="page">
           <div>Error fetching users: {error.message}</div>
         </div>
@@ -79,8 +79,8 @@ function Home() {
   }
   return (
     <main id="homePage">
-      <GridBackground />
-      <div className="page">
+      {/* <GridBackground /> */}
+      <div className="displayHomePage">
         <h1>H O M E</h1>
         {/* <ol>
           {users.length > 0 ? (
@@ -109,26 +109,37 @@ function Home() {
             <li>No users found</li>
           )}
         </ol> */}
-        <div>
+        <div className="fullWidth Height90 innerHomePage">
           <div>
-            <ul>
-              {cars.map((car) => (
-                <li key={car.id}>
-                  <label>{car.name}</label>
-                </li>
-              ))}
-            </ul>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <h3>Vehicles:</h3>
+                  </td>
+                  <td>
+                    <ul className="inline">
+                      {cars.map((car) => (
+                        <li key={car.id} className="inline">
+                          <label>{car.name}</label>
+                        </li>
+                      ))}
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <div>
-            <section>
+          <div className="fullWidth Height50">
+            <section className="inline car margin5">
               <h3>Car Details</h3>
             </section>
-            <section>
+            <section className="inline appointment margin5">
               <h3>Appointments</h3>
             </section>
           </div>
-          <div>
-            <section>
+          <div className="fullWidth Height30">
+            <section className="maintainance margin5">
               <h3>Maintainence Log</h3>
             </section>
           </div>

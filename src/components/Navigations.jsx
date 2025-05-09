@@ -29,7 +29,9 @@ export default function Navigations() {
           </>
         )}
         {/* {token ? <NavLink to="/me">My Account</NavLink> : navigate("/login")} */}
-        <button onClick={logout}>LogOut</button>
+        <button onClick={logout} id="logoutBtn">
+          LogOut
+        </button>
       </div>
     </nav>
   );
