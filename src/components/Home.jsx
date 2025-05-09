@@ -1,4 +1,3 @@
-import { GridBackground } from "../assets/grid";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useGetAllUsersQuery } from "../app/userSlice";
@@ -44,7 +43,6 @@ function Home() {
   if (!token) {
     return (
       <main id="homePage">
-        <GridBackground />
         <div className="page">
           <h1>
             Please <NavLink to="/login">Sign-in</NavLink> or{" "}
@@ -57,7 +55,6 @@ function Home() {
   if (isLoading) {
     return (
       <main id="homePage">
-        <GridBackground />
         <div className="page">
           <div>Loading...</div>
         </div>
@@ -67,7 +64,6 @@ function Home() {
   if (error) {
     return (
       <main id="homePage">
-        <GridBackground />
         <div className="page">
           <div>Error fetching users: {error.message}</div>
         </div>
@@ -76,7 +72,6 @@ function Home() {
   }
   return (
     <main id="homePage">
-      <GridBackground />
       <div className="page">
         <h1>U S E R S</h1>
         <ol>

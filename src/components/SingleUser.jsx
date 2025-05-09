@@ -1,7 +1,5 @@
 import React, { useEffect } from "react"; // Import useEffect
-import {
-  useGetUserQuery,
-} from "../app/userSlice";
+import { useGetUserQuery } from "../app/userSlice";
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function SingleUser() {
@@ -26,21 +24,18 @@ export default function SingleUser() {
   }
 
   // Only render details if fetching was successful and user data exists
- 
 
-    return (
-      <div className="selectedUser">
-        <div> 
+  return (
+    <div>
+      <div>
         <h1>User Details</h1>
-        </div>
-        <div>
+      </div>
+      <div>
         <p>First Name: {user.firstname}</p>
         <p>Last Name: {user.lastname}</p>
         <p>Email: {user.email}</p>
         <p>Id: {user.id}</p>
-      </div>    
       </div>
-    );
-  }
-  
-
+    </div>
+  );
+}
