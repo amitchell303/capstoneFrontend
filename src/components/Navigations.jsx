@@ -15,9 +15,9 @@ export default function Navigations() {
     navigate("/login");
   }
   return (
-    <nav className="navbar">
+    <nav>
       <NavLink className="nav-title" to="/">
-        <h1>Car App Name</h1>
+        <h1>MyMoto</h1>
       </NavLink>
       <div className="nav-links">
         {token ? (
