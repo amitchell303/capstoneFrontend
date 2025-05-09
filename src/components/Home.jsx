@@ -73,7 +73,7 @@ function Home() {
       <main id="homePage">
         {/* <GridBackground /> */}
         <div className="page">
-          <div>Error fetching users: {error.message}</div>
+          <div>Error fetching Vehicles: {error.message}</div>
         </div>
       </main>
     );

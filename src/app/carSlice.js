@@ -9,7 +9,7 @@ const CarApi = api.injectEndpoints({
         url: `/api/cars/all`,
         method: "GET",
       }),
-      providesTags: ["User"],
+      providesTags: ["Car"],
     }),
   }),
 });

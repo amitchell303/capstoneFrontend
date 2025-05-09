@@ -2,7 +2,6 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap'); */
 
 body {
-  
   color: #f0f0f0;
   line-height: 1.7;
   background: linear-gradient(-45deg, #295eff, #6b0064, #23a6d5, #0e0158);
@@ -11,46 +10,80 @@ body {
   overflow-x: hidden;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.accountPage {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 900px;
+  table {
+    margin: 0 auto;
+  }
 }
-.update-user{
-  font-family: 'Playfair Display', serif; 
-  font-size: 2.2em;
-  color: #fff; 
+#accountDetails {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  width: 90%;
+  margin: 0 auto;
+  padding: 3%;
   text-align: center;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.25);
+  h1 {
+    color: #cacaca;
+    font-size: larger;
+    font-family: "Poppins", sans-serif;
+  }
 }
 
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .update-user {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2em;
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  gap: 25px; 
-  max-width: 850px; 
-  margin: 0 auto; 
+  gap: 25px;
+  max-width: 850px;
+  margin: 0 auto;
 }
-
-
-
 
 .update-form [type="text"],
 .update-form [type="email"],
-.update-form  {
-  
+.update-form {
   border: none;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.08); /* Very subtle white tint */
   color: #fff; /* White text input */
   font-size: 1em;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
   outline: none;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 3%;
+  margin: 0 auto;
+  height: 100%;
+  width: 90%;
+  input {
+    margin: 5px 0 auto;
+    padding: 4px;
+    width: 97.5%;
+  }
+  h1 {
+    text-align: center;
+  }
 }
 
 .update-form [type="text"]::placeholder,
@@ -59,10 +92,9 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 
-
 /* --- delete Button Styling--- */
 .delete-button {
-  display:block;
+  display: block;
   width: 25%;
   border: none;
   border-radius: 50px;
@@ -73,7 +105,7 @@ body {
   cursor: pointer;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   letter-spacing: 0.5px;
 }
 
@@ -89,24 +121,32 @@ body {
 }
 
 .submitt-button {
-    display:block;
-    width: 55%;
-    margin: 5%;
-    border: none;
-    border-radius: 50px;
-    background: linear-gradient(60deg, #295eff, #6b0064);
-    color: white;
-    font-size: 1.15em;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 0.5px;
-  }
-  
-  .submitt-button:hover {
-    background: linear-gradient(60deg, #6b0064, #295eff); /* Reversed gradient */
-    box-shadow: 0 8px 25px rgba(107, 0, 100, 0.4); /* Shadow matching one of the gradient colors */
-    transform: translateY(-3px) scale(1.02);
-  }
+  display: block;
+  width: 55%;
+  margin: 5% auto;
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(60deg, #295eff, #6b0064);
+  color: white;
+  font-size: 1.15em;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.submitt-button:hover {
+  background: linear-gradient(60deg, #6b0064, #295eff); /* Reversed gradient */
+  box-shadow: 0 8px 25px rgba(107, 0, 100, 0.4); /* Shadow matching one of the gradient colors */
+  transform: translateY(-3px) scale(1.02);
+}
+
+.Width40 {
+  width: 40%;
+}
+.Width60 {
+  width: 60%;
+}
