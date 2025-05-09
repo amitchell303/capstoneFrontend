@@ -43,7 +43,7 @@ main {
 }
 
 /* Home Page*/
-.homePage {
+/* .homePage {
   position: relative;
   z-index: 1;
   background-color: #111;
@@ -56,7 +56,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 .displayHomePage h1 {
   color: white;
   text-shadow: 1px 1px 1px black;
@@ -165,6 +165,15 @@ form {
 }
 .padding1 {
   padding: 1%;
+}
+#carTable {
+  h3,
+  ul,
+  li {
+    border: 0.5px solid white;
+    border-radius: 12%;
+    border-collapse: collapse;
+  }
 }
 .car {
   border: 1px solid grey;

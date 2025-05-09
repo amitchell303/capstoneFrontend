@@ -23,6 +23,7 @@ function Home() {
     } else {
       if (data) {
         setCars(data);
+        console.log(cars);
       }
     }
   }, [token, navigate, data]);
@@ -78,7 +79,7 @@ function Home() {
     );
   }
   return (
-    <main id="homePage">
+    <main>
       {/* <GridBackground /> */}
       <div className="displayHomePage">
         <h1>H O M E</h1>
@@ -111,7 +112,7 @@ function Home() {
         </ol> */}
         <div className="fullWidth Height90 innerHomePage">
           <div>
-            <table>
+            <table id="carTable">
               <tbody>
                 <tr>
                   <td>
@@ -119,11 +120,17 @@ function Home() {
                   </td>
                   <td>
                     <ul className="inline">
-                      {cars.map((car) => (
-                        <li key={car.id} className="inline">
-                          <label>{car.name}</label>
+                      {cars.length > 0 ? (
+                        cars.map((car) => (
+                          <li key={car.id} className="inline">
+                            <label>{car.name}</label>
+                          </li>
+                        ))
+                      ) : (
+                        <li>
+                          <h3>No Vehicles in Garage</h3>
                         </li>
-                      ))}
+                      )}
                     </ul>
                   </td>
                 </tr>
