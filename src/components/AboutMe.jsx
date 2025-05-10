@@ -19,12 +19,15 @@ export default function AboutMe() {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   async function handleUpdateUser(e) {
     e.preventDefault();
+
     const updatedData = { firstname, lastname, email, password };
     const token = localStorage.getItem("token");
     console.log(token);
+
     if (!token) {
       navigate("/login");
       console.log("No token found, redirecting to login.");
@@ -58,55 +61,59 @@ export default function AboutMe() {
   if (error) return <div>{error.message}</div>;
 
   return (
-    <div className="profileDetails">
-      <div>
-        <h2>My Details:</h2>
-      </div>
-      <div>
-        <p>First Name: {me.user.firstname}</p>
-        <p>Last Name: {me.user.lastname}</p>
-        <p>Email: {me.user.email}</p>
-      </div>
-      <div className="update-user">
-        <form className="update-form" onSubmit={handleUpdateUser}>
-          <button className="submitt-button" type="submit" value="Update User">
-            {" "}
-            Submit{" "}
-          </button>
-          <input
-            type="text"
-            placeholder="First Name"
-            value={firstname}
-            onChange={(e) => setFirstname(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Last Name"
-            value={lastname}
-            onChange={(e) => setLastname(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </form>
-
+    <div className="content-container">
+      <h2>My Account</h2>
+      <p>First Name: {me.user.firstname}</p>
+      <p>Last Name: {me.user.lastname}</p>
+      <p>Email: {me.user.email}</p>
+      <h3>Edit User Information</h3>
+      <form onSubmit={handleUpdateUser} className="updateUserForm">
+        <label>First name</label>
+        <input
+          type="text"
+          placeholder="First Name"
+          value={firstname}
+          onChange={(e) => setFirstname(e.target.value)}
+        />
+        <label>Last Name</label>
+        <input
+          type="text"
+          placeholder="Last Name"
+          value={lastname}
+          onChange={(e) => setLastname(e.target.value)}
+        />
+        <label>New Email</label>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <label>New Password </label>
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <label>Confirm New Passsword</label>
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+        />
         <button
-          className="delete-button"
-          type="button"
-          onClick={handleDeleteUser}
+          className="update-btn"
+          type="submit"
+          disabled={password && confirmPassword && password !== confirmPassword}
         >
-          Delete
+          Update
         </button>
-      </div>
+      </form>
+      <button type="button" onClick={handleDeleteUser} className="delete-btn">
+        Delete Account
+      </button>
     </div>
   );
 }

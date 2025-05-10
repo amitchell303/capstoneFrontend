@@ -54,6 +54,40 @@ nav button:hover {
   text-decoration: underline 3px solid #8d2de2;
   color: #000000;
 }
+/* Main Content Container */
+.content-container {
+  color: white;
+  width: 30rem;
+  background-color: #111;
+  box-shadow: 0 15px 35px #8d2de274;
+  padding: 3rem;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.content-container h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.content-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.content-container h3 {
+  text-decoration: underline;
+  margin: 1rem 0 0.5rem;
+}
+.content-container p {
+  margin: 0.5rem;
+  text-align: left;
+  /* font-size: 16px; */
+}
 
 /* Home Page*/
 .homePage {
@@ -71,6 +105,7 @@ nav button:hover {
 .homePage h1 {
   color: white;
 }
+
 /*  Register  */
 .page {
   color: #ffffff;
@@ -83,7 +118,6 @@ nav button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -124,43 +158,6 @@ form {
 }
 
 /*  Login  */
-.content-container {
-  color: #fff;
-  background-color: #111;
-  box-shadow: 0 15px 35px #8d2de274;
-  padding: 3rem;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.content-container h1 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-.content-container button {
-  color: white;
-  background-color: #8e2de2;
-  border: none;
-  padding: 15px 30px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  align-self: center;
-}
-.content-container button:hover {
-  background-color: #4a00e0;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
 .login-form-field {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
@@ -175,40 +172,76 @@ form {
   border-radius: 8px;
   font-size: 0.9rem;
 }
-
-/* About Me Page */
-/* Import Google Fonts (e.g., in your HTML or here if preferred) */
-/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap'); */
-
-body {
-  
-  color: #f0f0f0;
-  line-height: 1.7;
-  background: linear-gradient(-45deg, #295eff, #6b0064, #23a6d5, #0e0158);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
-  overflow-x: hidden;
-}
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-.update-user{
-  font-family: 'Playfair Display', serif; 
-  font-size: 2.2em;
-  color: #fff; 
+.login-btn {
+  color: white;
+  background-color: #8e2de2;
+  border: none;
+  padding: 15px 30px;
   text-align: center;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.25);
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  align-self: center;
+}
+.login-btn button:hover {
+  background-color: #4a00e0;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
-.update-user {
+/* Account Page */
+.updateUserForm {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  color: #fff;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 25px; 
-  max-width: 850px; 
-  margin: 0 auto; 
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+.updateUserForm label {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.updateUserForm input {
+  width: 20rem;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
 }
 
+.updateUserForm input:focus {
+  outline: none;
+  border: 2px solid #8e2de2;
+}
 
+.update-btn,
+.delete-btn {
+  color: white;
+  width: 15rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 15px 30px;
+  background-color: #8e2de2;
+  border: none;
+  font-size: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.update-btn:hover {
+  background-color: #4a00e0;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.delete-btn {
+  background-color: #dc3545;
+}
+.delete-btn:hover {
+  background-color: #c82333;
+}
