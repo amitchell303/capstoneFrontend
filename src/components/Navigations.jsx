@@ -8,10 +8,7 @@ import { useDispatch } from "react-redux";
 import "../App.css";
 import { FaRegUser } from "react-icons/fa6";
 import { BiSolidCarGarage } from "react-icons/bi";
-import {
-  MdOutlineKeyboardDoubleArrowLeft,
-  MdOutlineKeyboardDoubleArrowRight,
-} from "react-icons/md";
+import { LuPanelRightOpen, LuPanelLeftOpen } from "react-icons/lu";
 
 export default function Navigations() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,18 +34,26 @@ export default function Navigations() {
         <ul>
           {token ? (
             <>
-              <li>
-                <NavLink className="navlink" to="/me">
-                  <FaRegUser className="icons" />
-                  <p className="link">My Account</p>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="navlink" to="/">
-                  <BiSolidCarGarage className="icons" />
-                  <p className="link">Dashboard</p>
-                </NavLink>
-              </li>
+              <ul>
+                <li>
+                  <div className="tooltip">
+                    <NavLink className="navlink" to="/me">
+                      <FaRegUser className="icons" />
+                      <p className="link">My Account</p>
+                    </NavLink>
+                    <span className="tooltiptext">Account</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="tooltip">
+                    <NavLink className="navlink" to="/">
+                      <BiSolidCarGarage className="icons" />
+                      <p className="link">Dashboard</p>
+                    </NavLink>
+                    <span class="tooltiptext">Garage</span>
+                  </div>
+                </li>
+              </ul>
               <button className="logout-btn" onClick={logout}>
                 LogOut
               </button>
@@ -71,9 +76,9 @@ export default function Navigations() {
       </div>
       <button className="toggle-btn" onClick={toggleNavbar}>
         {isOpen ? (
-          <MdOutlineKeyboardDoubleArrowLeft />
+          <LuPanelRightOpen className="toggle-icon" />
         ) : (
-          <MdOutlineKeyboardDoubleArrowRight />
+          <LuPanelLeftOpen className="toggle-icon" />
         )}
       </button>
     </nav>
