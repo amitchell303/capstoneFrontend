@@ -30,15 +30,8 @@ export default function Navigations() {
 
   return (
     <nav className={`sidebar ${isOpen ? "open" : ""}`}>
-      <button className="toggle-btn" onClick={toggleNavbar}>
-        {isOpen ? (
-          <MdOutlineKeyboardDoubleArrowLeft />
-        ) : (
-          <MdOutlineKeyboardDoubleArrowRight />
-        )}
-      </button>
-      <NavLink className="nav-title" to="/">
-        <h1>MyMoto</h1>
+      <NavLink className="logo" to="/">
+        <img src="src\components\assets\blackLogo.svg" alt="Logo/Home" />
       </NavLink>
       <div className="navlink-container">
         <ul>
@@ -56,6 +49,9 @@ export default function Navigations() {
                   <p className="link">Dashboard</p>
                 </NavLink>
               </li>
+              <button className="logout-btn" onClick={logout}>
+                LogOut
+              </button>
             </>
           ) : (
             <>
@@ -71,9 +67,15 @@ export default function Navigations() {
               </li>
             </>
           )}
-          <button onClick={logout}>LogOut</button>
         </ul>
       </div>
+      <button className="toggle-btn" onClick={toggleNavbar}>
+        {isOpen ? (
+          <MdOutlineKeyboardDoubleArrowLeft />
+        ) : (
+          <MdOutlineKeyboardDoubleArrowRight />
+        )}
+      </button>
     </nav>
   );
 }
