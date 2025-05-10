@@ -7,6 +7,7 @@ function Registration() {
   const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [addUser] = useRegisterUserMutation();
 
   async function submit(event) {
@@ -76,10 +77,22 @@ function Registration() {
                 onChange={(ev) => setPassword(ev.target.value)}
               />
             </div>
+            <div className="form-group">
+              <label>Confirm Passsword</label>
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+            </div>
             <button
-              className="formBtn"
               type="submit"
-              disabled={!email || !password}
+              disabled={
+                !email ||
+                !password ||
+                (password && confirmPassword && password !== confirmPassword)
+              }
             >
               Register
             </button>
