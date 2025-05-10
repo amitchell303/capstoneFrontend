@@ -3,6 +3,7 @@
 *:after {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 /* Navbar */
@@ -11,47 +12,63 @@
   width: 5rem;
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
   background-color: white;
-  overflow: hidden;
+  overflow-x: hidden;
 }
-.sidebar:hover {
-  width: 10rem;
-  overflow: visible;
-}
-.nav-title {
-  color: rgb(0, 0, 0);
-  padding: 0 4px;
-  margin: 30px;
-  text-decoration: none;
-}
-ul {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+.sidebar.open {
+  width: 12rem;
 }
 .navlink {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  text-decoration: none;
+  gap: 0.5rem; 
+  padding: 0.5rem;
 }
 .icons {
-  color: rgb(0, 0, 0);
-  width: 5rem;
-  padding: 0.5rem 0;
-  font-family: sans-serif;
-  box-shadow: 3px 3px 3px #838383;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 25%;
+  background-color: #ececec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  position: relative;
+  margin: 0 auto;
+}
+.icons:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
 }
 .link {
   color: black;
-  width: 75px;
   font-size: 16px;
-  /* text-decoration: none; */
   text-align: left;
   letter-spacing: 0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.navlink {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  text-decoration: none;
+  width: 100%;
+}
+.sidebar.open .navlink {
+  flex-direction: row; 
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sidebar.open .link {
+  opacity: 1;
 }
 
 
@@ -71,7 +88,6 @@ ul {
 .homePage h1 {
   color: white;
 }
-
 
 /*  Register  */
 .page {
@@ -124,7 +140,6 @@ form {
     padding: 5px 0px;
   }
 }
-
 
 /*  Login  */
 .content-container {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import api from "../app/api";
 import { deleteToken, getToken } from "../app/tokenService";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -8,20 +8,35 @@ import { useDispatch } from "react-redux";
 import "../App.css";
 import { FaRegUser } from "react-icons/fa6";
 import { BiSolidCarGarage } from "react-icons/bi";
+import {
+  MdOutlineKeyboardDoubleArrowLeft,
+  MdOutlineKeyboardDoubleArrowRight,
+} from "react-icons/md";
 
 export default function Navigations() {
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const token = getToken();
 
+  function toggleNavbar() {
+    setIsOpen(!isOpen);
+  }
   function logout() {
     deleteToken();
     dispatch(api.util.resetApiState());
     navigate("/login");
   }
-  
+
   return (
-    <nav className="sidebar">
+    <nav className={`sidebar ${isOpen ? "open" : ""}`}>
+      <button className="toggle-btn" onClick={toggleNavbar}>
+        {isOpen ? (
+          <MdOutlineKeyboardDoubleArrowLeft />
+        ) : (
+          <MdOutlineKeyboardDoubleArrowRight />
+        )}
+      </button>
       <NavLink className="nav-title" to="/">
         <h1>MyMoto</h1>
       </NavLink>
