@@ -163,16 +163,18 @@ form {
 .margin5 {
   margin: 5px;
 }
+.margin0 {
+  margin: 0px;
+}
 .padding1 {
   padding: 1%;
 }
 #carTable {
-  h3,
-  ul,
-  li {
+  ul li {
     border: 0.5px solid white;
     border-radius: 12%;
     border-collapse: collapse;
+    list-style: none;
   }
 }
 .car {

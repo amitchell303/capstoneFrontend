@@ -68,16 +68,16 @@ function Home() {
       </main>
     );
   }
-  if (error) {
-    return (
-      <main id="homePage">
-        {/* <GridBackground /> */}
-        <div className="page">
-          <div>Error fetching Vehicles: {error.message}</div>
-        </div>
-      </main>
-    );
-  }
+  // if (error) {
+  //   return (
+  //     <main id="homePage">
+  //       {/* <GridBackground /> */}
+  //       <div className="page">
+  //         <div>Error fetching Vehicles: {error.message}</div>
+  //       </div>
+  //     </main>
+  //   );
+  // }
   return (
     <main>
       {/* <GridBackground /> */}
@@ -127,9 +127,7 @@ function Home() {
                           </li>
                         ))
                       ) : (
-                        <li>
-                          <h3>No Vehicles in Garage</h3>
-                        </li>
+                        <h4>No Vehicles in Garage</h4>
                       )}
                     </ul>
                   </td>
