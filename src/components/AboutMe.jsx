@@ -58,18 +58,14 @@ export default function AboutMe() {
   if (error) return <div>{error.message}</div>;
 
   return (
-    <div className="profileDetails">
+    <div>
+      <h2>My Details:</h2>
+      <p>First Name: {me.user.firstname}</p>
+      <p>Last Name: {me.user.lastname}</p>
+      <p>Email: {me.user.email}</p>
       <div>
-        <h2>My Details:</h2>
-      </div>
-      <div>
-        <p>First Name: {me.user.firstname}</p>
-        <p>Last Name: {me.user.lastname}</p>
-        <p>Email: {me.user.email}</p>
-      </div>
-      <div className="update-user">
-        <form className="update-form" onSubmit={handleUpdateUser}>
-          <button className="submitt-button" type="submit" value="Update User">
+        <form onSubmit={handleUpdateUser}>
+          <button type="submit" value="Update User">
             {" "}
             Submit{" "}
           </button>
@@ -86,24 +82,19 @@ export default function AboutMe() {
             onChange={(e) => setLastname(e.target.value)}
           />
           <input
-            type="text"
+            type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            type="text"
+            type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </form>
-
-        <button
-          className="delete-button"
-          type="button"
-          onClick={handleDeleteUser}
-        >
+        <button type="button" onClick={handleDeleteUser}>
           Delete
         </button>
       </div>

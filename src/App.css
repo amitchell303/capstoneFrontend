@@ -1,59 +1,59 @@
-html,
-body {
-  margin: 0;
+*,
+*:before,
+*:after {
   padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-main {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  margin: 0;
 }
 
 /* Navbar */
-nav {
-  height: 5rem;
-  background: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+.sidebar {
+  height: 100vh;
+  width: 5rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  overflow: hidden;
+}
+.sidebar:hover {
+  width: 10rem;
+  overflow: visible;
 }
 .nav-title {
   color: rgb(0, 0, 0);
-  padding: 0 15px;
-  font-size: x-large;
+  padding: 0 4px;
+  margin: 30px;
   text-decoration: none;
 }
-nav button {
-  color: rgb(255, 255, 255);
-  padding: 0.75rem;
-  background-color: #181818;
-  border-radius: 20px;
+ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
-nav button:hover {
-  color: rgb(255, 255, 255);
-  padding: 0.75rem;
-  background-color: #181818;
-  border-radius: 20px;
-  cursor: pointer;
-  text-decoration: underline 3px solid #8d2de2;
+.navlink {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-decoration: none;
 }
-.nav-links a {
+.icons {
   color: rgb(0, 0, 0);
-  margin: 10px;
-  font-size: x-large;
-  text-decoration: none;
+  width: 5rem;
+  padding: 0.5rem 0;
+  font-family: sans-serif;
+  box-shadow: 3px 3px 3px #838383;
 }
-.nav-links a:hover {
-  text-decoration: underline 3px solid #8d2de2;
-  color: #000000;
+.link {
+  color: black;
+  width: 75px;
+  font-size: 16px;
+  /* text-decoration: none; */
+  text-align: left;
+  letter-spacing: 0.3px;
 }
+
 
 /* Home Page*/
 .homePage {
@@ -71,6 +71,8 @@ nav button:hover {
 .homePage h1 {
   color: white;
 }
+
+
 /*  Register  */
 .page {
   color: #ffffff;
@@ -122,6 +124,7 @@ form {
     padding: 5px 0px;
   }
 }
+
 
 /*  Login  */
 .content-container {
@@ -175,40 +178,3 @@ form {
   border-radius: 8px;
   font-size: 0.9rem;
 }
-
-/* About Me Page */
-/* Import Google Fonts (e.g., in your HTML or here if preferred) */
-/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap'); */
-
-body {
-  
-  color: #f0f0f0;
-  line-height: 1.7;
-  background: linear-gradient(-45deg, #295eff, #6b0064, #23a6d5, #0e0158);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
-  overflow-x: hidden;
-}
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-.update-user{
-  font-family: 'Playfair Display', serif; 
-  font-size: 2.2em;
-  color: #fff; 
-  text-align: center;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.25);
-}
-
-.update-user {
-  display: flex;
-  flex-direction: column;
-  gap: 25px; 
-  max-width: 850px; 
-  margin: 0 auto; 
-}
-
-
