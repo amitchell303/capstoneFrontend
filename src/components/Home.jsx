@@ -73,7 +73,7 @@ function Home() {
   return (
     <main id="homePage">
       <div className="page">
-        <h1>U S E R S</h1>
+        <h1>U S E R S / Dashboard/ Home</h1>
         <ol>
           {users.length > 0 ? (
             users.map((user) => (
