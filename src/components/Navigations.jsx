@@ -53,6 +53,14 @@ export default function Navigations() {
                     <span class="tooltiptext">Garage</span>
                   </div>
                 </li>
+                <li>
+                  <div class="tooltip">
+                    <NavLink className="navlink" to="/empty">
+                      <p className="link">Empty garage test</p>
+                    </NavLink>
+                    <span class="tooltiptext">Garage</span>
+                  </div>
+                </li>
               </ul>
               <button className="logout-btn" onClick={logout}>
                 LogOut
