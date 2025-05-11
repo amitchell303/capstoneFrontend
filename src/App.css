@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Navbar */
@@ -167,7 +168,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .content-container h1 {
   text-align: center;
@@ -261,9 +261,6 @@ form {
 }
 
 /*  Login  */
-.login-form-field {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
 .login-form-field label {
   padding: 0.3rem;
   font-size: 1rem;
@@ -296,7 +293,6 @@ form {
 
 /* Account Page */
 .updateUserForm {
-  font-family: "Playfair Display", serif;
   font-size: 1rem;
   color: #fff;
   text-align: left;
@@ -359,6 +355,31 @@ form {
 /* Empty Garage */
 .emptyGarage-container {
   border: white solid 2px;
-  width: 40rem;
-  height: 40rem;
+  width: 30rem;
+  height: 30rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+.emptyGarage-container img {
+  width: 250px;
+  height: 250px;
+}
+.emptyGarage-container h1 {
+  color: white;
+}
+.emptyGarage-container a {
+  margin: 15px;
+  color: white;
+}
+/* Font Shorthand */
+/*   font: style variant weight size/height family
+       ex:  font: italic small-caps bold 12px/30px Georgia, serif; */
+
+/* "a" applies to navlinks */

@@ -53,10 +53,19 @@ export default function Navigations() {
                     <span class="tooltiptext">Garage</span>
                   </div>
                 </li>
+                {/* Temporary links for dev purposes */}
                 <li>
                   <div class="tooltip">
                     <NavLink className="navlink" to="/empty">
-                      <p className="link">Empty garage test</p>
+                      <p className="link">X-Empty garage</p>
+                    </NavLink>
+                    <span class="tooltiptext">Garage</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="tooltip">
+                    <NavLink className="navlink" to="/addVehicle">
+                      <p className="link">X-Add Vehicle Form</p>
                     </NavLink>
                     <span class="tooltiptext">Garage</span>
                   </div>
