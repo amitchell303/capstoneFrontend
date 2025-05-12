@@ -13,7 +13,7 @@ export default function AboutMe() {
   const [deleteUser] = useDeleteUserMutation();
 
   if (me) {
-    // console.log(me);
+    console.log(me);
   }
   const [isUpdating, setIsUpdating] = useState(false);
   const [firstname, setFirstname] = useState("");
@@ -193,6 +193,12 @@ export default function AboutMe() {
                 Name: {me.user.firstname} {me.user.lastname}
               </p>
               <p>Email: {me.user.email}</p>
+              <p>Address:</p>
+              <p>{me.user.street}</p>
+              <p>
+                {me.user.city}, {me.user.state}
+              </p>
+              <p>{me.user.postal}</p>
             </div>
           </section>
         </div>
