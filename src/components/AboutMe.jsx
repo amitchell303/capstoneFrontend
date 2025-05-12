@@ -19,12 +19,19 @@ export default function AboutMe() {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [street, setStreet] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [postal, setPostal] = useState("");
 
   async function handleUpdateUser(e) {
     e.preventDefault();
+
     const updatedData = { firstname, lastname, email, password };
     const token = localStorage.getItem("token");
     console.log(token);
+
     if (!token) {
       navigate("/login");
       console.log("No token found, redirecting to login.");
@@ -58,54 +65,83 @@ export default function AboutMe() {
   if (error) return <div>{error.message}</div>;
 
   return (
-    <div className="profileDetails">
-      <div>
-        <h2>My Details:</h2>
-      </div>
-      <div>
-        <p>First Name: {me.user.firstname}</p>
-        <p>Last Name: {me.user.lastname}</p>
-        <p>Email: {me.user.email}</p>
-      </div>
-      <div className="update-user">
-        <form className="update-form" onSubmit={handleUpdateUser}>
-          <button className="submitt-button" type="submit" value="Update User">
-            {" "}
-            Submit{" "}
-          </button>
-          <input
-            type="text"
-            placeholder="First Name"
-            value={firstname}
-            onChange={(e) => setFirstname(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Last Name"
-            value={lastname}
-            onChange={(e) => setLastname(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </form>
-
-        <button
-          className="delete-button"
-          type="button"
-          onClick={handleDeleteUser}
-        >
-          Delete
-        </button>
+    <div className="content-container">
+      <div className="accountPage">
+        <table>
+          <tbody>
+            <tr>
+              <td className="Width40">
+                <section id="accountDetails">
+                  <h1>My Account </h1>
+                  <div>
+                    <p>
+                      Name: {me.user.firstname} {me.user.lastname}
+                    </p>
+                    <p>Email: {me.user.email}</p>
+                  </div>
+                </section>
+              </td>
+              <td className="Width60">
+                <h1>Update Info</h1>
+                <form className="updateUserForm" onSubmit={handleUpdateUser}>
+                  <label>First Name</label>
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    value={firstname}
+                    onChange={(e) => setFirstname(e.target.value)}
+                  />
+                  <label>Last Name</label>
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    value={lastname}
+                    onChange={(e) => setLastname(e.target.value)}
+                  />
+                  <label>New Email</label>
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <label>New Password </label>
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <label>Confirm New Password</label>
+                  <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                  />
+                  <button
+                    className="update-btn"
+                    type="submit"
+                    disabled={
+                      password &&
+                      confirmPassword &&
+                      password !== confirmPassword
+                    }
+                  >
+                    Update
+                  </button>
+                  <button
+                    className="delete-btn"
+                    type="button"
+                    onClick={handleDeleteUser}
+                  >
+                    Delete Account
+                  </button>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );

@@ -5,11 +5,13 @@ import store from "./app/store";
 import "./App.css";
 
 import Registration from "./components/Registration.jsx";
-import Home from "./components/Home.jsx";
+import Home from "./components/dashboard/Home.jsx";
 import SingleUser from "./components/SingleUser.jsx";
 import LogIn from "./components/Login.jsx";
 import AboutMe from "./components/AboutMe.jsx";
 import Navigations from "./components/Navigations.jsx";
+import EmptyGarage from "./components/dashboard/EmptyGarage.jsx";
+import AddVehicle from "./components/forms/AddVehicle.jsx";
 
 function App() {
   function logout() {
@@ -25,6 +27,9 @@ function App() {
           <Route path="/register" element={<Registration />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/me" element={<AboutMe />} />
+
+          <Route path="/empty" element={<EmptyGarage />} />
+          <Route path="/addVehicle" element={<AddVehicle />} />
         </Routes>
       </Router>
     </Provider>
