@@ -29,7 +29,16 @@ export default function AboutMe() {
   async function handleUpdateUser(e) {
     e.preventDefault();
 
-    const updatedData = { firstname, lastname, email, password };
+    const updatedData = {
+      firstname,
+      lastname,
+      email,
+      password,
+      street,
+      city,
+      state,
+      postal,
+    };
     const token = localStorage.getItem("token");
     console.log(token);
 
@@ -40,10 +49,20 @@ export default function AboutMe() {
       console.log(updatedData);
       try {
         const userId = me.user.id;
-        console.log(userId);
+        // console.log(userId);
         const response = await update({ userId, ...updatedData }).unwrap();
         if (response) {
           alert("User updated successfully!");
+          setFirstname("");
+          setLastname("");
+          setEmail("");
+          setPassword("");
+          setConfirmPassword("");
+          setStreet("");
+          setCity("");
+          setState("");
+          setPostal("");
+          setIsUpdating(false);
         }
       } catch (error) {
         console.error("Failed to update user:", error);
@@ -116,16 +135,35 @@ export default function AboutMe() {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
                 </td>
-                <td></td>
                 <td>
                   <label>Street</label>
-                  <input type="text" placeholder="Enter Street" />
+                  <input
+                    type="text"
+                    placeholder="Enter Street"
+                    value={street}
+                    onChange={(e) => setStreet(e.target.value)}
+                  />
                   <label>City</label>
-                  <input type="text" placeholder="City" />
+                  <input
+                    type="text"
+                    placeholder="City"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                  />
                   <label>State</label>
-                  <input type="text" placeholder="State" />
+                  <input
+                    type="text"
+                    placeholder="State"
+                    value={state}
+                    onChange={(e) => setState(e.target.value)}
+                  />
                   <label>Postal</label>
-                  <input type="text" placeholder="Zipcode" />
+                  <input
+                    type="text"
+                    placeholder="Zipcode"
+                    value={postal}
+                    onChange={(e) => setPostal(e.target.value)}
+                  />
                 </td>
               </tr>
             </tbody>
