@@ -1,9 +1,12 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 //import { useGetAllUsersQuery } from "../app/userSlice";
-import { useGetMyCarsQuery } from "../app/carSlice"; //make Slice file for cars
-import { useUpdateUserMutation, useDeleteUserMutation } from "../app/userSlice";
-import "../App.css";
+import { useGetMyCarsQuery } from "../../app/carSlice"; //make Slice file for cars
+import {
+  useUpdateUserMutation,
+  useDeleteUserMutation,
+} from "../../app/userSlice";
+import "../../App.css";
 
 function Home() {
   const navigate = useNavigate();
@@ -50,7 +53,7 @@ function Home() {
         <div className="page">
           <h1>
             Please <NavLink to="/login">Sign-in</NavLink> or{" "}
-            <NavLink to="/register">Register</NavLink> to view users.
+            <NavLink to="/register">Register</NavLink>.
           </h1>
         </div>
       </main>
@@ -74,40 +77,14 @@ function Home() {
   //     </main>
   //   );
   // }
+
   return (
-    <main id="homePage">
+    <div className="content-container">
       <div className="displayHomePage">
-        <div className="page">
+        <main>
           <h1>H O M E</h1>
-          <ol>
-            {users.length > 0 ? (
-              users.map((user) => (
-                <li key={user.id}>
-                  <label onClick={() => navigate(`/user/${user.id}`)}>
-                    {user.firstname} {user.lastname}{" "}
-                  </label>
-                  <button onClick={() => updateUser(user.id)}>update</button>
-                  <button
-                    onClick={() =>
-                      deleteUser(
-                        user.id,
-                        user.firstname,
-                        user.lastname,
-                        user.email,
-                        user.password
-                      )
-                    }
-                  >
-                    delete
-                  </button>
-                </li>
-              ))
-            ) : (
-              <li>No users found</li>
-            )}
-          </ol>
-          <div className="fullWidth Height90 innerHomePage">
-            <div>
+          <div className="innerHomePage">
+            <div className="vehicleSection">
               <table id="carTable">
                 <tbody>
                   <tr>
@@ -115,40 +92,73 @@ function Home() {
                       <h3>Vehicles:</h3>
                     </td>
                     <td>
-                      <ul className="inline">
-                        {cars.length > 0 ? (
-                          cars.map((car) => (
-                            <li key={car.id} className="inline">
+                      {cars.length > 0 ? (
+                        <ul className="vehicleList">
+                          {cars.map((car) => (
+                            <li key={car.id} className="vehicleItem">
                               <label>{car.name}</label>
                             </li>
-                          ))
-                        ) : (
-                          <h4>No Vehicles in Garage</h4>
-                        )}
-                      </ul>
+                          ))}
+                        </ul>
+                      ) : (
+                        <h4>No Vehicles in Garage</h4>
+                      )}
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <div className="fullWidth Height50">
-              <section className="inline car margin5">
+
+            <div className="sectionGroup">
+              <section className="sectionBox car">
                 <h3>Car Details</h3>
               </section>
-              <section className="inline appointment margin5">
+              <section className="sectionBox appointment">
                 <h3>Appointments</h3>
               </section>
             </div>
-            <div className="fullWidth Height30">
-              <section className="maintainance margin5">
-                <h3>Maintainence Log</h3>
+
+            <div className="sectionGroup">
+              <section className="sectionBox maintainance">
+                <h3>Maintenance Log</h3>
               </section>
             </div>
           </div>
-        </div>
+        </main>
       </div>
-    </main>
+    </div>
   );
 }
 
 export default Home;
+
+/* Bridge project Users List */
+{
+  /* <ol>
+  {users.length > 0 ? (
+    users.map((user) => (
+      <li key={user.id}>
+        <label onClick={() => navigate(`/user/${user.id}`)}>
+          {user.firstname} {user.lastname}{" "}
+        </label>
+        <button onClick={() => updateUser(user.id)}>update</button>
+        <button
+          onClick={() =>
+            deleteUser(
+              user.id,
+              user.firstname,
+              user.lastname,
+              user.email,
+              user.password
+            )
+          }
+        >
+          delete
+        </button>
+      </li>
+    ))
+  ) : (
+    <li>No users found</li>
+  )}
+</ol> */
+}

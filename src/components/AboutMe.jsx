@@ -65,24 +65,25 @@ export default function AboutMe() {
   if (error) return <div>{error.message}</div>;
 
   return (
-    <div className="accountPage">
-      <table>
-        <tbody>
-          <tr>
-            <td className="Width40">
-              <section id="accountDetails">
-                <h1>A C C O U N T :</h1>
-                <div>
-                  <p>First Name: {me.user.firstname}</p>
-                  <p>Last Name: {me.user.lastname}</p>
-                  <p>Email: {me.user.email}</p>
-                </div>
-              </section>
-            </td>
-            <td className="Width60">
-            <h1>U P D A T E</h1>
-              <form className="updateUserForm" onSubmit={handleUpdateUser}>
-                <label>First name</label>
+    <div className="content-container">
+      <div className="accountPage">
+        <table>
+          <tbody>
+            <tr>
+              <td className="Width40">
+                <section id="accountDetails">
+                  <h1>A C C O U N T :</h1>
+                  <div>
+                    <p>First Name: {me.user.firstname}</p>
+                    <p>Last Name: {me.user.lastname}</p>
+                    <p>Email: {me.user.email}</p>
+                  </div>
+                </section>
+              </td>
+              <td className="Width60">
+                <h1>U P D A T E</h1>
+                <form className="updateUserForm" onSubmit={handleUpdateUser}>
+                  <label>First name</label>
                   <input
                     type="text"
                     placeholder="First Name"
@@ -117,32 +118,30 @@ export default function AboutMe() {
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
-                <button
-                  className="submitt-button"
-                  type="submit"
-                  value="Update User"
-                >
-                  {" "}
-                  Submit{" "}
-                </button>
-              </form>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div className="update-user">
-        <button
-          className="update-btn"
-          type="submit"
-          disabled={password && confirmPassword && password !== confirmPassword}
-        >
-          Update
-        </button>
-      </form>
-      <button type="button" onClick={handleDeleteUser} className="delete-btn">
-        Delete Account
-      </button>
+                  <button
+                    className="update-btn"
+                    type="submit"
+                    disabled={
+                      password &&
+                      confirmPassword &&
+                      password !== confirmPassword
+                    }
+                  >
+                    Update
+                  </button>
+                  <button
+                    className="delete-btn"
+                    type="button"
+                    onClick={handleDeleteUser}
+                  >
+                    Delete Account
+                  </button>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
