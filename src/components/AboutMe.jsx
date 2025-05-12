@@ -76,41 +76,60 @@ export default function AboutMe() {
         </button>
         <h1>Update Info</h1>
         <form className="updateUserForm" onSubmit={handleUpdateUser}>
-          <label>First Name</label>
-          <input
-            type="text"
-            placeholder="First Name"
-            value={firstname}
-            onChange={(e) => setFirstname(e.target.value)}
-          />
-          <label>Last Name</label>
-          <input
-            type="text"
-            placeholder="Last Name"
-            value={lastname}
-            onChange={(e) => setLastname(e.target.value)}
-          />
-          <label>New Email</label>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <label>New Password </label>
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <label>Confirm New Password</label>
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <label>First Name</label>
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    value={firstname}
+                    onChange={(e) => setFirstname(e.target.value)}
+                  />
+                  <label>Last Name</label>
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    value={lastname}
+                    onChange={(e) => setLastname(e.target.value)}
+                  />
+                  <label>New Email</label>
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <label>New Password </label>
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <label>Confirm New Password</label>
+                  <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                  />
+                </td>
+                <td></td>
+                <td>
+                  <label>Street</label>
+                  <input type="text" placeholder="Enter Street" />
+                  <label>City</label>
+                  <input type="text" placeholder="City" />
+                  <label>State</label>
+                  <input type="text" placeholder="State" />
+                  <label>Postal</label>
+                  <input type="text" placeholder="Zipcode" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
           <button
             className="update-btn"
             type="submit"

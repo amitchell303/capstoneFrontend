@@ -585,6 +585,9 @@ form {
   h1 {
     text-shadow: 1px 1px 1px black;
   }
+  form table td {
+    margin: 0px 15px;
+  }
 }
 .closeBtn {
   float: right;
