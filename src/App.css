@@ -164,7 +164,8 @@
 .content-container {
   color: white;
   width: auto;
-  background-color: #111;
+  background-color: #2a2727;
+  border: 0.5px solid sandybrown;
   box-shadow: 0 8px 16px #00000074;
   padding: 3rem;
   border-radius: 30px;
@@ -556,4 +557,35 @@ form {
   background-color: #8e2de2;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+}
+
+.userFeatures {
+  float: right;
+  ul {
+    list-style-type: none;
+  }
+}
+.Updatepage {
+  color: #ffffff;
+  background-color: #858585;
+  box-shadow: 0 15px 35px #8d2de274;
+  width: 30rem;
+  height: auto;
+  padding: 3rem;
+  border-radius: 30px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  form input {
+    width: 100%;
+  }
+}
+.closeBtn {
+  float: right;
+  padding: 2%;
+  border-radius: 15%;
 }

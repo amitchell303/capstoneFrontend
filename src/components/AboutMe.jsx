@@ -15,6 +15,7 @@ export default function AboutMe() {
   if (me) {
     console.log(me);
   }
+  const [isUpdating, setIsUpdating] = useState(false);
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
@@ -63,86 +64,104 @@ export default function AboutMe() {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
+  if (isUpdating) {
+    return (
+      <div className="Updatepage">
+        <button
+          className="closeBtn"
+          type="button"
+          onClick={() => setIsUpdating(false)}
+        >
+          close
+        </button>
+        <h1>Update Info</h1>
+        <form className="updateUserForm" onSubmit={handleUpdateUser}>
+          <label>First Name</label>
+          <input
+            type="text"
+            placeholder="First Name"
+            value={firstname}
+            onChange={(e) => setFirstname(e.target.value)}
+          />
+          <label>Last Name</label>
+          <input
+            type="text"
+            placeholder="Last Name"
+            value={lastname}
+            onChange={(e) => setLastname(e.target.value)}
+          />
+          <label>New Email</label>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label>New Password </label>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <label>Confirm New Password</label>
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+          <button
+            className="update-btn"
+            type="submit"
+            disabled={
+              password && confirmPassword && password !== confirmPassword
+            }
+          >
+            Update
+          </button>
+        </form>
+      </div>
+    );
+  }
 
   return (
-    <div className="content-container">
-      <div className="accountPage">
-        <table>
-          <tbody>
-            <tr>
-              <td className="Width40">
-                <section id="accountDetails">
-                  <h1>My Account </h1>
-                  <div>
-                    <p>
-                      Name: {me.user.firstname} {me.user.lastname}
-                    </p>
-                    <p>Email: {me.user.email}</p>
-                  </div>
-                </section>
-              </td>
-              <td className="Width60">
-                <h1>Update Info</h1>
-                <form className="updateUserForm" onSubmit={handleUpdateUser}>
-                  <label>First Name</label>
-                  <input
-                    type="text"
-                    placeholder="First Name"
-                    value={firstname}
-                    onChange={(e) => setFirstname(e.target.value)}
-                  />
-                  <label>Last Name</label>
-                  <input
-                    type="text"
-                    placeholder="Last Name"
-                    value={lastname}
-                    onChange={(e) => setLastname(e.target.value)}
-                  />
-                  <label>New Email</label>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <label>New Password </label>
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                  <label>Confirm New Password</label>
-                  <input
-                    type="password"
-                    placeholder="Confirm Password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                  />
-                  <button
-                    className="update-btn"
-                    type="submit"
-                    disabled={
-                      password &&
-                      confirmPassword &&
-                      password !== confirmPassword
-                    }
-                  >
-                    Update
-                  </button>
-                  <button
-                    className="delete-btn"
-                    type="button"
-                    onClick={handleDeleteUser}
-                  >
-                    Delete Account
-                  </button>
-                </form>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <>
+      <div className="content-container">
+        <div className="accountPage">
+          <section id="accountDetails">
+            <h1>My Account </h1>
+            <div>
+              <p>
+                Name: {me.user.firstname} {me.user.lastname}
+              </p>
+              <p>Email: {me.user.email}</p>
+            </div>
+          </section>
+        </div>
       </div>
-    </div>
+      <div className="userFeatures">
+        <ul>
+          <li>
+            <button
+              className="update-btn"
+              type="button"
+              onClick={() => setIsUpdating(true)}
+            >
+              Update
+            </button>
+          </li>
+          <li>
+            <button
+              className="delete-btn"
+              type="button"
+              onClick={handleDeleteUser}
+            >
+              Delete Account
+            </button>
+          </li>
+        </ul>
+      </div>
+    </>
   );
 }
