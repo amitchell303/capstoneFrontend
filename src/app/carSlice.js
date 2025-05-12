@@ -6,7 +6,7 @@ const CarApi = api.injectEndpoints({
   endpoints: (build) => ({
     getMyCars: build.query({
       query: () => ({
-        url: `/api/cars/all`,
+        url: `/api/car/all`,
         method: "GET",
       }),
       providesTags: ["Car"],
