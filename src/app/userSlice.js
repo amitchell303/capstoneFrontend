@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import api from "./api";
 import { storeToken } from "./tokenService";
+import api from "./api";
 
 const UserApi = api.injectEndpoints({
   endpoints: (build) => ({

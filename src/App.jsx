@@ -11,6 +11,7 @@ import LogIn from "./components/Login.jsx";
 import AboutMe from "./components/AboutMe.jsx";
 import Navigations from "./components/Navigations.jsx";
 import EmptyGarage from "./components/dashboard/EmptyGarage.jsx";
+import AddVehicle from "./components/forms/AddVehicle.jsx";
 
 function App() {
   function logout() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/me" element={<AboutMe />} />
 
           <Route path="/empty" element={<EmptyGarage />} />
+          <Route path="/addVehicle" element={<AddVehicle />} />
         </Routes>
       </Router>
     </Provider>

@@ -72,18 +72,19 @@ export default function AboutMe() {
             <tr>
               <td className="Width40">
                 <section id="accountDetails">
-                  <h1>A C C O U N T :</h1>
+                  <h1>My Account </h1>
                   <div>
-                    <p>First Name: {me.user.firstname}</p>
-                    <p>Last Name: {me.user.lastname}</p>
+                    <p>
+                      Name: {me.user.firstname} {me.user.lastname}
+                    </p>
                     <p>Email: {me.user.email}</p>
                   </div>
                 </section>
               </td>
               <td className="Width60">
-                <h1>U P D A T E</h1>
+                <h1>Update Info</h1>
                 <form className="updateUserForm" onSubmit={handleUpdateUser}>
-                  <label>First name</label>
+                  <label>First Name</label>
                   <input
                     type="text"
                     placeholder="First Name"
@@ -111,7 +112,7 @@ export default function AboutMe() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
-                  <label>Confirm New Passsword</label>
+                  <label>Confirm New Password</label>
                   <input
                     type="password"
                     placeholder="Confirm Password"

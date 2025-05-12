@@ -255,22 +255,6 @@
   font-weight: bold;
 }
 
-.fullWidth {
-  width: 100%;
-}
-
-.Height90 {
-  height: 90%;
-}
-
-.Height50 {
-  height: 50%;
-}
-
-.Height30 {
-  height: 30%;
-}
-
 /*  Register  */
 .page {
   color: #ffffff;
@@ -519,4 +503,57 @@ form {
 }
 #logoutBtn:hover {
   background-color: rgba(127, 127, 127, 0.2);
+}
+
+/* Add Vehicle Form */
+.addVeh-form {
+  font-size: 1rem;
+  color: #fff;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+.addVeh-form label {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.addVeh-form input {
+  width: 20rem;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.addVeh-form input:focus {
+  outline: none;
+  border: 2px solid #8e2de2;
+}
+
+.addVeh-btn {
+  color: white;
+  width: 15rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 15px 30px;
+  background-color: #8e2de2;
+  border: none;
+  font-size: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.addVeh-btn:hover {
+  background-color: #4a00e0;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.addVeh-btn:disabled {
+  color: rgb(185, 185, 185);
+  background-color: #8e2de2;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }

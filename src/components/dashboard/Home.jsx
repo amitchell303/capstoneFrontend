@@ -6,6 +6,7 @@ import {
   useUpdateUserMutation,
   useDeleteUserMutation,
 } from "../../app/userSlice";
+// import { emptyGarage } from "./EmptyGarage";
 import "../../App.css";
 
 function Home() {
@@ -102,6 +103,7 @@ function Home() {
                         </ul>
                       ) : (
                         <h4>No Vehicles in Garage</h4>
+                        // <emptyGarage />
                       )}
                     </td>
                   </tr>
