@@ -13,7 +13,7 @@ export default function AboutMe() {
   const [deleteUser] = useDeleteUserMutation();
 
   if (me) {
-    console.log(me);
+    // console.log(me);
   }
   const [isUpdating, setIsUpdating] = useState(false);
   const [firstname, setFirstname] = useState("");
