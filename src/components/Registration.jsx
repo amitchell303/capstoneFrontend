@@ -40,7 +40,7 @@ function Registration() {
   return (
     <>
       <main>
-        <div className="page">
+        <div className="content-container">
           <h1>Register</h1>
           <form onSubmit={submit}>
             <div className="form-group">
@@ -93,6 +93,7 @@ function Registration() {
                 !password ||
                 (password && confirmPassword && password !== confirmPassword)
               }
+              className="login-btn"
             >
               Register
             </button>
