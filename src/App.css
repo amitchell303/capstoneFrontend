@@ -527,7 +527,6 @@ form {
   border-radius: 8px;
   font-size: 0.9rem;
 }
-
 .addVeh-form input:focus {
   outline: none;
   border: 2px solid #8e2de2;

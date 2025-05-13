@@ -1,8 +1,8 @@
-import { use, useState } from "react";
+import { useState } from "react";
 import { useAddVehicleMutation } from "../../app/carSlice";
 import "../../App.css";
 
-export default function AddVehicle() {
+const AddVehicleForm = () => {
   const [vin, setVin] = useState("");
   const [vehicleType, setVehicleType] = useState("");
   const [modelYear, setModelYear] = useState("");
@@ -11,18 +11,10 @@ export default function AddVehicle() {
   const [bodyClass, setBodyClass] = useState("");
   const [carImg, setCarImg] = useState("");
   const [userId, setUserId] = useState("");
-  const [addVehicle] = useAddVehicleMutation();
+  const [addVehicle, { isLoading, error }] = useAddVehicleMutation();
 
-  async function submit(event) {
-    event.preventDefault();
-    console.log("Vin: ", vin);
-    console.log(", vehicleType: ", vehicleType);
-    console.log(", modelYear: ", modelYear);
-    console.log(", make: ", make);
-    console.log(", model: ", model);
-    console.log(", bodyClass: ", bodyClass);
-    console.log(", carImg: ", carImg);
-    console.log(", userId: ", userId);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
     try {
       const response = await addVehicle({
@@ -35,60 +27,46 @@ export default function AddVehicle() {
         carImg,
         userId,
       }).unwrap();
-      try {
-        localStorage.setItem("token", response.token);
-        setVin("");
-        setVehicleType("");
-        setModelYear("");
-        setMake("");
-        setModel("");
-        setBodyClass("");
-        setCarImg("");
-        setUserId("");
-      } catch (error) {
-        console.error(error.message);
-      }
-    } catch (error) {
-      console.error(error);
+
+      console.log("Car added:", response);
+      setVin("");
+      setVehicleType("");
+      setModelYear("");
+      setMake("");
+      setModel("");
+      setBodyClass("");
+      setCarImg("");
+    } catch (err) {
+      console.error("Error adding vehicle:", err);
     }
-  }
+  };
 
   return (
     <div className="content-container">
-      <h1>Add a Vehicle</h1>
-      <form className="addVeh-form" onSubmit={submit}>
-        <label>VIN Number</label>
-        <input
-          type="text"
-          placeholder="VIN number"
-          value={vin}
-          onChange={(e) => setVin(e.target.value)}
-        />
-        <label>Make</label>
-        <input
-          type="text"
-          placeholder="Make"
-          value={make}
-          onChange={(e) => setMake(e.target.value)}
-        />
-        <label>Model</label>
-        <input
-          type="text"
-          placeholder="Model"
-          value={model}
-          onChange={(e) => setModel(e.target.value)}
-        />
-        <label>Year</label>
-        <input
-          type="text"
-          placeholder="Year"
-          value={modelYear}
-          onChange={(e) => setModelYear(e.target.value)}
-        />
-        <button className="addVeh-btn" type="submit" disabled={!vin}>
-          Add Vehicle
-        </button>
-      </form>
+      <h1>Add Vehicle</h1>
+      <div className="addVeh-form">
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="vin">Enter VIN</label>
+            <input
+              type="text"
+              id="vin"
+              placeholder="VIN number"
+              value={vin}
+              onChange={(e) => setVin(e.target.value)}
+              required
+            />
+          </div>
+
+          <button className="addVeh-btn" type="submit" disabled={isLoading}>
+            {isLoading ? "Adding..." : "Add Vehicle"}
+          </button>
+
+          {error && <p>Error: {error.message}</p>}
+        </form>
+      </div>
     </div>
   );
-}
+};
+
+export default AddVehicleForm;

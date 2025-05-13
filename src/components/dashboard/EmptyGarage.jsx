@@ -2,12 +2,12 @@
 // will import a container displaying an image, a prompt to add a vehcile,
 // and the link to do so below.
 
-import { useState } from "react";
+// import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../../App.css";
 
 export default function emptyGarage() {
-  //   const [isEmpty, setIsEmpty] = useState("");
+  // const [isEmpty, setIsEmpty] = useState("");
 
   return (
     <div className="emptyGarage-container">
