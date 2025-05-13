@@ -6,7 +6,7 @@
 import { NavLink } from "react-router-dom";
 import "../App.css";
 
-export default function emptyGarage() {
+export default function EmptyGarage() {
   // const [isEmpty, setIsEmpty] = useState("");
 
   return (

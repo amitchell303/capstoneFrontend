@@ -162,7 +162,7 @@
 
 /*  Content Container  */
 .content-container {
-  color: white;
+  color: rgb(0, 0, 0);
   border: 3px solid rgb(255, 0, 0);
   box-shadow: 0 4px 8px #00000074;
   position: absolute;
@@ -189,8 +189,16 @@
   /* font-size: 16px; */
 }
 
-/* Garage Page*/
-.dashboard {
+/* Vehicle Dashboard Bento*/
+.allVehicles {
+  color: black;
+  border: solid 3px rgb(0, 255, 51);
+  width: 85vw;
+  height: 80vh;
+  padding: 1rem;
+}
+
+/* .dashboard {
   border: solid 3px rgb(0, 255, 51);
   width: 85vw;
   height: 80vh;
@@ -207,7 +215,7 @@
   margin: 1rem;
   border: 3px solid rgb(255, 0, 204);
   background-color: white;
-}
+} */
 
 /*  Register  */
 .page {
@@ -366,7 +374,7 @@ form {
 
 /* Empty Garage */
 .emptyGarage-container {
-  border: white solid 2px;
+  /* border: white solid 2px; */
   width: 30rem;
   height: 30rem;
 

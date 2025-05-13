@@ -1,12 +1,9 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+//import { useGetAllUsersQuery } from "../app/userSlice";
 import { useGetMyCarsQuery } from "../app/carSlice"; //make Slice file for cars
-import {
-  // useGetAllUsersQuery
-  useUpdateUserMutation,
-  useDeleteUserMutation,
-} from "../app/userSlice";
-// import { emptyGarage } from "../components/EmptyGarage";
+import { useUpdateUserMutation, useDeleteUserMutation } from "../app/userSlice";
+// import { emptyGarage } from "./EmptyGarage";
 import "../App.css";
 
 function Home() {
@@ -35,7 +32,6 @@ function Home() {
     const response = await updateAUser({ id });
     console.log(response);
   }
-
   async function deleteUser(id, firstname, lastname, email, password) {
     const response = await updateAUser({
       userId: id,
@@ -82,25 +78,11 @@ function Home() {
 
   return (
     <div className="content-container">
-      <div className="dashboard">
+      <div className="displayHomePage">
         <main>
-          <h1>My Garage</h1>
-          <div className="sect-container">
-            <section className="vehicleInfo">Vehicle info</section>
-            <section className="maintLog">Maintenance log</section>
-            <section className="notes">Notes</section>
-            <section className="reminder">Reminders</section>
-          </div>
-        </main>
-      </div>
-    </div>
-  );
-}
-
-export default Home;
-
-{
-  /* <div className="vehicleSection">
+          <h1>H O M E</h1>
+          <div className="innerHomePage">
+            <div className="vehicleSection">
               <table id="carTable">
                 <tbody>
                   <tr>
@@ -125,22 +107,14 @@ export default Home;
                 </tbody>
               </table>
             </div>
-            
-            <div className="sectionGroup">
-              <section className="sectionBox car">
-                <h3>Car Details</h3>
-              </section>
-              <section className="sectionBox appointment">
-                <h3>Appointments</h3>
-              </section>
-            </div>
-
-            <div className="sectionGroup">
-              <section className="sectionBox maintainance">
-                <h3>Maintenance Log</h3>
-              </section>
-            </div> */
+          </div>
+        </main>
+      </div>
+    </div>
+  );
 }
+
+export default Home;
 
 /* Bridge project Users List */
 {
@@ -171,4 +145,29 @@ export default Home;
     <li>No users found</li>
   )}
 </ol> */
+}
+
+/* Specific/Single Vehicle Dashboard Bento */
+{
+  /* <div className="content-container">
+      <div className="dashboard">
+        <main>
+          <h1>My Garage</h1>
+          <div className="sect-container">
+            <section>
+              <h2>Vehicle Info</h2>
+            </section>
+            <section>
+              <h2>Maintenance log</h2>
+            </section>
+            <section>
+              <h2> Notes</h2>
+            </section>
+            <section>
+              <h2>Reminders</h2>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div> */
 }

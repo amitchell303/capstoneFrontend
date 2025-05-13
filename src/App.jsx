@@ -4,14 +4,15 @@ import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import store from "./app/store";
 import "./App.css";
 
-import Registration from "./components/Registration.jsx";
+import Registration from "./components/forms/Registration.jsx";
 import Home from "./pages/Home.jsx";
 import SingleUser from "./components/SingleUser.jsx";
-import LogIn from "./components/Login.jsx";
+import LogIn from "./components/forms/Login.jsx";
 import AboutMe from "./components/AboutMe.jsx";
 import Navigations from "./components/Navigations.jsx";
 import EmptyGarage from "./components/EmptyGarage.jsx";
 import AddVehicle from "./components/forms/AddVehicle.jsx";
+import AllVehicles from "./components/AllVehicles.jsx";
 
 function App() {
   function logout() {
@@ -30,6 +31,7 @@ function App() {
 
           <Route path="/empty" element={<EmptyGarage />} />
           <Route path="/addVehicle" element={<AddVehicle />} />
+          <Route path="/allVehicles" element={<AllVehicles />} />
         </Routes>
       </Router>
     </Provider>

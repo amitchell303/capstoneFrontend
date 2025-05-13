@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useRegisterUserMutation } from "../app/userSlice";
-import "../App.css";
+import { useRegisterUserMutation } from "../../app/userSlice";
+import "../../App.css";
 
 function Registration() {
   const [firstname, setFirstName] = useState("");

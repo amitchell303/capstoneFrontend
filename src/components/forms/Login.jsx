@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLoginUserMutation } from "../app/userSlice";
-import "../App.css";
+import { useLoginUserMutation } from "../../app/userSlice";
+import "../../App.css";
 
 function Login() {
   const [email, setEmail] = useState("");

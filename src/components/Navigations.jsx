@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import api from "../app/api";
 import { deleteToken, getToken } from "../app/tokenService";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -55,18 +55,19 @@ export default function Navigations() {
                 </li>
                 {/* Temporary links for dev purposes */}
                 <li>
-                  <div className="tooltip">
-                    <NavLink className="navlink" to="/empty">
-                      <p className="link">Comp-emptyGarage</p>
-                    </NavLink>
-                  </div>
+                  <NavLink className="navlink" to="/empty">
+                    <p className="link">Comp-emptyGarage</p>
+                  </NavLink>
                 </li>
                 <li>
-                  <div className="tooltip">
-                    <NavLink className="navlink" to="/addVehicle">
-                      <p className="link">Comp-addVehicleForm</p>
-                    </NavLink>
-                  </div>
+                  <NavLink className="navlink" to="/addVehicle">
+                    <p className="link">Comp-addVehicle</p>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="navlink" to="/allVehicles">
+                    <p className="link">Comp-allVehicles</p>
+                  </NavLink>
                 </li>
               </ul>
               <button className="logout-btn" onClick={logout}>
