@@ -5,12 +5,12 @@ import store from "./app/store";
 import "./App.css";
 
 import Registration from "./components/Registration.jsx";
-import Home from "./components/dashboard/Home.jsx";
+import Home from "./pages/Home.jsx";
 import SingleUser from "./components/SingleUser.jsx";
 import LogIn from "./components/Login.jsx";
 import AboutMe from "./components/AboutMe.jsx";
 import Navigations from "./components/Navigations.jsx";
-import EmptyGarage from "./components/dashboard/EmptyGarage.jsx";
+import EmptyGarage from "./components/EmptyGarage.jsx";
 import AddVehicle from "./components/forms/AddVehicle.jsx";
 
 function App() {

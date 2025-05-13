@@ -197,15 +197,7 @@
 }
 
 /* Home Page*/
-.displayHomePage {
-  background-color: rgba(105, 105, 105, 0.6);
-  margin: 0 auto;
-  padding: 2rem;
-  border: 1px solid rgb(247, 1, 255);
-  border-radius: 30px;
-  max-width: 900px;
-  color: white;
-}
+
 
 .displayHomePage h1 {
   text-shadow: 1px 1px 2px black;

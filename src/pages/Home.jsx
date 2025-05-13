@@ -1,13 +1,13 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-//import { useGetAllUsersQuery } from "../app/userSlice";
-import { useGetMyCarsQuery } from "../../app/carSlice"; //make Slice file for cars
+import { useGetMyCarsQuery } from "../app/carSlice"; //make Slice file for cars
 import {
+  // useGetAllUsersQuery
   useUpdateUserMutation,
   useDeleteUserMutation,
-} from "../../app/userSlice";
+} from "../app/userSlice";
 // import { emptyGarage } from "./EmptyGarage";
-import "../../App.css";
+import "../App.css";
 
 function Home() {
   const navigate = useNavigate();
@@ -35,6 +35,7 @@ function Home() {
     const response = await updateAUser({ id });
     console.log(response);
   }
+
   async function deleteUser(id, firstname, lastname, email, password) {
     const response = await updateAUser({
       userId: id,
@@ -81,53 +82,51 @@ function Home() {
 
   return (
     <div className="content-container">
-      <div className="displayHomePage">
-        <main>
-          <h1>H O M E</h1>
-          <div className="innerHomePage">
-            <div className="vehicleSection">
-              <table id="carTable">
-                <tbody>
-                  <tr>
-                    <td>
-                      <h3>Vehicles:</h3>
-                    </td>
-                    <td>
-                      {cars.length > 0 ? (
-                        <ul className="vehicleList">
-                          {cars.map((car) => (
-                            <li key={car.id} className="vehicleItem">
-                              <label>{car.name}</label>
-                            </li>
-                          ))}
-                        </ul>
-                      ) : (
-                        <h4>No Vehicles in Garage</h4>
-                        // <emptyGarage />
-                      )}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div className="sectionGroup">
-              <section className="sectionBox car">
-                <h3>Car Details</h3>
-              </section>
-              <section className="sectionBox appointment">
-                <h3>Appointments</h3>
-              </section>
-            </div>
-
-            <div className="sectionGroup">
-              <section className="sectionBox maintainance">
-                <h3>Maintenance Log</h3>
-              </section>
-            </div>
+      <main>
+        <h1>H O M E</h1>
+        <div className="innerHomePage">
+          <div className="vehicleSection">
+            <table id="carTable">
+              <tbody>
+                <tr>
+                  <td>
+                    <h3>Vehicles:</h3>
+                  </td>
+                  <td>
+                    {cars.length > 0 ? (
+                      <ul className="vehicleList">
+                        {cars.map((car) => (
+                          <li key={car.id} className="vehicleItem">
+                            <label>{car.name}</label>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <h4>No Vehicles in Garage</h4>
+                      // <emptyGarage />
+                    )}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </main>
-      </div>
+
+          <div className="sectionGroup">
+            <section className="sectionBox car">
+              <h3>Car Details</h3>
+            </section>
+            <section className="sectionBox appointment">
+              <h3>Appointments</h3>
+            </section>
+          </div>
+
+          <div className="sectionGroup">
+            <section className="sectionBox maintainance">
+              <h3>Maintenance Log</h3>
+            </section>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
