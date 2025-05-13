@@ -15,6 +15,7 @@ export default function AboutMe() {
   if (me) {
     console.log(me);
   }
+  const [isUpdating, setIsUpdating] = useState(false);
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
@@ -28,7 +29,16 @@ export default function AboutMe() {
   async function handleUpdateUser(e) {
     e.preventDefault();
 
-    const updatedData = { firstname, lastname, email, password };
+    const updatedData = {
+      firstname,
+      lastname,
+      email,
+      password,
+      street,
+      city,
+      state,
+      postal,
+    };
     const token = localStorage.getItem("token");
     console.log(token);
 
@@ -39,10 +49,20 @@ export default function AboutMe() {
       console.log(updatedData);
       try {
         const userId = me.user.id;
-        console.log(userId);
+        // console.log(userId);
         const response = await update({ userId, ...updatedData }).unwrap();
         if (response) {
           alert("User updated successfully!");
+          setFirstname("");
+          setLastname("");
+          setEmail("");
+          setPassword("");
+          setConfirmPassword("");
+          setStreet("");
+          setCity("");
+          setState("");
+          setPostal("");
+          setIsUpdating(false);
         }
       } catch (error) {
         console.error("Failed to update user:", error);
@@ -63,27 +83,22 @@ export default function AboutMe() {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
-
-  return (
-    <div className="content-container">
-      <div className="accountPage">
-        <table>
-          <tbody>
-            <tr>
-              <td className="Width40">
-                <section id="accountDetails">
-                  <h1>My Account </h1>
-                  <div>
-                    <p>
-                      Name: {me.user.firstname} {me.user.lastname}
-                    </p>
-                    <p>Email: {me.user.email}</p>
-                  </div>
-                </section>
-              </td>
-              <td className="Width60">
-                <h1>Update Info</h1>
-                <form className="updateUserForm" onSubmit={handleUpdateUser}>
+  if (isUpdating) {
+    return (
+      <div className="Updatepage">
+        <button
+          className="closeBtn"
+          type="button"
+          onClick={() => setIsUpdating(false)}
+        >
+          close
+        </button>
+        <h1>Update Info</h1>
+        <form className="updateUserForm" onSubmit={handleUpdateUser}>
+          <table>
+            <tbody>
+              <tr>
+                <td>
                   <label>First Name</label>
                   <input
                     type="text"
@@ -119,30 +134,97 @@ export default function AboutMe() {
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
-                  <button
-                    className="update-btn"
-                    type="submit"
-                    disabled={
-                      password &&
-                      confirmPassword &&
-                      password !== confirmPassword
-                    }
-                  >
-                    Update
-                  </button>
-                  <button
-                    className="delete-btn"
-                    type="button"
-                    onClick={handleDeleteUser}
-                  >
-                    Delete Account
-                  </button>
-                </form>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                </td>
+                <td>
+                  <label>Street</label>
+                  <input
+                    type="text"
+                    placeholder="Enter Street"
+                    value={street}
+                    onChange={(e) => setStreet(e.target.value)}
+                  />
+                  <label>City</label>
+                  <input
+                    type="text"
+                    placeholder="City"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                  />
+                  <label>State</label>
+                  <input
+                    type="text"
+                    placeholder="State"
+                    value={state}
+                    onChange={(e) => setState(e.target.value)}
+                  />
+                  <label>Postal</label>
+                  <input
+                    type="text"
+                    placeholder="Zipcode"
+                    value={postal}
+                    onChange={(e) => setPostal(e.target.value)}
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button
+            className="update-btn"
+            type="submit"
+            disabled={
+              password && confirmPassword && password !== confirmPassword
+            }
+          >
+            Update
+          </button>
+        </form>
       </div>
-    </div>
+    );
+  }
+
+  return (
+    <>
+      <div className="content-container">
+        <div className="accountPage">
+          <section id="accountDetails">
+            <h1>My Account </h1>
+            <div>
+              <p>
+                Name: {me.user.firstname} {me.user.lastname}
+              </p>
+              <p>Email: {me.user.email}</p>
+              <p>Address:</p>
+              <p>{me.user.street}</p>
+              <p>
+                {me.user.city}, {me.user.state}
+              </p>
+              <p>{me.user.postal}</p>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div className="userFeatures">
+        <ul>
+          <li>
+            <button
+              className="update-btn"
+              type="button"
+              onClick={() => setIsUpdating(true)}
+            >
+              Update
+            </button>
+          </li>
+          <li>
+            <button
+              className="delete-btn"
+              type="button"
+              onClick={handleDeleteUser}
+            >
+              Delete Account
+            </button>
+          </li>
+        </ul>
+      </div>
+    </>
   );
 }

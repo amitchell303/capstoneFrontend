@@ -163,8 +163,9 @@
 /* Main Content Container */
 .content-container {
   color: white;
-  width: auto;
-  background-color: #111;
+  width: 40%;
+  background-color: #0000005d;
+  border: 0.5px solid sandybrown;
   box-shadow: 0 8px 16px #00000074;
   padding: 3rem;
   border-radius: 30px;
@@ -179,6 +180,7 @@
 .content-container h1 {
   text-align: center;
   margin-bottom: 1rem;
+  text-shadow: 1px 1px 1px black;
 }
 .content-container h2 {
   text-align: center;
@@ -301,15 +303,19 @@
 }
 
 form {
-  width: 60%;
+  width: 100%;
 }
 .form-group {
   margin: 0.75rem;
   display: flex;
   flex-direction: column;
   input {
-    width: 13rem;
-    padding: 5px 0px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
   }
 }
 
@@ -324,6 +330,7 @@ form {
   border: none;
   border-radius: 8px;
   font-size: 0.9rem;
+  width: 100%;
 }
 .login-btn {
   color: white;
@@ -555,4 +562,39 @@ form {
   background-color: #8e2de2;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+}
+
+.userFeatures {
+  float: right;
+  ul {
+    list-style-type: none;
+  }
+}
+.Updatepage {
+  color: #ffffff;
+  background-color: #0000005e;
+  box-shadow: 0 15px 35px #d3a1fe74;
+  border: 0.5px solid rgb(251, 151, 251);
+  width: 30rem;
+  height: auto;
+  padding: 3rem;
+  border-radius: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  form input {
+    width: 100%;
+  }
+  h1 {
+    text-shadow: 1px 1px 1px black;
+  }
+  form table td {
+    margin: 0px 15px;
+  }
+}
+.closeBtn {
+  float: right;
+  padding: 2%;
+  border-radius: 15%;
 }
