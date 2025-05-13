@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 //import { useGetAllUsersQuery } from "../app/userSlice";
 import { useGetMyCarsQuery } from "../app/carSlice"; //make Slice file for cars
 import { useUpdateUserMutation, useDeleteUserMutation } from "../app/userSlice";
-// import { emptyGarage } from "./EmptyGarage";
+import EmptyGarage from "../components/EmptyGarage";
+import AllVehicles from "../components/allVehicles";
 import "../App.css";
 
 function Home() {
@@ -78,38 +79,7 @@ function Home() {
 
   return (
     <div className="content-container">
-      <div className="displayHomePage">
-        <main>
-          <h1>H O M E</h1>
-          <div className="innerHomePage">
-            <div className="vehicleSection">
-              <table id="carTable">
-                <tbody>
-                  <tr>
-                    <td>
-                      <h3>Vehicles:</h3>
-                    </td>
-                    <td>
-                      {cars.length > 0 ? (
-                        <ul className="vehicleList">
-                          {cars.map((car) => (
-                            <li key={car.id} className="vehicleItem">
-                              <label>{car.name}</label>
-                            </li>
-                          ))}
-                        </ul>
-                      ) : (
-                        <h4>No Vehicles in Garage</h4>
-                        // <emptyGarage />
-                      )}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </main>
-      </div>
+      <main>{cars.length > 0 ? <AllVehicles /> : <EmptyGarage />}</main>
     </div>
   );
 }

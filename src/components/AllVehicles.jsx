@@ -33,18 +33,20 @@ export default function AllVehicles() {
   return (
     <div className="content-container">
       <div className="allVehicles">
-        <h3>My Vehicles:</h3>
-        <div className="vehicleCard">
-          {cars.map((car) => (
-            <section key={car.id}>
-              <img src="" alt="" />
-              <h1>Car Name</h1>
-              <p>
-                {car.modelYear} {car.make} {car.model}
-              </p>
-              <p>{car.vin}</p>
-            </section>
-          ))}
+        <h3>My Vehicles</h3>
+        <div className="vehicleCard-container">
+          <div className="vehicleCard">
+            {cars.map((car) => (
+              <section key={car.id}>
+                <img src={car.carImg} alt={`${car.make} ${car.model}`} />
+                <h1>Car Name</h1>
+                <p>
+                  {car.modelYear} {car.make} {car.model}
+                </p>
+                <p>{car.vin}</p>
+              </section>
+            ))}
+          </div>
         </div>
       </div>
     </div>

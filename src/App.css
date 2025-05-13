@@ -163,7 +163,7 @@
 /*  Content Container  */
 .content-container {
   color: rgb(0, 0, 0);
-  border: 3px solid rgb(255, 0, 0);
+  /* border: 3px solid rgb(255, 0, 0); */
   box-shadow: 0 4px 8px #00000074;
   position: absolute;
   top: 50%;
@@ -189,13 +189,53 @@
   /* font-size: 16px; */
 }
 
-/* Vehicle Dashboard Bento*/
+/* All Vehicles Component*/
 .allVehicles {
   color: black;
-  border: solid 3px rgb(0, 255, 51);
+  /* border: solid 3px rgb(0, 255, 51); */
   width: 85vw;
   height: 80vh;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.allVehicles h3 {
   padding: 1rem;
+}
+
+.vehicleCard-contianer {
+  flex-direction: wrap;
+  justify-content: space-between;
+}
+
+.vehicleCard {
+  width: 20rem;
+  height: auto;
+  padding: 1rem;
+  margin: 10px;
+  border-radius: 25px;
+  border: 3px solid rgb(106, 106, 106);
+  background-color: rgba(106, 106, 106, 0.277);
+
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.vehicleCard img {
+  width: 10vw;
+  height: auto;
+}
+
+.vehicleCard h1 {
+  padding: 1rem;
+  margin-bottom: 0;
+}
+
+.vehicleCard p {
+  text-align: center;
+  margin-top: 0;
 }
 
 /* .dashboard {
