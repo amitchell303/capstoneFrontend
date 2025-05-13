@@ -6,7 +6,7 @@ import {
   useUpdateUserMutation,
   useDeleteUserMutation,
 } from "../app/userSlice";
-// import { emptyGarage } from "./EmptyGarage";
+// import { emptyGarage } from "../components/EmptyGarage";
 import "../App.css";
 
 function Home() {
@@ -82,56 +82,65 @@ function Home() {
 
   return (
     <div className="content-container">
-      <main>
-        <h1>H O M E</h1>
-        <div className="innerHomePage">
-          <div className="vehicleSection">
-            <table id="carTable">
-              <tbody>
-                <tr>
-                  <td>
-                    <h3>Vehicles:</h3>
-                  </td>
-                  <td>
-                    {cars.length > 0 ? (
-                      <ul className="vehicleList">
-                        {cars.map((car) => (
-                          <li key={car.id} className="vehicleItem">
-                            <label>{car.name}</label>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <h4>No Vehicles in Garage</h4>
-                      // <emptyGarage />
-                    )}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+      <div className="dashboard">
+        <main>
+          <h1>My Garage</h1>
+          <div className="sect-container">
+            <section className="vehicleInfo">Vehicle info</section>
+            <section className="maintLog">Maintenance log</section>
+            <section className="notes">Notes</section>
+            <section className="reminder">Reminders</section>
           </div>
-
-          <div className="sectionGroup">
-            <section className="sectionBox car">
-              <h3>Car Details</h3>
-            </section>
-            <section className="sectionBox appointment">
-              <h3>Appointments</h3>
-            </section>
-          </div>
-
-          <div className="sectionGroup">
-            <section className="sectionBox maintainance">
-              <h3>Maintenance Log</h3>
-            </section>
-          </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   );
 }
 
 export default Home;
+
+{
+  /* <div className="vehicleSection">
+              <table id="carTable">
+                <tbody>
+                  <tr>
+                    <td>
+                      <h3>Vehicles:</h3>
+                    </td>
+                    <td>
+                      {cars.length > 0 ? (
+                        <ul className="vehicleList">
+                          {cars.map((car) => (
+                            <li key={car.id} className="vehicleItem">
+                              <label>{car.name}</label>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <h4>No Vehicles in Garage</h4>
+                        // <emptyGarage />
+                      )}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div className="sectionGroup">
+              <section className="sectionBox car">
+                <h3>Car Details</h3>
+              </section>
+              <section className="sectionBox appointment">
+                <h3>Appointments</h3>
+              </section>
+            </div>
+
+            <div className="sectionGroup">
+              <section className="sectionBox maintainance">
+                <h3>Maintenance Log</h3>
+              </section>
+            </div> */
+}
 
 /* Bridge project Users List */
 {

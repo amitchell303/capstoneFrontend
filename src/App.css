@@ -160,18 +160,11 @@
   transform: translateY(-2px);
 }
 
-/* Main Content Container */
+/*  Content Container  */
 .content-container {
   color: white;
-  width: 40%;
-  background-color: #0000005d;
-  border: 0.5px solid sandybrown;
-  box-shadow: 0 8px 16px #00000074;
-  padding: 3rem;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border: 3px solid rgb(255, 0, 0);
+  box-shadow: 0 4px 8px #00000074;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -196,57 +189,24 @@
   /* font-size: 16px; */
 }
 
-/* Home Page*/
-
-
-.displayHomePage h1 {
-  text-shadow: 1px 1px 2px black;
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.innerHomePage {
-  border: 1px solid red;
-  border-radius: 25px;
+/* Garage Page*/
+.dashboard {
+  border: solid 3px rgb(0, 255, 51);
+  width: 85vw;
+  height: 80vh;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.1);
 }
-
-.vehicleList {
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.sect-container {
+  border: 3px solid black;
 }
-
-.vehicleItem {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  border: 1px solid white;
-}
-
-.sectionGroup {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 1rem;
-}
-
-.sectionBox {
-  flex: 1;
-  margin: 0 0.5rem;
+.dashboard section {
+  color: black;
+  width: 15vw;
+  height: 15vh;
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  text-align: center;
-  border: 1px solid white;
-}
-
-.sectionBox h3 {
-  margin: 0;
-  font-weight: bold;
+  margin: 1rem;
+  border: 3px solid rgb(255, 0, 204);
+  background-color: white;
 }
 
 /*  Register  */
