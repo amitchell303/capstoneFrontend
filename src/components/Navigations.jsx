@@ -69,6 +69,11 @@ export default function Navigations() {
                     <p className="link">Comp-allVehicles</p>
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink className="navlink" to="/landing">
+                    <p className="link">Comp-landingPage</p>
+                  </NavLink>
+                </li>
               </ul>
               <button className="logout-btn" onClick={logout}>
                 LogOut
@@ -84,6 +89,13 @@ export default function Navigations() {
               <li>
                 <NavLink className="navlink" to="/login">
                   Login
+                </NavLink>
+              </li>
+              {/* Temporary links for dev purposes */}
+
+              <li>
+                <NavLink className="navlink" to="/landing">
+                  <p className="link">Comp-landingPage</p>
                 </NavLink>
               </li>
             </>
