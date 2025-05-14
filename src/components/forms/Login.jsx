@@ -19,7 +19,7 @@ function Login() {
       localStorage.setItem("token", response.token);
       setEmail("");
       setPassword("");
-      navigate("/");
+      navigate("/home");
     } catch (err) {
       console.error("Login failed", err);
     }
