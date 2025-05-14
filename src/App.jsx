@@ -11,6 +11,7 @@ import Landing from "./pages/Landing.jsx";
 import EmptyGarage from "./components/garageViews/EmptyGarage.jsx";
 import AllVehicles from "./components/garageViews/AllVehicles.jsx";
 import AddVehicle from "./components/forms/AddVehicle.jsx";
+import Bento from "./components/garageViews/BentoView.jsx";
 
 function App() {
   function logout() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/empty" element={<EmptyGarage />} />
           <Route path="/addVehicle" element={<AddVehicle />} />
           <Route path="/allVehicles" element={<AllVehicles />} />
+          <Route path="/bentoView" element={<Bento />} />
         </Routes>
       </Router>
     </Provider>

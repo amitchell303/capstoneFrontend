@@ -1,6 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-//import { useGetAllUsersQuery } from "../app/userSlice";
 import { useGetMyCarsQuery } from "../app/carSlice"; //make Slice file for cars
 import { useUpdateUserMutation, useDeleteUserMutation } from "../app/userSlice";
 import EmptyGarage from "../components/garageViews/EmptyGarage";
@@ -15,7 +14,6 @@ function Home() {
   const { data, error, isLoading } = useGetMyCarsQuery(); //create to grab all of user's cars
   const [updateAUser] = useUpdateUserMutation();
   const [deleteAUser] = useDeleteUserMutation();
-  const [users, setUsers] = useState([]);
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
