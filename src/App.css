@@ -164,7 +164,6 @@
 .content-container {
   color: rgb(0, 0, 0);
   /* border: 3px solid rgb(255, 0, 0); */
-  box-shadow: 0 4px 8px #00000074;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -317,38 +316,6 @@ form {
     border-radius: 8px;
     font-size: 0.9rem;
   }
-}
-
-/*  Login  */
-.login-form-field label {
-  padding: 0.3rem;
-  font-size: 1rem;
-}
-.login-form-field input {
-  padding: 10px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  width: 100%;
-}
-.login-btn {
-  color: white;
-  background-color: #8e2de2;
-  border: none;
-  padding: 15px 30px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  align-self: center;
-}
-.login-btn button:hover {
-  background-color: #4a00e0;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
 }
 
 /* Account Page */

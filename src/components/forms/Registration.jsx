@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRegisterUserMutation } from "../../app/userSlice";
-import "../../App.css";
+import "../../styling/landing.css";
 
 function Registration() {
   const [firstname, setFirstName] = useState("");
@@ -38,69 +38,67 @@ function Registration() {
   }
 
   return (
-    <>
-      <main>
-        <div className="content-container">
-          <h1>Register</h1>
-          <form onSubmit={submit}>
-            <div className="form-group">
-              <label>First Name</label>
-              <input
-                value={firstname}
-                placeholder="First Name"
-                onChange={(ev) => setFirstName(ev.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label>Last Name</label>
-              <input
-                value={lastname}
-                placeholder="Last Name"
-                onChange={(ev) => setLastName(ev.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label>Email</label>
-              <input
-                type="email"
-                value={email}
-                placeholder="Email"
-                onChange={(ev) => setEmail(ev.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label>Password</label>
-              <input
-                type="password"
-                value={password}
-                placeholder="Password"
-                onChange={(ev) => setPassword(ev.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label>Confirm Passsword</label>
-              <input
-                type="password"
-                placeholder="Confirm Password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              />
-            </div>
-            <button
-              type="submit"
-              disabled={
-                !email ||
-                !password ||
-                (password && confirmPassword && password !== confirmPassword)
-              }
-              className="login-btn"
-            >
-              Register
-            </button>
-          </form>
-        </div>
+    <div className="landing-modal-container">
+      <main className="register-modal">
+        <h1>Register</h1>
+        <form onSubmit={submit}>
+          <div className="form-group">
+            <label>First Name</label>
+            <input
+              value={firstname}
+              placeholder="First Name"
+              onChange={(ev) => setFirstName(ev.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Last Name</label>
+            <input
+              value={lastname}
+              placeholder="Last Name"
+              onChange={(ev) => setLastName(ev.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              value={email}
+              placeholder="Email"
+              onChange={(ev) => setEmail(ev.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              value={password}
+              placeholder="Password"
+              onChange={(ev) => setPassword(ev.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Confirm Passsword</label>
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </div>
+          <button
+            type="submit"
+            disabled={
+              !email ||
+              !password ||
+              (password && confirmPassword && password !== confirmPassword)
+            }
+            className="login-btn"
+          >
+            Register
+          </button>
+        </form>
       </main>
-    </>
+    </div>
   );
 }
 

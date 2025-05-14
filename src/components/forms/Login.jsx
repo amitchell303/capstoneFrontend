@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLoginUserMutation } from "../../app/userSlice";
-import "../../App.css";
+import "../../styling/landing.css";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -26,8 +26,8 @@ function Login() {
   }
 
   return (
-    <main>
-      <div className="content-container">
+    <div className="landing-modal-container">
+      <main className="login-modal">
         <h1>Welcome</h1>
         <div className="login-form">
           <form onSubmit={submit}>
@@ -58,8 +58,8 @@ function Login() {
             </button>
           </form>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
 
