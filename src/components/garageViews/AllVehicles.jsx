@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useGetMyCarsQuery } from "../app/carSlice"; //make Slice file for cars
-import "../App.css";
+import { useGetMyCarsQuery } from "../../app/carSlice"; //make Slice file for cars
+import "../../App.css";
 
 export default function AllVehicles() {
   const navigate = useNavigate();
