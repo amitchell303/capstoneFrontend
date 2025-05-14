@@ -1,0 +1,90 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  height: 100%;
+}
+
+.landingPage {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.text-content {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+
+  animation-name: textFadeIn;
+  animation-duration: 1.25s;
+  animation-timing-function: ease-out;
+  animation-direction: forwards;
+}
+
+.text-content h1 {
+  background: linear-gradient(to top, #ff6600, #fab181);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-family: "Gruppo", sans-serif;
+  font-size: 90px;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 13px;
+}
+
+.text-content p {
+  color: whitesmoke;
+  letter-spacing: 1.5px;
+  font-family: "Gruppo", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  font-style: normal;
+}
+.text-content a {
+  color: #ffa568;
+  font-family: "Gruppo", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+}
+
+/* Image animation container */
+/* animation syntax: keyFrameName duration timing-function delay iteration-count direction fill-mode play-state; */
+.animation img {
+  width: 80vw;
+  height: auto;
+  opacity: 90%;
+  position: absolute;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: riseUp 1.5s ease-out forwards;
+  z-index: 1;
+}
+
+/* riseUp animation */
+@keyframes riseUp {
+  to {
+    bottom: -35%;
+  }
+}
+
+/* textFadeIn animation */
+@keyframes textFadeIn {
+  0% {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 0%);
+    opacity: 1;
+  }
+}
