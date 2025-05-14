@@ -28,7 +28,6 @@ export default function AboutMe() {
 
   async function handleUpdateUser(e) {
     e.preventDefault();
-
     const updatedData = {
       firstname,
       lastname,
@@ -50,6 +49,9 @@ export default function AboutMe() {
       try {
         const userId = me.user.id;
         // console.log(userId);
+        if (postal !== undefined || null) {
+          updatedData.postal = parseInt(postal, 10);
+        }
         const response = await update({ userId, ...updatedData }).unwrap();
         if (response) {
           alert("User updated successfully!");
@@ -103,21 +105,21 @@ export default function AboutMe() {
                   <input
                     type="text"
                     placeholder="First Name"
-                    value={firstname}
+                    value={me.user.firstname}
                     onChange={(e) => setFirstname(e.target.value)}
                   />
                   <label>Last Name</label>
                   <input
                     type="text"
                     placeholder="Last Name"
-                    value={lastname}
+                    value={me.user.lastname}
                     onChange={(e) => setLastname(e.target.value)}
                   />
                   <label>New Email</label>
                   <input
                     type="email"
                     placeholder="Email"
-                    value={email}
+                    value={me.user.email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                   <label>New Password </label>
@@ -140,28 +142,28 @@ export default function AboutMe() {
                   <input
                     type="text"
                     placeholder="Enter Street"
-                    value={street}
+                    value={me.user.street}
                     onChange={(e) => setStreet(e.target.value)}
                   />
                   <label>City</label>
                   <input
                     type="text"
                     placeholder="City"
-                    value={city}
+                    value={me.user.city}
                     onChange={(e) => setCity(e.target.value)}
                   />
                   <label>State</label>
                   <input
                     type="text"
                     placeholder="State"
-                    value={state}
+                    value={me.user.state}
                     onChange={(e) => setState(e.target.value)}
                   />
                   <label>Postal</label>
                   <input
                     type="text"
                     placeholder="Zipcode"
-                    value={postal}
+                    value={me.user.postal}
                     onChange={(e) => setPostal(e.target.value)}
                   />
                 </td>

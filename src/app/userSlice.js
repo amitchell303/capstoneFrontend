@@ -64,7 +64,7 @@ const UserApi = api.injectEndpoints({
           street,
           city,
           state,
-          postal,
+          postalCode: postal,
         },
       }),
       invalidatesTags: ["User"],
