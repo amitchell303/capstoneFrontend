@@ -39,11 +39,13 @@ export default function AllVehicles() {
             <div className="vehicleCard">
               <section key={car.id}>
                 <img src={car.carImg} alt={`${car.make} ${car.model}`} />
-                <h1>Car Name</h1>
-                <p>
-                  {car.modelYear} {car.make} {car.model}
-                </p>
-                <p>{car.vin}</p>
+                <div className="half-card">
+                  <h1>Car Name</h1>
+                  <p>
+                    {car.modelYear} {car.make} {car.model}
+                  </p>
+                  <p>{car.vin}</p>
+                </div>
               </section>
             </div>
           ))}
