@@ -1,0 +1,230 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* background-color: #181818; */
+  background-size: cover;
+  /* background-image: url(src/components/assets/green.jpg); */
+  background-image: url(src/components/assets/grey.jpg);
+}
+
+.landing-modal-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.landingPage {
+  background-color: #000;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-content {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+
+  animation-name: textFadeIn;
+  animation-duration: 1.25s;
+  animation-timing-function: ease-out;
+  animation-direction: forwards;
+}
+
+.text-content h1 {
+  background: linear-gradient(to top, #ff6600, #fab181);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-family: "Gruppo", sans-serif;
+  font-size: 90px;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 13px;
+}
+
+.text-content p {
+  color: whitesmoke;
+  letter-spacing: 1.5px;
+  font-family: "Gruppo", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  font-style: normal;
+}
+.link-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  color: #ffa568;
+  font-family: "Gruppo", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+}
+
+/* Image animation container */
+/* animation syntax: keyFrameName duration timing-function delay iteration-count direction fill-mode play-state; */
+.animation img {
+  width: 80vw;
+  height: auto;
+  opacity: 90%;
+  position: absolute;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: riseUp 1.35s ease-out forwards;
+  z-index: 1;
+}
+
+/* riseUp animation */
+@keyframes riseUp {
+  to {
+    bottom: -35%;
+  }
+}
+
+/* textFadeIn animation */
+@keyframes textFadeIn {
+  0% {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 0%);
+    opacity: 1;
+  }
+}
+
+/*  Modals  */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  animation: modalOverlayFadeIn 0.4s ease-out forwards;
+  z-index: 1000;
+}
+@keyframes modalOverlayFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal {
+  color: whitesmoke;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  animation: modalFadeIn 0.4s ease-out forwards;
+}
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.closeModal-btn {
+  position: relative;
+  top: -15rem;
+  right: -1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #3d3d3d;
+}
+
+/* Registration & Login forms */
+.modal h1 {
+  color: whitesmoke;
+  letter-spacing: 1.5px;
+  font-family: "Gruppo", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  margin-bottom: 20px;
+}
+.regLogForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  width: 100%;
+  margin: 0;
+}
+
+.form-group label {
+  color: #ddd;
+  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+}
+
+.form-group input {
+  color: #fff;
+  font-size: 1rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: #ff6600;
+}
+
+.regLogForm button {
+  color: white;
+  padding: 15px 30px;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff6600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.regLogForm button:hover {
+  background-color: #fd9047;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}

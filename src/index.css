@@ -1,14 +1,1 @@
-:root {
-  /* background-color: black; */
-  /* background-image: url(https://www.shutterstock.com/shutterstock/videos/3668315287/thumb/1.jpg?ip=x480); */
-  height: 100vh;
-}
-body {
-  /* background: linear-gradient(120deg, rgb(53, 0, 0), rgb(0, 0, 64)); */
-  background: linear-gradient(
-    90deg,
-    rgb(255, 200, 200),
-    rgb(255, 255, 200),
-    rgb(200, 255, 200)
-  );
-}
+
