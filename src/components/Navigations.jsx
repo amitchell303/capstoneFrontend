@@ -46,19 +46,19 @@ export default function Navigations() {
                 </li>
                 <li>
                   <div className="tooltip">
-                    <NavLink className="navlink" to="/">
+                    <NavLink className="navlink" to="/home">
                       <BiSolidCarGarage className="icons" />
-                      <p className="link">Dashboard</p>
+                      <p className="link">My Garage</p>
                     </NavLink>
                     <span className="tooltiptext">Garage</span>
                   </div>
                 </li>
                 {/* Temporary links for dev purposes */}
-                <li>
+                {/* <li>
                   <NavLink className="navlink" to="/empty">
                     <p className="link">Comp-emptyGarage</p>
                   </NavLink>
-                </li>
+                </li> */}
                 <li>
                   <NavLink className="navlink" to="/addVehicle">
                     <p className="link">Comp-addVehicle</p>
@@ -67,11 +67,6 @@ export default function Navigations() {
                 <li>
                   <NavLink className="navlink" to="/allVehicles">
                     <p className="link">Comp-allVehicles</p>
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="navlink" to="/landing">
-                    <p className="link">Comp-landingPage</p>
                   </NavLink>
                 </li>
               </ul>
@@ -89,13 +84,6 @@ export default function Navigations() {
               <li>
                 <NavLink className="navlink" to="/login">
                   Login
-                </NavLink>
-              </li>
-              {/* Temporary links for dev purposes */}
-
-              <li>
-                <NavLink className="navlink" to="/landing">
-                  <p className="link">Comp-landingPage</p>
                 </NavLink>
               </li>
             </>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useRegisterUserMutation } from "../../app/userSlice";
 import "../../styling/landing.css";
 
@@ -9,6 +10,7 @@ function Registration() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [addUser] = useRegisterUserMutation();
+  const navigate = useNavigate();
 
   async function submit(event) {
     event.preventDefault();
@@ -29,6 +31,7 @@ function Registration() {
         setLastName("");
         setEmail("");
         setPassword("");
+        navigate("/");
       } catch (error) {
         console.error(error.message);
       }
@@ -82,7 +85,7 @@ function Registration() {
               type="password"
               placeholder="Confirm Password"
               value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
+              onChange={(ev) => setConfirmPassword(ev.target.value)}
             />
           </div>
           <button
