@@ -202,28 +202,28 @@ export default function AboutMe() {
             </div>
           </section>
         </div>
-      </div>
-      <div className="userFeatures">
-        <ul>
-          <li>
-            <button
-              className="update-btn"
-              type="button"
-              onClick={() => setIsUpdating(true)}
-            >
-              Update
-            </button>
-          </li>
-          <li>
-            <button
-              className="delete-btn"
-              type="button"
-              onClick={handleDeleteUser}
-            >
-              Delete Account
-            </button>
-          </li>
-        </ul>
+        <div className="userFeatures">
+          <ul>
+            <li>
+              <button
+                className="update-btn"
+                type="button"
+                onClick={() => setIsUpdating(true)}
+              >
+                Update
+              </button>
+            </li>
+            <li>
+              <button
+                className="delete-btn"
+                type="button"
+                onClick={handleDeleteUser}
+              >
+                Delete Account
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </>
   );
