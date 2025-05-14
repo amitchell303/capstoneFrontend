@@ -3,8 +3,12 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #181818;
+  /* background-color: #181818; */
+  background-size: cover;
+  /* background-image: url(src/components/assets/green.jpg); */
+  background-image: url(src/components/assets/grey.jpg);
 }
+
 .landing-modal-container {
   position: absolute;
   top: 50%;
@@ -135,7 +139,7 @@ body {
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   align-items: center;

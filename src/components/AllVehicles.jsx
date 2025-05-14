@@ -34,20 +34,42 @@ export default function AllVehicles() {
     <div className="content-container">
       <div className="allVehicles">
         <h3>My Vehicles</h3>
-        <div className="vehicleCard-container">
+        <div className="card-list">
           {cars.map((car) => (
-            <div className="vehicleCard">
+            <article className="card">
               <section key={car.id}>
-                <img src={car.carImg} alt={`${car.make} ${car.model}`} />
-                <div className="half-card">
-                  <h1>Car Name</h1>
+                <figure className="card-image">
+                  <img src={car.carImg} alt={`${car.make} ${car.model}`} />
+                </figure>
+                <div className="card-header">
+                  <a href="#">wip-LinkTitle</a>
+                  {/* <h1>Car Name</h1> */}
                   <p>
-                    {car.modelYear} {car.make} {car.model}
+                    {car.modelYear} {car.make} {car.model}{" "}
                   </p>
+                  <button class="icon-button">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      display="block"
+                      id="Heart"
+                    >
+                      <path d="M7 3C4.239 3 2 5.216 2 7.95c0 2.207.875 7.445 9.488 12.74a.985.985 0 0 0 1.024 0C21.125 15.395 22 10.157 22 7.95 22 5.216 19.761 3 17 3s-5 3-5 3-2.239-3-5-3z" />
+                    </svg>
+                  </button>
+                </div>
+                <div className="card-footer">
                   <p>{car.vin}</p>
                 </div>
               </section>
-            </div>
+            </article>
           ))}
         </div>
       </div>

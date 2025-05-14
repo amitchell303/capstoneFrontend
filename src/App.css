@@ -13,14 +13,14 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* Navbar */
+/*  ----------  Navbar  ----------  */
 .sidebar {
   height: 100vh;
   width: 6rem;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(81, 254, 6, 0.827);
+  background-color: #e65d01;
   overflow-x: hidden;
 }
 .sidebar.open {
@@ -160,108 +160,17 @@
   transform: translateY(-2px);
 }
 
-/*  Content Container  */
+/*  ----------  Content Container  ----------  */
 .content-container {
   color: rgb(0, 0, 0);
-  border: 3px solid rgb(255, 0, 0);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-/* .content-container h1 {
-  text-align: center;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 1px black;
-}
-.content-container h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-.content-container h3 {
-  text-decoration: underline;
-  margin: 1rem 0 0.5rem;
-}
-.content-container p {
-  margin: 0.5rem;
-  text-align: left;
-  /* font-size: 16px;
-} */
-
-/* All Vehicles Component*/
-.allVehicles {
-  border: solid 3px rgb(0, 255, 51);
-  width: 85vw;
-  height: 80vh;
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
+  /* border: 1px solid rgb(255, 0, 0); */
 }
 
-.allVehicles h3 {
-  color: whitesmoke;
-}
-
-.vehicleCard-container {
-  display: flex;
-  flex: wrap;
-  padding: 1rem;
-  border: solid 1px rgb(247, 0, 255);
-}
-
-.vehicleCard {
-  width: 20rem;
-  height: auto;
-  padding: 1rem;
-  margin: 10px;
-  border-radius: 25px;
-  border: 3px solid rgb(106, 106, 106);
-  background-color: rgba(168, 168, 168, 0.274);
-
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-}
-
-.vehicleCard img {
-  width: 10vw;
-  height: auto;
-}
-
-.vehicleCard h1 {
-  padding: 1rem;
-  margin-bottom: 0;
-}
-
-.vehicleCard p {
-  text-align: center;
-  margin-top: 0;
-}
-
-.half-card {
-  background-color: whitesmoke;
-}
-
-/* .dashboard {
-  border: solid 3px rgb(0, 255, 51);
-  width: 85vw;
-  height: 80vh;
-  padding: 1rem;
-}
-.sect-container {
-  border: 3px solid black;
-}
-.dashboard section {
-  color: black;
-  width: 15vw;
-  height: 15vh;
-  padding: 1rem;
-  margin: 1rem;
-  border: 3px solid rgb(255, 0, 204);
-  background-color: white;
-} */
-
-/* Account Page */
+/*  ----------  Account Page  ----------  */
 .updateUserForm {
   font-size: 1rem;
   color: #fff;
@@ -322,7 +231,7 @@
   background-color: #c82333;
 }
 
-/* Empty Garage */
+/*  ----------  Empty Garage  ----------  */
 .emptyGarage-container {
   /* border: white solid 2px; */
   width: 30rem;
@@ -349,106 +258,7 @@
   color: white;
 }
 
-.inline {
-  display: inline-block;
-}
-.margin5 {
-  margin: 5px;
-}
-.margin0 {
-  margin: 0px;
-}
-.padding1 {
-  padding: 1%;
-}
-#carTable {
-  ul li {
-    border: 0.5px solid white;
-    border-radius: 12%;
-    border-collapse: collapse;
-    list-style: none;
-  }
-}
-.car {
-  border: 1px solid grey;
-  border-radius: 6%;
-  background-color: rgba(85, 85, 85, 0.35);
-  margin-left: 14px;
-  height: 90%;
-  width: 47%;
-}
-.car:hover {
-  border: 1px solid rgb(106, 0, 255);
-}
-.appointment {
-  border: 1px solid grey;
-  border-radius: 6%;
-  background-color: rgba(85, 85, 85, 0.35);
-  margin-right: 14px;
-  height: 90%;
-  width: 47%;
-  float: right;
-}
-.appointment:hover {
-  border: 1px solid rgb(106, 0, 255);
-}
-.maintainance {
-  border: 1px solid grey;
-  border-radius: 10px;
-  background-color: rgba(85, 85, 85, 0.35);
-  height: 100%;
-  width: 96%;
-  margin: 0 auto;
-}
-.maintainance:hover {
-  border: 1px solid rgb(106, 0, 255);
-}
-.fullWidth {
-  width: 100%;
-}
-.Height90 {
-  height: 90%;
-}
-.Height50 {
-  height: 50%;
-}
-.Height30 {
-  height: 30%;
-}
-#logoutBtn {
-  background-color: rgba(250, 235, 215, 0.2);
-}
-#logoutBtn:hover {
-  background-color: rgba(127, 127, 127, 0.2);
-}
-
-/* Add Vehicle Form */
-.addVeh-form {
-  font-size: 1rem;
-  color: #fff;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
-  margin-top: 1.5rem;
-}
-.addVeh-form label {
-  font-weight: bold;
-  margin-top: 1rem;
-}
-.addVeh-form input {
-  width: 20rem;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-}
-.addVeh-form input:focus {
-  outline: none;
-  border: 2px solid #8e2de2;
-}
-
+/*  ----------  Add Vehicle Form  ----------  */
 .content-container form {
   color: whitesmoke;
   background: rgba(255, 255, 255, 0.1);
@@ -535,6 +345,7 @@
   cursor: pointer;
 }
 
+/*  ----------  Unknown  ----------  */
 .userFeatures {
   float: right;
   ul {
@@ -568,4 +379,171 @@
   float: right;
   padding: 2%;
   border-radius: 15%;
+}
+
+/*  ----------  All Vehicles Component  ----------  */
+/*
+.allVehicles h3 {
+  color: whitesmoke;
+}
+
+/* .dashboard {
+  border: solid 3px rgb(0, 255, 51);
+  width: 85vw;
+  height: 80vh;
+  padding: 1rem;
+}
+.sect-container {
+  border: 3px solid black;
+}
+.dashboard section {
+  color: black;
+  width: 15vw;
+  height: 15vh;
+  padding: 1rem;
+  margin: 1rem;
+  border: 3px solid rgb(255, 0, 204);
+  background-color: white;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Lexend", sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #393232;
+}
+.allVehicles {
+  /* border: solid 3px rgb(0, 255, 51); */
+  width: 85vw;
+  height: 80vh;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.allVehicles h3 {
+  color: whitesmoke;
+  padding: 1rem;
+  letter-spacing: 1px;
+  font-family: "Gruppo", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 35px;
+}
+
+.card-list {
+  width: 50vw;
+  height: auto;
+  padding: 2rem;
+  display: flex;
+  flex: wrap;
+  gap: 5rem;
+}
+
+.card {
+  color: whitesmoke;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  /* transition: 0.15s ease-in; */
+  box-shadow: 0 0 0 1px rgba(#000, 0.05), 0 20px 50px 0 rgba(#000, 0.1);
+  animation: modalFadeIn 0.4s ease-out forwards;
+}
+.card:hover,
+.card:focus-within {
+  box-shadow: 0 0 0 2px #ff6600, 0 10px 60px 0 rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.card-image {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-header {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  a {
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 1.25;
+    padding-right: 1rem;
+    text-decoration: none;
+    color: inherit;
+    will-change: transform;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.icon-button {
+  border: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  transition: 0.25s ease;
+  box-shadow: 0 0 0 1px rgba(#000, 0.05), 0 3px 8px 0 rgba(#000, 0.15);
+  z-index: 1;
+  cursor: pointer;
+  color: #565656;
+
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+  &:hover,
+  &:focus {
+    background-color: #ff6600;
+    color: #fff;
+  }
+}
+
+.card-footer {
+  margin-top: 1.25rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
