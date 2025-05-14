@@ -201,11 +201,13 @@
 
 .allVehicles h3 {
   padding: 1rem;
+  border: solid 3px rgb(0, 255, 51);
 }
 
 .vehicleCard-contianer {
   flex-direction: wrap;
   justify-content: space-between;
+  border: solid 3px rgb(0, 255, 51);
 }
 
 .vehicleCard {
@@ -220,6 +222,7 @@
   flex-direction: column;
   align-items: center;
   justify-items: center;
+  border: solid 3px rgb(0, 255, 51);
 }
 
 .vehicleCard img {

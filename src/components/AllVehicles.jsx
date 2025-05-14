@@ -35,8 +35,8 @@ export default function AllVehicles() {
       <div className="allVehicles">
         <h3>My Vehicles</h3>
         <div className="vehicleCard-container">
-          <div className="vehicleCard">
-            {cars.map((car) => (
+          {cars.map((car) => (
+            <div className="vehicleCard">
               <section key={car.id}>
                 <img src={car.carImg} alt={`${car.make} ${car.model}`} />
                 <h1>Car Name</h1>
@@ -45,8 +45,8 @@ export default function AllVehicles() {
                 </p>
                 <p>{car.vin}</p>
               </section>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
