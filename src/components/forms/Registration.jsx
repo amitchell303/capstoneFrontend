@@ -38,10 +38,10 @@ function Registration() {
   }
 
   return (
-    <div className="landing-modal-container">
-      <main className="register-modal">
+    <div className="modal-container">
+      <main className="modal">
         <h1>Register</h1>
-        <form onSubmit={submit}>
+        <form className="regLogForm" onSubmit={submit}>
           <div className="form-group">
             <label>First Name</label>
             <input
@@ -92,7 +92,6 @@ function Registration() {
               !password ||
               (password && confirmPassword && password !== confirmPassword)
             }
-            className="login-btn"
           >
             Register
           </button>

@@ -26,38 +26,32 @@ function Login() {
   }
 
   return (
-    <div className="landing-modal-container">
-      <main className="login-modal">
+    <div className="modal-container">
+      <main className="modal">
         <h1>Welcome</h1>
-        <div className="login-form">
-          <form onSubmit={submit}>
-            <div className="login-form-field">
-              <label>Email</label>
-              <input
-                type="email"
-                value={email}
-                placeholder="email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="login-form-field">
-              <label>Password</label>
-              <input
-                type="password"
-                value={password}
-                placeholder="password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            <button
-              className="login-btn"
-              type="submit"
-              disabled={!email || !password}
-            >
-              Login
-            </button>
-          </form>
-        </div>
+        <form className="regLogForm" onSubmit={submit}>
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              value={email}
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              value={password}
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit" disabled={!email || !password}>
+            Login
+          </button>
+        </form>
       </main>
     </div>
   );

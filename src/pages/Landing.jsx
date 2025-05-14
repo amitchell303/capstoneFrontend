@@ -27,7 +27,6 @@ export default function Landing() {
           >
             Register
           </button>{" "}
-          .
         </p>
       </div>
       <div className="animation">
@@ -44,15 +43,13 @@ export default function Landing() {
             }
           }}
         >
-          <div className="modal-content">
-            <Login />
-            <button
-              className="close-btn"
-              onClick={() => setShowLoginModal(false)}
-            >
-              ×
-            </button>
-          </div>
+          <Login />
+          <button
+            className="closeModal-btn"
+            onClick={() => setShowLoginModal(false)}
+          >
+            ×
+          </button>
         </div>
       )}
 
@@ -65,15 +62,13 @@ export default function Landing() {
             }
           }}
         >
-          <div className="modal-content">
-            <Registration />
-            <button
-              className="close-btn"
-              onClick={() => setShowRegisterModal(false)}
-            >
-              ×
-            </button>
-          </div>
+          <Registration />
+          <button
+            className="closeModal-btn"
+            onClick={() => setShowRegisterModal(false)}
+          >
+            ×
+          </button>
         </div>
       )}
     </div>
