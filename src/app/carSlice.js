@@ -21,7 +21,7 @@ const CarApi = api.injectEndpoints({
         carImg,
         userId,
       }) => ({
-        url: `/api/car/:vin`,
+        url: `/api/car/${vin}`,
         method: "POST",
         body: {
           vin,
