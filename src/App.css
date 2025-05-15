@@ -405,6 +405,7 @@ body {
 .allVehicles h3 {
   color: whitesmoke;
   padding: 1rem;
+  margin-left: 3rem;
   letter-spacing: 1px;
   font-family: "Gruppo", sans-serif;
   font-weight: 500;

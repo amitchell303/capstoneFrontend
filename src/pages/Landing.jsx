@@ -13,7 +13,6 @@ export default function Landing() {
         <h1>MyMoto</h1>
         {/* Changed navlinks into buttons for modal handling */}
         <p>
-          Please{" "}
           <button
             className="link-button"
             onClick={() => setShowLoginModal(true)}
