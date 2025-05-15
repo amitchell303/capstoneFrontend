@@ -9,7 +9,7 @@ import AboutMe from "./components/AboutMe.jsx";
 import Navigations from "./components/Navigations.jsx";
 import EmptyGarage from "./components/EmptyGarage.jsx";
 import AddVehicle from "./components/forms/AddVehicle.jsx";
-import AllVehicles from "./components/allVehicles.jsx";
+import AllVehicles from "./components/AllVehicles.jsx";
 import Landing from "./pages/Landing.jsx";
 
 function App() {
