@@ -38,12 +38,14 @@ export default function AllVehicles() {
                   <img src={car.carImg} alt={`${car.make} ${car.model}`} />
                 </figure>
                 <div className="card-header">
-                  <Link to={`/vehicles/${car.vin}`}>
-                    {car.carName || `${car.make} ${car.model}`}
-                  </Link>
-                  <p>
-                    {car.modelYear} {car.make} {car.model}{" "}
-                  </p>
+                  <div>
+                    <Link to={`/vehicles/${car.vin}`}>
+                      {car.carName || `${car.make} ${car.model}`}
+                    </Link>
+                    <p>
+                      {car.modelYear} {car.make} {car.model}{" "}
+                    </p>
+                  </div>
                   <button className="icon-button">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
