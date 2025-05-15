@@ -543,3 +543,8 @@ img {
   font-weight: 500;
   font-size: 1rem;
 }
+
+main {
+  padding: 8px;
+  text-align: center;
+}
