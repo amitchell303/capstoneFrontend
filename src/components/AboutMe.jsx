@@ -224,6 +224,7 @@ export default function AboutMe() {
                 Delete Account
               </button>
             </li>
+          
           </ul>
         </div>
       </div>

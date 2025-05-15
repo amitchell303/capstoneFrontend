@@ -17,8 +17,8 @@ const ReminderApi = api.injectEndpoints({
             providesTags: ['Reminder'],
         }),
         createReminder: builder.mutation({
-            query: (title,note) => ({
-                url: `/api/reminder/create/car/:vin`,
+            query: (vin,title,note) => ({
+                url: `/api/reminder/create/car/${vin}`,
                 method: 'POST',
                 body: title,note,
             }),

@@ -1,33 +1,24 @@
 import React, { useState } from "react";
 import {
   useGetAllRemindersQuery,
-  useCreateReminderMutation,
-  useDeleteReminderMutation,
-  useUpdateReminderMutation,
 } from "../../app/reminderSlice";
 import { useParams } from "react-router-dom";
 
-const ReminderText = () => {
-  const [createReminder] = useCreateReminderMutation();
-  const [updateReminder] = useUpdateReminderMutation();
-  const [deleteReminder] = useDeleteReminderMutation();
+const RemindersList = () => {
   const {isLoading, status, data: reminderList } = useGetAllRemindersQuery();
-  
-  const [reminderInput, setReminderInput] = useState("");
   const [noteTittle, setNoteTitle] = useState([]);
-  const [tittle, setTittle] = useState("");
   const [search, setSearch] = useState("");
   const { id } = useParams();
-
-
+ 
 //Search by Title function
 async function handleSearch(e) {
   setSearch(e.target.value);
-  const searchedTtittle = noteTittle.filter(reminder =>
+  console.log(e.target.value);
+   const searchedTtittle = noteTittle.filter(reminder =>
         reminder.tittle.toLowerCase().startsWith(search.toLowerCase())
     );
   try {
-    await reminderList(searchedTtittle).unwrap();
+    console.log(searchedTtittle);
      if (status === "fulfilled") {
           setNoteTitle(reminderList);
         }
@@ -45,29 +36,11 @@ async function handleSearch(e) {
       console.error(error, 'Uh oh, something went wrong!');
     }
   }
+  if (isLoading) return <div>Loading...</div>;
 if (allReminders){
-  console.log(reminderList)
+  console.log('All Reminders loaded successfully!')
 }
-
-// Add Reminder function
-  async function handleAddReminder(event) {
-    event.preventDefault();
-    try {
-      const response = await createReminder({ reminderInput, tittle }).unwrap();
-      try {
-        localStorage.setItem("token", response.token);
-        setTitle("");
-        setReminderInput("");
-        window.location.reload();
-      } catch (error) {
-        console.error(error.message);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  // Update Reminder function
+// Update Reminder function
   async function handleUpdateReminder(event) {
     event.preventDefault();
     const reminderId = id;
@@ -90,17 +63,13 @@ if (allReminders){
       }
     } catch (error) {}
   }
-  if (isLoading) {
-    return "Loading...";
-  }
-  
-
   return (
     <>  
      <div className="search-title-container">
                 <div className="row justify-content-center">
                     <div className="col-md-6">
                         <div className="search-container">
+                             
                         <input 
                             type="text" 
                             className="form-control search-input" 
@@ -108,51 +77,44 @@ if (allReminders){
                             value={search}
                             onChange={handleSearch}
                         />
-                        <i className="fas fa-search search-icon"></i>
                         </div>
                     </div>
                 </div>
             </div>
-    <div className="content-container">
+    {/* <div className="content-container">
       <div className="reminderPage">
         <table>
           <tbody>
             <tr>
               <td className="Width40">
                 <section>
-                  <h1>My Reminders </h1>
+                  <h1>All Reminders </h1>
                 </section>
-                <form className="reminderForm" onSubmit={handleAddReminder}>
-                  <label>Title</label>
-                  <input
-                    type="text"
-                    placeholder="Title"
-                    onChange={(e) => setTittle(e.target.value)}
-                  />
-                  <label>Reminder</label>
-                  <input
-                    type="text"
-                    placeholder="Type Reminder Here"
-                    value={reminderInput}
-                    onChange={(e) => setReminderInput(e.target.value)}
-                  />
-                </form>
-                <button type="submit" onClick={handleAddReminder}>Add Reminder</button>
-                <button type="button" onClick={handleUpdateReminder}>
-                  Update Reminder
-                </button>
-
-                {/* <button type="button" onClick={handleDeleteReminder}>
-                  Delete Reminder
-                </button> */}
+               <ul>
+                {reminderList.map((reminder) => (
+                  <li key={reminder.id}>
+                    <p>{reminder.tittle}</p>
+                    <p>{reminder.notes}</p>
+                    <p>{reminder.createdAt}</p>
+                    <p>{reminder.car}</p>
+                    <button onClick={() => handleDeleteReminder(reminder.id)}>
+                      Delete
+                    </button>
+                    <button onClick={() => handleUpdateReminder(reminder.id)}>
+                      Update
+                    </button>
+                  </li>
+                ))}
+               </ul>
+               
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-    </div>
+    </div> */}
     </>
   );
 };
 
-export default ReminderText;
+export default RemindersList;

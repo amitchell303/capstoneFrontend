@@ -58,7 +58,7 @@ export default function Navigations() {
                       <BiSolidBook className="icons" />
                       <p className="link">Create Note</p>
                     </NavLink>
-                    <span className="tooltiptext">Create Note</span>
+                    <span className="tooltiptext">Search for Notes</span>
                   </div>
                 {/* Temporary links for dev purposes */}
                 {/* <li>

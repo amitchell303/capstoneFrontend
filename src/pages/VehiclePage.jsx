@@ -5,6 +5,9 @@ import { useParams } from "react-router-dom";
 import { useGetMyCarsQuery } from "../app/carSlice";
 import { useState } from "react";
 import "../styling/garage.css";
+import RemindersList from "../components/forms/AllReminders.jsx";
+import AddReminders from "../components/forms/AddNote.jsx"
+
 
 export default function VehiclePage() {
   const [activeComp, setActiveComp] = useState("overview");
@@ -32,7 +35,7 @@ export default function VehiclePage() {
       case "service":
         return <div>WIP - Maintenace/Service</div>;
       case "notes":
-        return <div>WIP - Notes</div>;
+        return <div><RemindersList /><AddReminders /></div>;
       default:
         return <div>No components rendered.</div>;
     }
