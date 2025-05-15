@@ -182,6 +182,13 @@ body {
 }
 
 /*  ----------  Account Page  ----------  */
+.accountPage {
+  border: 1px solid white;
+  border-radius: 5%;
+  background-color: #393232a0;
+  padding: 5%;
+  text-align: center;
+}
 .updateUserForm {
   font-size: 1rem;
   color: #fff;
@@ -359,7 +366,6 @@ body {
 
 /*  ----------  Unknown  ----------  */
 .userFeatures {
-  float: right;
   ul {
     list-style-type: none;
   }
