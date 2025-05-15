@@ -27,7 +27,7 @@ export default function Navigations() {
 
   return (
     <nav className={`sidebar ${isOpen ? "open" : ""}`}>
-      <NavLink className="logo" to="/">
+      <NavLink className="logo" to="/home">
         <img src="src\components\assets\MM logo(2).png" alt="Logo/Home" />
       </NavLink>
       <div className="navlink-container">
