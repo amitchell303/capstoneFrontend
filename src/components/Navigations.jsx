@@ -79,6 +79,11 @@ export default function Navigations() {
                     <p className="link">Comp-quickViews</p>
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink className="navlink" to="/vehiclePage">
+                    <p className="link">Comp-vehPage</p>
+                  </NavLink>
+                </li>
               </ul>
               <button className="logout-btn" onClick={logout}>
                 LogOut

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useGetMyCarsQuery } from "../app/carSlice"; //make Slice file for cars
 import { useUpdateUserMutation, useDeleteUserMutation } from "../app/userSlice";
 import EmptyGarage from "../components/garageViews/EmptyGarage";
-import AllVehicles from "../components/garageViews/AllVehicles";
+import AllVehicles from "../pages/MyGarage.jsx";
 import "../App.css";
 
 function Home() {
