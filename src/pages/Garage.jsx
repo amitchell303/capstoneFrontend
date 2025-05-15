@@ -32,42 +32,40 @@ export default function AllVehicles() {
         <h3>My Vehicles</h3>
         <div className="card-list">
           {cars.map((car) => (
-            <article className="card">
-              <section key={car.id}>
-                <figure className="card-image">
-                  <img src={car.carImg} alt={`${car.make} ${car.model}`} />
-                </figure>
-                <div className="card-header">
-                  <div>
-                    <Link to={`/vehicles/${car.vin}`}>
-                      {car.carName || `${car.make} ${car.model}`}
-                    </Link>
-                    <p>
-                      {car.modelYear} {car.make} {car.model}{" "}
-                    </p>
-                  </div>
-                  <button className="icon-button">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      display="block"
-                      id="Heart"
-                    >
-                      <path d="M7 3C4.239 3 2 5.216 2 7.95c0 2.207.875 7.445 9.488 12.74a.985.985 0 0 0 1.024 0C21.125 15.395 22 10.157 22 7.95 22 5.216 19.761 3 17 3s-5 3-5 3-2.239-3-5-3z" />
-                    </svg>
-                  </button>
+            <article className="card" key={car.vin}>
+              <figure className="card-image">
+                <img src={car.carImg} alt={`${car.make} ${car.model}`} />
+              </figure>
+              <div className="card-header">
+                <div>
+                  <Link to={`/vehicles/${car.vin}`}>
+                    {car.carName || `${car.make} ${car.model}`}
+                  </Link>
+                  <p>
+                    {car.modelYear} {car.make} {car.model}{" "}
+                  </p>
                 </div>
-                <div className="card-footer">
-                  <p>{car.vin}</p>
-                </div>
-              </section>
+                <button className="icon-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    display="block"
+                    id="Heart"
+                  >
+                    <path d="M7 3C4.239 3 2 5.216 2 7.95c0 2.207.875 7.445 9.488 12.74a.985.985 0 0 0 1.024 0C21.125 15.395 22 10.157 22 7.95 22 5.216 19.761 3 17 3s-5 3-5 3-2.239-3-5-3z" />
+                  </svg>
+                </button>
+              </div>
+              <div className="card-footer">
+                <p>{car.vin}</p>
+              </div>
             </article>
           ))}
         </div>

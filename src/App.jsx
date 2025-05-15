@@ -12,7 +12,7 @@ import AboutMe from "./components/AboutMe.jsx";
 import SingleUser from "./components/SingleUser.jsx";
 import EmptyGarage from "./components/garageViews/EmptyGarage.jsx";
 import AddVehicle from "./components/forms/AddVehicle.jsx";
-import QuickViews from "./components/garageViews/quickViews.jsx";
+import QuickViews from "./components/garageViews/QuickViews.jsx";
 
 function App() {
   function logout() {
