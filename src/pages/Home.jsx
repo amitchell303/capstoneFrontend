@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useGetMyCarsQuery } from "../app/carSlice"; //make Slice file for cars
 import { useUpdateUserMutation, useDeleteUserMutation } from "../app/userSlice";
 import EmptyGarage from "../components/EmptyGarage";
-import AllVehicles from "../components/allVehicles";
+import AllVehicles from "../components/AllVehicles";
 import "../App.css";
 
 function Home() {
