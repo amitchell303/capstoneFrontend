@@ -1,17 +1,19 @@
 import { Provider } from "react-redux";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import store from "./app/store";
 import "./App.css";
 
+import Landing from "./pages/Landing.jsx";
 import Home from "./pages/Home.jsx";
-import SingleUser from "./components/SingleUser.jsx";
-import AboutMe from "./components/AboutMe.jsx";
+import AllVehicles from "./pages/Garage.jsx";
+import VehiclePage from "./pages/VehiclePage.jsx";
 import Navigations from "./components/Navigations.jsx";
-import EmptyGarage from "./components/EmptyGarage.jsx";
+import AboutMe from "./components/AboutMe.jsx";
+import SingleUser from "./components/SingleUser.jsx";
+import EmptyGarage from "./components/garageViews/EmptyGarage.jsx";
 import AddVehicle from "./components/forms/AddVehicle.jsx";
 import ReminderText from "./components/forms/notes.jsx";
-import AllVehicles from "./components/allVehicles.jsx";
-import Landing from "./pages/Landing.jsx";
+import QuickViews from "./components/garageViews/quickViews.jsx";
 
 function App() {
   function logout() {
@@ -28,9 +30,12 @@ function App() {
           <Route path="/me" element={<AboutMe />} />
           <Route path="/notes" element={<ReminderText />} />
 
+          {/* Temporary routes for development */}
           <Route path="/empty" element={<EmptyGarage />} />
           <Route path="/addVehicle" element={<AddVehicle />} />
           <Route path="/allVehicles" element={<AllVehicles />} />
+          <Route path="/quickViews" element={<QuickViews />} />
+          <Route path="/vehicles/:vin" element={<VehiclePage />} />
         </Routes>
       </Router>
     </Provider>

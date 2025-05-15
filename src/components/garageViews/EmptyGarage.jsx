@@ -4,16 +4,18 @@
 
 // import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "../App.css";
+import "../../App.css";
 
 export default function EmptyGarage() {
   // const [isEmpty, setIsEmpty] = useState("");
 
   return (
-    <div className="emptyGarage-container">
-      <img src="src/components/assets/carSticker.gif" alt="car sticker" />
-      <h1>Your Garage is empty.</h1>
-      <NavLink to="/addVehicle">Add a Vehicle</NavLink>
+    <div className="glassmorphism-container">
+      <div className="emptyGarage-container">
+        <img src="src/components/assets/carSticker.gif" alt="car sticker" />
+        <h1>Your Garage is empty.</h1>
+        <NavLink to="/addVehicle">Add a Vehicle</NavLink>
+      </div>
     </div>
   );
 }

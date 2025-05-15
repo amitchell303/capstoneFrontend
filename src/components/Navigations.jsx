@@ -28,7 +28,7 @@ export default function Navigations() {
   return (
     <nav className={`sidebar ${isOpen ? "open" : ""}`}>
       <NavLink className="logo" to="/">
-        <img src="src\components\assets\blackLogo.svg" alt="Logo/Home" />
+        <img src="src\components\assets\MM logo(2).png" alt="Logo/Home" />
       </NavLink>
       <div className="navlink-container">
         <ul>
@@ -74,6 +74,11 @@ export default function Navigations() {
                 <li>
                   <NavLink className="navlink" to="/allVehicles">
                     <p className="link">Comp-allVehicles</p>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="navlink" to="/quickViews">
+                    <p className="link">Comp-quickViews</p>
                   </NavLink>
                 </li>
               </ul>
