@@ -70,11 +70,6 @@ export default function Navigations() {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className="navlink" to="/bentoView">
-                    <p className="link">Comp-bentoView</p>
-                  </NavLink>
-                </li>
-                <li>
                   <NavLink className="navlink" to="/quickViews">
                     <p className="link">Comp-quickViews</p>
                   </NavLink>
