@@ -1,14 +1,14 @@
 // This page displays all of the User's vehicles
 
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useGetMyCarsQuery } from "../app/carSlice"; //make Slice file for cars
 import "../App.css";
 
 export default function AllVehicles() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  const { data, error, isLoading } = useGetMyCarsQuery(); //create to grab all of user's cars
+  const { data, error, isLoading } = useGetMyCarsQuery();
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
@@ -23,13 +23,7 @@ export default function AllVehicles() {
   }, [token, navigate, data]);
 
   if (isLoading) {
-    return (
-      <main id="homePage">
-        <div className="page">
-          <div>Loading...</div>
-        </div>
-      </main>
-    );
+    return <div>Loading...</div>;
   }
 
   return (
@@ -44,12 +38,13 @@ export default function AllVehicles() {
                   <img src={car.carImg} alt={`${car.make} ${car.model}`} />
                 </figure>
                 <div className="card-header">
-                  <a href="#">wip-LinkTitle</a>
-                  {/* <h1>Car Name</h1> */}
+                  <Link to={`/vehicles/${car.vin}`}>
+                    {car.carName || `${car.make} ${car.model}`}
+                  </Link>
                   <p>
                     {car.modelYear} {car.make} {car.model}{" "}
                   </p>
-                  <button class="icon-button">
+                  <button className="icon-button">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"

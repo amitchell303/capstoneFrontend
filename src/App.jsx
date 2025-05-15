@@ -33,7 +33,7 @@ function App() {
           <Route path="/addVehicle" element={<AddVehicle />} />
           <Route path="/allVehicles" element={<AllVehicles />} />
           <Route path="/quickViews" element={<QuickViews />} />
-          <Route path="/vehiclePage" element={<VehiclePage />} />
+          <Route path="/vehicles/:vin" element={<VehiclePage />} />
         </Routes>
       </Router>
     </Provider>
