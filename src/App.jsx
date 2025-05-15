@@ -9,6 +9,7 @@ import AboutMe from "./components/AboutMe.jsx";
 import Navigations from "./components/Navigations.jsx";
 import EmptyGarage from "./components/EmptyGarage.jsx";
 import AddVehicle from "./components/forms/AddVehicle.jsx";
+import ReminderText from "./components/forms/notes.jsx";
 import AllVehicles from "./components/allVehicles.jsx";
 import Landing from "./pages/Landing.jsx";
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/user/:id" element={<SingleUser />} />
           <Route path="/me" element={<AboutMe />} />
+          <Route path="/notes" element={<ReminderText />} />
 
           <Route path="/empty" element={<EmptyGarage />} />
           <Route path="/addVehicle" element={<AddVehicle />} />

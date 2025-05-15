@@ -9,6 +9,13 @@ const CarApi = api.injectEndpoints({
       }),
       providesTags: ["Car"],
     }),
+    getSingleCar: build.query({
+      query: () => ({
+        url: `/api/car/:vin`,
+        method: "GET",
+      }),
+      providesTags: ["Car"],
+    }),
 
     addVehicle: build.mutation({
       query: ({
@@ -39,7 +46,7 @@ const CarApi = api.injectEndpoints({
   }),
 });
 
-export const { useGetMyCarsQuery, useAddVehicleMutation } = CarApi;
+export const { useGetMyCarsQuery,useGetSingleCarQuery, useAddVehicleMutation } = CarApi;
 
 // router.post("/:vin", middleware, createCar);
 // router.get("/all", middleware, getAllCar);
