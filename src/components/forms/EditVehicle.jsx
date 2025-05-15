@@ -1,10 +1,10 @@
-import "../../App.css";
+import "../../styling/forms.css";
 
 const EditVehicleForm = () => {
   return (
     <div>
       <h1>Edit Vehicle</h1>
-      <form>
+      <form className="allForms">
         <div className="form-group">
           <label htmlFor="vin">VIN</label>
           <input type="text" id="vin" placeholder="vin number" disabled />

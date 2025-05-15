@@ -86,25 +86,6 @@ body {
   z-index: 1;
 }
 
-/* riseUp animation */
-@keyframes riseUp {
-  to {
-    bottom: -35%;
-  }
-}
-
-/* textFadeIn animation */
-@keyframes textFadeIn {
-  0% {
-    transform: translate(-50%, 100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(-50%, 0%);
-    opacity: 1;
-  }
-}
-
 /*  Modals  */
 .modal-overlay {
   position: fixed;
@@ -120,17 +101,6 @@ body {
   animation: modalOverlayFadeIn 0.4s ease-out forwards;
   z-index: 1000;
 }
-@keyframes modalOverlayFadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 .modal {
   color: whitesmoke;
   background: rgba(255, 255, 255, 0.1);
@@ -144,16 +114,6 @@ body {
   align-items: center;
   justify-items: center;
   animation: modalFadeIn 0.4s ease-out forwards;
-}
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 .closeModal-btn {
