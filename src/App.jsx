@@ -12,6 +12,7 @@ import EmptyGarage from "./components/garageViews/EmptyGarage.jsx";
 import AllVehicles from "./components/garageViews/AllVehicles.jsx";
 import AddVehicle from "./components/forms/AddVehicle.jsx";
 import Bento from "./components/garageViews/BentoView.jsx";
+import QuickViews from "./components/garageViews/quickViews.jsx";
 
 function App() {
   function logout() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/addVehicle" element={<AddVehicle />} />
           <Route path="/allVehicles" element={<AllVehicles />} />
           <Route path="/bentoView" element={<Bento />} />
+          <Route path="/quickViews" element={<QuickViews />} />
         </Routes>
       </Router>
     </Provider>

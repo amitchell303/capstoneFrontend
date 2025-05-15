@@ -1,0 +1,39 @@
+.vehNav {
+  color: whitesmoke;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+.navlink a {
+  color: white;
+}
+.link {
+  color: white;
+}
+
+.bento-container {
+  color: whitesmoke;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3rem;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 5rem;
+}
+
+.bentoItem {
+  padding: 3rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+}

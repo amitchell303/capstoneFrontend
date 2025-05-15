@@ -90,7 +90,7 @@ body {
 /* riseUp animation */
 @keyframes riseUp {
   to {
-    bottom: -35%;
+    bottom: -15%;
   }
 }
 

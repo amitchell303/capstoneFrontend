@@ -232,30 +232,31 @@
 }
 
 /*  ----------  Empty Garage  ----------  */
-.emptyGarage-container {
-  /* border: white solid 2px; */
-  width: 30rem;
-  height: 30rem;
+.glassmorphism-container {
+  color: whitesmoke;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  animation: modalFadeIn 0.4s ease-out forwards;
+}
 
+.emptyGarage-container {
+  color: whitesmoke;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* border: rgb(255, 0, 230) solid 2px; */
 }
 .emptyGarage-container img {
   width: 250px;
   height: 250px;
 }
-.emptyGarage-container h1 {
-  color: white;
-}
 .emptyGarage-container a {
-  margin: 15px;
-  color: white;
+  color: whitesmoke;
 }
 
 /*  ----------  Add Vehicle Form  ----------  */
