@@ -56,7 +56,7 @@
   transition: all 0.3s ease;
 }
 .allForms button:hover {
-  background-color: #fd9047;
+  background-color: #ff6600cf;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
@@ -73,7 +73,7 @@
 }
 .section-2 {
   display: flex;
-  gap: 50px;
+  gap: 15px;
 }
 
 .section-3 {

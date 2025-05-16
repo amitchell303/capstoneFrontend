@@ -9,7 +9,7 @@ const EditVehicleForm = () => {
           <div className="section-1">
             <div className="allForms-group">
               <label htmlFor="vin">Nickname</label>
-              <input type="text" id="vin" placeholder="Nickname (Optional)" />
+              <input type="text" id="vin" placeholder="Nickname (optional)" />
             </div>
           </div>
           <div className="section-2">
@@ -22,7 +22,7 @@ const EditVehicleForm = () => {
               <input
                 type="text"
                 id="vin"
-                placeholder="Plate number (Optional)"
+                placeholder="Plate number (optional)"
               />
             </div>
           </div>
@@ -42,7 +42,7 @@ const EditVehicleForm = () => {
           </div>
           <div className="section-4">
             <div className="allForms-group">
-              <label htmlFor="vin">Current Mileage</label>
+              <label htmlFor="vin">Current Mileage*</label>
               <input type="text" id="vin" placeholder="Mileage (Required)" />
             </div>
           </div>

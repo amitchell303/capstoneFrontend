@@ -65,6 +65,11 @@ export default function Navigations() {
                   </NavLink>
                 </li>
                 <li>
+                  <NavLink className="navlink" to="/vehicleDetails">
+                    <p className="link">Comp-vehDetails</p>
+                  </NavLink>
+                </li>
+                <li>
                   <NavLink className="navlink" to="/quickViews">
                     <p className="link">Comp-quickViews</p>
                   </NavLink>
