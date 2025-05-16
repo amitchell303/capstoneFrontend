@@ -22,7 +22,7 @@ function Home() {
     } else {
       if (data) {
         setCars(data);
-        console.log(cars);
+        console.log(data);
       }
     }
   }, [token, navigate, data]);
