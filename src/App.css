@@ -563,7 +563,8 @@ main {
   ul {
     list-style-type: none;
   }
-  div input {
+  div input,
+  select {
     margin: 8px;
     padding: 5px;
   }

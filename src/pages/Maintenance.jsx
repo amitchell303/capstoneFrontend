@@ -1,15 +1,30 @@
 import "../App.css";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useGetLogsQuery } from "../app/maintenanceSlice";
+import { useGetAllUsersQuery } from "../app/userSlice";
 export default function VehiclePage() {
   const { vin } = useParams();
   const { error, isLoading, data: logs } = useGetLogsQuery({ testVin: vin });
+  const { data: users } = useGetAllUsersQuery();
   const [milage, setMilage] = useState("");
+  const [allMechanics, setAllMechanics] = useState([]);
   const [mechanic, setMechanic] = useState("");
   const [serviceType, setServiceType] = useState("");
   const [serviceCost, setServiceCost] = useState("");
   const [serviceDetail, setServiceDetail] = useState("");
+
+  useEffect(() => {
+    if (users) {
+      console.log("users:", users);
+      const mechanics = users.filter((user) => user.roleId === 2);
+      setAllMechanics(mechanics);
+      console.log("mechanics:", mechanics);
+    }
+    if (logs) {
+      console.log("logs:", logs);
+    }
+  }, [users, logs]);
   if (isLoading) return <h2>Loading Maintenance Log...</h2>;
   if (error)
     return (
@@ -17,9 +32,6 @@ export default function VehiclePage() {
         <h2>There was an error loading the maintenance log</h2>
       </>
     );
-  if (logs) {
-    console.log(logs);
-  }
   async function submitMaintenance(e) {
     e.preventDefault();
     console.log("milage: ", milage);
@@ -66,11 +78,21 @@ export default function VehiclePage() {
                     </div>
                     <div>
                       <label>Mechanic</label>
-                      <input
+                      {/* <input
                         value={mechanic}
                         placeholder="Enter Mechanic"
                         onChange={(e) => setMechanic(e.target.value)}
-                      />
+                      /> */}
+                      <select
+                        value={mechanic}
+                        onChange={(e) => setMechanic(e.target.value)}
+                      >
+                        {allMechanics.map((Mechanic) => (
+                          <option key={Mechanic.id}>
+                            {Mechanic.firstname}
+                          </option>
+                        ))}
+                      </select>
                     </div>
                     <div>
                       <label>Service Type</label>
