@@ -88,128 +88,123 @@ export default function AboutMe() {
   if (error) return <div>{error.message}</div>;
   if (isUpdating) {
     return (
-      // <div className="Updatepage">
-      <div className="glassmorphism-container">
-        <button
-          className="closeBtn"
-          type="button"
-          onClick={() => setIsUpdating(false)}
-        >
-          close
-        </button>
+      <div className="content-container">
         <h1>Update Info</h1>
-        <form className="allForms" onSubmit={handleUpdateUser}>
-          <div className="EAF-section-1">
-            <div className="allForms-group">
-              <label>First Name</label>
-              <input
-                type="text"
-                placeholder="First Name"
-                value={me.user.firstname}
-                onChange={(e) => setFirstname(e.target.value)}
-              />
-            </div>
-            <div className="allForms-group">
-              <label>Last Name</label>
-              <input
-                type="text"
-                placeholder="Last Name"
-                value={me.user.lastname}
-                onChange={(e) => setLastname(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className="EAF-section-2">
-            <div className="allForms-group">
-              <label>New Email</label>
-              <input
-                type="email"
-                placeholder="Email"
-                value={me.user.email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="allForms-group">
-              <label>Confirm New Email</label>
-              <input
-                type="email"
-                placeholder="Confirm Email"
-                value={""}
-                // onChange={(e) => setConfirmPassword(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className="EAF-section-3">
-            <div className="allForms-group">
-              <label>New Password </label>
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            <div className="allForms-group">
-              <label>Confirm New Password</label>
-              <input
-                type="password"
-                placeholder="Confirm Password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className="EAF-section-4">
-            <div className="allForms-group">
-              <label>Street</label>
-              <input
-                type="text"
-                placeholder="Enter Street"
-                value={me.user.street}
-                onChange={(e) => setStreet(e.target.value)}
-              />
-            </div>
-            <div className="allForms-group">
-              <label>City</label>
-              <input
-                type="text"
-                placeholder="City"
-                value={me.user.city}
-                onChange={(e) => setCity(e.target.value)}
-              />
-            </div>
-            <div className="allForms-group">
-              <label>State</label>
-              <input
-                type="text"
-                placeholder="State"
-                value={me.user.state}
-                onChange={(e) => setState(e.target.value)}
-              />
-            </div>
-            <div className="allForms-group">
-              <label>Postal</label>
-              <input
-                type="text"
-                placeholder="Zipcode"
-                value={me.user.postal}
-                onChange={(e) => setPostal(e.target.value)}
-              />
-            </div>
-          </div>
-
+        <div className="glassmorphism-container">
           <button
-            className="update-btn"
-            type="submit"
-            disabled={
-              password && confirmPassword && password !== confirmPassword
-            }
+            className="EAF-close-icon"
+            type="button"
+            onClick={() => setIsUpdating(false)}
           >
-            Update
+            Close
+            {/* <span class="material-symbols-outlined">close_small</span> */}
           </button>
-        </form>
+          <form className="allForms" onSubmit={handleUpdateUser}>
+            <div className="EAF-section-1">
+              <div className="allForms-group">
+                <label>First Name</label>
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  value={me.user.firstname}
+                  onChange={(e) => setFirstname(e.target.value)}
+                />
+              </div>
+              <div className="allForms-group">
+                <label>Last Name</label>
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  value={me.user.lastname}
+                  onChange={(e) => setLastname(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="EAF-section-2">
+              <div className="allForms-group">
+                <label>New Email</label>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={me.user.email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="EAF-section-3">
+              <div className="allForms-group">
+                <label>New Password </label>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+              <div className="allForms-group">
+                <label>Confirm New Password</label>
+                <input
+                  type="password"
+                  placeholder="Confirm Password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="EAF-section-4">
+              <div className="allForms-group">
+                <label>Street Address</label>
+                <input
+                  type="text"
+                  placeholder="Enter Street Address"
+                  value={me.user.street}
+                  onChange={(e) => setStreet(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="EAF-section-5">
+              <div className="allForms-group">
+                <label>City</label>
+                <input
+                  type="text"
+                  placeholder="City"
+                  value={me.user.city}
+                  onChange={(e) => setCity(e.target.value)}
+                />
+              </div>
+              <div className="allForms-group">
+                <label>State</label>
+                <input
+                  type="text"
+                  placeholder="State"
+                  value={me.user.state}
+                  onChange={(e) => setState(e.target.value)}
+                />
+              </div>
+              <div className="allForms-group">
+                <label>Postal</label>
+                <input
+                  type="text"
+                  placeholder="Zipcode"
+                  value={me.user.postal}
+                  onChange={(e) => setPostal(e.target.value)}
+                />
+              </div>
+            </div>
+            {/* <div className="EAF-section-6"> */}
+            <button
+              className="EAF-update-btn"
+              type="submit"
+              disabled={
+                password && confirmPassword && password !== confirmPassword
+              }
+            >
+              Update
+            </button>
+            {/* </div> */}
+          </form>
+        </div>
       </div>
-      // </div>
     );
   }
 

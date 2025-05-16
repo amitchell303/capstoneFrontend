@@ -416,6 +416,19 @@ img {
   border: 2px solid #8e2de2;
 }
 
+.delete-btn {
+  color: white;
+  width: 15rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 15px 30px;
+  background-color: #009a1f;
+  border: none;
+  font-size: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
 .update-btn,
 .delete-btn {
   color: white;
@@ -441,7 +454,6 @@ img {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
-
 .delete-btn {
   background-color: #dc3545;
 }
@@ -454,7 +466,7 @@ img {
     list-style-type: none;
   }
 }
-.Updatepage {
+/* .Updatepage {
   color: #ffffff;
   background-color: #0000005e;
   box-shadow: 0 15px 35px #d3a1fe74;
@@ -476,9 +488,4 @@ img {
   form table td {
     margin: 0px 15px;
   }
-}
-.closeBtn {
-  float: right;
-  padding: 2%;
-  border-radius: 15%;
-}
+} */
