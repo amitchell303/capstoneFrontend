@@ -1,9 +1,8 @@
-.allForms {
-  /* color: whitesmoke; */
+.glassmorphism-container {
+  color: whitesmoke;
   background: rgba(255, 255, 255, 0.1);
-  padding: 3rem;
+  padding: 1rem;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
   display: flex;
@@ -11,4 +10,59 @@
   align-items: center;
   justify-items: center;
   animation: modalFadeIn 0.4s ease-out forwards;
+}
+
+.allForms {
+  /* border: 1px solid rgb(255, 0, 195); */
+  padding: 0 20px;
+}
+
+.allForms-group {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.allForms-group label {
+  color: #ddd;
+  font-size: 0.85rem;
+}
+.allForms-group input {
+  color: #fff;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  margin: 5px 0;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: border-color 0.3s ease;
+}
+.allForms-group input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: #ff6600;
+}
+
+.allForms button {
+  color: white;
+  padding: 15px 30px;
+  /* margin: 15px; */
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff6600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.allForms button:hover {
+  background-color: #fd9047;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.allForms button:disabled {
+  color: rgb(185, 185, 185);
+  background-color: #8e2de2;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }

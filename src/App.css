@@ -15,13 +15,9 @@
 }
 
 body {
-  font-family: "Lexend", sans-serif;
-  line-height: 1.5;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #393232;
 }
 
 /*  ----------  Navbar  ----------  */
@@ -171,16 +167,6 @@ body {
   transform: translateY(-2px);
 }
 
-/*  ----------  Content Container  ----------  */
-.content-container {
-  color: rgb(0, 0, 0);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* border: 1px solid rgb(255, 0, 0); */
-}
-
 /*  ----------  Account Page  ----------  */
 .accountPage {
   border: 1px solid white;
@@ -250,16 +236,6 @@ body {
 }
 
 /*  ----------  Empty Garage  ----------  */
-.glassmorphism-container {
-  color: whitesmoke;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 3rem;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
-  animation: modalFadeIn 0.4s ease-out forwards;
-}
 
 .emptyGarage-container {
   color: whitesmoke;
@@ -278,7 +254,7 @@ body {
 }
 
 /*  ----------  Add Vehicle Form  ----------  */
-.content-container form {
+/* .content-container form {
   color: whitesmoke;
   background: rgba(255, 255, 255, 0.1);
   padding: 3rem;
@@ -352,7 +328,7 @@ body {
   background-color: #8e2de2;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-}
+} */
 
 /*  ----------  Unknown  ----------  */
 .userFeatures {
@@ -397,16 +373,6 @@ body {
   padding: 3rem;
   display: flex;
   flex-direction: column;
-}
-.allVehicles h3 {
-  color: whitesmoke;
-  padding: 1rem;
-  margin-left: 3rem;
-  letter-spacing: 1px;
-  font-family: "Gruppo", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 35px;
 }
 
 .card-list {

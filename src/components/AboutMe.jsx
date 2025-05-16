@@ -186,7 +186,7 @@ export default function AboutMe() {
 
   return (
     <>
-      <div className="content-container">
+      <div className="content-container1">
         <div className="accountPage">
           <section id="accountDetails">
             <h1>My Account </h1>

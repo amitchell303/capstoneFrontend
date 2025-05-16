@@ -28,8 +28,8 @@ export default function AllVehicles() {
 
   return (
     <div className="content-container">
+      <h1>My Vehicles</h1>
       <div className="allVehicles">
-        <h3>My Vehicles</h3>
         <div className="card-list">
           {cars.map((car) => (
             <article className="card" key={car.vin}>
