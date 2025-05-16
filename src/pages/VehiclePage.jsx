@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useGetMyCarsQuery } from "../app/carSlice";
 import { useState } from "react";
 import "../styling/garage.css";
+import Maintenance from "./Maintenance";
 
 export default function VehiclePage() {
   const [activeComp, setActiveComp] = useState("overview");
@@ -22,7 +23,7 @@ export default function VehiclePage() {
         return (
           <div className="bento-container">
             <div className="bentoItem">General Info</div>
-            <div className="bentoItem">Maintenance Log</div>
+            <div className="bentoItem">Services</div>
             <div className="bentoItem">Reminders</div>
             <div className="bentoItem">Notes</div>
           </div>
@@ -30,7 +31,11 @@ export default function VehiclePage() {
       case "details":
         return <div>WIP - Expanded vehicle details</div>;
       case "service":
-        return <div>WIP - Maintenace/Service</div>;
+        return (
+          <div>
+            <Maintenance />
+          </div>
+        );
       case "notes":
         return <div>WIP - Notes</div>;
       default:
