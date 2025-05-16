@@ -13,7 +13,6 @@
 }
 
 .allForms {
-  /* border: 1px solid rgb(255, 0, 195); */
   padding: 0 20px;
 }
 
@@ -46,7 +45,8 @@
 .allForms button {
   color: white;
   padding: 15px 30px;
-  /* margin: 15px; */
+  display: block;
+  margin: 2rem auto 20px;
   text-align: center;
   font-size: 16px;
   border: none;
@@ -65,4 +65,24 @@
   background-color: #8e2de2;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+}
+
+/* ---------- Edit Vehicle Form ---------- */
+.section-1 {
+  max-width: 300px;
+}
+.section-2 {
+  display: flex;
+  gap: 50px;
+}
+
+.section-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 15px;
+}
+
+.section-4 {
+  max-width: 300px;
+  margin-bottom: 2rem;
 }

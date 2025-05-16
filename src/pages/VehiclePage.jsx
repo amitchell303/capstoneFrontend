@@ -41,37 +41,42 @@ export default function VehiclePage() {
   return (
     <>
       <div className="vehNav">
-        <ul>
-          <li>
-            <button
-              className="btn-link"
-              onClick={() => setActiveComp("overview")}
-            >
-              Overview
-            </button>
-          </li>
-          <li>
-            <button
-              className="btn-link"
-              onClick={() => setActiveComp("details")}
-            >
-              Details
-            </button>
-          </li>
-          <li>
-            <button
-              className="btn-link"
-              onClick={() => setActiveComp("service")}
-            >
-              Service
-            </button>
-          </li>
-          <li>
-            <button className="btn-link" onClick={() => setActiveComp("notes")}>
-              Notes
-            </button>
-          </li>
-        </ul>
+        <div className="glassmorphism-container">
+          <ul>
+            <li>
+              <button
+                className="btn-link"
+                onClick={() => setActiveComp("overview")}
+              >
+                Overview
+              </button>
+            </li>
+            <li>
+              <button
+                className="btn-link"
+                onClick={() => setActiveComp("details")}
+              >
+                Details
+              </button>
+            </li>
+            <li>
+              <button
+                className="btn-link"
+                onClick={() => setActiveComp("service")}
+              >
+                Service
+              </button>
+            </li>
+            <li>
+              <button
+                className="btn-link"
+                onClick={() => setActiveComp("notes")}
+              >
+                Notes
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div className="glassmorphism-container">{renderComp()}</div>
