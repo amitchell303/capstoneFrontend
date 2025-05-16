@@ -167,74 +167,6 @@ body {
   transform: translateY(-2px);
 }
 
-/*  ----------  Account Page  ----------  */
-.accountPage {
-  border: 1px solid white;
-  border-radius: 5%;
-  background-color: #393232a0;
-  padding: 5%;
-  text-align: center;
-}
-.updateUserForm {
-  font-size: 1rem;
-  color: #fff;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
-  margin-top: 1.5rem;
-}
-.updateUserForm label {
-  font-weight: bold;
-  margin-top: 1rem;
-}
-.updateUserForm input {
-  width: 20rem;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-}
-
-.updateUserForm input:focus {
-  outline: none;
-  border: 2px solid #8e2de2;
-}
-
-.update-btn,
-.delete-btn {
-  color: white;
-  width: 15rem;
-  margin: 0 auto;
-  margin-top: 1rem;
-  padding: 15px 30px;
-  background-color: #009a1f;
-  border: none;
-  font-size: 16px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-.update-btn:hover {
-  background-color: #00ae239c;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-.update-btn:disabled {
-  color: rgb(185, 185, 185);
-  background-color: #009a1f;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-.delete-btn {
-  background-color: #dc3545;
-}
-.delete-btn:hover {
-  background-color: #c82333;
-}
-
 /*  ----------  Empty Garage  ----------  */
 
 .emptyGarage-container {
@@ -329,41 +261,6 @@ body {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 } */
-
-/*  ----------  Unknown  ----------  */
-.userFeatures {
-  ul {
-    list-style-type: none;
-  }
-}
-.Updatepage {
-  color: #ffffff;
-  background-color: #0000005e;
-  box-shadow: 0 15px 35px #d3a1fe74;
-  border: 0.5px solid rgb(251, 151, 251);
-  width: 30rem;
-  height: auto;
-  padding: 3rem;
-  border-radius: 30px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  form input {
-    width: 100%;
-  }
-  h1 {
-    text-shadow: 1px 1px 1px black;
-  }
-  form table td {
-    margin: 0px 15px;
-  }
-}
-.closeBtn {
-  float: right;
-  padding: 2%;
-  border-radius: 15%;
-}
 
 /*  ----------  All Vehicles Component  ----------  */
 .card-list {
@@ -479,7 +376,109 @@ img {
   font-size: 1rem;
 }
 
-main {
+/* main {
   padding: 8px;
   text-align: center;
+} */
+
+/*  ----------  Account Page  ----------  */
+.accountPage {
+  /* border: 1px solid white; */
+  border-radius: 25px;
+  background-color: #393232a0;
+  padding: 5%;
+  text-align: center;
+}
+.updateUserForm {
+  font-size: 1rem;
+  color: #fff;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+.updateUserForm label {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.updateUserForm input {
+  width: 20rem;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.updateUserForm input:focus {
+  outline: none;
+  border: 2px solid #8e2de2;
+}
+
+.update-btn,
+.delete-btn {
+  color: white;
+  width: 15rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 15px 30px;
+  background-color: #009a1f;
+  border: none;
+  font-size: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.update-btn:hover {
+  background-color: #00ae239c;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.update-btn:disabled {
+  color: rgb(185, 185, 185);
+  background-color: #009a1f;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.userFeatures {
+  ul {
+    list-style-type: none;
+  }
+}
+.Updatepage {
+  color: #ffffff;
+  background-color: #0000005e;
+  box-shadow: 0 15px 35px #d3a1fe74;
+  border: 0.5px solid rgb(251, 151, 251);
+  width: 30rem;
+  height: auto;
+  padding: 3rem;
+  border-radius: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  form input {
+    width: 100%;
+  }
+  h1 {
+    text-shadow: 1px 1px 1px black;
+  }
+  form table td {
+    margin: 0px 15px;
+  }
+}
+.closeBtn {
+  float: right;
+  padding: 2%;
+  border-radius: 15%;
 }

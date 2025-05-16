@@ -86,3 +86,28 @@
   max-width: 300px;
   margin-bottom: 2rem;
 }
+
+/* ---------- Edit Account info Form (EAF) ---------- */
+.EAF-section-1 {
+  display: flex;
+  gap: 15px;
+}
+.EAF-section-2 {
+  display: flex;
+  gap: 15px;
+}
+
+.EAF-section-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 15px;
+}
+
+.EAF-section-4 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 3fr);
+  grid-column-gap: 15px;
+  max-width: 300px;
+  margin-bottom: 2rem;
+}
