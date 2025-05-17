@@ -220,7 +220,7 @@ export default function AboutMe() {
             </div>
             <div className="acctPage-1b">
               <p>Email: {me.user.email}</p>
-              <p>*Update Password*</p>
+              <p>*Link to Update Account/Password form*</p>
               <p>Street Address:{me.user.street}</p>
               <p>City: {me.user.city}</p>
               <p>State:{me.user.state}</p>

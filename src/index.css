@@ -1,3 +1,16 @@
+/* index.css is for styles applied throughout the WHOLE site */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* background-color: #181818; */
+  background-size: cover;
+  /* background-image: url(src/components/assets/green.jpg); */
+  background-image: url(src/components/assets/grey.jpg);
+}
+
 /*  ----------  Content Container  ----------  */
 /* .content-container {
   color: whitesmoke;

@@ -15,7 +15,7 @@ export default function VehiclePage() {
   const car = cars?.find((car) => car.vin === vin);
   if (!car) return <p>Vehicle not found.</p>;
 
-  // switch statement utilized to switch between component displays upon nav btn click
+  // switch statement utilized to switch between imported component displays upon nav btn click
   // TO-DO: make and import components
   const renderComp = () => {
     switch (activeComp) {
