@@ -39,7 +39,7 @@ body {
 }
 
 .text-content h1 {
-  background: linear-gradient(to top, #ff6600, #fab181);
+  background: linear-gradient(to top, #ff6600, #ffdac1);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

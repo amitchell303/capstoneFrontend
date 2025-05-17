@@ -89,15 +89,14 @@ export default function AboutMe() {
   if (isUpdating) {
     return (
       <div className="content-container">
-        <h1>Update Info</h1>
+        <h1>Update Account</h1>
         <div className="glassmorphism-container">
           <button
             className="EAF-close-icon"
             type="button"
             onClick={() => setIsUpdating(false)}
           >
-            Close
-            {/* <span class="material-symbols-outlined">close_small</span> */}
+            <span class="material-symbols-outlined">close_small</span>
           </button>
           <form className="allForms" onSubmit={handleUpdateUser}>
             <div className="EAF-section-1">
@@ -210,44 +209,42 @@ export default function AboutMe() {
 
   return (
     <div className="content-container">
-      <div className="accountPage">
-        <section id="accountDetails">
-          <h1>My Account </h1>
-          <div>
-            <p>
-              Name: {me.user.firstname} {me.user.lastname}
-            </p>
-            <p>Email: {me.user.email}</p>
-            <p>Address:</p>
-            <p>{me.user.street}</p>
-            <p>
-              {me.user.city}, {me.user.state}
-            </p>
-            <p>{me.user.postal}</p>
-          </div>
-        </section>
-      </div>
-      <div className="userFeatures">
-        <ul>
-          <li>
+      <h1>My Account </h1>
+      <div className="glassmorphism-container">
+        <main className="acctPage">
+          <section className="acctPage-section-1">
+            <div className="acctPage-1a">
+              <h2>
+                {me.user.firstname} {me.user.lastname}
+              </h2>
+            </div>
+            <div className="acctPage-1b">
+              <p>Email: {me.user.email}</p>
+              <p>*Update Password*</p>
+              <p>Street Address:{me.user.street}</p>
+              <p>City: {me.user.city}</p>
+              <p>State:{me.user.state}</p>
+              <p>Zip:{me.user.postal}</p>
+            </div>
+          </section>
+          <section className="acctPage-section-2">
             <button
               className="update-btn"
               type="button"
               onClick={() => setIsUpdating(true)}
             >
-              Update
+              <span className="material-symbols-outlined">manage_accounts</span>
             </button>
-          </li>
-          <li>
+
             <button
               className="delete-btn"
               type="button"
               onClick={handleDeleteUser}
             >
-              Delete Account
+              <span className="material-symbols-outlined">delete_forever</span>
             </button>
-          </li>
-        </ul>
+          </section>
+        </main>
       </div>
     </div>
   );
