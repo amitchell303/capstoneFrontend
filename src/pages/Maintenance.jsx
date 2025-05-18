@@ -78,11 +78,6 @@ export default function VehiclePage() {
                     </div>
                     <div>
                       <label>Mechanic</label>
-                      {/* <input
-                        value={mechanic}
-                        placeholder="Enter Mechanic"
-                        onChange={(e) => setMechanic(e.target.value)}
-                      /> */}
                       <select
                         value={mechanic}
                         onChange={(e) => setMechanic(e.target.value)}
@@ -96,11 +91,19 @@ export default function VehiclePage() {
                     </div>
                     <div>
                       <label>Service Type</label>
-                      <input
+                      <select
                         value={serviceType}
-                        placeholder="Enter Service Type"
                         onChange={(e) => setServiceType(e.target.value)}
-                      />
+                      >
+                        <option>Oil Change</option>
+                        <option>Tire Rotation</option>
+                        <option>Replace Air Filter</option>
+                        <option>Change Break Pads</option>
+                        <option>Brake Fluid Flush</option>
+                        <option>Replace Tires</option>
+                        <option>Replace Battery</option>
+                        <option>Replace Timing Belt</option>
+                      </select>
                     </div>
                     <div>
                       <label>Service Cost</label>
