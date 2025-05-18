@@ -69,17 +69,19 @@
   flex-direction: row;
   justify-content: space-between;
 }
-.vs-1-general {
+.vd-1-general {
   display: flex;
   flex-direction: column;
 }
-.vs-general-1 img {
-  border: 1px solid green;
+.vd-section-1 img {
+  width: 350px;
+  height: auto;
+  /* border: 1px solid green; */
 }
 
-.vd-section-2 {
+/* .vd-section-2 {
   border: 1px solid red;
-}
+} */
 .performance-container {
   display: flex;
   justify-content: space-around;
@@ -107,11 +109,11 @@
 }
 .engine-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   margin: 0 25px;
-  /* flex-direction: row; */
 }
-.engine-container details {
+.engine-details {
   padding: 1rem;
   border: 1px solid red;
 }

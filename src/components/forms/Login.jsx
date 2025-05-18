@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLoginUserMutation } from "../../app/userSlice";
 import "../../styling/landing.css";
+import "../../styling/forms.css";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -29,8 +30,8 @@ function Login() {
     <div className="modal-container">
       <main className="modal">
         <h1>Welcome</h1>
-        <form className="regLogForm" onSubmit={submit}>
-          <div className="form-group">
+        <form className="allForms" onSubmit={submit}>
+          <div className="allForms-group">
             <label>Email</label>
             <input
               type="email"
@@ -39,7 +40,7 @@ function Login() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="form-group">
+          <div className="allForms-group">
             <label>Password</label>
             <input
               type="password"

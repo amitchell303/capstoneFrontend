@@ -62,7 +62,7 @@
 }
 .allForms button:disabled {
   color: rgb(185, 185, 185);
-  background-color: #8e2de2;
+  background-color: #ff6600;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }

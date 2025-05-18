@@ -44,8 +44,8 @@ function Registration() {
     <div className="modal-container">
       <main className="modal">
         <h1>Register</h1>
-        <form className="regLogForm" onSubmit={submit}>
-          <div className="form-group">
+        <form className="allForms" onSubmit={submit}>
+          <div className="allForms-group">
             <label>First Name</label>
             <input
               value={firstname}
@@ -53,7 +53,7 @@ function Registration() {
               onChange={(ev) => setFirstName(ev.target.value)}
             />
           </div>
-          <div className="form-group">
+          <div className="allForms-group">
             <label>Last Name</label>
             <input
               value={lastname}
@@ -61,7 +61,7 @@ function Registration() {
               onChange={(ev) => setLastName(ev.target.value)}
             />
           </div>
-          <div className="form-group">
+          <div className="allForms-group">
             <label>Email</label>
             <input
               type="email"
@@ -70,7 +70,7 @@ function Registration() {
               onChange={(ev) => setEmail(ev.target.value)}
             />
           </div>
-          <div className="form-group">
+          <div className="allForms-group">
             <label>Password</label>
             <input
               type="password"
@@ -79,7 +79,7 @@ function Registration() {
               onChange={(ev) => setPassword(ev.target.value)}
             />
           </div>
-          <div className="form-group">
+          <div className="allForms-group">
             <label>Confirm Passsword</label>
             <input
               type="password"

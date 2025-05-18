@@ -32,7 +32,7 @@ export default function VehiclePage() {
       case "details":
         return (
           <div>
-            <VehicleDetails />
+            <VehicleDetails car={car} />
           </div>
         );
       case "service":
@@ -86,7 +86,7 @@ export default function VehiclePage() {
               </button>
             </li>
           </ul>
-          <h1>Vehicle Name</h1>
+          <h1>{car.carName || `${car.make} ${car.model}`}</h1>
         </div>
       </div>
 

@@ -1,78 +1,77 @@
-export default function VehicleDetails() {
+export default function VehicleDetails({ car }) {
+  if (!car) return <p>Loading vehicle details...</p>;
+
   return (
     <div className="content-container">
-      <div className="glassmorphism-container">
-        <div className="vehicleDetails">
-          <section className="vd-section-1">
-            <div className="vs-1-general">
-              <h3>General Information</h3>
-              <p>Year: </p>
-              <p>Make: </p>
-              <p>Model: </p>
-              <p>Submodel: </p>
-              <p>Drive Type: </p>
-              <p>Vin Number: </p>
-            </div>
-            {/* <img src="" alt="" /> */}
-          </section>
-          <section className="vd-section-2">
-            <div className="performance-container">
-              <article className="performance-1">
-                <h3>Speed</h3>
-                <p>Charge System:</p>
-                <p>Cylinder Alignment:</p>
-              </article>
-              <article className="performance-2">
-                <h3>MPG</h3>
-                <p>Charge System:</p>
-                <p>Cylinder Alignment:</p>
-              </article>
-              <article className="performance-3">
-                <h3>Tow Capacity</h3>
-                <p>Charge System:</p>
-                <p>Cylinder Alignment:</p>
-              </article>
-            </div>
-          </section>
-          <section className="vd-section-3">
-            <h3>Engine</h3>
+      <div className="vehicleDetails">
+        <section className="vd-section-1">
+          <div className="vd-1-general">
+            <h3>General Information</h3>
+            <p>Year: {car.modelYear}</p>
+            <p>Make: {car.make}</p>
+            <p>Model: {car.model}</p>
+            <p>Drive Type: {car.driveType}</p>
+            <p>Body Class: {car.bodyClass}</p>
+            <p>VIN Number: {car.vin}</p>
+          </div>
+          <img src={car.carImg} alt={`${car.make} ${car.model}`} />
+        </section>
+        <section className="vd-section-2">
+          <div className="performance-container">
+            <article className="performance-1">
+              <h3>Speed</h3>
+              <p>Charge System:</p>
+              <p>Cylinder Alignment:</p>
+            </article>
+            <article className="performance-2">
+              <h3>MPG</h3>
+              <p>Highway: {car.mpgHighway}</p>
+              <p>City: {car.mpgCity}</p>
+            </article>
+            <article className="performance-3">
+              <h3>Tow Capacity</h3>
+              <p>Charge System:</p>
+              <p>Cylinder Alignment:</p>
+            </article>
+          </div>
+        </section>
+        <section className="vd-section-3">
+          <details>
+            <summary>Engine</summary>
             <div className="engine-container">
-              <article>
-                <p>Manufactuer:</p>
-                <p>Engine Type:</p>
-                <p>Horsepower:</p>
-                <p>Torque:</p>
-                <p>Charge System:</p>
-              </article>
-              <article>
-                {" "}
-                <p>Fuel System:</p>
-                <p>Fuel Type: </p>
-                <p>Fuel Capacity:</p>
-                <p>Emission Control:</p>
-              </article>
-              <article>
-                {" "}
-                <p>Cylinder Alignment:</p>
-                <p>Valves per Cylinder:</p>
-                <p>Valve Timing:</p>
-                <p>Displacement:</p>
-                <p>Bore:</p>
-                <p>Stroke:</p>
-                <p>Compression Ratio:</p>
-              </article>
-              <article>
-                {" "}
-                <p>Oil Type:</p>
-                <p>Oil capacity</p>
-                <p>Coolant Capacity:</p>
-                <p>Battery Capacity(Ah):</p>
-                <p>Tires:</p>
-                <p>Suspension:</p>
-              </article>
+              <div className="engine-details">
+                <p>Manufacturer: {car.engineManufacturer}</p>
+                <p>Engine Type: {car.engineType}</p>
+                <p>Horsepower: {car.horsepower}</p>
+                <p>Torque: {car.torque}</p>
+                <p>Charge System: {car.chargeSystem}</p>
+              </div>
+              <div className="engine-details">
+                <p>Fuel System: {car.fuelSystem}</p>
+                <p>Fuel Type: {car.fuelType}</p>
+                <p>Fuel Capacity: {car.fuelCapacity}</p>
+                <p>Emission Control: {car.emissionControl}</p>
+              </div>
+              <div className="engine-details">
+                <p>Cylinder Alignment: {car.cylinderAlignment}</p>
+                <p>Valves per Cylinder: {car.valvesPerCylinder}</p>
+                <p>Valve Timing: {car.valveTiming}</p>
+                <p>Displacement: {car.displacement}</p>
+                <p>Bore: {car.bore}</p>
+                <p>Stroke: {car.stroke}</p>
+                <p>Compression Ratio: {car.compressionRatio}</p>
+              </div>
+              <div className="engine-details">
+                <p>Oil Type: {car.oilType}</p>
+                <p>Oil Capacity: {car.oilCapacity}</p>
+                <p>Coolant Capacity: {car.coolantCapacity}</p>
+                <p>Battery Capacity (Ah): {car.batteryCapacity}</p>
+                <p>Tires: {car.tires}</p>
+                <p>Suspension: {car.suspension}</p>
+              </div>
             </div>
-          </section>
-        </div>
+          </details>
+        </section>
       </div>
     </div>
   );
