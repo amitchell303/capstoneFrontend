@@ -1,14 +1,18 @@
-.vehNav {
-  width: 90rem;
-  margin: 1.5rem 0;
-  text-decoration: none;
+.vehiclePage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+
+.vehNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90rem;
+}
+
 .vehNav ul {
   display: flex;
-  /* flex-direction: row;
-  align-items: left;
-  justify-items: center;
-  justify-content: space-around; */
   list-style: none;
 }
 
@@ -29,11 +33,13 @@
 
 /* ---------- Bento Display ---------- */
 .bento-container {
+  width: 95rem;
+  height: 40rem;
   /* border: 1px solid rgb(255, 0, 230); */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-  margin: 1rem;
+  padding: 5rem;
 }
 
 .bentoItem {
@@ -51,8 +57,8 @@
 
 /* ---------- Vehicle Details ---------- */
 .vehicleDetails {
-  width: 90em;
-  height: 45rem;
+  width: 95rem;
+  height: 40rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;

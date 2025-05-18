@@ -13,7 +13,7 @@ import EmptyGarage from "./components/garageViews/EmptyGarage.jsx";
 import AddVehicle from "./components/forms/AddVehicle.jsx";
 import EditVehicle from "./components/forms/editVehicle.jsx";
 import QuickViews from "./components/garageViews/QuickViews.jsx";
-import VehicleDetails from "./components/garageViews/vehicleDetails.jsx";
+// import VehicleDetails from "./components/garageViews/vehicleDetails.jsx";
 
 function App() {
   function logout() {
@@ -35,7 +35,7 @@ function App() {
           <Route path="/editVehicle" element={<EditVehicle />} />
           <Route path="/quickViews" element={<QuickViews />} />
           <Route path="/vehicles/:vin" element={<VehiclePage />} />
-          <Route path="/vehicleDetails" element={<VehicleDetails />} />
+          {/* <Route path="/vehicles/:vin" element={<VehicleDetails />} /> */}
         </Routes>
       </Router>
     </Provider>

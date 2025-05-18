@@ -4,17 +4,16 @@ export default function VehicleDetails() {
       <div className="glassmorphism-container">
         <div className="vehicleDetails">
           <section className="vd-section-1">
-            <div classname="vs-1-general">
+            <div className="vs-1-general">
               <h3>General Information</h3>
-              <p>Year:</p>
-              <p>Make:</p>
-              <p>Model:</p>
-              <p>Submodel:</p>
-              <p>Drive Type:</p>
-              <p>Plate Number:</p>
-              <p>Vin Number:</p>
+              <p>Year: </p>
+              <p>Make: </p>
+              <p>Model: </p>
+              <p>Submodel: </p>
+              <p>Drive Type: </p>
+              <p>Vin Number: </p>
             </div>
-            <img src="" alt="" />
+            {/* <img src="" alt="" /> */}
           </section>
           <section className="vd-section-2">
             <div className="performance-container">
@@ -78,29 +77,3 @@ export default function VehicleDetails() {
     </div>
   );
 }
-
-<section className="vd-section-2">
-  <h3>Engine</h3>
-  <div className="engine-article-container">
-    <article className="engine-1">
-      <p>Manufactuer:</p>
-      <p>Engine Type:</p>
-      <p>Charge System:</p>
-      <p>Cylinder Alignment:</p>
-    </article>
-    <article className="engine-2">
-      {" "}
-      <p>Manufactuer:</p>
-      <p>Engine Type:</p>
-      <p>Charge System:</p>
-      <p>Cylinder Alignment:</p>
-    </article>
-    <article className="engine-3">
-      {" "}
-      <p>Manufactuer:</p>
-      <p>Engine Type:</p>
-      <p>Charge System:</p>
-      <p>Cylinder Alignment:</p>
-    </article>
-  </div>
-</section>;

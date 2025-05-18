@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useGetMyCarsQuery } from "../app/carSlice";
 import { useState } from "react";
 import "../styling/garage.css";
+import VehicleDetails from "../components/garageViews/VehicleDetails";
 import Maintenance from "./Maintenance";
 
 export default function VehiclePage() {
@@ -29,7 +30,11 @@ export default function VehiclePage() {
           </div>
         );
       case "details":
-        return <div>WIP - Expanded vehicle details</div>;
+        return (
+          <div>
+            <VehicleDetails />
+          </div>
+        );
       case "service":
         return (
           <div>
@@ -44,9 +49,9 @@ export default function VehiclePage() {
   };
 
   return (
-    <>
-      <div className="vehNav">
-        <div className="glassmorphism-container">
+    <div className="vehiclePage">
+      <div className="glassmorphism-container">
+        <div className="vehNav">
           <ul>
             <li>
               <button
@@ -81,10 +86,11 @@ export default function VehiclePage() {
               </button>
             </li>
           </ul>
+          <h1>Vehicle Name</h1>
         </div>
       </div>
 
       <div className="glassmorphism-container">{renderComp()}</div>
-    </>
+    </div>
   );
 }
