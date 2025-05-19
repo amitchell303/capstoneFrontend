@@ -73,7 +73,7 @@ export default function VehiclePage() {
       <h1>M A I N T E N A N C E</h1>
       <main className="maintenance">
         <div className="maintenance-section-1">
-          <h3>This will be the section for upcoming maint./reminders</h3>
+          <h3>Upcoming Service Due</h3>
         </div>
         <div className="maintenance-history">
           {logs.length > 0 ? (
