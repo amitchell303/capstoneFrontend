@@ -22,7 +22,7 @@ export default function Navigations() {
   function logout() {
     deleteToken();
     dispatch(api.util.resetApiState());
-    navigate("/login");
+    navigate("/");
   }
 
   return (
