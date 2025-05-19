@@ -13,7 +13,7 @@ export default function AllVehicles() {
 
   useEffect(() => {
     if (!token) {
-      navigate("/login");
+      navigate("/");
     } else {
       if (data) {
         setCars(data);

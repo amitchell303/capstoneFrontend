@@ -33,7 +33,6 @@ export default function AboutMe() {
       firstname,
       lastname,
       email,
-      password,
       street,
       city,
       state,
@@ -43,7 +42,7 @@ export default function AboutMe() {
     console.log(token);
 
     if (!token) {
-      navigate("/login");
+      navigate("/");
       console.log("No token found, redirecting to login.");
     } else {
       console.log(updatedData);
@@ -59,8 +58,6 @@ export default function AboutMe() {
           setFirstname("");
           setLastname("");
           setEmail("");
-          setPassword("");
-          setConfirmPassword("");
           setStreet("");
           setCity("");
           setState("");
@@ -91,8 +88,6 @@ export default function AboutMe() {
       setFirstname(me.user.firstname);
       setLastname(me.user.lastname);
       setEmail(me.user.email);
-      setPassword(me.user.password);
-      setConfirmPassword(me.user.confirmPassword);
       setStreet(me.user.street);
       setCity(me.user.city);
       setState(me.user.state);
@@ -108,7 +103,7 @@ export default function AboutMe() {
             type="button"
             onClick={() => setIsUpdating(false)}
           >
-            <span class="material-symbols-outlined">close_small</span>
+            <span className="material-symbols-outlined">close_small</span>
           </button>
           <form className="allForms" onSubmit={handleUpdateUser}>
             <div className="EAF-section-1">
@@ -139,26 +134,6 @@ export default function AboutMe() {
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-            </div>
-            <div className="EAF-section-3">
-              <div className="allForms-group">
-                <label>New Password </label>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-              <div className="allForms-group">
-                <label>Confirm New Password</label>
-                <input
-                  type="password"
-                  placeholder="Confirm Password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
                 />
               </div>
             </div>
@@ -203,13 +178,7 @@ export default function AboutMe() {
               </div>
             </div>
             {/* <div className="EAF-section-6"> */}
-            <button
-              className="EAF-update-btn"
-              type="submit"
-              disabled={
-                password && confirmPassword && password !== confirmPassword
-              }
-            >
+            <button className="EAF-update-btn" type="submit">
               Update
             </button>
             {/* </div> */}
