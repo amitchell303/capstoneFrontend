@@ -134,3 +134,12 @@ details[open] {
   padding: 1rem;
   border-radius: 8px;
 }
+
+/* ------ Service Page ----- */
+.maintenance {
+  display: flex;
+}
+.maintenance-section-1 {
+  border: 1px solid pink;
+  width: 15rem;
+}

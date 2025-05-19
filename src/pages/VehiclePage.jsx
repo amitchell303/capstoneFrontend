@@ -10,7 +10,7 @@ import Maintenance from "./Maintenance";
 
 export default function VehiclePage() {
   const [activeComp, setActiveComp] = useState("overview");
-  const { data: cars, isLoading, error } = useGetMyCarsQuery();
+  const { data: cars } = useGetMyCarsQuery();
   const { vin } = useParams();
 
   const car = cars?.find((car) => car.vin === vin);

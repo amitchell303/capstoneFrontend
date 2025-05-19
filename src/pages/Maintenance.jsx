@@ -69,103 +69,87 @@ export default function VehiclePage() {
     }
   }
   return (
-    <>
-      <main>
-        <h1>M A I N T E N A N C E</h1>
-        <table className="maintenance">
-          <tbody>
-            <tr>
-              <td>
-                <div>
-                  <ol>
-                    {logs.length > 0 ? (
-                      logs.map((log) => (
-                        <li key={log.id}>
-                          ${log.serviceCost || "No cost available"}_
-                          {log.serviceType || "No description available"}_
-                          {log.mileage}miles
-                        </li>
-                      ))
-                    ) : (
-                      <li>No logs available.</li>
-                    )}
-                  </ol>
-                </div>
-              </td>
-              <td>
-                <div>
-                  <form
-                    className="allForms"
-                    onSubmit={(e) => submitMaintenance(e)}
-                  >
-                    <div>
-                      <h3>Add Maintenance</h3>
-                    </div>
-                    <div className="allForms-group">
-                      <label>Mileage</label>
-                      <input
-                        value={milage}
-                        placeholder="Enter Mileage"
-                        onChange={(e) => setMilage(e.target.value)}
-                      />
-                    </div>
-                    <div className="allForms-group">
-                      <label>Mechanic</label>
-                      <select
-                        value={mechanic}
-                        onChange={(e) => setMechanic(e.target.value)}
-                      >
-                        <option>Select</option>
-                        {allMechanics.map((Mechanic) => (
-                          <option key={Mechanic.id}>
-                            {Mechanic.firstname}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                    <div className="allForms-group">
-                      <label>Service Type</label>
-                      <select
-                        value={serviceType}
-                        onChange={(e) => setServiceType(e.target.value)}
-                      >
-                        <option>Select</option>
-                        <option>Oil Change</option>
-                        <option>Tire Rotation</option>
-                        <option>Replace Air Filter</option>
-                        <option>Change Break Pads</option>
-                        <option>Brake Fluid Flush</option>
-                        <option>Replace Tires</option>
-                        <option>Replace Battery</option>
-                        <option>Replace Timing Belt</option>
-                      </select>
-                    </div>
-                    <div className="allForms-group">
-                      <label>Service Cost</label>
-                      <input
-                        value={serviceCost}
-                        placeholder="Enter Service Cost"
-                        onChange={(e) => setServiceCost(e.target.value)}
-                      />
-                    </div>
-                    <div className="allForms-group">
-                      <label>Service Detail</label>
-                      <input
-                        value={serviceDetail}
-                        placeholder="Enter Service Detail"
-                        onChange={(e) => setServiceDetail(e.target.value)}
-                      />
-                    </div>
-                    <button type="submit">Submit</button>
-                  </form>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div></div>
+    <div className="content-container">
+      <h1>M A I N T E N A N C E</h1>
+      <main className="maintenance">
+        <div className="maintenance-section-1">
+          <h3>This will be the section for upcoming maint./reminders</h3>
+        </div>
+        <div className="maintenance-history">
+          {logs.length > 0 ? (
+            logs.map((log) => (
+              <li key={log.id}>
+                ${log.serviceCost || "No cost available"}_
+                {log.serviceType || "No description available"}_{log.mileage}
+                miles
+              </li>
+            ))
+          ) : (
+            <li>No logs available.</li>
+          )}
+        </div>
+        <div className="maintenance-addMaint">
+          <form className="allForms" onSubmit={(e) => submitMaintenance(e)}>
+            <div>
+              <h3>Add Maintenance</h3>
+            </div>
+            <div className="allForms-group">
+              <label>Mileage</label>
+              <input
+                value={milage}
+                placeholder="Enter Mileage"
+                onChange={(e) => setMilage(e.target.value)}
+              />
+            </div>
+            <div className="allForms-group">
+              <label>Mechanic</label>
+              <select
+                value={mechanic}
+                onChange={(e) => setMechanic(e.target.value)}
+              >
+                <option>Select</option>
+                {allMechanics.map((Mechanic) => (
+                  <option key={Mechanic.id}>{Mechanic.firstname}</option>
+                ))}
+              </select>
+            </div>
+            <div className="allForms-group">
+              <label>Service Type</label>
+              <select
+                value={serviceType}
+                onChange={(e) => setServiceType(e.target.value)}
+              >
+                <option>Select</option>
+                <option>Oil Change</option>
+                <option>Tire Rotation</option>
+                <option>Replace Air Filter</option>
+                <option>Change Break Pads</option>
+                <option>Brake Fluid Flush</option>
+                <option>Replace Tires</option>
+                <option>Replace Battery</option>
+                <option>Replace Timing Belt</option>
+              </select>
+            </div>
+            <div className="allForms-group">
+              <label>Service Cost</label>
+              <input
+                value={serviceCost}
+                placeholder="Enter Service Cost"
+                onChange={(e) => setServiceCost(e.target.value)}
+              />
+            </div>
+            <div className="allForms-group">
+              <label>Service Detail</label>
+              <input
+                value={serviceDetail}
+                placeholder="Enter Service Detail"
+                onChange={(e) => setServiceDetail(e.target.value)}
+              />
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
       </main>
-    </>
+    </div>
   );
 }
