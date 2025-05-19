@@ -94,19 +94,22 @@ export default function VehiclePage() {
               </td>
               <td>
                 <div>
-                  <form onSubmit={(e) => submitMaintenance(e)}>
+                  <form
+                    className="allForms"
+                    onSubmit={(e) => submitMaintenance(e)}
+                  >
                     <div>
                       <h3>Add Maintenance</h3>
                     </div>
-                    <div>
-                      <label>Milage</label>
+                    <div className="allForms-group">
+                      <label>Mileage</label>
                       <input
                         value={milage}
-                        placeholder="Enter Milage"
+                        placeholder="Enter Mileage"
                         onChange={(e) => setMilage(e.target.value)}
                       />
                     </div>
-                    <div>
+                    <div className="allForms-group">
                       <label>Mechanic</label>
                       <select
                         value={mechanic}
@@ -120,7 +123,7 @@ export default function VehiclePage() {
                         ))}
                       </select>
                     </div>
-                    <div>
+                    <div className="allForms-group">
                       <label>Service Type</label>
                       <select
                         value={serviceType}
@@ -137,7 +140,7 @@ export default function VehiclePage() {
                         <option>Replace Timing Belt</option>
                       </select>
                     </div>
-                    <div>
+                    <div className="allForms-group">
                       <label>Service Cost</label>
                       <input
                         value={serviceCost}
@@ -145,7 +148,7 @@ export default function VehiclePage() {
                         onChange={(e) => setServiceCost(e.target.value)}
                       />
                     </div>
-                    <div>
+                    <div className="allForms-group">
                       <label>Service Detail</label>
                       <input
                         value={serviceDetail}
@@ -153,7 +156,7 @@ export default function VehiclePage() {
                         onChange={(e) => setServiceDetail(e.target.value)}
                       />
                     </div>
-                    <button type="submit">submit</button>
+                    <button type="submit">Submit</button>
                   </form>
                 </div>
               </td>
