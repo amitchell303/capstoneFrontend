@@ -1,12 +1,13 @@
 import "../App.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useGetLogsQuery } from "../app/maintenanceSlice";
+import { useGetLogsQuery, useCreateLogMutation } from "../app/maintenanceSlice";
 import { useGetAllUsersQuery } from "../app/userSlice";
 export default function VehiclePage() {
   const { vin } = useParams();
   const { error, isLoading, data: logs } = useGetLogsQuery({ testVin: vin });
   const { data: users } = useGetAllUsersQuery();
+  const [createLog] = useCreateLogMutation();
   const [milage, setMilage] = useState("");
   const [allMechanics, setAllMechanics] = useState([]);
   const [mechanic, setMechanic] = useState("");
@@ -34,11 +35,38 @@ export default function VehiclePage() {
     );
   async function submitMaintenance(e) {
     e.preventDefault();
-    console.log("milage: ", milage);
-    console.log("mechanic: ", mechanic);
-    console.log("serviceType: ", serviceType);
-    console.log("serviceCost: ", serviceCost);
-    console.log("serviceDetail: ", serviceDetail);
+    try {
+      const mechanicId = allMechanics.find(
+        (mech) => mech.firstname == mechanic
+      );
+      console.log(mechanicId.id);
+      const updatedData = {
+        mileage: milage,
+        serviceBy: mechanicId.id,
+        serviceType,
+        serviceCost: serviceCost,
+        serviceDetail,
+      };
+      console.log(updatedData);
+      const response = await createLog({
+        testVin: vin,
+        mileage: updatedData.mileage,
+        serviceBy: updatedData.serviceBy,
+        serviceType: updatedData.serviceType,
+        serviceCost: updatedData.serviceCost,
+        serviceDetail: updatedData.serviceDetail,
+      }).unwrap();
+      if (response) {
+        alert("Maintenace added successfully!");
+        setMilage("");
+        setMechanic("");
+        setServiceType("");
+        setServiceCost("");
+        setServiceDetail("");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
   return (
     <>
@@ -49,17 +77,19 @@ export default function VehiclePage() {
             <tr>
               <td>
                 <div>
-                  <ul>
+                  <ol>
                     {logs.length > 0 ? (
                       logs.map((log) => (
                         <li key={log.id}>
-                          {log.serviceDetail || "No description available"}
+                          ${log.serviceCost || "No cost available"}_
+                          {log.serviceType || "No description available"}_
+                          {log.mileage}miles
                         </li>
                       ))
                     ) : (
                       <li>No logs available.</li>
                     )}
-                  </ul>
+                  </ol>
                 </div>
               </td>
               <td>
@@ -82,6 +112,7 @@ export default function VehiclePage() {
                         value={mechanic}
                         onChange={(e) => setMechanic(e.target.value)}
                       >
+                        <option>Select</option>
                         {allMechanics.map((Mechanic) => (
                           <option key={Mechanic.id}>
                             {Mechanic.firstname}
@@ -95,6 +126,7 @@ export default function VehiclePage() {
                         value={serviceType}
                         onChange={(e) => setServiceType(e.target.value)}
                       >
+                        <option>Select</option>
                         <option>Oil Change</option>
                         <option>Tire Rotation</option>
                         <option>Replace Air Filter</option>

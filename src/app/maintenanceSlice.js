@@ -12,7 +12,7 @@ const maintenanceApi = api.injectEndpoints({
     createLog: build.mutation({
       query: ({
         testVin,
-        milage,
+        mileage,
         serviceBy,
         serviceType,
         serviceCost,
@@ -21,7 +21,7 @@ const maintenanceApi = api.injectEndpoints({
         url: `/api/servicelog/create/car/${testVin}`,
         method: "POST",
         body: {
-          milage,
+          mileage,
           serviceBy,
           serviceType,
           serviceCost,
