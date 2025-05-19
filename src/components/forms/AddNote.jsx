@@ -1,67 +1,68 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   useCreateReminderMutation,
 } from "../../app/reminderSlice";
 import { useParams } from "react-router-dom";
 
+
+
 const AddReminders = () => {
-  const [isLoading, status, createReminder] = useCreateReminderMutation();
-  
-  
+  const [createReminder, { isLoading, isSuccess, isError, error }] = useCreateReminderMutation();
+  const {vin} = useParams();
+
   const [reminderInput, setReminderInput] = useState("");
   const [tittle, setTittle] = useState("");
-  
+ 
 
-// Add Reminder function
+
+  // Add Reminder function
   async function handleAddReminder(event) {
     event.preventDefault();
+   
     try {
-      const response = await createReminder({ reminderInput, tittle }).unwrap();
-      try {
-        localStorage.setItem("token", response.token);
-        setTittle("");
-        setReminderInput("");
-        window.location.reload();
-      } catch (error) {
-        console.error(error.message);
-      }
-    } catch (error) {
-      console.error(error);
+      console.log("carVin:", vin);
+      console.log("tittle:", tittle);
+      console.log("reminderInput:", reminderInput);
+      await createReminder({ carVin: vin, tittle, notes: reminderInput }).unwrap();
+    } catch (err) {
+      console.error("Failed to create reminder:", err);
     }
   }
 
   
-  if (isLoading) {
-    return "Loading...";
-  }
-  
-  if (status === "fulfilled") {
-    alert("Reminder added successfully!");
-    console.log("Reminder added successfully!");
-  }
-  if (status !== "fulfilled"){
-    alert ("Unable to add reminder!")
-    console.log("Unable to add reminder!")
-  }
+  useEffect(() => {
+    if (isSuccess) {
+      alert("Reminder added successfully!");
+      console.log("Reminder added successfully!");
+      setTittle("");
+      setReminderInput("");
+     
+      
+    }
+    if (isError) {
+      alert(`Failed to add reminder: ${error?.data?.message || error?.error || "Unknown error"}`);
+      console.error("Failed to add reminder:", error);
+    }
+  }, [isSuccess, isError, error]); 
 
 
   return (
-    <>  
-    
+    <>
     <div className="content-container">
       <div className="reminderPage">
         <table>
           <tbody>
             <tr>
               <td className="Width40">
-                <section>
-                  <h1>My Reminders </h1>
-                </section>
+                
+                  <h1>Create a New Reminder</h1>
+                
                 <form className="reminderForm" onSubmit={handleAddReminder}>
                   <label>Title</label>
                   <input
                     type="text"
                     placeholder="Title"
+                    value={tittle} 
                     onChange={(e) => setTittle(e.target.value)}
                   />
                   <label>Reminder</label>
@@ -71,8 +72,10 @@ const AddReminders = () => {
                     value={reminderInput}
                     onChange={(e) => setReminderInput(e.target.value)}
                   />
+                  <button type="submit" disabled={isLoading}>
+                    {isLoading ? "Adding..." : "Add Reminder"}
+                  </button>
                 </form>
-                <button type="submit" onClick={handleAddReminder}>Add Reminder</button>
               </td>
             </tr>
           </tbody>

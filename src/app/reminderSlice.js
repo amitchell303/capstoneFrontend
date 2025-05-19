@@ -3,8 +3,8 @@ import api from "./api";
 const ReminderApi = api.injectEndpoints({
     endpoints: (builder) => ({
         getAllReminders: builder.query({
-            query: () => ({
-                url: `/api/reminder/getAll/car/:vin`,
+            query: (carVin) => ({
+                url: `/api/reminder/getAll/car/${carVin}`,
                 method: 'GET',
             }),
             providesTags: ['Reminder'],
@@ -17,16 +17,16 @@ const ReminderApi = api.injectEndpoints({
             providesTags: ['Reminder'],
         }),
         createReminder: builder.mutation({
-            query: (vin,title,note) => ({
-                url: `/api/reminder/create/car/${vin}`,
+            query: ({carVin,tittle,notes}) => ({
+                url: `/api/reminder/create/car/${carVin}`,
                 method: 'POST',
-                body: title,note,
+                body: {tittle,notes},
             }),
             invalidatesTags: ['Reminder'],
         }),
         deleteReminder: builder.mutation({
-        query: () => ({
-            url: `/api/reminder/deleteReminder/:vin`,
+        query: (carVin) => ({
+            url: `/api/reminder/deleteReminder/${carVin}`,
             method: 'DELETE',
         }),
         invalidatesTags: ['Reminder'],
