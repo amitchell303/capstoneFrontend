@@ -42,7 +42,7 @@ export default function AboutMe() {
     console.log(token);
 
     if (!token) {
-      navigate("/login");
+      navigate("/");
       console.log("No token found, redirecting to login.");
     } else {
       console.log(updatedData);
