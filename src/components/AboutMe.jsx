@@ -87,6 +87,18 @@ export default function AboutMe() {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
   if (isUpdating) {
+    if (firstname == "") {
+      setFirstname(me.user.firstname);
+      setLastname(me.user.lastname);
+      setEmail(me.user.email);
+      setPassword(me.user.password);
+      setConfirmPassword(me.user.confirmPassword);
+      setStreet(me.user.street);
+      setCity(me.user.city);
+      setState(me.user.state);
+      setPostal(me.user.postal);
+    }
+
     return (
       <div className="content-container">
         <h1>Update Account</h1>
@@ -105,7 +117,7 @@ export default function AboutMe() {
                 <input
                   type="text"
                   placeholder="First Name"
-                  value={me.user.firstname}
+                  value={firstname}
                   onChange={(e) => setFirstname(e.target.value)}
                 />
               </div>
@@ -114,7 +126,7 @@ export default function AboutMe() {
                 <input
                   type="text"
                   placeholder="Last Name"
-                  value={me.user.lastname}
+                  value={lastname}
                   onChange={(e) => setLastname(e.target.value)}
                 />
               </div>
@@ -125,7 +137,7 @@ export default function AboutMe() {
                 <input
                   type="email"
                   placeholder="Email"
-                  value={me.user.email}
+                  value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
@@ -156,7 +168,7 @@ export default function AboutMe() {
                 <input
                   type="text"
                   placeholder="Enter Street Address"
-                  value={me.user.street}
+                  value={street}
                   onChange={(e) => setStreet(e.target.value)}
                 />
               </div>
@@ -167,7 +179,7 @@ export default function AboutMe() {
                 <input
                   type="text"
                   placeholder="City"
-                  value={me.user.city}
+                  value={city}
                   onChange={(e) => setCity(e.target.value)}
                 />
               </div>
@@ -176,7 +188,7 @@ export default function AboutMe() {
                 <input
                   type="text"
                   placeholder="State"
-                  value={me.user.state}
+                  value={state}
                   onChange={(e) => setState(e.target.value)}
                 />
               </div>
@@ -185,7 +197,7 @@ export default function AboutMe() {
                 <input
                   type="text"
                   placeholder="Zipcode"
-                  value={me.user.postal}
+                  value={postal}
                   onChange={(e) => setPostal(e.target.value)}
                 />
               </div>
