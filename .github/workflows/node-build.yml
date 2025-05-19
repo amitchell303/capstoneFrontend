@@ -1,0 +1,32 @@
+name: Build React Vite App
+
+on:
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [22.x]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm i
+
+      - name: Set environment variables
+        run: echo "VITE_API_URL=https://fsa-capstone-backend-9b3e597200f5.herokuapp.com/" >> $GITHUB_ENV
+
+      - name: Build project with Vite
+        run: npm run build
+
+      - name: Start the app
+        run: |
+          npm run start &
+          sleep 10
