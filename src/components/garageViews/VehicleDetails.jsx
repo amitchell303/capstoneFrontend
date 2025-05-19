@@ -11,7 +11,6 @@ export default function VehicleDetails({ car }) {
             <p>Make: {car.make}</p>
             <p>Model: {car.model}</p>
             <p>Drive Type: {car.driveType}</p>
-            <p>Body Class: {car.bodyClass}</p>
             <p>VIN Number: {car.vin}</p>
           </div>
           <img src={car.carImg} alt={`${car.make} ${car.model}`} />
@@ -20,8 +19,8 @@ export default function VehicleDetails({ car }) {
           <div className="performance-container">
             <article className="performance-1">
               <h3>Speed</h3>
-              <p>Charge System:</p>
-              <p>Cylinder Alignment:</p>
+              <p>Top Speed:</p>
+              <p>0-60mph:</p>
             </article>
             <article className="performance-2">
               <h3>MPG</h3>
@@ -36,7 +35,7 @@ export default function VehicleDetails({ car }) {
           </div>
         </section>
         <section className="vd-section-3">
-          <details>
+          <details name="accordian-details">
             <summary>Engine</summary>
             <div className="engine-container">
               <div className="engine-details">
@@ -69,6 +68,41 @@ export default function VehicleDetails({ car }) {
                 <p>Tires: {car.tires}</p>
                 <p>Suspension: {car.suspension}</p>
               </div>
+            </div>
+          </details>
+
+          <details name="accordian-details">
+            <summary>Transmission</summary>
+            <div className="engine-container">
+              <div className="engine-details">
+                <p>Body Class: {car.bodyClass}</p>
+                <p>Engine Type: {car.engineType}</p>
+                <p>Horsepower: {car.horsepower}</p>
+                <p>Torque: {car.torque}</p>
+              </div>
+              <div className="engine-details">
+                <p>Fuel System: {car.fuelSystem}</p>
+                <p>Fuel Type: {car.fuelType}</p>
+                <p>Fuel Capacity: {car.fuelCapacity}</p>
+                <p>Emission Control: {car.emissionControl}</p>
+              </div>
+              <div className="engine-details">
+                <p>Cylinder Alignment: {car.cylinderAlignment}</p>
+                <p>Valves per Cylinder: {car.valvesPerCylinder}</p>
+                <p>Valve Timing: {car.valveTiming}</p>
+                <p>Valve Timing: {car.valveTiming}</p>
+              </div>
+            </div>
+          </details>
+
+          <details name="accordian-details">
+            <summary>Dimensions/Body</summary>
+            <div className="engine-details">
+              <p>Body Class: {car.bodyClass}</p>
+              <p>Engine Type: {car.engineType}</p>
+              <p>Horsepower: {car.horsepower}</p>
+              <p>Torque: {car.torque}</p>
+              <p>Charge System: {car.chargeSystem}</p>
             </div>
           </details>
         </section>

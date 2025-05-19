@@ -58,62 +58,79 @@
 /* ---------- Vehicle Details ---------- */
 .vehicleDetails {
   width: 95rem;
-  height: 40rem;
-  padding: 1rem;
+  margin: 0 auto;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 2rem;
 }
 .vd-section-1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+.vd-1-general p {
+  margin: 0.25rem 0;
+}
+
 .vd-1-general {
   display: flex;
   flex-direction: column;
 }
 .vd-section-1 img {
-  width: 350px;
+  width: 250px;
   height: auto;
-  /* border: 1px solid green; */
+  margin-right: 20rem;
 }
-
-/* .vd-section-2 {
-  border: 1px solid red;
-} */
 .performance-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 1rem;
 }
-
-.performance-1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.performance-container h3 {
+  text-decoration: underline 2px;
 }
-.performance-2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+.performance-1,
+.performance-2,
 .performance-3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex: 1;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+.vd-section-3 details {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid white;
+  overflow: hidden;
 }
 
-.vd-section-3 h3 {
-  margin: 10px;
-  font-size: 40px;
+.vd-section-3 summary {
+  padding: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
 }
+
+.vd-section-3 summary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
+details[open] {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
 .engine-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0 25px;
-}
-.engine-details {
+  flex-wrap: wrap;
+  gap: 1rem;
   padding: 1rem;
-  border: 1px solid red;
+}
+
+.engine-details {
+  flex: 1 1 250px;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
 }
