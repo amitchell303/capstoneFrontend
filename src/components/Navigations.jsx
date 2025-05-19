@@ -54,19 +54,19 @@ export default function Navigations() {
                   </div>
                 </li>
                 {/* Temporary links for dev purposes */}
-                {/* <li>
-                  <NavLink className="navlink" to="/empty">
-                    <p className="link">Comp-emptyGarage</p>
-                  </NavLink>
-                </li> */}
                 <li>
                   <NavLink className="navlink" to="/addVehicle">
                     <p className="link">Comp-addVehicle</p>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className="navlink" to="/allVehicles">
-                    <p className="link">Comp-allVehicles</p>
+                  <NavLink className="navlink" to="/editVehicle">
+                    <p className="link">Comp-editVehicle</p>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="navlink" to="/vehicleDetails">
+                    <p className="link">Comp-vehDetails</p>
                   </NavLink>
                 </li>
                 <li>

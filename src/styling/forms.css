@@ -1,0 +1,122 @@
+.glassmorphism-container {
+  color: whitesmoke;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  animation: modalFadeIn 0.4s ease-out forwards;
+}
+
+.allForms {
+  padding: 0 20px;
+}
+
+.allForms-group {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.allForms-group label {
+  color: #ddd;
+  font-size: 0.85rem;
+}
+.allForms-group input {
+  color: #fff;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  margin: 5px 0;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: border-color 0.3s ease;
+}
+.allForms-group input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: #ff6600;
+}
+
+.allForms button {
+  color: white;
+  padding: 15px 30px;
+  display: block;
+  margin: 2rem auto 20px;
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff6600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.allForms button:hover {
+  background-color: #ff6600cf;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.allForms button:disabled {
+  color: rgb(185, 185, 185);
+  background-color: #ff6600;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* ---------- Edit Vehicle Form ---------- */
+.section-1 {
+  max-width: 300px;
+}
+.section-2 {
+  display: flex;
+  gap: 15px;
+}
+
+.section-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 15px;
+}
+
+.section-4 {
+  max-width: 300px;
+  margin-bottom: 2rem;
+}
+
+/* ---------- Edit Account info Form (EAF) ---------- */
+.EAF-section-1 {
+  display: flex;
+  gap: 15px;
+  max-width: 550px;
+}
+
+.EAF-section-2 {
+  max-width: 550px;
+}
+
+.EAF-section-3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 15px;
+  max-width: 550px;
+}
+
+.EAF-section-4 {
+  max-width: 550px;
+}
+
+.EAF-section-5 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 3fr);
+  grid-column-gap: 15px;
+  max-width: 550px;
+}
+
+/* .EAF-close-icon {
+  problem: CSS is not being applied;
+} */

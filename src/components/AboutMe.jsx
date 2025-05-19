@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import "../App.css";
+import "../styling/forms.css";
 import {
   useAboutMeQuery,
   useUpdateUserMutation,
@@ -99,146 +100,164 @@ export default function AboutMe() {
     }
 
     return (
-      <div className="Updatepage">
-        <button
-          className="closeBtn"
-          type="button"
-          onClick={() => setIsUpdating(false)}
-        >
-          close
-        </button>
-        <h1>Update Info</h1>
-        <form className="updateUserForm" onSubmit={handleUpdateUser}>
-          <table>
-            <tbody>
-              <tr>
-                <td>
-                  <label>First Name</label>
-                  <input
-                    type="text"
-                    placeholder="First Name"
-                    value={firstname}
-                    onChange={(e) => setFirstname(e.target.value)}
-                  />
-                  <label>Last Name</label>
-                  <input
-                    type="text"
-                    placeholder="Last Name"
-                    value={lastname}
-                    onChange={(e) => setLastname(e.target.value)}
-                  />
-                  <label>New Email</label>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <label>New Password </label>
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                  <label>Confirm New Password</label>
-                  <input
-                    type="password"
-                    placeholder="Confirm Password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                  />
-                </td>
-                <td>
-                  <label>Street</label>
-                  <input
-                    type="text"
-                    placeholder="Enter Street"
-                    value={street}
-                    onChange={(e) => setStreet(e.target.value)}
-                  />
-                  <label>City</label>
-                  <input
-                    type="text"
-                    placeholder="City"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                  />
-                  <label>State</label>
-                  <input
-                    type="text"
-                    placeholder="State"
-                    value={state}
-                    onChange={(e) => setState(e.target.value)}
-                  />
-                  <label>Postal</label>
-                  <input
-                    type="text"
-                    placeholder="Zipcode"
-                    value={postal}
-                    onChange={(e) => setPostal(e.target.value)}
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      <div className="content-container">
+        <h1>Update Account</h1>
+        <div className="glassmorphism-container">
           <button
-            className="update-btn"
-            type="submit"
-            disabled={
-              password && confirmPassword && password !== confirmPassword
-            }
+            className="EAF-close-icon"
+            type="button"
+            onClick={() => setIsUpdating(false)}
           >
-            Update
+            <span class="material-symbols-outlined">close_small</span>
           </button>
-        </form>
+          <form className="allForms" onSubmit={handleUpdateUser}>
+            <div className="EAF-section-1">
+              <div className="allForms-group">
+                <label>First Name</label>
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  value={firstname}
+                  onChange={(e) => setFirstname(e.target.value)}
+                />
+              </div>
+              <div className="allForms-group">
+                <label>Last Name</label>
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  value={lastname}
+                  onChange={(e) => setLastname(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="EAF-section-2">
+              <div className="allForms-group">
+                <label>New Email</label>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="EAF-section-3">
+              <div className="allForms-group">
+                <label>New Password </label>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+              <div className="allForms-group">
+                <label>Confirm New Password</label>
+                <input
+                  type="password"
+                  placeholder="Confirm Password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="EAF-section-4">
+              <div className="allForms-group">
+                <label>Street Address</label>
+                <input
+                  type="text"
+                  placeholder="Enter Street Address"
+                  value={street}
+                  onChange={(e) => setStreet(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="EAF-section-5">
+              <div className="allForms-group">
+                <label>City</label>
+                <input
+                  type="text"
+                  placeholder="City"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                />
+              </div>
+              <div className="allForms-group">
+                <label>State</label>
+                <input
+                  type="text"
+                  placeholder="State"
+                  value={state}
+                  onChange={(e) => setState(e.target.value)}
+                />
+              </div>
+              <div className="allForms-group">
+                <label>Postal</label>
+                <input
+                  type="text"
+                  placeholder="Zipcode"
+                  value={postal}
+                  onChange={(e) => setPostal(e.target.value)}
+                />
+              </div>
+            </div>
+            {/* <div className="EAF-section-6"> */}
+            <button
+              className="EAF-update-btn"
+              type="submit"
+              disabled={
+                password && confirmPassword && password !== confirmPassword
+              }
+            >
+              Update
+            </button>
+            {/* </div> */}
+          </form>
+        </div>
       </div>
     );
   }
 
   return (
-    <>
-      <div className="content-container">
-        <div className="accountPage">
-          <section id="accountDetails">
-            <h1>My Account </h1>
-            <div>
-              <p>
-                Name: {me.user.firstname} {me.user.lastname}
-              </p>
+    <div className="content-container">
+      <h1>My Account </h1>
+      <div className="glassmorphism-container">
+        <main className="acctPage">
+          <section className="acctPage-section-1">
+            <div className="acctPage-1a">
+              <h2>
+                {me.user.firstname} {me.user.lastname}
+              </h2>
+            </div>
+            <div className="acctPage-1b">
               <p>Email: {me.user.email}</p>
-              <p>Address:</p>
-              <p>{me.user.street}</p>
-              <p>
-                {me.user.city}, {me.user.state}
-              </p>
-              <p>{me.user.postal}</p>
+              <p>*Link to Update Account/Password form*</p>
+              <p>Street Address:{me.user.street}</p>
+              <p>City: {me.user.city}</p>
+              <p>State:{me.user.state}</p>
+              <p>Zip:{me.user.postal}</p>
             </div>
           </section>
-        </div>
-        <div className="userFeatures">
-          <ul>
-            <li>
-              <button
-                className="update-btn"
-                type="button"
-                onClick={() => setIsUpdating(true)}
-              >
-                Update
-              </button>
-            </li>
-            <li>
-              <button
-                className="delete-btn"
-                type="button"
-                onClick={handleDeleteUser}
-              >
-                Delete Account
-              </button>
-            </li>
-          </ul>
-        </div>
+          <section className="acctPage-section-2">
+            <button
+              className="update-btn"
+              type="button"
+              onClick={() => setIsUpdating(true)}
+            >
+              <span className="material-symbols-outlined">manage_accounts</span>
+            </button>
+
+            <button
+              className="delete-btn"
+              type="button"
+              onClick={handleDeleteUser}
+            >
+              <span className="material-symbols-outlined">delete_forever</span>
+            </button>
+          </section>
+        </main>
       </div>
-    </>
+    </div>
   );
 }

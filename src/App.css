@@ -15,13 +15,9 @@
 }
 
 body {
-  font-family: "Lexend", sans-serif;
-  line-height: 1.5;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #393232;
 }
 
 /*  ----------  Navbar  ----------  */
@@ -171,95 +167,7 @@ body {
   transform: translateY(-2px);
 }
 
-/*  ----------  Content Container  ----------  */
-.content-container {
-  color: rgb(0, 0, 0);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* border: 1px solid rgb(255, 0, 0); */
-}
-
-/*  ----------  Account Page  ----------  */
-.accountPage {
-  border: 1px solid white;
-  border-radius: 5%;
-  background-color: #393232a0;
-  padding: 5%;
-  text-align: center;
-}
-.updateUserForm {
-  font-size: 1rem;
-  color: #fff;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
-  margin-top: 1.5rem;
-}
-.updateUserForm label {
-  font-weight: bold;
-  margin-top: 1rem;
-}
-.updateUserForm input {
-  width: 20rem;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-}
-
-.updateUserForm input:focus {
-  outline: none;
-  border: 2px solid #8e2de2;
-}
-
-.update-btn,
-.delete-btn {
-  color: white;
-  width: 15rem;
-  margin: 0 auto;
-  margin-top: 1rem;
-  padding: 15px 30px;
-  background-color: #8e2de2;
-  border: none;
-  font-size: 16px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-.update-btn:hover {
-  background-color: #4a00e0;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-.update-btn:disabled {
-  color: rgb(185, 185, 185);
-  background-color: #8e2de2;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-.delete-btn {
-  background-color: #dc3545;
-}
-.delete-btn:hover {
-  background-color: #c82333;
-}
-
 /*  ----------  Empty Garage  ----------  */
-.glassmorphism-container {
-  color: whitesmoke;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 3rem;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
-  animation: modalFadeIn 0.4s ease-out forwards;
-}
 
 .emptyGarage-container {
   color: whitesmoke;
@@ -277,152 +185,10 @@ body {
   color: whitesmoke;
 }
 
-/*  ----------  Add Vehicle Form  ----------  */
-.content-container form {
-  color: whitesmoke;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 3rem;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  animation: modalFadeIn 0.4s ease-out forwards;
-}
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.content-container h1 {
-  color: whitesmoke;
-  letter-spacing: 1.5px;
-  font-family: "Gruppo", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  margin-bottom: 20px;
-}
-.form-group {
-  width: 100%;
-  margin: 0;
-}
-
-.form-group label {
-  color: #ddd;
-  margin-bottom: 0.3rem;
-  font-size: 0.85rem;
-}
-
-.form-group input {
-  color: #fff;
-  font-size: 1rem;
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.05);
-  transition: border-color 0.3s ease;
-}
-
-.form-group input:focus {
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: #ff6600;
-}
-
-.content-container form button {
-  color: white;
-  padding: 15px 30px;
-  margin: 0 auto;
-  margin-top: 10px;
-  text-align: center;
-  font-size: 16px;
-  border: none;
-  border-radius: 12px;
-  background-color: #ff6600;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-.content-container form button:hover {
-  background-color: #fd9047;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-.content-container form button:disabled {
-  color: rgb(185, 185, 185);
-  background-color: #8e2de2;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-/*  ----------  Unknown  ----------  */
-.userFeatures {
-  ul {
-    list-style-type: none;
-  }
-}
-.Updatepage {
-  color: #ffffff;
-  background-color: #0000005e;
-  box-shadow: 0 15px 35px #d3a1fe74;
-  border: 0.5px solid rgb(251, 151, 251);
-  width: 30rem;
-  height: auto;
-  padding: 3rem;
-  border-radius: 30px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  form input {
-    width: 100%;
-  }
-  h1 {
-    text-shadow: 1px 1px 1px black;
-  }
-  form table td {
-    margin: 0px 15px;
-  }
-}
-.closeBtn {
-  float: right;
-  padding: 2%;
-  border-radius: 15%;
-}
-
 /*  ----------  All Vehicles Component  ----------  */
-.allVehicles {
-  /* border: solid 3px rgb(0, 255, 51); */
-  width: 85vw;
-  height: 80vh;
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
-}
-.allVehicles h3 {
-  color: whitesmoke;
-  padding: 1rem;
-  margin-left: 3rem;
-  letter-spacing: 1px;
-  font-family: "Gruppo", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 35px;
-}
-
 .card-list {
   width: 50vw;
   height: auto;
-  padding: 2rem;
   display: flex;
   gap: 3rem;
 }
@@ -433,7 +199,7 @@ body {
   padding: 2rem;
   margin: 0 1rem;
   border-radius: 16px;
-  /* border: 1px solid rgba(255, 255, 255, 0.3); */
+  border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
 
@@ -449,17 +215,6 @@ body {
 .card:focus-within {
   box-shadow: 0 0 0 2px #ff6600, 0 10px 60px 0 rgba(0, 0, 0, 0.1);
   transform: translateY(-5px);
-}
-
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 img {
@@ -544,11 +299,55 @@ img {
   font-size: 1rem;
 }
 
-main {
-  padding: 8px;
-  text-align: center;
+/*  ----------  Account Page  ----------  */
+.acctPage {
+  padding: 0.5rem;
+  display: flex;
 }
-.maintenance {
+.acctPage-section-1 {
+  padding: 0.5rem;
+}
+.acctPage-1a {
+  margin: 0 30px 30px 0;
+}
+.acctPage-1a h2 {
+  font-size: xx-large;
+}
+.acctPage-1b p {
+  margin: 0 10px 10px 0;
+}
+.acctPage-section-2 {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.update-btn,
+.delete-btn {
+  color: white;
+  width: 1rem;
+  padding: 15px 30px;
+  margin: 0 0 10px 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.update-btn:hover {
+  color: #009a1f;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.update-btn:disabled {
+  color: rgb(185, 185, 185);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.delete-btn:hover {
+  color: #c82333;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+/* .maintenance {
   width: 100%;
   td {
     width: 48%;
@@ -568,8 +367,4 @@ main {
     margin: 8px;
     padding: 5px;
   }
-  button {
-    margin: 12px 0 35px;
-    padding: 8px 40px;
-  }
-}
+} */

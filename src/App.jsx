@@ -5,14 +5,15 @@ import "./App.css";
 
 import Landing from "./pages/Landing.jsx";
 import Home from "./pages/Home.jsx";
-import AllVehicles from "./pages/Garage.jsx";
 import VehiclePage from "./pages/VehiclePage.jsx";
 import Navigations from "./components/Navigations.jsx";
 import AboutMe from "./components/AboutMe.jsx";
 import SingleUser from "./components/SingleUser.jsx";
 import EmptyGarage from "./components/garageViews/EmptyGarage.jsx";
 import AddVehicle from "./components/forms/AddVehicle.jsx";
+import EditVehicle from "./components/forms/editVehicle.jsx";
 import QuickViews from "./components/garageViews/QuickViews.jsx";
+// import VehicleDetails from "./components/garageViews/vehicleDetails.jsx";
 
 function App() {
   function logout() {
@@ -31,9 +32,10 @@ function App() {
           {/* Temporary routes for development */}
           <Route path="/empty" element={<EmptyGarage />} />
           <Route path="/addVehicle" element={<AddVehicle />} />
-          <Route path="/allVehicles" element={<AllVehicles />} />
+          <Route path="/editVehicle" element={<EditVehicle />} />
           <Route path="/quickViews" element={<QuickViews />} />
           <Route path="/vehicles/:vin" element={<VehiclePage />} />
+          {/* <Route path="/vehicles/:vin" element={<VehicleDetails />} /> */}
         </Routes>
       </Router>
     </Provider>

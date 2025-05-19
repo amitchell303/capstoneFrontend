@@ -5,17 +5,18 @@ import { useParams } from "react-router-dom";
 import { useGetMyCarsQuery } from "../app/carSlice";
 import { useState } from "react";
 import "../styling/garage.css";
+import VehicleDetails from "../components/garageViews/VehicleDetails";
 import Maintenance from "./Maintenance";
 
 export default function VehiclePage() {
   const [activeComp, setActiveComp] = useState("overview");
-  const { data: cars, isLoading, error } = useGetMyCarsQuery();
+  const { data: cars } = useGetMyCarsQuery();
   const { vin } = useParams();
 
   const car = cars?.find((car) => car.vin === vin);
   if (!car) return <p>Vehicle not found.</p>;
 
-  // switch statement utilized to switch between component displays upon nav btn click
+  // switch statement utilized to switch between imported component displays upon nav btn click
   // TO-DO: make and import components
   const renderComp = () => {
     switch (activeComp) {
@@ -29,7 +30,11 @@ export default function VehiclePage() {
           </div>
         );
       case "details":
-        return <div>WIP - Expanded vehicle details</div>;
+        return (
+          <div>
+            <VehicleDetails car={car} />
+          </div>
+        );
       case "service":
         return (
           <div>
@@ -44,42 +49,48 @@ export default function VehiclePage() {
   };
 
   return (
-    <>
-      <div className="vehNav">
-        <ul>
-          <li>
-            <button
-              className="btn-link"
-              onClick={() => setActiveComp("overview")}
-            >
-              Overview
-            </button>
-          </li>
-          <li>
-            <button
-              className="btn-link"
-              onClick={() => setActiveComp("details")}
-            >
-              Details
-            </button>
-          </li>
-          <li>
-            <button
-              className="btn-link"
-              onClick={() => setActiveComp("service")}
-            >
-              Service
-            </button>
-          </li>
-          <li>
-            <button className="btn-link" onClick={() => setActiveComp("notes")}>
-              Notes
-            </button>
-          </li>
-        </ul>
+    <div className="vehiclePage">
+      <div className="glassmorphism-container">
+        <div className="vehNav">
+          <ul>
+            <li>
+              <button
+                className="btn-link"
+                onClick={() => setActiveComp("overview")}
+              >
+                Overview
+              </button>
+            </li>
+            <li>
+              <button
+                className="btn-link"
+                onClick={() => setActiveComp("details")}
+              >
+                Details
+              </button>
+            </li>
+            <li>
+              <button
+                className="btn-link"
+                onClick={() => setActiveComp("service")}
+              >
+                Service
+              </button>
+            </li>
+            <li>
+              <button
+                className="btn-link"
+                onClick={() => setActiveComp("notes")}
+              >
+                Notes
+              </button>
+            </li>
+          </ul>
+          <h1>{car.carName || `${car.make} ${car.model}`}</h1>
+        </div>
       </div>
 
       <div className="glassmorphism-container">{renderComp()}</div>
-    </>
+    </div>
   );
 }
