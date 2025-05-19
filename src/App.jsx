@@ -10,8 +10,8 @@ import Navigations from "./components/Navigations.jsx";
 import AboutMe from "./components/AboutMe.jsx";
 import SingleUser from "./components/SingleUser.jsx";
 import EmptyGarage from "./components/garageViews/EmptyGarage.jsx";
+import EditVehicleForm from "./components/forms/EditVehicle.jsx";
 import AddVehicle from "./components/forms/AddVehicle.jsx";
-import EditVehicle from "./components/forms/editVehicle.jsx";
 import QuickViews from "./components/garageViews/QuickViews.jsx";
 // import VehicleDetails from "./components/garageViews/vehicleDetails.jsx";
 
@@ -32,7 +32,7 @@ function App() {
           {/* Temporary routes for development */}
           <Route path="/empty" element={<EmptyGarage />} />
           <Route path="/addVehicle" element={<AddVehicle />} />
-          <Route path="/editVehicle" element={<EditVehicle />} />
+          <Route path="/editVehicle" element={<EditVehicleForm />} />
           <Route path="/quickViews" element={<QuickViews />} />
           <Route path="/vehicles/:vin" element={<VehiclePage />} />
           {/* <Route path="/vehicles/:vin" element={<VehicleDetails />} /> */}
