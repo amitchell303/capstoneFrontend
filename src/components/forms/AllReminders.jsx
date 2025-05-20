@@ -1,34 +1,40 @@
-import React, { useState, useMemo } from "react";
+import React, { useEffect,useState, useMemo } from "react";
 import {
   useGetAllRemindersQuery,
   useDeleteReminderMutation,
 } from "../../app/reminderSlice"; 
+import { useParams } from "react-router-dom";
 
 const AllReminders = () => {
+  const [search, setSearch] = useState("");
+  const {vin} = useParams();
+  const [deleteReminder, { isLoading: isDeleting }] = useDeleteReminderMutation();
   const {
     isLoading,
-    isError,
     error,
-    data: reminderList = [], // Default to an empty array to prevent errors if data is undefined initially
-  } = useGetAllRemindersQuery();
+    data: reminderList , // Default to an empty array to prevent errors if data is undefined initially
+  } = useGetAllRemindersQuery({testVin: vin});
 
-  const [search, setSearch] = useState("");
- 
 
-  const [deleteReminder, { isLoading: isDeleting }] = useDeleteReminderMutation();
+ const [reminders, setReminders] = useState([]);
+useEffect(() => {
+  if (reminderList) {
+    console.log(reminderList);
+    setReminders(reminderList);
+  }
+}, [reminderList])
+
   
 
-  console.log(reminderList);
-
   // Memoized filtered list of reminders
-  const filteredReminders = useMemo(() => {
-    if (!reminderList || reminderList.length === 0) return [];
-    return reminderList.filter(
-      (reminder) =>
-        reminder.tittle && 
-        reminder.tittle.toLowerCase().includes(search.toLowerCase())
-    );
-  }, [reminderList, search]);
+  // const filteredReminders = useMemo(() => {
+  //   if (!reminders || reminders.length === 0) return [];
+  //   return reminders.filter(
+  //     (reminder) =>
+  //       reminder.tittle && 
+  //       reminder.tittle.toLowerCase().includes(search.toLowerCase())
+  //   );
+  // }, [reminders, search]);
 
   
 
@@ -46,7 +52,7 @@ const AllReminders = () => {
     return <div>Loading reminders...</div>;
   }
 
-  if (isError) {
+  if (error) {
     return (
       <div>
         Error fetching reminders:{" "}
@@ -57,7 +63,7 @@ const AllReminders = () => {
 
   return (
     <>
-      <div className="search-title-container">
+      {/* <div className="search-title-container">
         <div className="row justify-content-center">
           <div className="col-md-6">
             <div className="search-container">
@@ -71,14 +77,14 @@ const AllReminders = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="content-container">
         <div className="reminderPage">
           <article>
             <h2>All Reminders</h2>
-            {filteredReminders.length > 0 ? (
+            {reminders?.length > 0 ? (
               <ul>
-                {filteredReminders.map((reminder) => (
+                {reminders.map((reminder) => (
                   <li key={reminder.id}>
                     <h3>{reminder.tittle}</h3>
                     <p>{reminder.notes}</p>

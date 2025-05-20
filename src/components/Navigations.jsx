@@ -54,7 +54,7 @@ export default function Navigations() {
                   </div>
                 </li>
                 <div className="tooltip">
-                    <NavLink className="navlink" to="/notes">
+                    <NavLink className="navlink" to="/allnotes">
                       <BiSolidBook className="icons" />
                       <p className="link">Create Note</p>
                     </NavLink>

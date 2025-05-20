@@ -3,8 +3,8 @@ import api from "./api";
 const ReminderApi = api.injectEndpoints({
     endpoints: (builder) => ({
         getAllReminders: builder.query({
-            query: () => ({
-                url: `/api/reminder/getAll/car/:vin`,
+            query: ({testVin}) => ({
+                url: `/api/reminder/getAll/car/${testVin}`,
                 method: 'GET',
             }),
             providesTags: ['Reminder'],

@@ -3,6 +3,7 @@ import {
   useCreateReminderMutation,
 } from "../../app/reminderSlice";
 import { useParams } from "react-router-dom";
+import "../../styling/forms.css";
 
 
 
@@ -57,7 +58,7 @@ const AddReminders = () => {
                 
                   <h1>Create a New Reminder</h1>
                 
-                <form className="reminderForm" onSubmit={handleAddReminder}>
+                <form className="allForms" onSubmit={handleAddReminder}>
                   <label>Title</label>
                   <input
                     type="text"
