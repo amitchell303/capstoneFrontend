@@ -17,6 +17,7 @@ export default function AboutMe() {
     console.log(me);
   }
   const [isUpdating, setIsUpdating] = useState(false);
+  const [isNewPassword, setIsNewPassword] = useState(false);
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
@@ -78,6 +79,27 @@ export default function AboutMe() {
     } catch (error) {
       console.error("Failed to delete user:", error);
       alert("Failed to delete user.");
+    }
+  }
+  async function handleNewPassword(e) {
+    e.preventDefault();
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        navigate("/");
+        console.log("No token found, redirecting to login.");
+      } else {
+        const userId = me.user.id;
+        const response = await update({ userId, password }).unwrap();
+        if (response) {
+          alert("User updated successfully!");
+          setPassword("");
+          setConfirmPassword("");
+        }
+      }
+    } catch (error) {
+      console.error("Failed to change user password:", error);
+      alert("Failed to change password.");
     }
   }
 
@@ -187,6 +209,48 @@ export default function AboutMe() {
       </div>
     );
   }
+  if (isNewPassword) {
+    return (
+      <div className="content-container">
+        <h1>Change Password</h1>
+        <div className="glassmorphism-container">
+          <button
+            className="EAF-close-icon"
+            type="button"
+            onClick={() => setIsNewPassword(false)}
+          >
+            <span className="material-symbols-outlined">close_small</span>
+          </button>
+          <form className="allForms" onSubmit={handleNewPassword}>
+            <div className="allForms-group">
+              <label>Password</label>
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <div className="allForms-group">
+              <label>Password</label>
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={isLoading || !password || password !== confirmPassword}
+            >
+              {isLoading ? "Adding..." : "Add Vehicle"}
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="content-container">
@@ -201,7 +265,6 @@ export default function AboutMe() {
             </div>
             <div className="acctPage-1b">
               <p>Email: {me.user.email}</p>
-              <p>*Link to Update Account/Password form*</p>
               <p>Street Address:{me.user.street}</p>
               <p>City: {me.user.city}</p>
               <p>State:{me.user.state}</p>
@@ -223,6 +286,14 @@ export default function AboutMe() {
               onClick={handleDeleteUser}
             >
               <span className="material-symbols-outlined">delete_forever</span>
+            </button>
+            <button
+              className="password-btn"
+              type="button"
+              onClick={() => setIsNewPassword(true)}
+            >
+              {/* <span className="material-symbols-outlined">change_password</span> */}
+              <p>change password</p>
             </button>
           </section>
         </main>
