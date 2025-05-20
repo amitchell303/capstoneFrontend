@@ -2,10 +2,16 @@ import "../App.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useGetLogsQuery, useCreateLogMutation } from "../app/maintenanceSlice";
+import { useGetUpcomingServicesQuery } from "../app/upcomingServiceSlice";
 import { useGetAllUsersQuery } from "../app/userSlice";
 export default function VehiclePage() {
   const { vin } = useParams();
   const { error, isLoading, data: logs } = useGetLogsQuery({ testVin: vin });
+  const {
+    error: error2,
+    isLoading: loading2,
+    data: upcomingServices,
+  } = useGetUpcomingServicesQuery({ testVin: vin });
   const { data: users } = useGetAllUsersQuery();
   const [createLog] = useCreateLogMutation();
   const [milage, setMilage] = useState("");
@@ -17,22 +23,20 @@ export default function VehiclePage() {
 
   useEffect(() => {
     if (users) {
-      console.log("users:", users);
+      //console.log("users:", users);
       const mechanics = users.filter((user) => user.roleId === 2);
       setAllMechanics(mechanics);
-      console.log("mechanics:", mechanics);
+      //console.log("mechanics:", mechanics);
     }
     if (logs) {
-      console.log("logs:", logs);
+      //console.log("logs:", logs);
     }
-  }, [users, logs]);
-  if (isLoading) return <h2>Loading Maintenance Log...</h2>;
-  if (error)
-    return (
-      <>
-        <h2>There was an error loading the maintenance log</h2>
-      </>
-    );
+    if (upcomingServices) {
+      console.log("upcoming services: ", upcomingServices.data);
+    }
+  }, [users, logs, upcomingServices]);
+  if (isLoading || loading2) return <h2>Loading...</h2>;
+  if (error || error2) return <h2>There was an error loading your data.</h2>;
   async function submitMaintenance(e) {
     e.preventDefault();
     try {
@@ -73,15 +77,25 @@ export default function VehiclePage() {
       <h1>M A I N T E N A N C E</h1>
       <main className="maintenance">
         <div className="maintenance-section-1">
-          <h3>Upcoming Service Due</h3>
+          <h3>Upcoming Services:</h3>
+          {upcomingServices.data.length > 0 ? (
+            upcomingServices.data.map((upcomingService) => (
+              <li key={upcomingService.id}>
+                <strong>{upcomingService.serviceType}</strong> at{" "}
+                {upcomingService.targetMileage} miles
+              </li>
+            ))
+          ) : (
+            <h3>This will be the section for upcoming maint./reminders</h3>
+          )}
         </div>
         <div className="maintenance-history">
+          <h3>Maintenance Log:</h3>
           {logs.length > 0 ? (
             logs.map((log) => (
               <li key={log.id}>
                 ${log.serviceCost || "No cost available"}_
-                {log.serviceType || "No description available"}_{log.mileage}
-                miles
+                {log.serviceType || "No description available"}
               </li>
             ))
           ) : (
@@ -91,7 +105,7 @@ export default function VehiclePage() {
         <div className="maintenance-addMaint">
           <form className="allForms" onSubmit={(e) => submitMaintenance(e)}>
             <div>
-              <h3>Add Maintenance</h3>
+              <h3>Add Maintenance:</h3>
             </div>
             <div className="allForms-group">
               <label>Mileage</label>

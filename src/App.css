@@ -202,6 +202,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
+  max-width: 250px;
 
   display: flex;
   flex-direction: column;
@@ -322,7 +323,8 @@ img {
   flex-direction: column;
 }
 .update-btn,
-.delete-btn {
+.delete-btn,
+.password-btn {
   color: white;
   width: 1rem;
   padding: 15px 30px;
@@ -346,6 +348,11 @@ img {
 .delete-btn:hover {
   color: #c82333;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.password-btn:hover {
+  color: rgb(144, 174, 255);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 /* .maintenance {
   width: 100%;

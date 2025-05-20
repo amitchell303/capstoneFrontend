@@ -7,6 +7,9 @@ import { useState } from "react";
 import "../styling/garage.css";
 import VehicleDetails from "../components/garageViews/VehicleDetails";
 import Maintenance from "./Maintenance";
+import AllReminders from "../components/forms/AllReminders.jsx";
+import AddReminders from "../components/forms/AddNote.jsx"
+
 
 export default function VehiclePage() {
   const [activeComp, setActiveComp] = useState("overview");
@@ -42,9 +45,8 @@ export default function VehiclePage() {
           </div>
         );
       case "notes":
-        return <div>WIP - Notes</div>;
-      default:
-        return <div>No components rendered.</div>;
+        return <div><AddReminders /> <AllReminders /></div>;
+      
     }
   };
 

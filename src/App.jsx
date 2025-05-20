@@ -14,6 +14,8 @@ import EditVehicleForm from "./components/forms/EditVehicle.jsx";
 import AddVehicle from "./components/forms/AddVehicle.jsx";
 import QuickViews from "./components/garageViews/QuickViews.jsx";
 // import VehicleDetails from "./components/garageViews/vehicleDetails.jsx";
+import AddReminders from "./components/forms/AddNote.jsx";
+import AllReminders from "./components/forms/AllReminders.jsx";
 
 function App() {
   function logout() {
@@ -28,6 +30,8 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/user/:id" element={<SingleUser />} />
           <Route path="/me" element={<AboutMe />} />
+          
+          
 
           {/* Temporary routes for development */}
           <Route path="/empty" element={<EmptyGarage />} />
@@ -36,6 +40,8 @@ function App() {
           <Route path="/quickViews" element={<QuickViews />} />
           <Route path="/vehicles/:vin" element={<VehiclePage />} />
           {/* <Route path="/vehicles/:vin" element={<VehicleDetails />} /> */}
+          <Route path="/notes" element={<AddReminders />} />
+          <Route path="/allNotes" element={<AllReminders />} />
         </Routes>
       </Router>
     </Provider>
