@@ -1,22 +1,19 @@
-.vehNav {
-  background: rgba(255, 255, 255, 0.1);
-  width: 90rem;
-  padding: 0.75rem;
-  margin: 1rem 0;
-  border-radius: 16px;
-  /* border: 1px solid rgba(255, 255, 255, 0.3); */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  text-decoration: none;
+.vehiclePage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.vehNav ul {
+
+.vehNav {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 90rem;
+}
+
+.vehNav ul {
+  display: flex;
   list-style: none;
-  
 }
 
 .btn-link {
@@ -34,19 +31,15 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-.glassmorphism-container {
-  width: auto;
-  height: 40rem;
-  border: none;
-}
-
 /* ---------- Bento Display ---------- */
 .bento-container {
+  width: 95rem;
+  height: 40rem;
   /* border: 1px solid rgb(255, 0, 230); */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-  margin: 1rem;
+  padding: 5rem;
 }
 
 .bentoItem {
@@ -60,4 +53,93 @@
   padding: 1rem;
   border-radius: 12px;
   color: #fff;
+}
+
+/* ---------- Vehicle Details ---------- */
+.vehicleDetails {
+  width: 95rem;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.vd-section-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.vd-1-general p {
+  margin: 0.25rem 0;
+}
+
+.vd-1-general {
+  display: flex;
+  flex-direction: column;
+}
+.vd-section-1 img {
+  width: 250px;
+  height: auto;
+  margin-right: 20rem;
+}
+.performance-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.performance-container h3 {
+  text-decoration: underline 2px;
+}
+.performance-1,
+.performance-2,
+.performance-3 {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+.vd-section-3 details {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid white;
+  overflow: hidden;
+}
+
+.vd-section-3 summary {
+  padding: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+
+.vd-section-3 summary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
+details[open] {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
+.engine-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.engine-details {
+  flex: 1 1 250px;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* ------ Service Page ----- */
+.maintenance {
+  display: flex;
+}
+.maintenance-section-1 {
+  border: 1px solid pink;
+  width: 15rem;
 }

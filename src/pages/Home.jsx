@@ -18,11 +18,11 @@ function Home() {
 
   useEffect(() => {
     if (!token) {
-      navigate("/login");
+      navigate("/");
     } else {
       if (data) {
         setCars(data);
-        console.log(cars);
+        console.log(data);
       }
     }
   }, [token, navigate, data]);
@@ -76,7 +76,7 @@ function Home() {
   // }
 
   return (
-    <div className="content-container">
+    <div className="content-container1">
       <main>{cars.length > 0 ? <AllVehicles /> : <EmptyGarage />}</main>
     </div>
   );

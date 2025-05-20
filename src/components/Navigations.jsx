@@ -22,12 +22,12 @@ export default function Navigations() {
   function logout() {
     deleteToken();
     dispatch(api.util.resetApiState());
-    navigate("/login");
+    navigate("/");
   }
 
   return (
     <nav className={`sidebar ${isOpen ? "open" : ""}`}>
-      <NavLink className="logo" to="/">
+      <NavLink className="logo" to="/home">
         <img src="src\components\assets\MM logo(2).png" alt="Logo/Home" />
       </NavLink>
       <div className="navlink-container">
@@ -61,19 +61,19 @@ export default function Navigations() {
                     <span className="tooltiptext">Search for Notes</span>
                   </div>
                 {/* Temporary links for dev purposes */}
-                {/* <li>
-                  <NavLink className="navlink" to="/empty">
-                    <p className="link">Comp-emptyGarage</p>
-                  </NavLink>
-                </li> */}
                 <li>
                   <NavLink className="navlink" to="/addVehicle">
                     <p className="link">Comp-addVehicle</p>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className="navlink" to="/allVehicles">
-                    <p className="link">Comp-allVehicles</p>
+                  <NavLink className="navlink" to="/editVehicle">
+                    <p className="link">Comp-editVehicle</p>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="navlink" to="/vehicleDetails">
+                    <p className="link">Comp-vehDetails</p>
                   </NavLink>
                 </li>
                 <li>

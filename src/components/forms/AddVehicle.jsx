@@ -44,25 +44,25 @@ const AddVehicleForm = () => {
   return (
     <div className="content-container">
       <h1>Add Vehicle</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="vin">Enter VIN</label>
-          <input
-            type="text"
-            id="vin"
-            placeholder="VIN number"
-            value={vin}
-            onChange={(e) => setVin(e.target.value)}
-            required
-          />
-        </div>
-
-        <button type="submit" disabled={isLoading}>
-          {isLoading ? "Adding..." : "Add Vehicle"}
-        </button>
-
-        {error && <p>Error: {error.message}</p>}
-      </form>
+      <div className="glassmorphism-container">
+        <form className="allForms" onSubmit={handleSubmit}>
+          <div className="allForms-group">
+            <label htmlFor="vin">Enter VIN</label>
+            <input
+              type="text"
+              id="vin"
+              placeholder="VIN number"
+              value={vin}
+              onChange={(e) => setVin(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? "Adding..." : "Add Vehicle"}
+          </button>
+          {error && <p>Error: {error.message}</p>}
+        </form>
+      </div>
     </div>
   );
 };
