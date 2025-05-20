@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 900px;
 }
 
 .vehNav {
@@ -9,6 +10,7 @@
   flex-direction: row;
   justify-content: space-between;
   width: 90rem;
+  max-width: 890px;
 }
 
 .vehNav ul {
@@ -34,6 +36,7 @@
 /* ---------- Bento Display ---------- */
 .bento-container {
   width: 95rem;
+  max-width: 900px;
   height: 40rem;
   /* border: 1px solid rgb(255, 0, 230); */
   display: grid;
@@ -58,6 +61,7 @@
 /* ---------- Vehicle Details ---------- */
 .vehicleDetails {
   width: 95rem;
+  max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
   display: flex;

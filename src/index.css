@@ -31,7 +31,9 @@ body {
   backdrop-filter: blur(8px);
   animation: modalFadeIn 0.4s ease-out forwards;
 } */
-
+.content-container {
+  max-width: 900px;
+}
 .content-container h1 {
   color: whitesmoke;
   padding: 1rem;
