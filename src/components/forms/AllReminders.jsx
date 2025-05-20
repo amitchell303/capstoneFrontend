@@ -1,36 +1,26 @@
-import { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import {
   useGetAllRemindersQuery,
   useDeleteReminderMutation,
 } from "../../app/reminderSlice"; 
-import { useParams } from "react-router-dom";
-
 
 const AllReminders = () => {
   const {
-    status,
+    isLoading,
     isError,
     error,
     data: reminderList = [], // Default to an empty array to prevent errors if data is undefined initially
   } = useGetAllRemindersQuery();
 
   const [search, setSearch] = useState("");
-  const [deleteReminder, { isLoading: isDeleting }] = useDeleteReminderMutation();
-  const {  } = useParams();
+ 
 
+  const [deleteReminder, { isLoading: isDeleting }] = useDeleteReminderMutation();
   
 
+  console.log(reminderList);
 
-  // Delete Reminder function
-  async function handleDeleteReminder(reminderIdToDelete) {
-    try {
-      await deleteReminder(reminderIdToDelete).unwrap();
-    } catch (err) {
-      console.error("Failed to delete reminder:", err);
-    }
-  }
-
-   // Memoized filtered list of reminders
+  // Memoized filtered list of reminders
   const filteredReminders = useMemo(() => {
     if (!reminderList || reminderList.length === 0) return [];
     return reminderList.filter(
@@ -40,8 +30,20 @@ const AllReminders = () => {
     );
   }, [reminderList, search]);
 
-  if (status === "fufilled") {
-    console.log(reminderList);
+  
+
+  // Delete Reminder function
+  async function handleDeleteReminder(reminderIdToDelete) {
+    try {
+      await deleteReminder(reminderIdToDelete).unwrap();
+      
+    } catch (err) {
+      console.error("Failed to delete reminder:", err);
+    }
+  }
+
+  if (isLoading) {
+    return <div>Loading reminders...</div>;
   }
 
   if (isError) {

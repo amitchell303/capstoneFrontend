@@ -35,9 +35,8 @@ export default function VehiclePage() {
       case "service":
         return <div>WIP - Maintenace/Service</div>;
       case "notes":
-        return <div><RemindersList /><AddReminders /></div>;
-      default:
-        return <div>No components rendered.</div>;
+        return <div><AddReminders /></div>;
+      
     }
   };
 
