@@ -214,6 +214,13 @@ export default function AboutMe() {
       <div className="content-container">
         <h1>Change Password</h1>
         <div className="glassmorphism-container">
+          <button
+            className="EAF-close-icon"
+            type="button"
+            onClick={() => setIsNewPassword(false)}
+          >
+            <span className="material-symbols-outlined">close_small</span>
+          </button>
           <form className="allForms" onSubmit={handleNewPassword}>
             <div className="allForms-group">
               <label>Password</label>
@@ -285,7 +292,8 @@ export default function AboutMe() {
               type="button"
               onClick={() => setIsNewPassword(true)}
             >
-              <span className="material-symbols-outlined">change_password</span>
+              {/* <span className="material-symbols-outlined">change_password</span> */}
+              <p>change password</p>
             </button>
           </section>
         </main>

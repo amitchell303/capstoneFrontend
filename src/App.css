@@ -349,6 +349,7 @@ img {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 .password-btn:hover {
+  color: rgb(144, 174, 255);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
