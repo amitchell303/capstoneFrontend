@@ -322,7 +322,8 @@ img {
   flex-direction: column;
 }
 .update-btn,
-.delete-btn {
+.delete-btn,
+.password-btn {
   color: white;
   width: 1rem;
   padding: 15px 30px;
@@ -346,6 +347,10 @@ img {
 .delete-btn:hover {
   color: #c82333;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.password-btn:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 /* .maintenance {
   width: 100%;
