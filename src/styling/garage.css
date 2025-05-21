@@ -312,9 +312,9 @@ details[open] {
   /* border: 1px solid rgb(238, 255, 0); */
 }
 
-.settings-header {
-  /* border: 1px solid rgb(0, 255, 47); */
-}
+/* .settings-header {
+ border: 1px solid rgb(0, 255, 47); 
+} */
 
 .settings-body {
   width: 100%;
@@ -355,7 +355,7 @@ details[open] {
   padding: 0;
   margin: 1rem 3rem;
   font-family: "Gruppo", sans-serif;
-  font-size: 18px;
+  font-size: 23px;
   font-weight: 400;
   font-style: normal;
   text-decoration: none;
@@ -363,5 +363,4 @@ details[open] {
 
 .settings-links:hover {
   color: #ff6600;
-  text-decoration: underline;
 }

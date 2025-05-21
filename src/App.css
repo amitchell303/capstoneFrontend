@@ -308,7 +308,9 @@ img {
 
 /*  ----------  Account Page  ----------  */
 .acctPage {
-  padding: 0.5rem;
+  width: 50rem;
+  height: 30rem;
+  padding: 1rem;
   display: flex;
 }
 .acctPage-section-1 {

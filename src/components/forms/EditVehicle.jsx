@@ -24,15 +24,15 @@ const EditVehicleForm = () => {
         <div className="section-3">
           <div className="allForms-group">
             <label htmlFor="vin">Make</label>
-            <input type="text" id="vin" placeholder="vin number" disabled />
+            <input type="text" id="vin" placeholder="make" disabled />
           </div>
           <div className="allForms-group">
             <label htmlFor="vin">Model</label>
-            <input type="text" id="vin" placeholder="vin number" disabled />
+            <input type="text" id="vin" placeholder="model" disabled />
           </div>
           <div className="allForms-group">
             <label htmlFor="vin">Year</label>
-            <input type="text" id="vin" placeholder="vin number" disabled />
+            <input type="text" id="vin" placeholder="year" disabled />
           </div>
         </div>
         <div className="section-4">
