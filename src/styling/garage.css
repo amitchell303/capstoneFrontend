@@ -2,15 +2,15 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 900px;
+  /* max-width: 900px; */
 }
 
 .vehNav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 90rem;
-  max-width: 890px;
+  width: 80rem;
+  /* max-width: 890px; */
 }
 
 .vehNav ul {
@@ -35,33 +35,32 @@
 
 /* ---------- Bento Display ---------- */
 .bento-container {
-  width: 95rem;
-  max-width: 900px;
+  width: 80rem;
   height: 40rem;
-  /* border: 1px solid rgb(255, 0, 230); */
+  border: 1px solid rgb(255, 0, 230);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-  padding: 5rem;
+  /* max-width: 900px; */
 }
 
 .bentoItem {
-  /* padding: 3rem;
+  /* 
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 25px;
   backdrop-filter: blur(8px); */
 
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
-  padding: 1rem;
   border-radius: 12px;
   color: #fff;
 }
 
 /* ---------- Vehicle Details ---------- */
 .vehicleDetails {
-  width: 95rem;
-  max-width: 900px;
+  width: 80rem;
+  height: 40rem;
+  /* max-width: 900px; */
   margin: 0 auto;
   padding: 2rem;
   display: flex;
@@ -139,11 +138,31 @@ details[open] {
   border-radius: 8px;
 }
 
-/* ------ Service Page ----- */
+/* ------ Maintenance Page ----- */
 .maintenance {
+  width: 80rem;
+  height: 40rem;
   display: flex;
+  flex-direction: column;
 }
-.maintenance-section-1 {
+.maint-section-1 {
+  display: flex;
+  justify-content: space-between;
+}
+.maint-section-2 {
+  display: flex;
+  justify-content: space-between;
+}
+.maint-2a {
+  border: 1px solid rgb(35, 8, 241);
+  padding: 1rem;
+}
+.maint-2b {
+  border: 1px solid rgb(38, 13, 227);
+  padding: 1rem;
+}
+
+.maint-section-3 {
   border: 1px solid pink;
-  width: 15rem;
+  margin-top: 10rem;
 }

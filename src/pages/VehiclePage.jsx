@@ -4,11 +4,11 @@
 import { useParams } from "react-router-dom";
 import { useGetMyCarsQuery } from "../app/carSlice";
 import { useState } from "react";
-import "../styling/garage.css";
 import VehicleDetails from "../components/garageViews/VehicleDetails";
 import Maintenance from "./Maintenance";
 import AllReminders from "../components/forms/AllReminders.jsx";
 import AddReminders from "../components/forms/AddNote.jsx";
+import "../styling/garage.css";
 
 export default function VehiclePage() {
   const [activeComp, setActiveComp] = useState("overview");
