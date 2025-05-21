@@ -3,8 +3,8 @@ import "../../styling/forms.css";
 const EditVehicleForm = () => {
   return (
     <div className="content-container">
-      <h1>Edit Vehicle</h1>
       <div className="glassmorphism-container">
+        <h1>Edit Vehicle</h1>
         <form className="allForms">
           <div className="section-1">
             <div className="allForms-group">

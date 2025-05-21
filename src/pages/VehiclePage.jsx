@@ -7,6 +7,7 @@ import { useState } from "react";
 import VehicleDetails from "../components/garageViews/VehicleDetails";
 import Maintenance from "./Maintenance";
 import AllReminders from "../components/forms/AllReminders.jsx";
+import VehicleSettings from "../components/garageViews/VehicleSettings.jsx";
 import "../styling/garage.css";
 
 export default function VehiclePage() {
@@ -48,6 +49,12 @@ export default function VehiclePage() {
             <AllReminders />
           </div>
         );
+      case "settings":
+        return (
+          <div>
+            <VehicleSettings />
+          </div>
+        );
     }
   };
 
@@ -86,6 +93,14 @@ export default function VehiclePage() {
                 onClick={() => setActiveComp("notes")}
               >
                 Notes
+              </button>
+            </li>
+            <li>
+              <button
+                className="btn-link"
+                onClick={() => setActiveComp("settings")}
+              >
+                Settings
               </button>
             </li>
           </ul>

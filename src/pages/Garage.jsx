@@ -31,7 +31,7 @@ export default function AllVehicles() {
       <div className="allVehicles-sect-1">
         <h1>My Vehicles</h1>
         <button className="addVehcile-btn">
-          <span class="material-symbols-outlined">add_2</span>
+          <span className="material-symbols-outlined">add_2</span>
         </button>
       </div>
       <div className="card-list">

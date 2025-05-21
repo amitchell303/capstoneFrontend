@@ -70,6 +70,11 @@ export default function Navigations() {
                     <p className="link">Comp-createNote</p>
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink className="navlink" to="/deleteVehicle">
+                    <p className="link">Comp-deleteVehicle</p>
+                  </NavLink>
+                </li>
               </ul>
               <button className="logout-btn" onClick={logout}>
                 LogOut
