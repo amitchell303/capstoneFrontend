@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 const AllReminders = () => {
   const [search, setSearch] = useState("");
-  const {vin, id} = useParams();
+  const {vin} = useParams();
   const [deleteReminder, { isLoading: isDeleting }] = useDeleteReminderMutation();
   const {
     isLoading,
@@ -23,20 +23,14 @@ useEffect(() => {
     setReminders(reminderList);
   }
 }, [reminderList])
-
-  
-
-  
-  async function handleSearch() {
-    try {
-      
-    } catch (error) {
-      
-    }
-  }
-      
-    
-  
+ 
+  const filteredReminders = useMemo(() => {
+    if (!reminders) return [];
+    if (!search) return reminders;
+    return reminders.filter((reminder) =>
+      reminder.tittle.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [reminders, search]);
 
   
 
@@ -84,9 +78,9 @@ useEffect(() => {
         <div className="reminderPage">
           <article>
             <h2>All Reminders</h2>
-            {reminders?.length > 0 ? (
+            {filteredReminders?.length > 0 ? (
               <ul>
-                {reminders.map((reminder) => (
+                {filteredReminders.map((reminder) => (
                   <li key={reminder.id}>
                     <h3>{reminder.tittle}</h3>
                     <p>{reminder.notes}</p>
