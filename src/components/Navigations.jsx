@@ -5,10 +5,9 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 /* Styling imports */
-import "../App.css";
+import "../styling/nav.css";
 import { FaRegUser } from "react-icons/fa6";
 import { BiSolidCarGarage } from "react-icons/bi";
-import { LuPanelRightOpen, LuPanelLeftOpen } from "react-icons/lu";
 
 export default function Navigations() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,82 +25,56 @@ export default function Navigations() {
   }
 
   return (
-    <nav className={`sidebar ${isOpen ? "open" : ""}`}>
+    <nav className="navbar">
       <NavLink className="logo" to="/home">
-        <img src="src\components\assets\MM logo(2).png" alt="Logo/Home" />
+        <img src="../../assets/MM logo(2).png" alt="Logo/Home" />
       </NavLink>
       <div className="navlink-container">
         <ul>
-          {token ? (
-            <>
-              <ul>
-                <li>
-                  <div className="tooltip">
-                    <NavLink className="navlink" to="/me">
-                      <FaRegUser className="icons" />
-                      <p className="link">My Account</p>
-                    </NavLink>
-                    <span className="tooltiptext">Account</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="tooltip">
-                    <NavLink className="navlink" to="/home">
-                      <BiSolidCarGarage className="icons" />
-                      <p className="link">My Garage</p>
-                    </NavLink>
-                    <span className="tooltiptext">Garage</span>
-                  </div>
-                </li>
+          <li>
+            {/* <div className="tooltip"> */}
+            <NavLink className="navlink" to="/me">
+              <FaRegUser className="icons" />
+              <p className="link">My Account</p>
+            </NavLink>
+            {/* <span className="tooltiptext">Account</span> */}
+            {/* </div> */}
+          </li>
+          <li>
+            {/* <div className="tooltip"> */}
+            <NavLink className="navlink" to="/home">
+              <BiSolidCarGarage className="icons" />
+              <p className="link">My Garage</p>
+            </NavLink>
+            {/* <span className="tooltiptext">Garage</span> */}
+            {/* </div> */}
+          </li>
 
-                {/* Temporary links for dev purposes */}
-                <li>
-                  <NavLink className="navlink" to="/addVehicle">
-                    <p className="link">Comp-addVehicle</p>
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="navlink" to="/editVehicle">
-                    <p className="link">Comp-editVehicle</p>
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="navlink" to="/allnotes">
-                    <p className="link">Comp-createNote</p>
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="navlink" to="/deleteVehicle">
-                    <p className="link">Comp-deleteVehicle</p>
-                  </NavLink>
-                </li>
-              </ul>
-              <button className="logout-btn" onClick={logout}>
-                LogOut
-              </button>
-            </>
-          ) : (
-            <>
-              <li>
-                <NavLink className="navlink" to="/register">
-                  Register
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="navlink" to="/login">
-                  Login
-                </NavLink>
-              </li>
-            </>
-          )}
+          {/* Temporary links for dev purposes */}
+          <li>
+            <NavLink className="navlink" to="/addVehicle">
+              <p className="link">addVehicle</p>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="navlink" to="/editVehicle">
+              <p className="link">editVehicle</p>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="navlink" to="/allnotes">
+              <p className="link">createNote</p>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="navlink" to="/deleteVehicle">
+              <p className="link">deleteVehicle</p>
+            </NavLink>
+          </li>
         </ul>
       </div>
-      <button className="toggle-btn" onClick={toggleNavbar}>
-        {isOpen ? (
-          <LuPanelRightOpen className="toggle-icon" />
-        ) : (
-          <LuPanelLeftOpen className="toggle-icon" />
-        )}
+      <button className="logout-btn" onClick={logout}>
+        LogOut
       </button>
     </nav>
   );
