@@ -168,19 +168,52 @@ details[open] {
 }
 
 /* ----- Notes Page ----- */
-.notesPage {
+.notes {
   width: 80rem;
   height: 40rem;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: space-between;
+}
+.notes-title {
+  color: whitesmoke;
+  letter-spacing: 1px;
+  font-family: "Gruppo", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 35px;
 }
 
 .notes-section-1 {
   width: 50rem;
-  border: 1px solid rgb(38, 13, 227);
+  height: 85%;
+  margin-left: 10px;
+  /* border: 1px solid red; */
+  overflow: hidden;
+  scrollbar-width: none;
+}
+.notes-section-1:hover {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(103, 103, 103, 0.337) transparent; /* Firefox: thumb + track */
+}
+/* WebKit browsers (Chrome, Safari, Edge) */
+.notes-section-1::-webkit-scrollbar {
+  width: 8px;
+}
+.notes-section-1::-webkit-scrollbar-track {
+  background: transparent;
+}
+.notes-section-1::-webkit-scrollbar-button {
+  height: 0;
+  width: 0;
+  display: none;
+}
+/* Only show WebKit scrollbar on hover */
+.notes-section-1:not(:hover)::-webkit-scrollbar {
+  width: 0;
 }
 
 .note-list {
@@ -188,10 +221,28 @@ details[open] {
 }
 
 .note-card {
-  /* border: 1px solid rgb(13, 227, 45); */
+  margin: 10px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  border: 1px solid red;
+}
+
+.note-card-info p {
   margin: 10px;
 }
 
+.note-card-btn {
+  align-self: center;
+}
+.note-card-btn button {
+  background: transparent;
+}
+.material-symbols-outlined {
+  color: whitesmoke;
+  background-color: none;
+}
 .notes-section-2 {
   margin: 5rem 0;
 }

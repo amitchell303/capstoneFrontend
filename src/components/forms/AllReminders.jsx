@@ -76,27 +76,34 @@ const AllReminders = () => {
       </div> */}
 
       <div className="content-container">
-        <main className="notesPage">
+        <h2 className="notes-title">All Notes</h2>
+        <main className="notes">
           <div className="notes-section-1">
-            <h1>All Notes</h1>
             {reminders?.length > 0 ? (
               <ul className="note-list">
                 {reminders.map((reminder) => (
                   <li key={reminder.id} className="note-card">
-                    <h2>{reminder.tittle}</h2>
-                    <small>
-                      {new Date(reminder.createdAt).toLocaleString()}
-                    </small>
-                    <p>{reminder.notes}</p>
-                    {reminder.car && (
-                      <p>Associated Car: {reminder.car_id || reminder.car}</p>
-                    )}
-                    <button
-                      onClick={() => handleDeleteReminder(reminder.id)}
-                      disabled={isDeleting}
-                    >
-                      {isDeleting ? "Deleting..." : "Delete"}
-                    </button>
+                    <div className="note-card-info">
+                      <h2>{reminder.tittle}</h2>
+                      <small>
+                        {new Date(reminder.createdAt).toLocaleString()}
+                      </small>
+                      <p>{reminder.notes}</p>
+                      {reminder.car && (
+                        <p>Associated Car: {reminder.car_id || reminder.car}</p>
+                      )}
+                    </div>
+                    <div className="note-card-btn">
+                      <button
+                        onClick={() => handleDeleteReminder(reminder.id)}
+                        disabled={isDeleting}
+                      >
+                        {/* {isDeleting ? "Deleting..." : "Delete"} */}
+                        <span className="material-symbols-outlined">
+                          delete
+                        </span>
+                      </button>
+                    </div>
                   </li>
                 ))}
               </ul>
