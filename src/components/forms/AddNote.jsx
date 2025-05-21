@@ -65,7 +65,7 @@ const AddReminders = () => {
               <label>Description</label>
               <input
                 type="text"
-                placeholder="Enter note here"
+                placeholder="Note details"
                 value={reminderInput}
                 onChange={(e) => setReminderInput(e.target.value)}
               />
