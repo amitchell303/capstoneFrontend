@@ -1,4 +1,33 @@
+.reminderPage .Width40 {
+  padding: 55px 30px; 
+}
 
+.reminderPage .Width40 > h1 { 
+  text-align: center;
+  color: #5391ce; 
+  margin-bottom: 50px;
+  margin-top: 20px;
+  font-size: 2rem;  
+  font-weight: 600;
+}
+
+.reminderPage .Width40 form.allForms input[type="text"] {
+  width: 100%;
+  padding: 12px 18px; /* Increased padding */
+  border: 1px solid #ced4da; /* Standard Bootstrap border */
+  border-radius: 8px;      /* Softer rounded corners */
+  background-color: #ffffff;
+  font-size: 1rem;
+  color: #343a40;
+  transition: border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  box-sizing: border-box;
+  margin-bottom: 20px; /* Space after each input, before the next label or button */
+}
+
+.reminderPage .Width40 form.allForms button[type="submit"]:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
 
 /* Search Box Styling  */
 
