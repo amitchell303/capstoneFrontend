@@ -111,7 +111,7 @@ const AllReminders = () => {
               <p>No reminders found{search ? " matching your search." : "."}</p>
             )}
           </div>
-          <div class="floating-divider"></div>
+          <div className="floating-divider"></div>
           <div className="notes-section-2">
             <AddReminders />
           </div>

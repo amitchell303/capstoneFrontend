@@ -85,20 +85,23 @@ export default function VehiclePage() {
           </button>
           {showAMFModal && (
             <div
-              className="modal-overlay"
+              className="garage-modal-overlay"
               onClick={(e) => {
-                if (e.target.classList.contains("modal-overlay")) {
+                if (e.target.classList.contains("garage-modal-overlay")) {
                   setshowAMFModal(false);
                 }
               }}
             >
-              <AddMaint />
-              <button
-                className="closeModal-btn"
-                onClick={() => setShowAMFModal(false)}
-              >
-                ×
-              </button>
+              {" "}
+          
+                <AddMaint />
+                <button
+                  className="garage-closeModal-btn"
+                  onClick={() => setShowAMFModal(false)}
+                >
+                  ×
+                </button>
+          
             </div>
           )}
         </div>

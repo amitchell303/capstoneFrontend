@@ -28,7 +28,12 @@ export default function AllVehicles() {
 
   return (
     <div className="content-container">
-      <h1>My Vehicles</h1>
+      <div className="allVehicles-sect-1">
+        <h1>My Vehicles</h1>
+        <button className="addVehcile-btn">
+          <span class="material-symbols-outlined">add_2</span>
+        </button>
+      </div>
       <div className="card-list">
         {cars.map((car) => (
           <article className="card" key={car.vin}>
@@ -45,21 +50,7 @@ export default function AllVehicles() {
                 </p>
               </div>
               <button className="icon-button">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  display="block"
-                  id="Heart"
-                >
-                  <path d="M7 3C4.239 3 2 5.216 2 7.95c0 2.207.875 7.445 9.488 12.74a.985.985 0 0 0 1.024 0C21.125 15.395 22 10.157 22 7.95 22 5.216 19.761 3 17 3s-5 3-5 3-2.239-3-5-3z" />
-                </svg>
+                <span className="material-symbols-outlined">edit</span>
               </button>
             </div>
             <div className="card-footer">

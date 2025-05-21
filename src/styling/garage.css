@@ -226,7 +226,7 @@ details[open] {
   display: flex;
   justify-content: space-between;
   align-content: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .note-card-info p {
@@ -238,11 +238,16 @@ details[open] {
 }
 .note-card-btn button {
   background: transparent;
-}
-.material-symbols-outlined {
+  border: none;
   color: whitesmoke;
-  background-color: none;
 }
+.note-card-btn button:hover {
+  background: transparent;
+  border: none;
+  color: #ff6600;
+  cursor: pointer;
+}
+
 .notes-section-2 {
   margin: 5rem 0;
 }
@@ -253,4 +258,44 @@ details[open] {
   margin: 0;
   background-color: #ff6600;
   align-self: center;
+}
+
+/*  Modals  */
+.garage-modal-overlay {
+  position: fixed;
+  inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0 */
+  background-color: rgba(0, 0, 0, 0.642);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  animation: garageModalOverlayFadeIn 0.3s ease-out;
+}
+
+.garage-modal {
+  background: #18181829;
+  border-radius: 25px;
+  animation: garageModalFadeIn 0.3s ease-out;
+  position: relative;
+}
+
+.garage-modal h1 {
+  color: whitesmoke;
+  letter-spacing: 1.5px;
+  font-family: "Gruppo", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  margin-bottom: 20px;
+}
+.garage-closeModal-btn {
+  position: relative;
+  top: -15rem;
+  right: -1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #3d3d3d;
 }

@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 /* Styling imports */
 import "../App.css";
 import { FaRegUser } from "react-icons/fa6";
-import { BiSolidCarGarage, BiSolidBook } from "react-icons/bi";
+import { BiSolidCarGarage } from "react-icons/bi";
 import { LuPanelRightOpen, LuPanelLeftOpen } from "react-icons/lu";
 
 export default function Navigations() {
@@ -53,13 +53,7 @@ export default function Navigations() {
                     <span className="tooltiptext">Garage</span>
                   </div>
                 </li>
-                <div className="tooltip">
-                    <NavLink className="navlink" to="/allnotes">
-                      <BiSolidBook className="icons" />
-                      <p className="link">Create Note</p>
-                    </NavLink>
-                    <span className="tooltiptext">Search for Notes</span>
-                  </div>
+
                 {/* Temporary links for dev purposes */}
                 <li>
                   <NavLink className="navlink" to="/addVehicle">
@@ -69,6 +63,11 @@ export default function Navigations() {
                 <li>
                   <NavLink className="navlink" to="/editVehicle">
                     <p className="link">Comp-editVehicle</p>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="navlink" to="/allnotes">
+                    <p className="link">Comp-createNote</p>
                   </NavLink>
                 </li>
               </ul>

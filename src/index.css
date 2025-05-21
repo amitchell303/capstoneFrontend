@@ -58,7 +58,19 @@ html {
     transform: scale(1);
   }
 }
-/* riseUp animation */
+
+@keyframes modalOverlayFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* landing page car riseUp animation */
 @keyframes riseUp {
   to {
     bottom: -35%;
@@ -76,7 +88,19 @@ html {
     opacity: 1;
   }
 }
-@keyframes modalOverlayFadeIn {
+
+@keyframes garageModalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes garageModalOverlayFadeIn {
   from {
     opacity: 0;
     transform: scale(0.95);

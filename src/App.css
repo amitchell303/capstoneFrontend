@@ -179,7 +179,7 @@
   color: whitesmoke;
 }
 
-/*  ----------  All Vehicles Component  ----------  */
+/*  ----------  All Vehicles Page  ----------  */
 .card-list {
   width: 50vw;
   height: auto;
@@ -200,8 +200,6 @@
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-items: center;
   position: relative;
   transition: 0.15s ease-in;
   animation: modalFadeIn 0.4s ease-out forwards;
@@ -209,7 +207,6 @@
 .card:hover,
 .card:focus-within {
   box-shadow: 0 0 0 2px #ff6600, 0 10px 60px 0 rgba(0, 0, 0, 0.1);
-  transform: translateY(-5px);
 }
 
 img {
@@ -254,7 +251,7 @@ img {
 
 .icon-button {
   border: 0;
-  background-color: #fff;
+  background-color: whitesmoke;
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
@@ -269,12 +266,7 @@ img {
   cursor: pointer;
   color: #565656;
 
-  svg {
-    width: 1em;
-    height: 1em;
-  }
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: #ff6600;
     color: #fff;
   }
@@ -292,6 +284,26 @@ img {
   font-family: "Gruppo", sans-serif;
   font-weight: 500;
   font-size: 1rem;
+}
+
+.allVehicles-sect-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.addVehcile-btn {
+  color: rgba(245, 245, 245, 0.785);
+  width: 35px;
+  height: 35px;
+  margin-top: 10px;
+  margin-right: 20px;
+  border: none;
+  background-color: transparent;
+}
+.addVehcile-btn:hover {
+  color: #ff822f;
+  cursor: pointer;
 }
 
 /*  ----------  Account Page  ----------  */
