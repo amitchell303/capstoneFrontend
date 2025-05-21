@@ -4,6 +4,7 @@ import {
   useDeleteReminderMutation,
 } from "../../app/reminderSlice"; 
 import { useParams } from "react-router-dom";
+import "../../styling/AllReminders.css"; // <-- IMPORT THE NEW CSS FILE
 
 const AllReminders = () => {
   const [search, setSearch] = useState("");
@@ -83,12 +84,12 @@ useEffect(() => {
                 {filteredReminders.map((reminder) => (
                   <li key={reminder.id}>
                     <h3>{reminder.tittle}</h3>
-                    <p>{reminder.notes}</p>
-                    <p>
+                    <p className="reminder-notes">{reminder.notes}</p> {/* Optional: class for notes if needed */}
+                    <p className="reminder-meta">
                       Created:{" "}
                       {new Date(reminder.createdAt).toLocaleString()}
                     </p>
-                    {reminder.car && <p>Associated Car: {reminder.car_id || reminder.car}</p> /* Adjust based on your car data structure */}
+                    {reminder.car && <p className="reminder-meta">Associated Car: {reminder.car_id || reminder.car}</p>}
                     <button
                       onClick={() => handleDeleteReminder(reminder.id)}
                       disabled={isDeleting}
