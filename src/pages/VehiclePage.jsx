@@ -7,7 +7,6 @@ import { useState } from "react";
 import VehicleDetails from "../components/garageViews/VehicleDetails";
 import Maintenance from "./Maintenance";
 import AllReminders from "../components/forms/AllReminders.jsx";
-import AddReminders from "../components/forms/AddNote.jsx";
 import "../styling/garage.css";
 
 export default function VehiclePage() {
@@ -47,7 +46,6 @@ export default function VehiclePage() {
         return (
           <div>
             <AllReminders />
-            <AddReminders />
           </div>
         );
     }

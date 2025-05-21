@@ -1,48 +1,44 @@
-import React, { useEffect,useState, useMemo } from "react";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import {
   useGetAllRemindersQuery,
   useDeleteReminderMutation,
-} from "../../app/reminderSlice"; 
-import { useParams } from "react-router-dom";
+} from "../../app/reminderSlice";
+import AddReminders from "./AddNote.jsx";
 
 const AllReminders = () => {
   const [search, setSearch] = useState("");
-  const {vin} = useParams();
-  const [deleteReminder, { isLoading: isDeleting }] = useDeleteReminderMutation();
+  const { vin } = useParams();
+  const [deleteReminder, { isLoading: isDeleting }] =
+    useDeleteReminderMutation();
   const {
     isLoading,
     error,
-    data: reminderList , // Default to an empty array to prevent errors if data is undefined initially
-  } = useGetAllRemindersQuery({testVin: vin});
+    data: reminderList, // Default to an empty array to prevent errors if data is undefined initially
+  } = useGetAllRemindersQuery({ testVin: vin });
 
-
- const [reminders, setReminders] = useState([]);
-useEffect(() => {
-  if (reminderList) {
-    console.log(reminderList);
-    setReminders(reminderList);
-  }
-}, [reminderList])
-
-  
+  const [reminders, setReminders] = useState([]);
+  useEffect(() => {
+    if (reminderList) {
+      console.log(reminderList);
+      setReminders(reminderList);
+    }
+  }, [reminderList]);
 
   // Memoized filtered list of reminders
   // const filteredReminders = useMemo(() => {
   //   if (!reminders || reminders.length === 0) return [];
   //   return reminders.filter(
   //     (reminder) =>
-  //       reminder.tittle && 
+  //       reminder.tittle &&
   //       reminder.tittle.toLowerCase().includes(search.toLowerCase())
   //   );
   // }, [reminders, search]);
-
-  
 
   // Delete Reminder function
   async function handleDeleteReminder(reminderIdToDelete) {
     try {
       await deleteReminder(reminderIdToDelete).unwrap();
-      
     } catch (err) {
       console.error("Failed to delete reminder:", err);
     }
@@ -78,21 +74,23 @@ useEffect(() => {
           </div>
         </div>
       </div> */}
+
       <div className="content-container">
-        <div className="reminderPage">
-          <article>
-            <h2>All Reminders</h2>
+        <main className="notesPage">
+          <div className="notes-section-1">
+            <h1>All Notes</h1>
             {reminders?.length > 0 ? (
-              <ul>
+              <ul className="note-list">
                 {reminders.map((reminder) => (
-                  <li key={reminder.id}>
-                    <h3>{reminder.tittle}</h3>
-                    <p>{reminder.notes}</p>
-                    <p>
-                      Created:{" "}
+                  <li key={reminder.id} className="note-card">
+                    <h2>{reminder.tittle}</h2>
+                    <small>
                       {new Date(reminder.createdAt).toLocaleString()}
-                    </p>
-                    {reminder.car && <p>Associated Car: {reminder.car_id || reminder.car}</p> /* Adjust based on your car data structure */}
+                    </small>
+                    <p>{reminder.notes}</p>
+                    {reminder.car && (
+                      <p>Associated Car: {reminder.car_id || reminder.car}</p>
+                    )}
                     <button
                       onClick={() => handleDeleteReminder(reminder.id)}
                       disabled={isDeleting}
@@ -105,8 +103,12 @@ useEffect(() => {
             ) : (
               <p>No reminders found{search ? " matching your search." : "."}</p>
             )}
-          </article>
-        </div>
+          </div>
+          <div class="floating-divider"></div>
+          <div className="notes-section-2">
+            <AddReminders />
+          </div>
+        </main>
       </div>
     </>
   );

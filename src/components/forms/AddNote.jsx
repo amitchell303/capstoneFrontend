@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useCreateReminderMutation } from "../../app/reminderSlice";
 import { useParams } from "react-router-dom";
 import "../../styling/forms.css";
@@ -62,7 +62,7 @@ const AddReminders = () => {
               />
             </div>
             <div className="allForms-group">
-              <label>Reminder</label>
+              <label>Description</label>
               <input
                 type="text"
                 placeholder="Type Reminder Here"
@@ -71,7 +71,7 @@ const AddReminders = () => {
               />
             </div>
             <button type="submit" disabled={isLoading}>
-              {isLoading ? "Adding..." : "Add Reminder"}
+              {isLoading ? "Adding..." : "Add Note"}
             </button>
           </form>
         </div>

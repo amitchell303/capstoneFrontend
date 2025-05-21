@@ -166,3 +166,40 @@ details[open] {
   border: 1px solid pink;
   margin-top: 10rem;
 }
+
+/* ----- Notes Page ----- */
+.notesPage {
+  width: 80rem;
+  height: 40rem;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.notes-section-1 {
+  width: 50rem;
+  border: 1px solid rgb(38, 13, 227);
+}
+
+.note-list {
+  list-style: none;
+}
+
+.note-card {
+  /* border: 1px solid rgb(13, 227, 45); */
+  margin: 10px;
+}
+
+.notes-section-2 {
+  margin: 5rem 0;
+}
+
+.floating-divider {
+  width: 0.1rem;
+  height: 95%;
+  margin: 0;
+  background-color: #ff6600;
+  align-self: center;
+}
