@@ -15,6 +15,8 @@ import AddVehicle from "./components/forms/AddVehicle.jsx";
 import AddReminders from "./components/forms/AddNote.jsx";
 import AllReminders from "./components/forms/AllReminders.jsx";
 import DeleteVehicle from "./components/forms/DeleteVehicle.jsx";
+import Faq from "./pages/Faq.jsx";
+import Build from "./pages/Build.jsx";
 
 function App() {
   function logout() {
@@ -27,8 +29,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/user/:id" element={<SingleUser />} />
           <Route path="/me" element={<AboutMe />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/build" element={<Build />} />
 
           {/* Temporary routes for development */}
           <Route path="/empty" element={<EmptyGarage />} />

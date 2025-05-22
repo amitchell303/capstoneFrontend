@@ -1,4 +1,3 @@
-import { useState } from "react";
 import api from "../app/api";
 import { deleteToken, getToken } from "../app/tokenService";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -8,16 +7,17 @@ import { useDispatch } from "react-redux";
 import "../styling/nav.css";
 import { FaRegUser } from "react-icons/fa6";
 import { BiSolidCarGarage } from "react-icons/bi";
+import { MdLogout } from "react-icons/md";
+import { FaQuestion } from "react-icons/fa6";
+import { TbHeartCode } from "react-icons/tb";
+import { TbDatabaseHeart } from "react-icons/tb";
+import { GoCodescan } from "react-icons/go";
 
 export default function Navigations() {
-  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const token = getToken();
 
-  function toggleNavbar() {
-    setIsOpen(!isOpen);
-  }
   function logout() {
     deleteToken();
     dispatch(api.util.resetApiState());
@@ -26,56 +26,60 @@ export default function Navigations() {
 
   return (
     <nav className="navbar">
-      <NavLink className="logo" to="/home">
-        <img src="../../assets/MM logo(2).png" alt="Logo/Home" />
-      </NavLink>
-      <div className="navlink-container">
-        <ul>
-          <li>
-            {/* <div className="tooltip"> */}
-            <NavLink className="navlink" to="/me">
-              <FaRegUser className="icons" />
-              <p className="link">My Account</p>
-            </NavLink>
-            {/* <span className="tooltiptext">Account</span> */}
-            {/* </div> */}
-          </li>
-          <li>
-            {/* <div className="tooltip"> */}
-            <NavLink className="navlink" to="/home">
-              <BiSolidCarGarage className="icons" />
-              <p className="link">My Garage</p>
-            </NavLink>
-            {/* <span className="tooltiptext">Garage</span> */}
-            {/* </div> */}
-          </li>
-
-          {/* Temporary links for dev purposes */}
-          <li>
-            <NavLink className="navlink" to="/addVehicle">
-              <p className="link">addVehicle</p>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="navlink" to="/editVehicle">
-              <p className="link">editVehicle</p>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="navlink" to="/allnotes">
-              <p className="link">createNote</p>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="navlink" to="/deleteVehicle">
-              <p className="link">deleteVehicle</p>
-            </NavLink>
-          </li>
-        </ul>
+      {/* <div className="glassmorphism-container"> */}
+      <div className="nav-sect-1">
+        <NavLink to="/home">
+          <img src="src\components\assets\MM logo(2).png" alt="Logo/Home" />
+        </NavLink>
       </div>
-      <button className="logout-btn" onClick={logout}>
-        LogOut
-      </button>
+      <div className="nav-sect-2">
+        <div className="nav-group">
+          <NavLink to="/me">
+            <FaRegUser className="icons" />
+            <p>Account</p>
+          </NavLink>
+        </div>
+        <div className="nav-group">
+          <NavLink to="/home">
+            <BiSolidCarGarage className="icons" />
+            <p>Garage</p>
+          </NavLink>
+        </div>
+        <div className="nav-group">
+          <NavLink to="/faq">
+            <FaQuestion className="icons" />
+            <p>FAQ</p>
+          </NavLink>
+        </div>
+        <div className="nav-group">
+          <NavLink to="/build">
+            {/* <TbHeartCode className="icons"/> */}
+            <TbDatabaseHeart className="icons" />
+            {/* <GoCodescan className="icons" /> */}
+            <p>Build</p>
+          </NavLink>
+        </div>
+
+        {/* Temporary links for dev purposes */}
+        {/* <NavLink to="/addVehicle">
+          <p>addVehicle</p>
+        </NavLink>
+        <NavLink to="/editVehicle">
+          <p>editVehicle</p>
+        </NavLink>
+        <NavLink to="/allnotes">
+          <p>createNote</p>
+        </NavLink>
+        <NavLink to="/deleteVehicle">
+          <p>deleteVehicle</p>
+        </NavLink> */}
+      </div>
+      <div>
+        <button className="logout-btn" onClick={logout}>
+          <MdLogout />
+        </button>
+      </div>
+      {/* </div> */}
     </nav>
   );
 }
