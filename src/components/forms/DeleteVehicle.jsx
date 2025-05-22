@@ -45,11 +45,11 @@ const DeleteVehicle = ({ car }) => {
               checked={confirmDelete}
               onChange={(e) => setConfirmDelete(e.target.checked)}
             />
-            Confirm deletion
+            Confirm
           </label>
 
           <button type="submit" disabled={isLoading}>
-            {isLoading ? "Deleting..." : "Remove"}
+            {isLoading ? "Removing..." : "Remove"}
           </button>
           {isSuccess && <p>Vehicle successfully deleted.</p>}
           {isError && <p>Failed to delete vehicle.</p>}

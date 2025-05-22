@@ -4,7 +4,7 @@ import {
   useGetAllRemindersQuery,
   useDeleteReminderMutation,
 } from "../../app/reminderSlice";
-import AddReminders from "./AddNote.jsx";
+import AddReminders from "../forms/AddNote";
 
 const AllReminders = () => {
   const [search, setSearch] = useState("");

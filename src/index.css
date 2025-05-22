@@ -9,19 +9,9 @@ html {
   background-color: #181818;
   background-size: cover;
   background-image: url(src/components/assets/grey.jpg);
-  /* background-image: url(src/components/assets/green.jpg); */
 }
 
 /*  ----------  Content Container  ----------  */
-/* .content-container {
-  color: whitesmoke;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid rgb(255, 0, 195);
-  max-width: 900px;
-} */
 
 .glassmorphism-container {
   color: whitesmoke;
@@ -29,12 +19,8 @@ html {
   padding: 1rem;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(15px);
   animation: modalFadeIn 0.4s ease-out forwards;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center; */
   /* max-width: 900px; */
 }
 

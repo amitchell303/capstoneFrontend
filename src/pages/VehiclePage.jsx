@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { useGetMyCarsQuery } from "../app/carSlice";
 import { useState } from "react";
 import Maintenance from "./Maintenance";
-import AllReminders from "../components/forms/AllReminders.jsx";
+import AllReminders from "../components/garageViews/AllReminders.jsx";
 import VehicleDetails from "../components/garageViews/VehicleDetails";
 import VehicleSettings from "../components/garageViews/VehicleSettings.jsx";
 import "../styling/garage.css";

@@ -93,15 +93,13 @@ export default function VehiclePage() {
               }}
             >
               {" "}
-          
-                <AddMaint />
-                <button
-                  className="garage-closeModal-btn"
-                  onClick={() => setShowAMFModal(false)}
-                >
-                  ×
-                </button>
-          
+              <AddMaint />
+              <button
+                className="garage-closeModal-btn"
+                onClick={() => setShowAMFModal(false)}
+              >
+                ×
+              </button>
             </div>
           )}
         </div>
