@@ -51,7 +51,7 @@ export default function VehiclePage() {
       case "settings":
         return (
           <div className="glassmorphism-container">
-            <VehicleSettings />
+            <VehicleSettings car={car} />
           </div>
         );
     }

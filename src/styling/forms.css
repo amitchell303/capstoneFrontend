@@ -106,3 +106,23 @@
 /* .EAF-close-icon {
   problem: CSS is not being applied;
 } */
+
+/* ----- Remove Vehicle ----- */
+.remove-vehicle {
+  width: 30rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid green; */
+}
+
+.remove-vehicle-1 {
+  margin: 0 40px;
+  margin: 1rem 4.5rem;
+  padding: 1rem;
+  /* border: 1px solid green; */
+}
+
+.remove-vehicle-2 input {
+  margin: 0.5rem 0.5rem 0 9rem;
+}

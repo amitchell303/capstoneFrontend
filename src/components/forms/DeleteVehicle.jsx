@@ -1,18 +1,60 @@
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDeleteVehicleMutation } from "../../app/carSlice";
 import "../../styling/forms.css";
 
-const DeleteVehicle = () => {
+const DeleteVehicle = ({ car }) => {
+  const [confirmDelete, setConfirmDelete] = useState(false);
+  const [deleteVehicle, { isLoading, isSuccess, isError }] =
+    useDeleteVehicleMutation();
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!confirmDelete) {
+      alert("Please confirm deletion by checking the box.");
+      return;
+    }
+    try {
+      await deleteVehicle(vin).unwrap();
+    } catch (error) {
+      console.error("Failed to delete vehicle:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (isSuccess) {
+      navigate("/home");
+    }
+  }, [isSuccess, navigate]);
+
   return (
     <div className="content-container">
-      <h1>Delete Vehicle</h1>
-      <form className="allForms">
-        <div className="section-1">
-          <div className="allForms-group">
-            <label>Enter "DELETE/(car vin)"</label>
-            <input type="text" placeholder="DELETE/(CAR VIN)" />
-          </div>
+      <main className="remove-vehicle">
+        <h1>Remove Vehicle</h1>
+        <div className="remove-vehicle-1">
+          <strong>
+            {car.make} {car.model} {car.vin}
+          </strong>
         </div>
-        <button type="submit">Delete</button>
-      </form>
+        <form className="allForms" onSubmit={handleSubmit}>
+          <label className="remove-vehicle-2">
+            <input
+              type="checkbox"
+              checked={confirmDelete}
+              onChange={(e) => setConfirmDelete(e.target.checked)}
+            />
+            Confirm deletion
+          </label>
+
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? "Deleting..." : "Remove"}
+          </button>
+          {isSuccess && <p>Vehicle successfully deleted.</p>}
+          {isError && <p>Failed to delete vehicle.</p>}
+        </form>
+      </main>
     </div>
   );
 };

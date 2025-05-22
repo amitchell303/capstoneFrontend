@@ -3,7 +3,7 @@ import settingsIcon from "../assets/gear-svgrepo-com.svg";
 import EditVehicleForm from "../forms/EditVehicle";
 import DeleteVehicle from "../forms/DeleteVehicle";
 
-export default function VehicleSettings() {
+export default function VehicleSettings({ car }) {
   const [activeComp, setActiveComp] = useState("settings");
 
   const renderComp = () => {
@@ -29,7 +29,7 @@ export default function VehicleSettings() {
       case "remove":
         return (
           <div>
-            <DeleteVehicle />
+            <DeleteVehicle car={car} />
           </div>
         );
     }
