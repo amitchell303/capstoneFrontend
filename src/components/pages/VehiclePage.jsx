@@ -2,14 +2,14 @@
 // for vehicle specific expanded view pages, and the container for the various component Displays.
 
 import { useParams } from "react-router-dom";
-import { useGetMyCarsQuery } from "../app/carSlice";
+import { useGetMyCarsQuery } from "../../app/carSlice.js";
 import { useState } from "react";
-import Maintenance from "./Maintenance";
-import AllReminders from "../components/garageViews/AllReminders.jsx";
-import VehicleDetails from "../components/garageViews/VehicleDetails";
-import VehicleSettings from "../components/garageViews/VehicleSettings.jsx";
-import "../styling/garage.css";
-import Overview from "../components/garageViews/Overview.jsx";
+import Overview from "../garageViews/Overview.jsx";
+import VehicleDetails from "../garageViews/VehicleDetails.jsx";
+import Maintenance from "./Maintenance.jsx";
+import AllReminders from "../garageViews/AllReminders.jsx";
+import VehicleSettings from "../garageViews/VehicleSettings.jsx";
+import "../../styling/garage.css";
 
 export default function VehiclePage() {
   const [activeComp, setActiveComp] = useState("overview");

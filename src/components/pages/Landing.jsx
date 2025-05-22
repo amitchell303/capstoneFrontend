@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Login from "../components/forms/Login";
-import Registration from "../components/forms/Registration";
-import "../styling/landing.css";
+import Login from "../forms/Login";
+import Registration from "../forms/Registration";
+import "../../styling/landing.css";
 
 export default function Landing() {
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -29,7 +29,7 @@ export default function Landing() {
         </p>
       </div>
       <div className="animation">
-        <img src="src/components/assets/bmwbkgd.jpg" alt="BMW M3" />
+        <img src="src/public/bmwbkgd.jpg" alt="BMW M3" />
       </div>
 
       {/* Modals */}

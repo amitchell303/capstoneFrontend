@@ -27,7 +27,7 @@ export default function Navigations() {
     <nav className="navbar">
       <div className="nav-sect-1">
         <NavLink to="/home">
-          <img src="src\components\assets\MM logo(2).png" alt="Logo/Home" />
+          <img src="src/public/MM logo(2).png" alt="Logo/Home" />
         </NavLink>
       </div>
       <div className="nav-sect-2">

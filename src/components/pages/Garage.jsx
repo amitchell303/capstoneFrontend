@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useGetMyCarsQuery } from "../app/carSlice"; //make Slice file for cars
+import { useGetMyCarsQuery } from "../../app/carSlice"; //make Slice file for cars
 import { BiSolidCarGarage, BiSolidBook } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
-import "../App.css";
+import "../../App.css";
 
 export default function AllVehicles() {
   const navigate = useNavigate();
@@ -51,7 +51,7 @@ export default function AllVehicles() {
                   {car.modelYear} {car.make} {car.model}{" "}
                 </p>
               </div>
-              
+
               <button className="icon-button">
                 <span className="material-symbols-outlined">edit</span>
               </button>

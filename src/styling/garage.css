@@ -243,8 +243,8 @@ details[open] {
 .garage-modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
+  background: rgba(65, 65, 65, 0.847);
+  backdrop-filter: blur(15px);
   border-radius: 15px;
   display: flex;
   justify-content: center;

@@ -1,10 +1,13 @@
-import "../App.css";
+import "../../App.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useGetLogsQuery, useCreateLogMutation } from "../app/maintenanceSlice";
-import { useGetUpcomingServicesQuery } from "../app/upcomingServiceSlice";
-import { useGetAllUsersQuery } from "../app/userSlice";
-import AddMaint from "../components/forms/AddMaint";
+import {
+  useGetLogsQuery,
+  useCreateLogMutation,
+} from "../../app/maintenanceSlice";
+import { useGetUpcomingServicesQuery } from "../../app/upcomingServiceSlice";
+import { useGetAllUsersQuery } from "../../app/userSlice";
+import AddMaint from "../forms/AddMaint";
 
 export default function VehiclePage() {
   const { vin } = useParams();
@@ -15,13 +18,8 @@ export default function VehiclePage() {
     data: upcomingServices,
   } = useGetUpcomingServicesQuery({ testVin: vin });
   const { data: users } = useGetAllUsersQuery();
-  const [createLog] = useCreateLogMutation();
   const [milage, setMilage] = useState("");
   const [allMechanics, setAllMechanics] = useState([]);
-  const [mechanic, setMechanic] = useState("");
-  const [serviceType, setServiceType] = useState("");
-  const [serviceCost, setServiceCost] = useState("");
-  const [serviceDetail, setServiceDetail] = useState("");
   const [showAMFModal, setShowAMFModal] = useState(false);
 
   useEffect(() => {

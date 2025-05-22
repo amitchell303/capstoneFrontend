@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../../styling/shareCar.css";
-import settingsIcon from "../assets/gear-svgrepo-com.svg";
+import settingsIcon from "../../public/gear-svgrepo-com.svg";
 import EditVehicleForm from "../forms/EditVehicle";
 import DeleteVehicle from "../forms/DeleteVehicle";
 import AddCarOwner from "../forms/AddCarOwner";
