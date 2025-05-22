@@ -1,7 +1,9 @@
 import { useState } from "react";
+import "../../styling/shareCar.css";
 import settingsIcon from "../assets/gear-svgrepo-com.svg";
 import EditVehicleForm from "../forms/EditVehicle";
 import DeleteVehicle from "../forms/DeleteVehicle";
+import AddCarOwner from "../forms/AddCarOwner";
 
 export default function VehicleSettings({ car }) {
   const [activeComp, setActiveComp] = useState("settings");
@@ -19,7 +21,7 @@ export default function VehicleSettings({ car }) {
           </div>
         );
       case "share":
-        return <div></div>;
+        return <AddCarOwner />;
       case "edit":
         return (
           <div>
@@ -64,9 +66,7 @@ export default function VehicleSettings({ car }) {
             </button>
           </div>
           <div className="floating-divider"></div>
-          <div className="settings-sect-2">
-            <div>{renderComp()}</div>
-          </div>
+          <div className="settings-sect-2">{renderComp()}</div>
         </section>
       </div>
     </div>
