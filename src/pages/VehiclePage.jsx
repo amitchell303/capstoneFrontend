@@ -1,15 +1,16 @@
-// This page is the display layout for a selected vehicle.
-// The layout includes a navbar for vehicle specific expanded view pages,
-// and the container for the various component Displays.
+// This page is the display layout for a selected vehicle. The layout includes a navbar
+// for vehicle specific expanded view pages, and the container for the various component Displays.
+
 import { useParams } from "react-router-dom";
 import { useGetMyCarsQuery } from "../app/carSlice";
 import { useState } from "react";
-import "../styling/garage.css";
-import VehicleDetails from "../components/garageViews/VehicleDetails";
 import Maintenance from "./Maintenance";
-import AllReminders from "../components/forms/AllReminders.jsx";
-import AddReminders from "../components/forms/AddNote.jsx";
+import AllReminders from "../components/garageViews/AllReminders.jsx";
+import VehicleDetails from "../components/garageViews/VehicleDetails";
+import VehicleSettings from "../components/garageViews/VehicleSettings.jsx";
+import "../styling/garage.css";
 import AddCarOwner from "../components/forms/AddCarOwner.jsx";
+import Overview from "../components/garageViews/Overview.jsx";
 
 export default function VehiclePage() {
   const [activeComp, setActiveComp] = useState("overview");
@@ -25,35 +26,34 @@ export default function VehiclePage() {
     switch (activeComp) {
       case "overview":
         return (
-          <div className="bento-container">
-            <div className="bentoItem">General Info</div>
-            <div className="bentoItem">Services</div>
-            <div className="bentoItem">Reminders</div>
-            <div className="bentoItem">Notes</div>
-            <div className="bentoItem">Access</div>{" "}
-            {/* Displays all users who have access?*/}
+          <div>
+            <Overview />
           </div>
         );
       case "details":
         return (
-          <div>
+          <div className="glassmorphism-container">
             <VehicleDetails car={car} />
           </div>
         );
       case "service":
         return (
-          <div>
+          <div className="glassmorphism-container">
             <Maintenance />
           </div>
         );
       case "notes":
         return (
-          <div>
-            <AddReminders /> <AllReminders />
+          <div className="glassmorphism-container">
+            <AllReminders />
           </div>
         );
-      case "share":
-        return <AddCarOwner />;
+      case "settings":
+        return (
+          <div className="glassmorphism-container">
+            <VehicleSettings car={car} />
+          </div>
+        );
     }
   };
 
@@ -102,12 +102,20 @@ export default function VehiclePage() {
                 Share
               </button>
             </li>
+            <li>
+              <button
+                className="btn-link"
+                onClick={() => setActiveComp("settings")}
+              >
+                Settings
+              </button>
+            </li>
           </ul>
           <h1>{car.carName || `${car.make} ${car.model}`}</h1>
         </div>
       </div>
 
-      <div className="glassmorphism-container">{renderComp()}</div>
+      <div>{renderComp()}</div>
     </div>
   );
 }

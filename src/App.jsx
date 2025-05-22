@@ -7,15 +7,15 @@ import Landing from "./pages/Landing.jsx";
 import Home from "./pages/Home.jsx";
 import VehiclePage from "./pages/VehiclePage.jsx";
 import Navigations from "./components/Navigations.jsx";
-import AboutMe from "./components/AboutMe.jsx";
-import SingleUser from "./components/SingleUser.jsx";
+import AboutMe from "./pages/AboutMe.jsx";
 import EmptyGarage from "./components/garageViews/EmptyGarage.jsx";
 import EditVehicleForm from "./components/forms/EditVehicle.jsx";
 import AddVehicle from "./components/forms/AddVehicle.jsx";
-import QuickViews from "./components/garageViews/QuickViews.jsx";
-// import VehicleDetails from "./components/garageViews/vehicleDetails.jsx";
 import AddReminders from "./components/forms/AddNote.jsx";
-import AllReminders from "./components/forms/AllReminders.jsx";
+import AllReminders from "./components/garageViews//AllReminders.jsx";
+import DeleteVehicle from "./components/forms/DeleteVehicle.jsx";
+import Faq from "./pages/Faq.jsx";
+import Build from "./pages/Build.jsx";
 
 function App() {
   function logout() {
@@ -28,14 +28,15 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/user/:id" element={<SingleUser />} />
           <Route path="/me" element={<AboutMe />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/build" element={<Build />} />
 
           {/* Temporary routes for development */}
           <Route path="/empty" element={<EmptyGarage />} />
           <Route path="/addVehicle" element={<AddVehicle />} />
           <Route path="/editVehicle" element={<EditVehicleForm />} />
-          <Route path="/quickViews" element={<QuickViews />} />
+          <Route path="/deleteVehicle" element={<DeleteVehicle />} />
           <Route path="/vehicles/:vin" element={<VehiclePage />} />
           {/* <Route path="/vehicles/:vin" element={<VehicleDetails />} /> */}
           <Route path="/notes" element={<AddReminders />} />
