@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect,useState, useMemo } from "react";
 import {
   useGetAllRemindersQuery,
   useDeleteReminderMutation,
@@ -25,24 +25,26 @@ const AllReminders = () => {
     }
   }, [reminderList]);
 
-  // Memoized filtered list of reminders
-  // const filteredReminders = useMemo(() => {
-  //   if (!reminders || reminders.length === 0) return [];
-  //   return reminders.filter(
-  //     (reminder) =>
-  //       reminder.tittle &&
-  //       reminder.tittle.toLowerCase().includes(search.toLowerCase())
-  //   );
-  // }, [reminders, search]);
-
-  // Delete Reminder function
-  async function handleDeleteReminder(reminderIdToDelete) {
-    try {
-      await deleteReminder(reminderIdToDelete).unwrap();
-    } catch (err) {
-      console.error("Failed to delete reminder:", err);
+   const filteredReminders = useMemo(() => {
+      if (!reminders) return [];
+      if (!search) return reminders;
+      return reminders.filter((reminder) =>
+        reminder.tittle.toLowerCase().includes(search.toLowerCase())
+      );
+    }, [reminders, search]);
+  
+    
+  
+    // Delete Reminder function
+    async function handleDeleteReminder(reminderIdToDelete) {
+      try {
+        await deleteReminder(reminderIdToDelete).unwrap();
+        
+      } catch (err) {
+        console.error("Failed to delete reminder:", err);
+      }
     }
-  }
+  
 
   if (isLoading) {
     return <div>Loading reminders...</div>;
@@ -59,7 +61,7 @@ const AllReminders = () => {
 
   return (
     <>
-      {/* <div className="search-title-container">
+      <div className="search-title-container">
         <div className="row justify-content-center">
           <div className="col-md-6">
             <div className="search-container">
@@ -73,16 +75,16 @@ const AllReminders = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
       <div className="content-container">
         <div className="notes-container">
           <h1>All Notes</h1>
           <main className="notes">
             <div className="notes-section-1">
-              {reminders?.length > 0 ? (
+              {filteredReminders?.length > 0 ? (
                 <ul className="note-list">
-                  {reminders.map((reminder) => (
+                  {filteredReminders.map((reminder) => (
                     <li key={reminder.id} className="note-card">
                       <div className="note-card-info">
                         <h2>{reminder.tittle}</h2>

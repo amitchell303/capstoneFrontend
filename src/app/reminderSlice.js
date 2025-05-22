@@ -25,8 +25,8 @@ const ReminderApi = api.injectEndpoints({
             invalidatesTags: ['Reminder'],
         }),
         deleteReminder: builder.mutation({
-        query: () => ({
-            url: `/api/reminder/deleteReminder/:vin`,
+        query: (vin) => ({
+            url: `/api/reminder/deleteReminder/${vin}`,
             method: 'DELETE',
         }),
         invalidatesTags: ['Reminder'],
