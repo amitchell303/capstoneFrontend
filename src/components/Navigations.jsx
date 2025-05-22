@@ -1,24 +1,22 @@
-import { useState } from "react";
 import api from "../app/api";
-import { deleteToken, getToken } from "../app/tokenService";
+import { deleteToken } from "../app/tokenService";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 /* Styling imports */
-import "../App.css";
+import "../styling/nav.css";
 import { FaRegUser } from "react-icons/fa6";
-import { BiSolidCarGarage, BiSolidBook } from "react-icons/bi";
-import { LuPanelRightOpen, LuPanelLeftOpen } from "react-icons/lu";
+import { FaCar } from "react-icons/fa";
+import { MdLogout } from "react-icons/md";
+import { FaQuestion } from "react-icons/fa6";
+import { TbHeartCode } from "react-icons/tb";
+import { TbDatabaseHeart } from "react-icons/tb";
+import { GoCodescan } from "react-icons/go";
 
 export default function Navigations() {
-  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const token = getToken();
 
-  function toggleNavbar() {
-    setIsOpen(!isOpen);
-  }
   function logout() {
     deleteToken();
     dispatch(api.util.resetApiState());
@@ -26,89 +24,64 @@ export default function Navigations() {
   }
 
   return (
-    <nav className={`sidebar ${isOpen ? "open" : ""}`}>
-      <NavLink className="logo" to="/home">
-        <img src="src\components\assets\MM logo(2).png" alt="Logo/Home" />
-      </NavLink>
-      <div className="navlink-container">
-        <ul>
-          {token ? (
-            <>
-              <ul>
-                <li>
-                  <div className="tooltip">
-                    <NavLink className="navlink" to="/me">
-                      <FaRegUser className="icons" />
-                      <p className="link">My Account</p>
-                    </NavLink>
-                    <span className="tooltiptext">Account</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="tooltip">
-                    <NavLink className="navlink" to="/home">
-                      <BiSolidCarGarage className="icons" />
-                      <p className="link">My Garage</p>
-                    </NavLink>
-                    <span className="tooltiptext">Garage</span>
-                  </div>
-                </li>
-                <div className="tooltip">
-                    <NavLink className="navlink" to="/allnotes">
-                      <BiSolidBook className="icons" />
-                      <p className="link">Create Note</p>
-                    </NavLink>
-                    <span className="tooltiptext">Search for Notes</span>
-                  </div>
-                {/* Temporary links for dev purposes */}
-                <li>
-                  <NavLink className="navlink" to="/addVehicle">
-                    <p className="link">Comp-addVehicle</p>
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="navlink" to="/editVehicle">
-                    <p className="link">Comp-editVehicle</p>
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="navlink" to="/vehicleDetails">
-                    <p className="link">Comp-vehDetails</p>
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="navlink" to="/quickViews">
-                    <p className="link">Comp-quickViews</p>
-                  </NavLink>
-                </li>
-              </ul>
-              <button className="logout-btn" onClick={logout}>
-                LogOut
-              </button>
-            </>
-          ) : (
-            <>
-              <li>
-                <NavLink className="navlink" to="/register">
-                  Register
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="navlink" to="/login">
-                  Login
-                </NavLink>
-              </li>
-            </>
-          )}
-        </ul>
+    <nav className="navbar">
+      <div className="nav-sect-1">
+        <NavLink to="/home">
+          <img src="src\components\assets\MM logo(2).png" alt="Logo/Home" />
+        </NavLink>
       </div>
-      <button className="toggle-btn" onClick={toggleNavbar}>
-        {isOpen ? (
-          <LuPanelRightOpen className="toggle-icon" />
-        ) : (
-          <LuPanelLeftOpen className="toggle-icon" />
-        )}
-      </button>
+      <div className="nav-sect-2">
+        <div className="nav-group">
+          <NavLink className="nav-link" to="/me">
+            <FaRegUser className="icons" />
+            <p className="nav-label">Account</p>
+          </NavLink>
+        </div>
+        <div className="nav-group">
+          <NavLink className="nav-link" to="/home">
+            <FaCar className="icons" />
+
+            <p className="nav-label">Garage</p>
+          </NavLink>
+        </div>
+        <div className="nav-group">
+          <NavLink className="nav-link" to="/faq">
+            <FaQuestion className="icons" />
+            <p className="nav-label">FAQ</p>
+          </NavLink>
+        </div>
+        <div className="nav-group">
+          <NavLink className="nav-link" to="/build">
+            {/* <TbHeartCode className="icons"/> */}
+            <TbDatabaseHeart className="icons" />
+            {/* <GoCodescan className="icons" /> */}
+            <p className="nav-label">Build</p>
+          </NavLink>
+        </div>
+      </div>
+      <div>
+        <button className="logout-btn" onClick={logout}>
+          <MdLogout />
+        </button>
+      </div>
     </nav>
   );
+}
+
+{
+  /* Temporary links for dev purposes */
+}
+{
+  /* <NavLink to="/addVehicle">
+          <p>addVehicle</p>
+        </NavLink>
+        <NavLink to="/editVehicle">
+          <p>editVehicle</p>
+        </NavLink>
+        <NavLink to="/allnotes">
+          <p>createNote</p>
+        </NavLink>
+        <NavLink to="/deleteVehicle">
+          <p>deleteVehicle</p>
+        </NavLink> */
 }

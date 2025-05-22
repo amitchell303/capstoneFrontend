@@ -1,16 +1,18 @@
+/*Shorthand order: top right bottom left*/
+
 .vehiclePage {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 900px;
+  /* max-width: 900px; */
 }
 
 .vehNav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 90rem;
-  max-width: 890px;
+  width: 80rem;
+  /* max-width: 890px; */
 }
 
 .vehNav ul {
@@ -33,40 +35,17 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* ---------- Bento Display ---------- */
-.bento-container {
-  width: 95rem;
-  max-width: 900px;
-  height: 40rem;
-  /* border: 1px solid rgb(255, 0, 230); */
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  padding: 5rem;
-}
-
-.bentoItem {
-  /* padding: 3rem;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 25px;
-  backdrop-filter: blur(8px); */
-
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  padding: 1rem;
-  border-radius: 12px;
-  color: #fff;
-}
-
 /* ---------- Vehicle Details ---------- */
 .vehicleDetails {
-  width: 95rem;
-  max-width: 900px;
+  width: 80rem;
+  height: 40rem;
+  /* max-width: 900px; */
   margin: 0 auto;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  animation: modalFadeIn 0.4s ease-out forwards;
 }
 .vd-section-1 {
   display: flex;
@@ -139,11 +118,235 @@ details[open] {
   border-radius: 8px;
 }
 
-/* ------ Service Page ----- */
+/* ------ Maintenance Page ----- */
 .maintenance {
+  width: 80rem;
+  height: 40rem;
   display: flex;
+  flex-direction: column;
+  animation: modalFadeIn 0.4s ease-out forwards;
 }
-.maintenance-section-1 {
+.maint-section-1 {
+  display: flex;
+  justify-content: space-between;
+}
+.maint-section-2 {
+  display: flex;
+  justify-content: space-between;
+}
+.maint-2a {
+  border: 1px solid rgb(35, 8, 241);
+  padding: 1rem;
+}
+.maint-2b {
+  border: 1px solid rgb(38, 13, 227);
+  padding: 1rem;
+}
+
+.maint-section-3 {
   border: 1px solid pink;
-  width: 15rem;
+  margin-top: 10rem;
+}
+
+/* ----- Notes Page ----- */
+.notes-container {
+  width: 80rem;
+  height: 40rem;
+  margin: 0 auto;
+  padding: 1rem;
+  animation: modalFadeIn 0.4s ease-out forwards;
+  /* border: 1px solid red; */
+}
+.notes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  transform: translateY(-2.5rem);
+  /* border: 1px solid red; */
+}
+
+.notes-section-1 {
+  width: 50rem;
+  height: 80%;
+  overflow: hidden;
+  scrollbar-width: none;
+  /* border: 1px solid red; */
+}
+.notes-section-1:hover {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(103, 103, 103, 0.337) transparent; /* Firefox: thumb + track */
+}
+/* WebKit browsers (Chrome, Safari, Edge) */
+.notes-section-1::-webkit-scrollbar {
+  width: 8px;
+}
+.notes-section-1::-webkit-scrollbar-track {
+  background: transparent;
+}
+.notes-section-1::-webkit-scrollbar-button {
+  height: 0;
+  width: 0;
+  display: none;
+}
+/* Only show WebKit scrollbar on hover */
+.notes-section-1:not(:hover)::-webkit-scrollbar {
+  width: 0;
+}
+
+.note-list {
+  list-style: none;
+}
+
+.note-card {
+  margin: 0 10px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  /* border: 1px solid red; */
+}
+
+.note-card-info p {
+  margin: 10px;
+}
+
+.note-card-btn {
+  align-self: center;
+}
+.note-card-btn button {
+  background: transparent;
+  border: none;
+  color: whitesmoke;
+}
+.note-card-btn button:hover {
+  background: transparent;
+  border: none;
+  color: #ff6600;
+  cursor: pointer;
+}
+
+.notes-section-2 {
+  margin: 5rem 0;
+}
+
+.floating-divider {
+  width: 0.1rem;
+  height: 99%;
+  margin: 0;
+  background-color: #ff6600;
+  align-self: center;
+}
+
+/*  Modals  */
+.garage-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  animation: garageModalOverlayFadeIn 0.3s ease-out;
+}
+
+.garage-modal {
+  background: #18181829;
+  border-radius: 25px;
+  animation: garageModalFadeIn 0.3s ease-out;
+  position: relative;
+}
+
+.garage-modal h1 {
+  color: whitesmoke;
+  letter-spacing: 1.5px;
+  font-family: "Gruppo", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  margin-bottom: 20px;
+}
+.garage-closeModal-btn {
+  position: relative;
+  top: -15rem;
+  right: -1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #3d3d3d;
+}
+
+/* ----- Vehicle Settings Page ----- */
+.vehSettings {
+  width: 80rem;
+  height: 40rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalFadeIn 0.4s ease-out forwards;
+  /* border: 1px solid rgb(238, 255, 0); */
+}
+
+/* .settings-header {
+ border: 1px solid rgb(0, 255, 47); 
+} */
+
+.settings-icon {
+  width: 700px;
+  height: auto;
+  opacity: 30%;
+  transform: translateX(30rem);
+  /* border: 1px solid red; */
+}
+.settings-body {
+  width: 100%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 1px solid rgb(255, 0, 0); */
+}
+
+.settings-sect-1 {
+  width: 20rem;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* border: 1px solid rgb(0, 13, 255); */
+}
+
+.settings-sect-2 {
+  max-width: 50rem;
+  /* width: 50rem; */
+  /* height: 100%; */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid rgb(3, 16, 255); */
+}
+
+.settings-links {
+  color: whitesmoke;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  margin: 1rem 3rem;
+  font-family: "Gruppo", sans-serif;
+  font-size: 23px;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.settings-links:hover {
+  color: #ff6600;
 }

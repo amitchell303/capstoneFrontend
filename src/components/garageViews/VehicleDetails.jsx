@@ -2,7 +2,6 @@ export default function VehicleDetails({ car }) {
   if (!car) return <p>Loading vehicle details...</p>;
 
   return (
-    <div className="content-container">
       <div className="vehicleDetails">
         <section className="vd-section-1">
           <div className="vd-1-general">
@@ -107,6 +106,5 @@ export default function VehicleDetails({ car }) {
           </details>
         </section>
       </div>
-    </div>
   );
 }

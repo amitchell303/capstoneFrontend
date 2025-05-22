@@ -1,39 +1,29 @@
 /* index.css is for styles applied throughout the WHOLE site */
-
-html,
-body {
+html {
   margin: 0;
   padding: 0;
   height: 100%;
-  /* background-color: #181818; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #181818;
   background-size: cover;
-  /* background-image: url(src/components/assets/green.jpg); */
   background-image: url(src/components/assets/grey.jpg);
 }
 
 /*  ----------  Content Container  ----------  */
-/* .content-container {
-  color: whitesmoke;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid rgb(255, 0, 195);
-} */
 
-/* .glassmorphism-container {
+.glassmorphism-container {
   color: whitesmoke;
   background: rgba(255, 255, 255, 0.1);
-  padding: 3rem;
+  padding: 1rem;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(15px);
   animation: modalFadeIn 0.4s ease-out forwards;
-} */
-.content-container {
-  max-width: 900px;
+  /* max-width: 900px; */
 }
+
 .content-container h1 {
   color: whitesmoke;
   padding: 1rem;
@@ -54,7 +44,19 @@ body {
     transform: scale(1);
   }
 }
-/* riseUp animation */
+
+@keyframes modalOverlayFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* landing page car riseUp animation */
 @keyframes riseUp {
   to {
     bottom: -35%;
@@ -72,7 +74,19 @@ body {
     opacity: 1;
   }
 }
-@keyframes modalOverlayFadeIn {
+
+@keyframes garageModalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes garageModalOverlayFadeIn {
   from {
     opacity: 0;
     transform: scale(0.95);
