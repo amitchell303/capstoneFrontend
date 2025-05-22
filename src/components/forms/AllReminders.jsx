@@ -76,8 +76,8 @@ const AllReminders = () => {
       </div> */}
 
       <div className="content-container">
-        <h2 className="notes-title">All Notes</h2>
         <main className="notes">
+          <h1>All Notes</h1>
           <div className="notes-section-1">
             {reminders?.length > 0 ? (
               <ul className="note-list">

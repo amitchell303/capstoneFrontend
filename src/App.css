@@ -14,7 +14,6 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
 /*  ----------  Empty Garage  ----------  */
 
 .emptyGarage-container {
@@ -216,24 +215,23 @@ img {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
-/* .maintenance {
-  width: 100%;
-  td {
-    width: 48%;
-    form {
-      margin: 10% auto;
-      padding: 30px 0 0 0;
-      width: 60%;
-      border: 0.5px solid rgb(255, 166, 42);
-      border-radius: 12%;
-    }
-  }
-  ul {
-    list-style-type: none;
-  }
-  div input,
-  select {
-    margin: 8px;
-    padding: 5px;
-  }
-} */
+
+/* ----- FAQ ----- */
+.faq {
+  max-width: 750px;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.faq-item {
+  margin: 20px;
+}
+
+.faq-item h3 {
+  color: #ff9045;
+  margin-bottom: 8px;
+}
+
+.faq-item p {
+  line-height: 1.6;
+}

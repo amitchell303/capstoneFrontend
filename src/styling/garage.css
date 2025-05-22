@@ -159,14 +159,6 @@ details[open] {
   justify-content: space-between;
   animation: modalFadeIn 0.4s ease-out forwards;
 }
-.notes-title {
-  color: whitesmoke;
-  letter-spacing: 1px;
-  font-family: "Gruppo", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 35px;
-}
 
 .notes-section-1 {
   width: 50rem;
