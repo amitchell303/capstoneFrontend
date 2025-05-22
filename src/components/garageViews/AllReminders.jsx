@@ -15,7 +15,7 @@ const AllReminders = () => {
     isLoading,
     error,
     data: reminderList, // Default to an empty array to prevent errors if data is undefined initially
-  } = useGetAllRemindersQuery({ testVin: vin });
+  } = useGetAllRemindersQuery({vin });
 
   const [reminders, setReminders] = useState([]);
   useEffect(() => {
