@@ -1,0 +1,122 @@
+.reminderPage .Width40 {
+  padding: 55px 30px; 
+}
+
+.reminderPage .Width40 > h1 { 
+  text-align: center;
+  color: #5391ce; 
+  margin-bottom: 50px;
+  margin-top: 20px;
+  font-size: 2rem;  
+  font-weight: 600;
+}
+
+.reminderPage .Width40 form.allForms input[type="text"] {
+  width: 100%;
+  padding: 12px 18px; /* Increased padding */
+  border: 1px solid #ced4da; /* Standard Bootstrap border */
+  border-radius: 8px;      /* Softer rounded corners */
+  background-color: #ffffff;
+  font-size: 1rem;
+  color: #343a40;
+  transition: border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  box-sizing: border-box;
+  margin-bottom: 20px; /* Space after each input, before the next label or button */
+}
+
+.reminderPage .Width40 form.allForms button[type="submit"]:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+/* Search Box Styling  */
+
+.search-container .search-input {
+  border-radius: 25px; 
+  padding: 7px 40px;
+  font-size: 1rem;
+}
+
+/* .content-container {
+  padding: 10px 15px 20px;
+} */
+
+.reminderPage {
+  padding: 2px;
+  border-radius: 12px;
+  box-shadow: 25px 5px 20px rgba(50, 190, 255, 0.07);
+}
+
+/* Reminder List Title */
+.reminderPage article h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #c99d8d; 
+    font-size: 1.75rem;
+}
+
+/* Reminder List Styling */
+.reminderPage article ul {
+  list-style-type: none;
+}
+
+.reminderPage article li {
+  background-color: #838383;
+  border: 1px solid #070b0f; /* Lighter border */
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 25px 20px 15px rgba(0, 0, 0, 0.06);
+  }
+
+.reminderPage article li:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 12px rgba(21, 100, 178, 0.1);
+}
+
+/* .reminderPage article li h3 {
+  margin-bottom: 12px;
+  color: #0923ce;   
+} */
+
+.reminderPage article li p {
+  color: #050606; 
+}
+
+/* Delete Button Styling */
+.reminderPage article li button {
+  background-color: #892225; 
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 8px 2px 4px rgba(0, 3, 5, 0.1);
+}
+
+.reminderPage article li button:hover:not(:disabled) {
+  background-color: #c82333; /* Darker red on hover */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* "No reminders found" message styling */
+.reminderPage article > p { 
+  font-size: 1.05rem;
+  color: #6c757d;
+  text-align: center;
+  padding: 25px 20px;
+  background-color: #e9ecef; 
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.reminderPage article ul{
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-around;
+}
