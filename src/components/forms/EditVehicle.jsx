@@ -1,54 +1,48 @@
 import "../../styling/forms.css";
 
-const EditVehicleForm = () => {
+const EditVehicleForm = ({ car }) => {
   return (
     <div className="content-container">
       <h1>Edit Vehicle</h1>
-      <div className="glassmorphism-container">
-        <form className="allForms">
-          <div className="section-1">
-            <div className="allForms-group">
-              <label htmlFor="vin">Nickname</label>
-              <input type="text" id="vin" placeholder="Nickname (optional)" />
-            </div>
+      <form className="allForms">
+        <div className="section-1">
+          <div className="allForms-group">
+            <label>Nickname</label>
+            <input type="text" id="vin" placeholder="Nickname (optional)" />
           </div>
-          <div className="section-2">
-            <div className="allForms-group">
-              <label htmlFor="vin">VIN</label>
-              <input type="text" id="vin" placeholder="vin number" disabled />
-            </div>
-            <div className="allForms-group">
-              <label htmlFor="vin">Plate Number</label>
-              <input
-                type="text"
-                id="vin"
-                placeholder="Plate number (optional)"
-              />
-            </div>
+        </div>
+        <div className="section-2">
+          <div className="allForms-group">
+            <label>VIN</label>
+            <input type="text" placeholder={car.vin} disabled />
           </div>
-          <div className="section-3">
-            <div className="allForms-group">
-              <label htmlFor="vin">Make</label>
-              <input type="text" id="vin" placeholder="vin number" disabled />
-            </div>
-            <div className="allForms-group">
-              <label htmlFor="vin">Model</label>
-              <input type="text" id="vin" placeholder="vin number" disabled />
-            </div>
-            <div className="allForms-group">
-              <label htmlFor="vin">Year</label>
-              <input type="text" id="vin" placeholder="vin number" disabled />
-            </div>
+          <div className="allForms-group">
+            <label>Plate Number</label>
+            <input type="text" id="vin" placeholder="Plate number (optional)" />
           </div>
-          <div className="section-4">
-            <div className="allForms-group">
-              <label htmlFor="vin">Current Mileage*</label>
-              <input type="text" id="vin" placeholder="Mileage (Required)" />
-            </div>
+        </div>
+        <div className="section-3">
+          <div className="allForms-group">
+            <label>Make</label>
+            <input type="text" placeholder={car.make} disabled />
           </div>
-          <button type="submit">Save Changes</button>
-        </form>
-      </div>
+          <div className="allForms-group">
+            <label>Model</label>
+            <input type="text" placeholder={car.model} disabled />
+          </div>
+          <div className="allForms-group">
+            <label>Year</label>
+            <input type="text" placeholder={car.modelYear} disabled />
+          </div>
+        </div>
+        <div className="section-4">
+          <div className="allForms-group">
+            <label>Current Mileage*</label>
+            <input type="text" id="vin" placeholder="Mileage (required)" />
+          </div>
+        </div>
+        <button type="submit">Save Changes</button>
+      </form>
     </div>
   );
 };
