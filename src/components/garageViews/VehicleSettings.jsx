@@ -23,7 +23,7 @@ export default function VehicleSettings({ car }) {
       case "edit":
         return (
           <div>
-            <EditVehicleForm />
+            <EditVehicleForm car={car} />
           </div>
         );
       case "remove":

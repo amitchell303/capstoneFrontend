@@ -76,46 +76,52 @@ const AllReminders = () => {
       </div> */}
 
       <div className="content-container">
-        <main className="notes">
+        <div className="notes-container">
           <h1>All Notes</h1>
-          <div className="notes-section-1">
-            {reminders?.length > 0 ? (
-              <ul className="note-list">
-                {reminders.map((reminder) => (
-                  <li key={reminder.id} className="note-card">
-                    <div className="note-card-info">
-                      <h2>{reminder.tittle}</h2>
-                      <small>
-                        {new Date(reminder.createdAt).toLocaleString()}
-                      </small>
-                      <p>{reminder.notes}</p>
-                      {reminder.car && (
-                        <p>Associated Car: {reminder.car_id || reminder.car}</p>
-                      )}
-                    </div>
-                    <div className="note-card-btn">
-                      <button
-                        onClick={() => handleDeleteReminder(reminder.id)}
-                        disabled={isDeleting}
-                      >
-                        {/* {isDeleting ? "Deleting..." : "Delete"} */}
-                        <span className="material-symbols-outlined">
-                          delete
-                        </span>
-                      </button>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>No reminders found{search ? " matching your search." : "."}</p>
-            )}
-          </div>
-          <div className="floating-divider"></div>
-          <div className="notes-section-2">
-            <AddReminders />
-          </div>
-        </main>
+          <main className="notes">
+            <div className="notes-section-1">
+              {reminders?.length > 0 ? (
+                <ul className="note-list">
+                  {reminders.map((reminder) => (
+                    <li key={reminder.id} className="note-card">
+                      <div className="note-card-info">
+                        <h2>{reminder.tittle}</h2>
+                        <small>
+                          {new Date(reminder.createdAt).toLocaleString()}
+                        </small>
+                        <p>{reminder.notes}</p>
+                        {reminder.car && (
+                          <p>
+                            Associated Car: {reminder.car_id || reminder.car}
+                          </p>
+                        )}
+                      </div>
+                      <div className="note-card-btn">
+                        <button
+                          onClick={() => handleDeleteReminder(reminder.id)}
+                          disabled={isDeleting}
+                        >
+                          {/* {isDeleting ? "Deleting..." : "Delete"} */}
+                          <span className="material-symbols-outlined">
+                            delete
+                          </span>
+                        </button>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>
+                  No reminders found{search ? " matching your search." : "."}
+                </p>
+              )}
+            </div>
+            <div className="floating-divider"></div>
+            <div className="notes-section-2">
+              <AddReminders />
+            </div>
+          </main>
+        </div>
       </div>
     </>
   );
