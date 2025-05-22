@@ -3,15 +3,16 @@
   color: whitesmoke;
   height: 95vh;
   width: 90px;
-  margin: 1.5rem 0.5rem;
+  margin: 1.5rem 0.55rem;
   padding: 0.75rem;
   background-color: transparent;
   /* border: 1px solid white; */
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
-  animation: modalFadeIn 0.4s ease-out forwards;
+  backdrop-filter: blur(15px);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.192),
+    inset 0 0 5px rgba(255, 255, 255, 0.274), 0 5px 5px rgba(0, 0, 0, 0.164);
+  transition: 0.5s;
 
   display: flex;
   flex-direction: column;
@@ -25,6 +26,10 @@
   /* width: 90px;
   transition: width 0.3s ease;
   overflow: hidden; */
+}
+.navbar:hover {
+  animation: ease-out 5s;
+  background: rgba(173, 173, 173, 0.05);
 }
 
 .nav-link {
@@ -69,14 +74,14 @@
 }
 
 .icons {
-  color: rgb(220, 220, 220);
+  color: rgb(244, 244, 244);
   width: 3.5rem;
   height: 3.5rem;
   margin: 0 auto;
   padding: 0.5rem;
   border-radius: 25%;
   border: 1px solid rgba(245, 245, 245, 0.1);
-  background-color: #3a3a3a42;
+  background-color: #44444442;
   display: flex;
   justify-content: center;
   align-items: center;

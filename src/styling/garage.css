@@ -35,29 +35,6 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* ---------- Bento Display ---------- */
-.bento-container {
-  width: 80rem;
-  height: 40rem;
-  border: 1px solid rgb(255, 0, 230);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  /* max-width: 900px; */
-}
-
-.bentoItem {
-  /* 
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 25px;
-  backdrop-filter: blur(8px); */
-
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  border-radius: 12px;
-  color: #fff;
-}
-
 /* ---------- Vehicle Details ---------- */
 .vehicleDetails {
   width: 80rem;
@@ -68,6 +45,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  animation: modalFadeIn 0.4s ease-out forwards;
 }
 .vd-section-1 {
   display: flex;
@@ -146,6 +124,7 @@ details[open] {
   height: 40rem;
   display: flex;
   flex-direction: column;
+  animation: modalFadeIn 0.4s ease-out forwards;
 }
 .maint-section-1 {
   display: flex;
@@ -178,6 +157,7 @@ details[open] {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  animation: modalFadeIn 0.4s ease-out forwards;
 }
 .notes-title {
   color: whitesmoke;
@@ -309,6 +289,8 @@ details[open] {
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  animation: modalFadeIn 0.4s ease-out forwards;
   /* border: 1px solid rgb(238, 255, 0); */
 }
 
@@ -316,6 +298,13 @@ details[open] {
  border: 1px solid rgb(0, 255, 47); 
 } */
 
+.settings-icon {
+  width: 700px;
+  height: auto;
+  opacity: 30%;
+  transform: translateX(30rem);
+  /* border: 1px solid red; */
+}
 .settings-body {
   width: 100%;
   height: 85%;

@@ -1,14 +1,16 @@
-// This page is the display layout for a selected vehicle.
-// The layout includes a navbar for vehicle specific expanded view pages,
-// and the container for the various component Displays.
+// This page is the display layout for a selected vehicle. The layout includes a navbar
+// for vehicle specific expanded view pages, and the container for the various component Displays.
+
 import { useParams } from "react-router-dom";
 import { useGetMyCarsQuery } from "../app/carSlice";
 import { useState } from "react";
-import VehicleDetails from "../components/garageViews/VehicleDetails";
 import Maintenance from "./Maintenance";
 import AllReminders from "../components/forms/AllReminders.jsx";
+import VehicleDetails from "../components/garageViews/VehicleDetails";
 import VehicleSettings from "../components/garageViews/VehicleSettings.jsx";
 import "../styling/garage.css";
+
+import Overview from "../components/garageViews/Overview.jsx";
 
 export default function VehiclePage() {
   const [activeComp, setActiveComp] = useState("overview");
@@ -24,34 +26,31 @@ export default function VehiclePage() {
     switch (activeComp) {
       case "overview":
         return (
-          <div className="bento-container">
-            <div className="bentoItem">General Info</div>
-            <div className="bentoItem">Services</div>
-            <div className="bentoItem">Reminders</div>
-            <div className="bentoItem">Notes</div>
+          <div>
+            <Overview />
           </div>
         );
       case "details":
         return (
-          <div>
+          <div className="glassmorphism-container">
             <VehicleDetails car={car} />
           </div>
         );
       case "service":
         return (
-          <div>
+          <div className="glassmorphism-container">
             <Maintenance />
           </div>
         );
       case "notes":
         return (
-          <div>
+          <div className="glassmorphism-container">
             <AllReminders />
           </div>
         );
       case "settings":
         return (
-          <div>
+          <div className="glassmorphism-container">
             <VehicleSettings />
           </div>
         );
@@ -108,7 +107,7 @@ export default function VehiclePage() {
         </div>
       </div>
 
-      <div className="glassmorphism-container">{renderComp()}</div>
+      <div>{renderComp()}</div>
     </div>
   );
 }
