@@ -30,8 +30,6 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/user/:id" element={<SingleUser />} />
           <Route path="/me" element={<AboutMe />} />
-          
-          
 
           {/* Temporary routes for development */}
           <Route path="/empty" element={<EmptyGarage />} />

@@ -8,8 +8,8 @@ import "../styling/garage.css";
 import VehicleDetails from "../components/garageViews/VehicleDetails";
 import Maintenance from "./Maintenance";
 import AllReminders from "../components/forms/AllReminders.jsx";
-import AddReminders from "../components/forms/AddNote.jsx"
-
+import AddReminders from "../components/forms/AddNote.jsx";
+import AddCarOwner from "../components/forms/AddCarOwner.jsx";
 
 export default function VehiclePage() {
   const [activeComp, setActiveComp] = useState("overview");
@@ -30,6 +30,8 @@ export default function VehiclePage() {
             <div className="bentoItem">Services</div>
             <div className="bentoItem">Reminders</div>
             <div className="bentoItem">Notes</div>
+            <div className="bentoItem">Access</div>{" "}
+            {/* Displays all users who have access?*/}
           </div>
         );
       case "details":
@@ -45,8 +47,13 @@ export default function VehiclePage() {
           </div>
         );
       case "notes":
-        return <div><AddReminders /> <AllReminders /></div>;
-      
+        return (
+          <div>
+            <AddReminders /> <AllReminders />
+          </div>
+        );
+      case "share":
+        return <AddCarOwner />;
     }
   };
 
@@ -85,6 +92,14 @@ export default function VehiclePage() {
                 onClick={() => setActiveComp("notes")}
               >
                 Notes
+              </button>
+            </li>
+            <li>
+              <button
+                className="btn-link"
+                onClick={() => setActiveComp("share")}
+              >
+                Share
               </button>
             </li>
           </ul>

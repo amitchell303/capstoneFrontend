@@ -1,0 +1,22 @@
+h2 {
+  text-shadow: 1px 1px 1px black;
+}
+main {
+  width: 100%;
+  text-align: center;
+}
+#whichUser {
+  width: 50%;
+  margin: 10px auto;
+  tbody tr td {
+    width: 50%;
+    button {
+      padding: 4% 10%;
+    }
+    button:hover {
+      cursor: pointer;
+      background-color: rgb(255, 223, 180);
+      border: solid 0.25px grey;
+    }
+  }
+}
