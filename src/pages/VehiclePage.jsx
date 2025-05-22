@@ -43,8 +43,17 @@ export default function VehiclePage() {
           </div>
         );
       case "notes":
-        return <div><AddReminders /> <AllReminders /></div>;
-      
+        return (
+          <div className="glassmorphism-container">
+            <AllReminders />
+          </div>
+        );
+      case "settings":
+        return (
+          <div className="glassmorphism-container">
+            <VehicleSettings car={car} />
+          </div>
+        );
     }
   };
 
