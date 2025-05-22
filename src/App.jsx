@@ -41,7 +41,7 @@ function App() {
           <Route path="/vehicles/:vin" element={<VehiclePage />} />
           {/* <Route path="/vehicles/:vin" element={<VehicleDetails />} /> */}
           <Route path="/notes" element={<AddReminders />} />
-          <Route path="/allNotes" element={<AllReminders />} />
+          <Route path="/allnotes" element={<AllReminders />} />
         </Routes>
       </Router>
     </Provider>

@@ -45,8 +45,7 @@ export default function VehiclePage() {
           </div>
         );
       case "notes":
-        return <div><AddReminders /> <AllReminders /></div>;
-      
+        return <div> <AddReminders /> <AllReminders />  </div>;      
     }
   };
 

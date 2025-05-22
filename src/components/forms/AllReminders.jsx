@@ -4,7 +4,7 @@ import {
   useDeleteReminderMutation,
 } from "../../app/reminderSlice"; 
 import { useParams } from "react-router-dom";
-import "../../styling/AllReminders.css"; // <-- IMPORT THE NEW CSS FILE
+import "../../styling/AllReminders.css"; 
 
 const AllReminders = () => {
   const [search, setSearch] = useState("");
@@ -13,7 +13,7 @@ const AllReminders = () => {
   const {
     isLoading,
     error,
-    data: reminderList , // Default to an empty array to prevent errors if data is undefined initially
+    data: reminderList , 
   } = useGetAllRemindersQuery({ vin});
 
 

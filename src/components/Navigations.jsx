@@ -53,13 +53,13 @@ export default function Navigations() {
                     <span className="tooltiptext">Garage</span>
                   </div>
                 </li>
-                <div className="tooltip">
-                    <NavLink className="navlink" to="/allnotes">
+                {/* <div className="tooltip">
+                    <NavLink className="navlink" to="/notes">
                       <BiSolidBook className="icons" />
                       <p className="link">Create Note</p>
                     </NavLink>
-                    <span className="tooltiptext">Search for Notes</span>
-                  </div>
+                    <span className="tooltiptext">Create Notes</span>
+                  </div> */}
                 {/* Temporary links for dev purposes */}
                 <li>
                   <NavLink className="navlink" to="/addVehicle">

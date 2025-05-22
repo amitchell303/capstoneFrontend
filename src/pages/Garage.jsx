@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useGetMyCarsQuery } from "../app/carSlice"; //make Slice file for cars
+import { BiSolidCarGarage, BiSolidBook } from "react-icons/bi";
+import { NavLink } from "react-router-dom";
 import "../App.css";
 
 export default function AllVehicles() {
@@ -44,6 +46,7 @@ export default function AllVehicles() {
                   {car.modelYear} {car.make} {car.model}{" "}
                 </p>
               </div>
+              
               <button className="icon-button">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
