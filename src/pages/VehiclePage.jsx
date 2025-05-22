@@ -9,7 +9,6 @@ import AllReminders from "../components/garageViews/AllReminders.jsx";
 import VehicleDetails from "../components/garageViews/VehicleDetails";
 import VehicleSettings from "../components/garageViews/VehicleSettings.jsx";
 import "../styling/garage.css";
-import AddCarOwner from "../components/forms/AddCarOwner.jsx";
 import Overview from "../components/garageViews/Overview.jsx";
 
 export default function VehiclePage() {
@@ -92,14 +91,6 @@ export default function VehiclePage() {
                 onClick={() => setActiveComp("notes")}
               >
                 Notes
-              </button>
-            </li>
-            <li>
-              <button
-                className="btn-link"
-                onClick={() => setActiveComp("share")}
-              >
-                Share
               </button>
             </li>
             <li>
