@@ -159,60 +159,89 @@ img {
   cursor: pointer;
 }
 
-/*  ----------  Account Page  ----------  */
+/* ---------- Account Page ---------- */
 .acctPage {
-  width: 50rem;
-  height: 30rem;
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
   padding: 1rem;
   display: flex;
+  justify-content: space-between;
 }
+
 .acctPage-section-1 {
-  padding: 0.5rem;
+  flex: 2;
+  padding: 1rem;
 }
+
 .acctPage-1a {
-  margin: 0 30px 30px 0;
+  margin-bottom: 1.5rem;
 }
+
 .acctPage-1a h2 {
-  font-size: xx-large;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
 }
+
 .acctPage-1b p {
-  margin: 0 10px 10px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 0.5rem;
 }
+
 .acctPage-section-2 {
-  padding: 0.5rem;
+  flex: 1;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
 }
+
 .update-btn,
 .delete-btn,
 .password-btn {
   color: white;
-  width: 1rem;
-  padding: 15px 30px;
-  margin: 0 0 10px 0;
-  background: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.08);
   border: none;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
+
 .update-btn:hover {
-  color: #009a1f;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  color: #28d169;
+  background: rgba(40, 209, 105, 0.1);
+  box-shadow: 0 6px 14px rgba(40, 209, 105, 0.3);
   cursor: pointer;
 }
+
 .update-btn:disabled {
-  color: rgb(185, 185, 185);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  color: #aaa;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.delete-btn:hover {
+  color: #ff4e4e;
+  background: rgba(255, 78, 78, 0.1);
+  box-shadow: 0 6px 14px rgba(255, 78, 78, 0.3);
   cursor: pointer;
 }
-.delete-btn:hover {
-  color: #c82333;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
+
 .password-btn:hover {
-  color: rgb(144, 174, 255);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  color: #91b3ff;
+  background: rgba(145, 179, 255, 0.1);
+  box-shadow: 0 6px 14px rgba(145, 179, 255, 0.3);
   cursor: pointer;
 }
 

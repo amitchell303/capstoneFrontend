@@ -8,7 +8,6 @@ import Home from "./pages/Home.jsx";
 import VehiclePage from "./pages/VehiclePage.jsx";
 import Navigations from "./components/Navigations.jsx";
 import AboutMe from "./components/AboutMe.jsx";
-import SingleUser from "./components/SingleUser.jsx";
 import EmptyGarage from "./components/garageViews/EmptyGarage.jsx";
 import EditVehicleForm from "./components/forms/EditVehicle.jsx";
 import AddVehicle from "./components/forms/AddVehicle.jsx";
