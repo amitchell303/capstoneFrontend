@@ -30,9 +30,9 @@ export default function AllVehicles() {
     <div className="content-container">
       <div className="allVehicles-sect-1">
         <h1>My Vehicles</h1>
-        <button className="addVehcile-btn">
+        <Link to="/addVehicle" className="addVehcile-btn">
           <span className="material-symbols-outlined">add_2</span>
-        </button>
+        </Link>
       </div>
       <div className="card-list">
         {cars.map((car) => (

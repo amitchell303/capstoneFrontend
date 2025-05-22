@@ -279,21 +279,20 @@ export default function AboutMe() {
             >
               <span className="material-symbols-outlined">manage_accounts</span>
             </button>
-
-            <button
-              className="delete-btn"
-              type="button"
-              onClick={handleDeleteUser}
-            >
-              <span className="material-symbols-outlined">delete_forever</span>
-            </button>
             <button
               className="password-btn"
               type="button"
               onClick={() => setIsNewPassword(true)}
             >
               {/* <span className="material-symbols-outlined">change_password</span> */}
-              <p>change password</p>
+              <span class="material-symbols-outlined">password</span>
+            </button>
+            <button
+              className="delete-btn"
+              type="button"
+              onClick={handleDeleteUser}
+            >
+              <span className="material-symbols-outlined">delete_forever</span>
             </button>
           </section>
         </main>
