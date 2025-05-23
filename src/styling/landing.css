@@ -40,13 +40,14 @@
 }
 
 .text-content p {
-  color: whitesmoke;
+  color: rgba(245, 245, 245, 0.793);
   margin-top: 15px;
   letter-spacing: 1.5px;
   font-family: "Gruppo", sans-serif;
   font-size: 17px;
   font-weight: 400;
   font-style: normal;
+  opacity: 70%;
 }
 .link-button {
   background: none;
@@ -54,12 +55,13 @@
   cursor: pointer;
   text-decoration: underline;
   padding: 0;
-  color: #ffa568;
+  color: rgba(245, 245, 245, 0.793);
   font-family: "Gruppo", sans-serif;
   font-size: 18px;
   font-weight: 400;
   font-style: normal;
   text-decoration: none;
+  opacity: 70%;
 }
 .link-button:hover {
   text-decoration: underline;

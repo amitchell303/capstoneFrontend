@@ -19,7 +19,7 @@ export default function Landing() {
           >
             Sign-in
           </button>{" "}
-          or{" "}
+          /{" "}
           <button
             className="link-button"
             onClick={() => setShowRegisterModal(true)}
