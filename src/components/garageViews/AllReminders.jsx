@@ -5,6 +5,7 @@ import {
   useDeleteReminderMutation,
 } from "../../app/reminderSlice";
 import AddReminders from "../forms/AddNote";
+import { TbSearch } from "react-icons/tb";
 
 const AllReminders = () => {
   const [search, setSearch] = useState("");
@@ -59,7 +60,23 @@ const AllReminders = () => {
     <>
       <div className="content-container">
         <div className="notes-container">
-          <h1>All Notes</h1>
+          <div className="notes-header">
+            <h1>All Notes</h1>{" "}
+            <form className="search" onSubmit={(e) => e.preventDefault()}>
+              <div className="search__wrapper">
+                <input
+                  type="text"
+                  className="search__field"
+                  placeholder="Search by title..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+                <button type="submit" className="search__icon">
+                  <TbSearch />
+                </button>
+              </div>
+            </form>
+          </div>
           <main className="notes">
             <div className="notes-section-1">
               {filteredReminders?.length > 0 ? (
