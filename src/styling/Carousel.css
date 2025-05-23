@@ -20,19 +20,24 @@
   filter: grayscale(40%);
 }
 .card.active {
-  transform: scale(1.1);
   opacity: 1;
+  max-height: 525px;
+  min-height: 525px;
   filter: none;
   z-index: 10;
 }
 .card.prev {
-  transform: translateX(-150px) scale(0.9);
+  transform: translateX(-150px);
+  max-height: 475px;
+  min-height: 475px;
   opacity: 0.7;
   filter: grayscale(20%);
   z-index: 5;
 }
 .card.next {
-  transform: translateX(150px) scale(0.9);
+  transform: translateX(150px);
+  max-height: 475px;
+  min-height: 475px;
   opacity: 0.7;
   filter: grayscale(20%);
   z-index: 5;
@@ -44,11 +49,11 @@
   cursor: pointer;
   user-select: none;
   padding: 0 10px;
-  color: #333;
+  color: #cecece;
   transition: color 0.3s ease;
 }
 .carousel-btn:hover {
-  color: #000;
+  color: #ffe7a0;
 }
 .carousel-btn.prev {
   margin-right: 10px;
