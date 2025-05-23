@@ -40,10 +40,10 @@ const AddCarOwner = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // const response = await createAccess({
-      //   testVin: vin,
-      //   userId,
-      // });
+      const response = await createAccess({
+        testVin: vin,
+        userId,
+      });
     } catch (err) {
       console.error("Error adding vehicle access:", err);
     }
