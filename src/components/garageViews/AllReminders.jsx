@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useEffect,useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import {
   useGetAllRemindersQuery,
   useDeleteReminderMutation,
@@ -15,7 +15,7 @@ const AllReminders = () => {
     isLoading,
     error,
     data: reminderList, // Default to an empty array to prevent errors if data is undefined initially
-  } = useGetAllRemindersQuery({vin });
+  } = useGetAllRemindersQuery({ vin });
 
   const [reminders, setReminders] = useState([]);
   useEffect(() => {
@@ -25,26 +25,22 @@ const AllReminders = () => {
     }
   }, [reminderList]);
 
-   const filteredReminders = useMemo(() => {
-      if (!reminders) return [];
-      if (!search) return reminders;
-      return reminders.filter((reminder) =>
-        reminder.tittle.toLowerCase().includes(search.toLowerCase())
-      );
-    }, [reminders, search]);
-  
-    
-  
-    // Delete Reminder function
-    async function handleDeleteReminder(reminderIdToDelete) {
-      try {
-        await deleteReminder(reminderIdToDelete).unwrap();
-        
-      } catch (err) {
-        console.error("Failed to delete reminder:", err);
-      }
+  const filteredReminders = useMemo(() => {
+    if (!reminders) return [];
+    if (!search) return reminders;
+    return reminders.filter((reminder) =>
+      reminder.tittle.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [reminders, search]);
+
+  // Delete Reminder function
+  async function handleDeleteReminder(reminderIdToDelete) {
+    try {
+      await deleteReminder(reminderIdToDelete).unwrap();
+    } catch (err) {
+      console.error("Failed to delete reminder:", err);
     }
-  
+  }
 
   if (isLoading) {
     return <div>Loading reminders...</div>;
@@ -61,22 +57,6 @@ const AllReminders = () => {
 
   return (
     <>
-      <div className="search-title-container">
-        <div className="row justify-content-center">
-          <div className="col-md-6">
-            <div className="search-container">
-              <input
-                type="text"
-                className="form-control search-input"
-                placeholder="Search by title..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className="content-container">
         <div className="notes-container">
           <h1>All Notes</h1>
@@ -118,7 +98,7 @@ const AllReminders = () => {
                 </p>
               )}
             </div>
-            <div className="floating-divider"></div>
+            <div className="notes-floating-divider"></div>
             <div className="notes-section-2">
               <AddReminders />
             </div>

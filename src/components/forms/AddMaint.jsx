@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useCreateLogMutation } from "../../app/maintenanceSlice";
 import { useGetAllUsersQuery } from "../../app/userSlice";
 
-function AddMaint() {
+function AddMaint({ vin }) {
   const { data: users } = useGetAllUsersQuery();
   const [createLog] = useCreateLogMutation();
   const [milage, setMilage] = useState("");

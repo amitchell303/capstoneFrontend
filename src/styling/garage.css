@@ -209,6 +209,7 @@ details[open] {
   animation: modalFadeIn 0.4s ease-out forwards;
   /* border: 1px solid red; */
 }
+
 .notes {
   display: flex;
   align-items: center;
@@ -225,6 +226,7 @@ details[open] {
   scrollbar-width: none;
   /* border: 1px solid red; */
 }
+
 .notes-section-1:hover {
   overflow: auto;
   scrollbar-width: thin;
@@ -283,9 +285,9 @@ details[open] {
   margin: 5rem 0;
 }
 
-.floating-divider {
+.notes-floating-divider {
   width: 0.1rem;
-  height: 99%;
+  height: 85%;
   margin: 0;
   background-color: #ff6600;
   align-self: center;
@@ -401,4 +403,11 @@ details[open] {
 
 .settings-links:hover {
   color: #ff6600;
+}
+.settings-floating-divider {
+  width: 0.1rem;
+  height: 95%;
+  margin: 0;
+  background-color: #ff6600;
+  align-self: center;
 }

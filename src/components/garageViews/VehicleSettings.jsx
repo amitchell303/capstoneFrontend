@@ -65,7 +65,7 @@ export default function VehicleSettings({ car }) {
               Remove Vehicle
             </button>
           </div>
-          <div className="floating-divider"></div>
+          <div className="settings-floating-divider"></div>
           <div className="settings-sect-2">{renderComp()}</div>
         </section>
       </div>

@@ -108,7 +108,7 @@ export default function VehiclePage() {
             <h1>Past Due</h1>
           </div>
           <div className={`slide-form ${showForm ? "active" : ""}`}>
-            <AddMaint />
+            <AddMaint vin={vin} />
           </div>
         </div>
 
