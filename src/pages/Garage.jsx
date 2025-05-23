@@ -21,7 +21,6 @@ export default function AllVehicles() {
     } else {
       if (data) {
         setCars(data);
-        console.log(data);
       }
     }
   }, [token, navigate, data]);
@@ -128,33 +127,6 @@ export default function AllVehicles() {
           ))}
         </div>
       )}
-
-      {/* <div className="card-list">
-        {cars.map((car) => (
-          <article className="card" key={car.vin}>
-            <figure className="card-image">
-              <img src={car.carImg} alt={`${car.make} ${car.model}`} />
-            </figure>
-            <div className="card-header">
-              <div>
-                <Link to={`/vehicles/${car.vin}`}>
-                  {car.carName || `${car.make} ${car.model}`}
-                </Link>
-                <p>
-                  {car.modelYear} {car.make} {car.model}{" "}
-                </p>
-              </div>
-
-              <button className="icon-button">
-                <span className="material-symbols-outlined">edit</span>
-              </button>
-            </div>
-            <div className="card-footer">
-              <p>{car.vin}</p>
-            </div>
-          </article>
-        ))}
-      </div> */}
     </div>
   );
 }
