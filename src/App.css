@@ -18,6 +18,7 @@
 
 .emptyGarage-container {
   color: whitesmoke;
+  margin: 0 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,9 +29,22 @@
   width: 250px;
   height: 250px;
 }
+
 .emptyGarage-container a {
   color: whitesmoke;
+  margin: 1.5rem 1rem;
+  padding: 12px 16px;
 }
+
+.emptyGarage-container a:hover {
+  background-color: #fefefe1d;
+  border-radius: 16px;
+}
+
+/* .emptyGarage-container a:active {
+  box-shadow: 2px 2px 5px whitesmoke;
+} */
+
 
 /*  ----------  All Vehicles Page  ----------  */
 .card-list {

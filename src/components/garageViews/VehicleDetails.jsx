@@ -29,7 +29,6 @@ export default function VehicleDetails({ car }) {
             <article className="performance-3">
               <h3>Tow Capacity</h3>
               <p>Charge System:</p>
-              <p>Cylinder Alignment:</p>
             </article>
           </div>
         </section>
@@ -51,19 +50,13 @@ export default function VehicleDetails({ car }) {
                 <p>Emission Control: {car.emissionControl}</p>
               </div>
               <div className="engine-details">
-                <p>Cylinder Alignment: {car.cylinderAlignment}</p>
-                <p>Valves per Cylinder: {car.valvesPerCylinder}</p>
-                <p>Valve Timing: {car.valveTiming}</p>
                 <p>Displacement: {car.displacement}</p>
-                <p>Bore: {car.bore}</p>
-                <p>Stroke: {car.stroke}</p>
                 <p>Compression Ratio: {car.compressionRatio}</p>
               </div>
               <div className="engine-details">
                 <p>Oil Type: {car.oilType}</p>
                 <p>Oil Capacity: {car.oilCapacity}</p>
                 <p>Coolant Capacity: {car.coolantCapacity}</p>
-                <p>Battery Capacity (Ah): {car.batteryCapacity}</p>
                 <p>Tires: {car.tires}</p>
                 <p>Suspension: {car.suspension}</p>
               </div>
