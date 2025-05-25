@@ -2,9 +2,6 @@
   <a href="https://imgbb.com/"><img src="https://i.ibb.co/spMNqFzN/MM-logo-2.png" alt="MM-logo-2" border="0" /></a>
 </p>
 
-# Site Status
-
-
 # MyMoto/Capstone Frontend
 
 Deployed site: https://fsa-capstone-frontend-5a11747f8eba.herokuapp.com/
