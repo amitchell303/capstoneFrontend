@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDeleteVehicleMutation } from "../../app/carSlice";
 import "../../styling/forms.css";
 
@@ -8,6 +8,7 @@ const DeleteVehicle = ({ car }) => {
   const [deleteVehicle, { isLoading, isSuccess, isError }] =
     useDeleteVehicleMutation();
   const navigate = useNavigate();
+  const { vin } = useParams();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,9 +18,12 @@ const DeleteVehicle = ({ car }) => {
       return;
     }
     try {
-      await deleteVehicle(vin).unwrap();
+      const response = await deleteVehicle(vin).unwrap();
     } catch (error) {
       console.error("Failed to delete vehicle:", error);
+      if (error.status === 422) {
+        alert("Service is down.");
+      }
     }
   };
 

@@ -45,7 +45,6 @@
   box-shadow: 2px 2px 5px whitesmoke;
 } */
 
-
 /*  ----------  All Vehicles Page  ----------  */
 .card-list {
   width: 50vw;
@@ -165,11 +164,14 @@ img {
   height: 35px;
   margin-top: 10px;
   margin-right: 20px;
+  padding: 5px 0px 0px 5px;
   border: none;
   background-color: transparent;
 }
 .addVehcile-btn:hover {
   color: #ff822f;
+  background-color: #f8fcf32f;
+  border-radius: 25%;
   cursor: pointer;
 }
 

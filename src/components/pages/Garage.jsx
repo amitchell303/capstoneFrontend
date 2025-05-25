@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useGetMyCarsQuery } from "../../app/carSlice";
+import { useGetMyCarsQuery } from "../../app/carSlice"; //make Slice file for cars
 import { BiSolidCarGarage, BiSolidBook } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import "../../App.css";
@@ -61,10 +61,49 @@ export default function AllVehicles() {
           <span className="material-symbols-outlined">add_2</span>
         </Link>
       </div>
-      <div className="carousel-container">
-        <div className="carousel">
-          {visibleCars.map(({ car, position }) => (
-            <article key={car.vin} className={`card ${position}`}>
+      {cars.length > 3 ? (
+        <>
+          <div className="carousel-container">
+            <div className="carousel">
+              {visibleCars.map(({ car, position }) => (
+                <article key={car.vin} className={`card ${position}`}>
+                  <figure className="card-image">
+                    <img src={car.carImg} alt={`${car.make} ${car.model}`} />
+                  </figure>
+                  <div className="card-header">
+                    <div>
+                      <Link to={`/vehicles/${car.vin}`}>
+                        {car.carName || `${car.make} ${car.model}`}
+                      </Link>
+                      <p>
+                        {car.modelYear} {car.make} {car.model}{" "}
+                      </p>
+                    </div>
+
+                    <button className="icon-button">
+                      <span className="material-symbols-outlined">edit</span>
+                    </button>
+                  </div>
+                  <div className="card-footer">
+                    <p>{car.vin}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+          <div>
+            <button className="carousel-btn prev" onClick={prev}>
+              ‹
+            </button>
+            <button className="carousel-btn next" onClick={next}>
+              ›
+            </button>
+          </div>
+        </>
+      ) : (
+        <div className="card-list">
+          {cars.map((car) => (
+            <article className="card" key={car.vin}>
               <figure className="card-image">
                 <img src={car.carImg} alt={`${car.make} ${car.model}`} />
               </figure>
@@ -88,41 +127,7 @@ export default function AllVehicles() {
             </article>
           ))}
         </div>
-      </div>
-      <div>
-        <button className="carousel-btn prev" onClick={prev}>
-          ‹
-        </button>
-        <button className="carousel-btn next" onClick={next}>
-          ›
-        </button>
-      </div>
-      {/* <div className="card-list">
-        {cars.map((car) => (
-          <article className="card" key={car.vin}>
-            <figure className="card-image">
-              <img src={car.carImg} alt={`${car.make} ${car.model}`} />
-            </figure>
-            <div className="card-header">
-              <div>
-                <Link to={`/vehicles/${car.vin}`}>
-                  {car.carName || `${car.make} ${car.model}`}
-                </Link>
-                <p>
-                  {car.modelYear} {car.make} {car.model}{" "}
-                </p>
-              </div>
-
-              <button className="icon-button">
-                <span className="material-symbols-outlined">edit</span>
-              </button>
-            </div>
-            <div className="card-footer">
-              <p>{car.vin}</p>
-            </div>
-          </article>
-        ))}
-      </div> */}
+      )}
     </div>
   );
 }
