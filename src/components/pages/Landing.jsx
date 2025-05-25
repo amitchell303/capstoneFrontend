@@ -29,7 +29,7 @@ export default function Landing() {
         </p>
       </div>
       <div className="animation">
-        <img src="src/public/bmwbkgd.jpg" alt="BMW M3" />
+        <img src="/bmwbkgd.jpg" alt="BMW M3" />
       </div>
 
       {/* Modals */}

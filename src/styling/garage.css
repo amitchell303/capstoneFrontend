@@ -211,7 +211,6 @@ details[open] {
 
 .notes-header {
   display: flex;
-  border: 1px solid red;
 }
 
 .notes {
@@ -220,7 +219,6 @@ details[open] {
   justify-content: space-between;
   height: 100%;
   transform: translateY(-2.5rem);
-  /* border: 1px solid red; */
 }
 
 .notes-section-1 {
@@ -228,7 +226,6 @@ details[open] {
   height: 80%;
   overflow: hidden;
   scrollbar-width: none;
-  /* border: 1px solid red; */
 }
 
 .notes-section-1:hover {

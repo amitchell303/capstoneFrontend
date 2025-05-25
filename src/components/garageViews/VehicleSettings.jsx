@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "../../styling/shareCar.css";
-import settingsIcon from "../../public/gear-svgrepo-com.svg";
 import EditVehicleForm from "../forms/EditVehicle";
 import DeleteVehicle from "../forms/DeleteVehicle";
 import AddCarOwner from "../forms/AddCarOwner";
@@ -15,7 +14,7 @@ export default function VehicleSettings({ car }) {
           <div>
             <img
               className="settings-icon"
-              src={settingsIcon}
+              src="/gear-svgrepo-com.svg"
               alt="Settings Icon"
             />
           </div>
