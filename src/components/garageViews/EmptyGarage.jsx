@@ -12,7 +12,7 @@ export default function EmptyGarage() {
   return (
     <div className="glassmorphism-container">
       <div className="emptyGarage-container">
-        <img src="src\public\carSticker.gif" alt="car sticker" />
+        <img src="/carSticker.gif" alt="car sticker" />
         <h1>Your Garage is empty.</h1>
         <NavLink to="/addVehicle">Add a Vehicle</NavLink>
       </div>
