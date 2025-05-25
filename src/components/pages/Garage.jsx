@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useGetMyCarsQuery } from "../app/carSlice"; //make Slice file for cars
+import { useGetMyCarsQuery } from "../../app/carSlice"; //make Slice file for cars
 import { BiSolidCarGarage, BiSolidBook } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
-import "../App.css";
-import "../styling/Carousel.css";
+import "../../App.css";
+import "../../styling/Carousel.css";
 
 export default function AllVehicles() {
   const navigate = useNavigate();

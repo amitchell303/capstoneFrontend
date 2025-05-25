@@ -1,12 +1,11 @@
-import { useParams } from "react-router-dom";
 import { useState } from "react";
-import "../App.css";
-import "../styling/forms.css";
 import {
   useAboutMeQuery,
   useUpdateUserMutation,
   useDeleteUserMutation,
-} from "../app/userSlice";
+} from "../../app/userSlice";
+import "../../App.css";
+import "../../styling/forms.css";
 
 export default function AboutMe() {
   const { error, isLoading, data: me } = useAboutMeQuery();

@@ -1,10 +1,14 @@
-import "../App.css";
+import "../../App.css";
+import { IoAdd } from "react-icons/io5";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useGetLogsQuery, useCreateLogMutation } from "../app/maintenanceSlice";
-import { useGetUpcomingServicesQuery } from "../app/upcomingServiceSlice";
-import { useGetAllUsersQuery } from "../app/userSlice";
-import AddMaint from "../components/forms/AddMaint";
+import {
+  useGetLogsQuery,
+  useCreateLogMutation,
+} from "../../app/maintenanceSlice";
+import { useGetUpcomingServicesQuery } from "../../app/upcomingServiceSlice";
+import { useGetAllUsersQuery } from "../../app/userSlice";
+import AddMaint from "../forms/AddMaint";
 
 export default function VehiclePage() {
   const { vin } = useParams();
@@ -15,14 +19,9 @@ export default function VehiclePage() {
     data: upcomingServices,
   } = useGetUpcomingServicesQuery({ testVin: vin });
   const { data: users } = useGetAllUsersQuery();
-  const [createLog] = useCreateLogMutation();
   const [milage, setMilage] = useState("");
   const [allMechanics, setAllMechanics] = useState([]);
-  const [mechanic, setMechanic] = useState("");
-  const [serviceType, setServiceType] = useState("");
-  const [serviceCost, setServiceCost] = useState("");
-  const [serviceDetail, setServiceDetail] = useState("");
-  const [showAMFModal, setShowAMFModal] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     if (users) {
@@ -38,8 +37,10 @@ export default function VehiclePage() {
       console.log("upcoming services: ", upcomingServices.data);
     }
   }, [users, logs, upcomingServices]);
+
   if (isLoading || loading2) return <h2>Loading...</h2>;
   if (error || error2) return <h2>There was an error loading your data.</h2>;
+
   // async function submitMaintenance(e) {
   //   e.preventDefault();
   //   try {
@@ -75,34 +76,20 @@ export default function VehiclePage() {
   //     console.error(error);
   //   }
   // }
+
   return (
     <div className="content-container">
       <main className="maintenance">
         <div className="maint-section-1">
           <h1>Service</h1>
-          <button className="AMF-btn" onClick={() => setShowAMFModal(true)}>
-            Log Service
+          <button
+            className={`AMF-btn ${showForm ? "rotated" : ""}`}
+            onClick={() => setShowForm((hidden) => !hidden)}
+          >
+            {showForm ? <IoAdd /> : <IoAdd />}
           </button>
-          {showAMFModal && (
-            <div
-              className="garage-modal-overlay"
-              onClick={(e) => {
-                if (e.target.classList.contains("garage-modal-overlay")) {
-                  setshowAMFModal(false);
-                }
-              }}
-            >
-              {" "}
-              <AddMaint />
-              <button
-                className="garage-closeModal-btn"
-                onClick={() => setShowAMFModal(false)}
-              >
-                ×
-              </button>
-            </div>
-          )}
         </div>
+
         <div className="maint-section-2">
           <div className="maint-2a">
             <h1>Upcoming</h1>
@@ -120,7 +107,11 @@ export default function VehiclePage() {
           <div className="maint-2b">
             <h1>Past Due</h1>
           </div>
+          <div className={`slide-form ${showForm ? "active" : ""}`}>
+            <AddMaint vin={vin} />
+          </div>
         </div>
+
         <div className="maint-section-3">
           <h1>Service History</h1>
           {logs.length > 0 ? (

@@ -125,6 +125,12 @@ details[open] {
   display: flex;
   flex-direction: column;
   animation: modalFadeIn 0.4s ease-out forwards;
+
+  /* font-family: sans-serif; */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
 }
 .maint-section-1 {
   display: flex;
@@ -148,6 +154,52 @@ details[open] {
   margin-top: 10rem;
 }
 
+.slide-form {
+  position: absolute;
+  top: 95px;
+  left: 68%;
+  width: auto;
+  /* max-width: 600px; */
+  height: auto;
+
+  background: rgb(37, 37, 37);
+  border: 2px solid #afafaf38;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  z-index: 1000;
+
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.slide-form.active {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.AMF-btn {
+  width: 42px;
+  height: 42px;
+  margin: auto 0;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.AMF-btn:hover {
+  color: #ff6600;
+  transition: 0.3s ease;
+}
+
+.AMF-btn.rotated {
+  transform: rotate(45deg);
+}
+
 /* ----- Notes Page ----- */
 .notes-container {
   width: 80rem;
@@ -155,15 +207,18 @@ details[open] {
   margin: 0 auto;
   padding: 1rem;
   animation: modalFadeIn 0.4s ease-out forwards;
-  /* border: 1px solid red; */
 }
+
+.notes-header {
+  display: flex;
+}
+
 .notes {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
   transform: translateY(-2.5rem);
-  /* border: 1px solid red; */
 }
 
 .notes-section-1 {
@@ -171,8 +226,8 @@ details[open] {
   height: 80%;
   overflow: hidden;
   scrollbar-width: none;
-  /* border: 1px solid red; */
 }
+
 .notes-section-1:hover {
   overflow: auto;
   scrollbar-width: thin;
@@ -231,20 +286,87 @@ details[open] {
   margin: 5rem 0;
 }
 
-.floating-divider {
+.notes-floating-divider {
   width: 0.1rem;
-  height: 99%;
+  height: 85%;
   margin: 0;
   background-color: #ff6600;
   align-self: center;
+}
+:root {
+  --icon-size: 65px;
+  /* --main-color: #e9f1f4; */
+}
+
+.search {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  /* margin-right: 2rem; */
+}
+.search *,
+.search *:before,
+.search *:after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+.search__wrapper {
+  position: relative;
+}
+
+.search__field {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  color: whitesmoke;
+  font-family: Lato, sans-serif;
+  font-size: 1.35em;
+  padding: 0.35em var(--icon-size) 0.35em 0;
+  border: 1px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: transparent;
+}
+
+.search__field:hover {
+  width: 30vw;
+  color: whitesmoke;
+  cursor: text;
+  border-bottom-color: #ccc;
+}
+
+.search__icon {
+  color: whitesmoke;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--main-color);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  font-size: 1.5em;
+  text-align: center;
+  border: none;
+  border-radius: 50%;
+  pointer-events: none;
+  display: inline-block;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.search__field:focus + .search__icon {
+  background-color: transparent;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 /*  Modals  */
 .garage-modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
+  background: rgba(65, 65, 65, 0.847);
+  backdrop-filter: blur(15px);
   border-radius: 15px;
   display: flex;
   justify-content: center;
@@ -349,4 +471,11 @@ details[open] {
 
 .settings-links:hover {
   color: #ff6600;
+}
+.settings-floating-divider {
+  width: 0.1rem;
+  height: 95%;
+  margin: 0;
+  background-color: #ff6600;
+  align-self: center;
 }

@@ -3,19 +3,20 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import store from "./app/store";
 import "./App.css";
 
-import Landing from "./pages/Landing.jsx";
-import Home from "./pages/Home.jsx";
-import VehiclePage from "./pages/VehiclePage.jsx";
 import Navigations from "./components/Navigations.jsx";
-import AboutMe from "./pages/AboutMe.jsx";
-import EmptyGarage from "./components/garageViews/EmptyGarage.jsx";
+import Landing from "./components/pages/Landing.jsx";
+import Home from "./components/pages/Home.jsx";
+import AboutMe from "./components/pages/AboutMe.jsx";
+import Faq from "./components/pages/Faq.jsx";
+import Build from "./components/pages/Build.jsx";
+
+import VehiclePage from "./components/pages/VehiclePage.jsx";
 import EditVehicleForm from "./components/forms/EditVehicle.jsx";
 import AddVehicle from "./components/forms/AddVehicle.jsx";
 import AddReminders from "./components/forms/AddNote.jsx";
-import AllReminders from "./components/garageViews//AllReminders.jsx";
 import DeleteVehicle from "./components/forms/DeleteVehicle.jsx";
-import Faq from "./pages/Faq.jsx";
-import Build from "./pages/Build.jsx";
+import EmptyGarage from "./components/garageViews/EmptyGarage.jsx";
+import AllReminders from "./components/garageViews//AllReminders.jsx";
 
 function App() {
   function logout() {

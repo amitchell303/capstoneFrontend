@@ -38,6 +38,9 @@ const AddVehicleForm = () => {
       setCarImg("");
     } catch (err) {
       console.error("Error adding vehicle:", err);
+      if (err.status === 422) {
+        alert("Service is down.");
+      }
     }
   };
 

@@ -41,66 +41,64 @@ function Registration() {
   }
 
   return (
-    <div className="modal-container">
-      <main className="modal">
-        <h1>Register</h1>
-        <form className="allForms" onSubmit={submit}>
-          <div className="allForms-group">
-            <label>First Name</label>
-            <input
-              value={firstname}
-              placeholder="First Name"
-              onChange={(ev) => setFirstName(ev.target.value)}
-            />
-          </div>
-          <div className="allForms-group">
-            <label>Last Name</label>
-            <input
-              value={lastname}
-              placeholder="Last Name"
-              onChange={(ev) => setLastName(ev.target.value)}
-            />
-          </div>
-          <div className="allForms-group">
-            <label>Email</label>
-            <input
-              type="email"
-              value={email}
-              placeholder="Email"
-              onChange={(ev) => setEmail(ev.target.value)}
-            />
-          </div>
-          <div className="allForms-group">
-            <label>Password</label>
-            <input
-              type="password"
-              value={password}
-              placeholder="Password"
-              onChange={(ev) => setPassword(ev.target.value)}
-            />
-          </div>
-          <div className="allForms-group">
-            <label>Confirm Passsword</label>
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              value={confirmPassword}
-              onChange={(ev) => setConfirmPassword(ev.target.value)}
-            />
-          </div>
-          <button
-            type="submit"
-            disabled={
-              !email ||
-              !password ||
-              (password && confirmPassword && password !== confirmPassword)
-            }
-          >
-            Register
-          </button>
-        </form>
-      </main>
-    </div>
+    <main className="modal">
+      <h1>Register</h1>
+      <form className="allForms" onSubmit={submit}>
+        <div className="allForms-group">
+          <label>First Name</label>
+          <input
+            value={firstname}
+            placeholder="First Name"
+            onChange={(ev) => setFirstName(ev.target.value)}
+          />
+        </div>
+        <div className="allForms-group">
+          <label>Last Name</label>
+          <input
+            value={lastname}
+            placeholder="Last Name"
+            onChange={(ev) => setLastName(ev.target.value)}
+          />
+        </div>
+        <div className="allForms-group">
+          <label>Email</label>
+          <input
+            type="email"
+            value={email}
+            placeholder="Email"
+            onChange={(ev) => setEmail(ev.target.value)}
+          />
+        </div>
+        <div className="allForms-group">
+          <label>Password</label>
+          <input
+            type="password"
+            value={password}
+            placeholder="Password"
+            onChange={(ev) => setPassword(ev.target.value)}
+          />
+        </div>
+        <div className="allForms-group">
+          <label>Confirm Passsword</label>
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={(ev) => setConfirmPassword(ev.target.value)}
+          />
+        </div>
+        <button
+          type="submit"
+          disabled={
+            !email ||
+            !password ||
+            (password && confirmPassword && password !== confirmPassword)
+          }
+        >
+          Register
+        </button>
+      </form>
+    </main>
   );
 }
 

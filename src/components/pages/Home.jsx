@@ -1,10 +1,13 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useGetMyCarsQuery } from "../app/carSlice"; //make Slice file for cars
-import { useUpdateUserMutation, useDeleteUserMutation } from "../app/userSlice";
-import EmptyGarage from "../components/garageViews/EmptyGarage";
+import { useGetMyCarsQuery } from "../../app/carSlice"; //make Slice file for cars
+import {
+  useUpdateUserMutation,
+  useDeleteUserMutation,
+} from "../../app/userSlice";
+import EmptyGarage from "../garageViews/EmptyGarage";
 import AllVehicles from "../pages/Garage.jsx";
-import "../App.css";
+import "../../App.css";
 
 function Home() {
   const navigate = useNavigate();
