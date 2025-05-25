@@ -48,12 +48,15 @@
   font-size: 2rem;
   cursor: pointer;
   user-select: none;
-  padding: 0 10px;
+  margin-top: 10px;
+  padding: 0 10px 5px 10px;
   color: #cecece;
   transition: color 0.3s ease;
 }
 .carousel-btn:hover {
   color: #ffe7a0;
+  background-color: #f8fcf32f;
+  border-radius: 25%;
 }
 .carousel-btn.prev {
   margin-right: 10px;

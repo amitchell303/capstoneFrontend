@@ -21,7 +21,6 @@ export default function AllVehicles() {
     } else {
       if (data) {
         setCars(data);
-        console.log(data);
       }
     }
   }, [token, navigate, data]);
