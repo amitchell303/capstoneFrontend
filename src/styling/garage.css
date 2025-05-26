@@ -15,6 +15,16 @@
   /* max-width: 890px; */
 }
 
+.vehNav h1 {
+  color: whitesmoke;
+  margin-right: 10px;
+  letter-spacing: 1px;
+  font-family: "Gruppo", sans-serif;
+  font-weight: 550;
+  font-style: normal;
+  font-size: 35px;
+}
+
 .vehNav ul {
   display: flex;
   list-style: none;
@@ -33,6 +43,11 @@
 
 .btn-link:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+
+.active-link {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 /* ---------- Vehicle Details ---------- */
@@ -200,167 +215,6 @@ details[open] {
   transform: rotate(45deg);
 }
 
-/* ----- Notes Page ----- */
-.notes-container {
-  width: 80rem;
-  height: 40rem;
-  margin: 0 auto;
-  padding: 1rem;
-  animation: modalFadeIn 0.4s ease-out forwards;
-}
-
-.notes-header {
-  display: flex;
-}
-
-.notes {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  transform: translateY(-2.5rem);
-}
-
-.notes-section-1 {
-  width: 50rem;
-  height: 80%;
-  overflow: hidden;
-  scrollbar-width: none;
-}
-
-.notes-section-1:hover {
-  overflow: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(103, 103, 103, 0.337) transparent; /* Firefox: thumb + track */
-}
-/* WebKit browsers (Chrome, Safari, Edge) */
-.notes-section-1::-webkit-scrollbar {
-  width: 8px;
-}
-.notes-section-1::-webkit-scrollbar-track {
-  background: transparent;
-}
-.notes-section-1::-webkit-scrollbar-button {
-  height: 0;
-  width: 0;
-  display: none;
-}
-/* Only show WebKit scrollbar on hover */
-.notes-section-1:not(:hover)::-webkit-scrollbar {
-  width: 0;
-}
-
-.note-list {
-  list-style: none;
-}
-
-.note-card {
-  margin: 0 10px;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  /* border: 1px solid red; */
-}
-
-.note-card-info p {
-  margin: 10px;
-}
-
-.note-card-btn {
-  align-self: center;
-}
-.note-card-btn button {
-  background: transparent;
-  border: none;
-  color: whitesmoke;
-}
-.note-card-btn button:hover {
-  background: transparent;
-  border: none;
-  color: #ff6600;
-  cursor: pointer;
-}
-
-.notes-section-2 {
-  margin: 5rem 0;
-}
-
-.notes-floating-divider {
-  width: 0.1rem;
-  height: 85%;
-  margin: 0;
-  background-color: #ff6600;
-  align-self: center;
-}
-:root {
-  --icon-size: 65px;
-  /* --main-color: #e9f1f4; */
-}
-
-.search {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  /* margin-right: 2rem; */
-}
-.search *,
-.search *:before,
-.search *:after {
-  box-sizing: border-box;
-  outline: none;
-}
-
-.search__wrapper {
-  position: relative;
-}
-
-.search__field {
-  width: var(--icon-size);
-  height: var(--icon-size);
-  color: whitesmoke;
-  font-family: Lato, sans-serif;
-  font-size: 1.35em;
-  padding: 0.35em var(--icon-size) 0.35em 0;
-  border: 1px solid transparent;
-  border-radius: 0;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  background: transparent;
-}
-
-.search__field:hover {
-  width: 30vw;
-  color: whitesmoke;
-  cursor: text;
-  border-bottom-color: #ccc;
-}
-
-.search__icon {
-  color: whitesmoke;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: var(--main-color);
-  width: var(--icon-size);
-  height: var(--icon-size);
-  font-size: 1.5em;
-  text-align: center;
-  border: none;
-  border-radius: 50%;
-  pointer-events: none;
-  display: inline-block;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.search__field:focus + .search__icon {
-  background-color: transparent;
-  pointer-events: auto;
-  cursor: pointer;
-}
-
 /*  Modals  */
 .garage-modal-overlay {
   position: fixed;
@@ -401,7 +255,7 @@ details[open] {
   color: #3d3d3d;
 }
 
-/* ----- Vehicle Settings Page ----- */
+/* ----- Settings Page ----- */
 .vehSettings {
   width: 80rem;
   height: 40rem;

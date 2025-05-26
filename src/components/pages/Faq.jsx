@@ -16,22 +16,7 @@ function Faq() {
               </p>
             </div>
             <div class="faq-item">
-              <h3>How do I add a new motorcycle?</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus liquam perspiciatis unde voluptate nobis quam.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3>Can I track service history for multiple bikes?</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus aspernatur nesciunt et modi aliquam rem maxime
-                perspiciatis nobis quam.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3>Does MyMoto send service reminders?</h3>
+              <h3>What features does MyMoto include?</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Possimus aspernatur nesciunt et modi aliquam rem maxime
@@ -39,18 +24,33 @@ function Faq() {
               </p>
             </div>
             <div class="faq-item">
-              <h3>Can I export my maintenance records?</h3>
+              <h3>How do I add a vehicle?</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus liquam perspiciatis unde voluptate nobis quam.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3>How do I edit my vehicle?</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus aspernatur nesciunt.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3>Can I track service history for multiple vehicles?</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus aspernatur nesciunt et modi aliquam rem maxime
+                perspiciatis nobis quam.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3>How do I share my vehicle?</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Possimus aspernatur nesciunt et modi aliquam rem maxime
                 perspiciatis unde voluptate nobis quam.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3>Is MyMoto free to use?</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus aspernatur nesciunt.
               </p>
             </div>
           </div>

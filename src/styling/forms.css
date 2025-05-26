@@ -108,19 +108,26 @@
 } */
 
 /* ----- Remove Vehicle ----- */
-.remove-vehicle {
-  width: 30rem;
-  height: auto;
+.rmVeh-page-container {
+  width: 50rem;
+  height: 30rem;
+  margin: 0 auto;
+  padding: 1rem;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
+  border: 1px solid red;
+  animation: modalFadeIn 0.4s ease-out forwards;
 }
 
-.remove-vehicle-1 {
-  margin: 1rem 4.5rem;
+.rmVeh-sect-1 {
+  display: flex;
+  justify-content: space-between;
   padding: 1rem;
+  border: 1px solid rgb(248, 219, 0);
 }
 
-.remove-vehicle-2 input {
-  margin: 0rem 0.5rem 0 1rem;
+.rmVeh-sect-1 img {
+  width: 150px;
+  height: auto;
 }

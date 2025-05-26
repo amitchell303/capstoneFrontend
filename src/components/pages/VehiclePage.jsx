@@ -63,7 +63,9 @@ export default function VehiclePage() {
           <ul>
             <li>
               <button
-                className="btn-link"
+                className={`btn-link ${
+                  activeComp === "overview" ? "active-link" : ""
+                }`}
                 onClick={() => setActiveComp("overview")}
               >
                 Overview
@@ -71,7 +73,9 @@ export default function VehiclePage() {
             </li>
             <li>
               <button
-                className="btn-link"
+                className={`btn-link ${
+                  activeComp === "details" ? "active-link" : ""
+                }`}
                 onClick={() => setActiveComp("details")}
               >
                 Details
@@ -79,7 +83,9 @@ export default function VehiclePage() {
             </li>
             <li>
               <button
-                className="btn-link"
+                className={`btn-link ${
+                  activeComp === "service" ? "active-link" : ""
+                }`}
                 onClick={() => setActiveComp("service")}
               >
                 Service
@@ -87,7 +93,9 @@ export default function VehiclePage() {
             </li>
             <li>
               <button
-                className="btn-link"
+                className={`btn-link ${
+                  activeComp === "notes" ? "active-link" : ""
+                }`}
                 onClick={() => setActiveComp("notes")}
               >
                 Notes
@@ -95,7 +103,9 @@ export default function VehiclePage() {
             </li>
             <li>
               <button
-                className="btn-link"
+                className={`btn-link ${
+                  activeComp === "settings" ? "active-link" : ""
+                }`}
                 onClick={() => setActiveComp("settings")}
               >
                 Settings
