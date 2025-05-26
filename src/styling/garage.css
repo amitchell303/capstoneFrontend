@@ -15,6 +15,16 @@
   /* max-width: 890px; */
 }
 
+.vehNav h1 {
+  color: whitesmoke;
+  margin-right: 10px;
+  letter-spacing: 1px;
+  font-family: "Gruppo", sans-serif;
+  font-weight: 550;
+  font-style: normal;
+  font-size: 35px;
+}
+
 .vehNav ul {
   display: flex;
   list-style: none;
@@ -33,6 +43,11 @@
 
 .btn-link:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+
+.active-link {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 /* ---------- Vehicle Details ---------- */
