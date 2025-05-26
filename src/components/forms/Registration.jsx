@@ -31,7 +31,7 @@ function Registration() {
         setLastName("");
         setEmail("");
         setPassword("");
-        navigate("/");
+        navigate("/home");
       } catch (error) {
         console.error(error.message);
       }
