@@ -52,7 +52,7 @@
 
 .sp-sect-2 select {
   color: whitesmoke;
-  padding: 8px 12px;
+  padding: 0.55rem;
   width: 220px;
   margin: 10px 10px 10px 40px;
   background: rgba(253, 253, 253, 0.127);
@@ -61,7 +61,6 @@
   border-radius: 5px;
   font-size: 15px;
   font-family: inherit;
-
 }
 
 .sp-sect-2 select:hover,

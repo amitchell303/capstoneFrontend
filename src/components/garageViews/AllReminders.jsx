@@ -6,6 +6,7 @@ import {
 } from "../../app/reminderSlice";
 import AddReminders from "../forms/AddNote";
 import { TbSearch } from "react-icons/tb";
+import "../../styling/Notes.css";
 
 const AllReminders = () => {
   const [search, setSearch] = useState("");
@@ -57,28 +58,28 @@ const AllReminders = () => {
   }
 
   return (
-    <>
-      <div className="content-container">
-        <div className="notes-container">
-          <div className="notes-header">
-            <h1>All Notes</h1>{" "}
-            <form className="search" onSubmit={(e) => e.preventDefault()}>
-              <div className="search__wrapper">
-                <input
-                  type="text"
-                  className="search__field"
-                  placeholder="Search by title..."
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                />
-                <button type="submit" className="search__icon">
-                  <TbSearch />
-                </button>
-              </div>
-            </form>
-          </div>
-          <main className="notes">
-            <div className="notes-section-1">
+    <div className="content-container">
+      <div className="notes-container">
+        <h1>All Notes</h1>{" "}
+        <main className="notes">
+          <div className="notes-section-1">
+            <div className="notes-section-1a">
+              <form className="search" onSubmit={(e) => e.preventDefault()}>
+                <div className="search__wrapper">
+                  <input
+                    type="text"
+                    className="search__field"
+                    placeholder="Search by title..."
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                  />
+                  <button type="submit" className="search__icon">
+                    <TbSearch />
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div className="notes-section-1b">
               {filteredReminders?.length > 0 ? (
                 <ul className="note-list">
                   {filteredReminders.map((reminder) => (
@@ -115,14 +116,14 @@ const AllReminders = () => {
                 </p>
               )}
             </div>
-            <div className="notes-floating-divider"></div>
-            <div className="notes-section-2">
-              <AddReminders />
-            </div>
-          </main>
-        </div>
+          </div>
+          <div className="notes-floating-divider"></div>
+          <div className="notes-section-2">
+            <AddReminders />
+          </div>
+        </main>
       </div>
-    </>
+    </div>
   );
 };
 
