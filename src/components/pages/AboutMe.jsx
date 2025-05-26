@@ -247,7 +247,7 @@ export default function AboutMe() {
               type="submit"
               disabled={isLoading || !password || password !== confirmPassword}
             >
-              {isLoading ? "Adding..." : "Add Vehicle"}
+              {isLoading ? "Updating..." : "Change Password"}
             </button>
           </form>
         </div>
