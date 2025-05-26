@@ -61,26 +61,21 @@ const AddCarOwner = () => {
     </div>;
   }
   return (
-    <main>
-      <h2>Share Car Access:</h2>
-      <div>
-        <table id="whichUser">
-          <tbody>
-            <tr>
-              <td>
-                <button onClick={() => setUser()}>Users</button>
-              </td>
-              <td>
-                <button onClick={() => setMechanic()}>Mechanics</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      {isUser && (
-        <div className="content-container">
-          <div className="glassmorphism-container">
-            <h2>All Users:</h2>
+    <main className="shareVeh-page">
+      <section className="sp-sect-1">
+        <div className="sp-sect-1a">
+          <h2>Share Vehicle Access</h2>
+        </div>
+        <div className="sp-sect-1b" id="whichUser">
+          <button onClick={() => setUser()}>Users</button>
+          <button onClick={() => setMechanic()}>Mechanics</button>
+        </div>
+      </section>
+
+      <section className="sp-sect-2">
+        {isUser && (
+          <div className="sp-sect-2a">
+            <h2>All Users</h2>
             <form className="allForms" onSubmit={handleSubmit}>
               <div className="allForms-group">
                 <label>User:</label>
@@ -101,11 +96,9 @@ const AddCarOwner = () => {
               </button>
             </form>
           </div>
-        </div>
-      )}
-      {isMechanic && (
-        <div className="content-container">
-          <div className="glassmorphism-container">
+        )}
+        {isMechanic && (
+          <div className="sp-sect-2b">
             <h2>All Mechanics:</h2>
             <form className="allForms" onSubmit={handleSubmit}>
               <div className="allForms-group">
@@ -127,8 +120,8 @@ const AddCarOwner = () => {
               </button>
             </form>
           </div>
-        </div>
-      )}
+        )}
+      </section>
     </main>
   );
 };
