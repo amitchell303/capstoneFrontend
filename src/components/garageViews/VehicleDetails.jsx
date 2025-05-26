@@ -11,6 +11,7 @@ export default function VehicleDetails({ car }) {
             <p>Model: {car.model}</p>
             <p>Drive Type: {car.driveType}</p>
             <p>VIN Number: {car.vin}</p>
+            <p>Mileage: {car.mileage}</p>
           </div>
           <img src={car.carImg} alt={`${car.make} ${car.model}`} />
         </section>

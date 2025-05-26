@@ -9,6 +9,7 @@ const CarApi = api.injectEndpoints({
       }),
       providesTags: ["Car"],
     }),
+
     getSingleCar: build.query({
       query: () => ({
         url: `/api/car/:vin`,
@@ -43,7 +44,16 @@ const CarApi = api.injectEndpoints({
       }),
       invalidatesTags: ["Car"],
     }),
-    
+
+    updateMileage: build.mutation({
+      query: ({ vin, mileage }) => ({
+        url: `/api/car/${vin}`,
+        method: "PUT",
+        body: { mileage },
+      }),
+      invalidatesTags: ["Car"],
+    }),
+
     deleteVehicle: build.mutation({
       query: (vin) => ({
         url: `/api/car/${vin}`,
@@ -58,6 +68,7 @@ export const {
   useGetMyCarsQuery,
   useGetSingleCarQuery,
   useAddVehicleMutation,
+  useUpdateMileageMutation,
   useDeleteVehicleMutation,
 } = CarApi;
 
