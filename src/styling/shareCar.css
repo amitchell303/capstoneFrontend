@@ -2,6 +2,7 @@
   width: 50rem;
   height: 30rem;
   overflow-y: auto;
+  animation: modalFadeIn 0.4s ease-out forwards;
   /* border: 1px solid red; */
 }
 

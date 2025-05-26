@@ -34,16 +34,15 @@ const DeleteVehicle = ({ car }) => {
   }, [isSuccess, navigate]);
 
   return (
-    <div className="content-container">
-      <main className="remove-vehicle">
-        <h1>Remove Vehicle</h1>
-        <div className="remove-vehicle-1">
-          <strong>
-            {car.make} {car.model} {car.vin}
-          </strong>
-        </div>
-        <form className="allForms" onSubmit={handleSubmit}>
-          <label className="remove-vehicle-2">
+    <main className="rmVeh-page-container">
+      <h1>Remove Vehicle</h1>
+      <div className="rmVeh-sect-1">
+        <img src={car.carImg} alt={`${car.make} ${car.model}`} />
+        <strong>
+          {car.make} {car.model} {car.vin}
+        </strong>
+        <form onSubmit={handleSubmit}>
+          <label>
             <input
               type="checkbox"
               checked={confirmDelete}
@@ -51,15 +50,14 @@ const DeleteVehicle = ({ car }) => {
             />
             Confirm
           </label>
-
-          <button type="submit" disabled={isLoading}>
-            {isLoading ? "Removing..." : "Remove"}
-          </button>
-          {isSuccess && <p>Vehicle successfully deleted.</p>}
-          {isError && <p>Failed to delete vehicle.</p>}
         </form>
-      </main>
-    </div>
+      </div>
+      <button type="submit" disabled={isLoading}>
+        {isLoading ? "Removing..." : "Remove"}
+      </button>
+      {isSuccess && <p>Vehicle successfully deleted.</p>}
+      {isError && <p>Failed to delete vehicle.</p>}
+    </main>
   );
 };
 
