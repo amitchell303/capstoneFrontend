@@ -4,6 +4,7 @@ import {
   useUpdateUserMutation,
   useDeleteUserMutation,
 } from "../../app/userSlice";
+import { useNavigate } from "react-router-dom";
 import "../../App.css";
 import "../../styling/forms.css";
 
@@ -11,6 +12,7 @@ export default function AboutMe() {
   const { error, isLoading, data: me } = useAboutMeQuery();
   const [update] = useUpdateUserMutation();
   const [deleteUser] = useDeleteUserMutation();
+  const navigate = useNavigate();
 
   if (me) {
     console.log(me);
@@ -72,7 +74,9 @@ export default function AboutMe() {
   }
   async function handleDeleteUser() {
     try {
-      await deleteUser().unwrap();
+      const userId = me.user.id;
+      console.log();
+      await deleteUser({ userId }).unwrap();
       alert("User deleted Successfully!");
       navigate("/");
     } catch (error) {

@@ -71,12 +71,12 @@ const UserApi = api.injectEndpoints({
     }),
 
     deleteUser: build.mutation({
-      query: (userId) => ({
-        url: `/api/user/delete/${userId}`,
+      query: ({ userId }) => ({
+        url: `/api/user/update/${userId}`,
         method: "PUT",
         body: {
           activated: false,
-          deactivatedOn: Date.now(),
+          deactivatedOn: new Date(Date.now()).toISOString(),
         },
       }),
       invalidatesTags: ["User"],
