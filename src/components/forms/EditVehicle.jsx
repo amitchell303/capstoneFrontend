@@ -41,6 +41,7 @@ const EditVehicleForm = ({ car }) => {
             <label>VIN</label>
             <input type="text" placeholder={car.vin} disabled />
           </div>
+          {/* NEED TO UPDATE BACKEND TO ADD PLATE */}
           <div className="allForms-group">
             <label>Plate Number</label>
             <input type="text" placeholder="Plate number (optional)" />
