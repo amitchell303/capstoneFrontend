@@ -7,6 +7,7 @@ import {
   useCreateLogMutation,
 } from "../../app/maintenanceSlice";
 import { useGetUpcomingServicesQuery } from "../../app/upcomingServiceSlice";
+import { useGetPastDueQuery } from "../../app/pastDueSlice";
 import { useGetAllUsersQuery } from "../../app/userSlice";
 import AddMaint from "../forms/AddMaint";
 
@@ -18,6 +19,7 @@ export default function VehiclePage() {
     isLoading: loading2,
     data: upcomingServices,
   } = useGetUpcomingServicesQuery({ testVin: vin });
+  const { data: pastDue } = useGetPastDueQuery({ testVin: vin });
   const { data: users } = useGetAllUsersQuery();
   const [milage, setMilage] = useState("");
   const [allMechanics, setAllMechanics] = useState([]);
@@ -25,22 +27,20 @@ export default function VehiclePage() {
 
   useEffect(() => {
     if (users) {
-      //console.log("users:", users);
       const mechanics = users.filter((user) => user.roleId === 2);
       setAllMechanics(mechanics);
-      //console.log("mechanics:", mechanics);
     }
     if (logs) {
-      //console.log("logs:", logs);
     }
-    if (upcomingServices) {
-      console.log("upcoming services: ", upcomingServices.data);
+    if (pastDue) {
+      console.log("Past Due services: ", pastDue.data);
     }
-  }, [users, logs, upcomingServices]);
+  }, [users, logs, upcomingServices, pastDue]);
 
   if (isLoading || loading2) return <h2>Loading...</h2>;
   if (error || error2) return <h2>There was an error loading your data.</h2>;
 
+  // --- FORM REMOVED FROM PAGE; THIS FUNCTION IS NOT USED ---
   // async function submitMaintenance(e) {
   //   e.preventDefault();
   //   try {
@@ -106,6 +106,16 @@ export default function VehiclePage() {
           </div>
           <div className="maint-2b">
             <h1>Past Due</h1>
+            {pastDue?.length > 0 ? (
+              pastDue.data.map((serviceDue) => (
+                <li key={serviceDue.id}>
+                  <strong>{serviceDue.serviceType}</strong> at{" "}
+                  {serviceDue.targetMileage} miles
+                </li>
+              ))
+            ) : (
+              <p>No Services Due.</p>
+            )}
           </div>
           <div className={`slide-form ${showForm ? "active" : ""}`}>
             <AddMaint vin={vin} />
