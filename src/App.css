@@ -125,7 +125,8 @@ img {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  font-size: 1.25rem;
+  font-size: 25px;
+  font-weight: 100;
   transition: 0.25s ease;
   box-shadow: 0 0 0 1px rgba(#000, 0.05), 0 3px 8px 0 rgba(#000, 0.15);
   z-index: 1;

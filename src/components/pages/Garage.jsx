@@ -2,9 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useGetMyCarsQuery } from "../../app/carSlice"; //make Slice file for cars
-import { BiSolidCarGarage, BiSolidBook } from "react-icons/bi";
-import { NavLink } from "react-router-dom";
+import { useGetMyCarsQuery } from "../../app/carSlice";
+import { MdSpeed } from "react-icons/md";
 import "../../App.css";
 import "../../styling/Carousel.css";
 
@@ -67,7 +66,10 @@ export default function AllVehicles() {
               {visibleCars.map(({ car, position }) => (
                 <article key={car.vin} className={`card ${position}`}>
                   <figure className="card-image">
-                    <img src={car.carImg || "/missingcarimg.png"} alt={`${car.make} ${car.model}`} />
+                    <img
+                      src={car.carImg || "/missingcarimg.png"}
+                      alt={`${car.make} ${car.model}`}
+                    />
                   </figure>
                   <div className="card-header">
                     <div>
@@ -80,7 +82,7 @@ export default function AllVehicles() {
                     </div>
 
                     <button className="icon-button">
-                      <span className="material-symbols-outlined">edit</span>
+                      <MdSpeed />
                     </button>
                   </div>
                   <div className="card-footer">
@@ -117,7 +119,7 @@ export default function AllVehicles() {
                 </div>
 
                 <button className="icon-button">
-                  <span className="material-symbols-outlined">edit</span>
+                  <MdSpeed />
                 </button>
               </div>
               <div className="card-footer">
