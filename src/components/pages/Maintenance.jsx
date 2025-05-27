@@ -20,7 +20,6 @@ export default function VehiclePage() {
     data: upcomingServices,
   } = useGetUpcomingServicesQuery({ testVin: vin });
   const { data: pastDue } = useGetPastDueQuery({ testVin: vin });
-  const [pastDueServices, setPastDueServices] = useState([]);
   const { data: users } = useGetAllUsersQuery();
   const [milage, setMilage] = useState("");
   const [allMechanics, setAllMechanics] = useState([]);
