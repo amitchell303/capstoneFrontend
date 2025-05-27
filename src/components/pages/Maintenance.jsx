@@ -5,6 +5,7 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useGetLogsQuery } from "../../app/maintenanceSlice";
 import { useGetUpcomingServicesQuery } from "../../app/upcomingServiceSlice";
+import { useGetPastDueQuery } from "../../app/pastDueSlice";
 import { useGetAllUsersQuery } from "../../app/userSlice";
 import AddMaint from "../forms/AddMaint";
 
@@ -16,6 +17,7 @@ export default function VehiclePage() {
     isLoading: loading2,
     data: upcomingServices,
   } = useGetUpcomingServicesQuery({ testVin: vin });
+  const { data: pastDue } = useGetPastDueQuery({ testVin: vin });
   const { data: users } = useGetAllUsersQuery();
   const [milage, setMilage] = useState("");
   const [allMechanics, setAllMechanics] = useState([]);
@@ -23,18 +25,15 @@ export default function VehiclePage() {
 
   useEffect(() => {
     if (users) {
-      //console.log("users:", users);
       const mechanics = users.filter((user) => user.roleId === 2);
       setAllMechanics(mechanics);
-      //console.log("mechanics:", mechanics);
     }
     if (logs) {
-      //console.log("logs:", logs);
     }
-    if (upcomingServices) {
-      console.log("upcoming services: ", upcomingServices.data);
+    if (pastDue) {
+      console.log("Past Due services: ", pastDue.data);
     }
-  }, [users, logs, upcomingServices]);
+  }, [users, logs, upcomingServices, pastDue]);
 
   if (isLoading || loading2) return <h2>Loading...</h2>;
   if (error || error2) return <h2>There was an error loading your data.</h2>;
@@ -67,6 +66,16 @@ export default function VehiclePage() {
         </div>
         <div className="maint-2b">
           <h1>Past Due</h1>
+          {pastDue?.length > 0 ? (
+            pastDue.data.map((serviceDue) => (
+              <li key={serviceDue.id}>
+                <strong>{serviceDue.serviceType}</strong> at{" "}
+                {serviceDue.targetMileage} miles
+              </li>
+            ))
+          ) : (
+            <p>No Service Due.</p>
+          )}
         </div>
         <div className={`slide-form ${showForm ? "active" : ""}`}>
           <AddMaint vin={vin} />
@@ -77,14 +86,12 @@ export default function VehiclePage() {
           {logs.length > 0 ? (
             logs.map((log) => (
               <div className="serviceCard" key={log.id}>
-               
-                  <h3>{log.serviceType || "No description available"} </h3>
-                  <p> {log.mileage || "No mileage available"}</p>
-                  <p> ${log.serviceCost || "No cost available"}</p>
-                  <Link>
-                    <span class="material-symbols-outlined">summarize</span>
-                  </Link>
-               
+                <h3>{log.serviceType || "No description available"} </h3>
+                <p> {log.mileage || "No mileage available"}</p>
+                <p> ${log.serviceCost || "No cost available"}</p>
+                <Link>
+                  <span class="material-symbols-outlined">summarize</span>
+                </Link>
               </div>
             ))
           ) : (
