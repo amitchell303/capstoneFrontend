@@ -36,19 +36,19 @@
   text-decoration: none;
   transition: all 0.3s ease;
 }
+
 .nav-label {
   opacity: 0;
-  white-space: nowrap;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease-in-out;
+  text-align: center;
   color: whitesmoke;
   font-size: 1rem;
+  text-align: center;
+  margin-top: 5px;
 }
 
 .nav-group:hover .nav-label {
   opacity: 1;
-  transform: scaleX(1);
 }
 
 .nav-sect-1 {

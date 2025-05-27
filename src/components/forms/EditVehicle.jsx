@@ -27,57 +27,54 @@ const EditVehicleForm = ({ car }) => {
   };
 
   return (
-    <div className="content-container">
-      <main className="editVeh-form">
-        <h1>Edit Vehicle</h1>
-        <form className="allForms" onSubmit={handleSubmit}>
-          <div className="section-1">
-            <div className="allForms-group">
-              <label>Nickname</label>
-              <input type="text" placeholder="Nickname (optional)" />
-            </div>
+    <main className="editVeh-form">
+      <h1>Edit Vehicle</h1>
+      <form className="allForms" onSubmit={handleSubmit}>
+        <div className="section-1">
+          <div className="allForms-group">
+            <label>Nickname</label>
+            <input type="text" placeholder="Nickname (optional)" />
           </div>
-          <div className="section-2">
-            <div className="allForms-group">
-              <label>VIN</label>
-              <input type="text" placeholder={car.vin} disabled />
-            </div>
-            {/* NEED TO UPDATE BACKEND TO ADD PLATE */}
-            <div className="allForms-group">
-              <label>Plate Number</label>
-              <input type="text" placeholder="Plate number (optional)" />
-            </div>
+          <div className="allForms-group">
+            <label>Current Mileage*</label>
+            <input
+              type="number"
+              value={mileage}
+              onChange={(e) => setMileage(e.target.value)}
+              placeholder="Mileage (required)"
+              required
+            />
           </div>
-          <div className="section-3">
-            <div className="allForms-group">
-              <label>Make</label>
-              <input type="text" placeholder={car.make} disabled />
-            </div>
-            <div className="allForms-group">
-              <label>Model</label>
-              <input type="text" placeholder={car.model} disabled />
-            </div>
-            <div className="allForms-group">
-              <label>Year</label>
-              <input type="text" placeholder={car.modelYear} disabled />
-            </div>
+        </div>
+        <div className="section-2">
+          {/* NEED TO UPDATE BACKEND TO ADD PLATE */}
+          <div className="allForms-group">
+            <label>Plate Number</label>
+            <input type="text" placeholder="Plate number (optional)" />
           </div>
-          <div className="section-4">
-            <div className="allForms-group">
-              <label>Current Mileage*</label>
-              <input
-                type="number"
-                value={mileage}
-                onChange={(e) => setMileage(e.target.value)}
-                placeholder="Mileage (required)"
-                required
-              />
-            </div>
+          <div className="allForms-group">
+            <label>VIN</label>
+            <input type="text" placeholder={car.vin} disabled />
           </div>
-          <button type="submit">Save Changes</button>
-        </form>
-      </main>
-    </div>
+        </div>
+        <div className="section-3">
+          <div className="allForms-group">
+            <label>Make</label>
+            <input type="text" placeholder={car.make} disabled />
+          </div>
+          <div className="allForms-group">
+            <label>Model</label>
+            <input type="text" placeholder={car.model} disabled />
+          </div>
+          <div className="allForms-group">
+            <label>Year</label>
+            <input type="text" placeholder={car.modelYear} disabled />
+          </div>
+        </div>
+        <div className="section-4"></div>
+        <button type="submit">Save Changes</button>
+      </form>
+    </main>
   );
 };
 

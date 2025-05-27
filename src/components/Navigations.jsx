@@ -40,7 +40,6 @@ export default function Navigations() {
         <div className="nav-group">
           <NavLink className="nav-link" to="/home">
             <FaCar className="icons" />
-
             <p className="nav-label">Garage</p>
           </NavLink>
         </div>

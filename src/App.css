@@ -47,7 +47,8 @@
 
 /*  ----------  All Vehicles Page  ----------  */
 .card-list {
-  width: 50vw;
+  width: auto;
+  max-width: 55vw;
   height: auto;
   display: flex;
   gap: 3rem;
