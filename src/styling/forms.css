@@ -54,6 +54,11 @@
 }
 
 /* ---------- Edit Vehicle Form ---------- */
+.editVeh-form {
+  /* padding: 1rem; */
+  animation: modalFadeIn 0.4s ease-out forwards;
+}
+
 .section-1 {
   max-width: 300px;
 }
@@ -132,8 +137,10 @@
 
 .rmVeh-carCard {
   display: flex;
+  gap: 1rem;
   /* border: 1px solid rgb(255, 0, 242); */
 }
+
 .rmVeh-carCard-text {
   margin: 2rem;
   display: flex;
