@@ -139,86 +139,6 @@ details[open] {
   border-radius: 8px;
 }
 
-/* ------ Maintenance Page ----- */
-.maintenance {
-  width: 80rem;
-  height: 40rem;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow-x: hidden;
-  animation: modalFadeIn 0.4s ease-out forwards;
-}
-.maint-section-1 {
-  display: flex;
-  justify-content: space-between;
-}
-.maint-section-2 {
-  display: flex;
-  justify-content: space-between;
-}
-.maint-2a {
-  border: 1px solid rgb(35, 8, 241);
-  padding: 1rem;
-}
-.maint-2b {
-  border: 1px solid rgb(38, 13, 227);
-  padding: 1rem;
-}
-
-.maint-section-3 {
-  border: 1px solid pink;
-  margin-top: 10rem;
-}
-
-.slide-form {
-  position: absolute;
-  top: 95px;
-  left: 68%;
-  width: auto;
-  /* max-width: 600px; */
-  height: auto;
-
-  background: rgb(37, 37, 37);
-  border: 2px solid #afafaf38;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  border-radius: 25px;
-  z-index: 1000;
-
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
-}
-
-.slide-form.active {
-  max-height: 1000px;
-  opacity: 1;
-}
-
-.AMF-btn {
-  width: 42px;
-  height: 42px;
-  margin: auto 0;
-  background-color: transparent;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 2rem;
-  cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.AMF-btn:hover {
-  color: #ff6600;
-  transition: 0.3s ease;
-}
-
-.AMF-btn.rotated {
-  transform: rotate(45deg);
-}
-
 /*  Modals  */
 .garage-modal-overlay {
   position: fixed;
@@ -332,8 +252,7 @@ details[open] {
   align-self: center;
 }
 
-.comingSoon {
-  width: 50%;
-  height: auto;
+/* ----- Under Construction ----- */
+.underCon {
   margin: 0 auto;
 }

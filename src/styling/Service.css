@@ -1,0 +1,99 @@
+/* ------ Maintenance Page ----- */
+.maintenance {
+  width: 80rem;
+  height: 40rem;
+  margin: 0;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 5px;
+  /* position: relative; */
+  /* overflow-x: hidden; */
+  animation: modalFadeIn 0.4s ease-out forwards;
+  border: 1px solid rgb(241, 8, 8);
+}
+.maint-section-1 {
+  grid-area: 1 / 1 / 2 / 3;
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+  height: 5rem;
+  border: 1px solid rgb(234, 255, 0);
+}
+
+.maint-2a {
+  grid-area: 2 / 1 / 3 / 2;
+  border: 1px solid rgb(35, 8, 241);
+  padding: 1rem;
+}
+.maint-2b {
+  grid-area: 2 / 2 / 3 / 3;
+  border: 1px solid rgb(13, 227, 24);
+  padding: 1rem;
+}
+
+.maint-section-3 {
+  grid-area: 3 / 1 / 4 / 3;
+  border: 1px solid pink;
+  padding: 1rem;
+}
+
+.serviceCard {
+  width: 90%;
+  padding: 1rem;
+  margin: 0 auto;
+  border: 1px solid rgb(217, 2, 255);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.slide-form {
+  position: absolute;
+  top: 95px;
+  left: 68%;
+  width: auto;
+  max-width: 600px;
+  height: auto;
+
+  background: rgb(37, 37, 37);
+  border: 2px solid #afafaf38;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  z-index: 1000;
+
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.slide-form.active {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.AMF-btn {
+  width: 42px;
+  height: 42px;
+  margin: auto 0;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.AMF-btn:hover {
+  color: #ff6600;
+  transition: 0.3s ease;
+}
+
+.AMF-btn.rotated {
+  transform: rotate(45deg);
+}

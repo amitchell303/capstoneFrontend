@@ -1,12 +1,10 @@
-import ComingSoon from "./ComingSoon";
-
 export default function VehicleDetails({ car }) {
   if (!car) return <p>Loading vehicle details...</p>;
 
   return (
     <div className="vehicleDetails">
-      <div className="comingSoon">
-        <ComingSoon />
+      <div className="underCon">
+        <img src="/underCon.png" alt="Page coming soon" />
       </div>
     </div>
 
