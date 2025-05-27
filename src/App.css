@@ -45,7 +45,7 @@
   box-shadow: 2px 2px 5px whitesmoke;
 } */
 
-/*  ----------  All Vehicles Page  ----------  */
+/*  ----------  Garage Page  ----------  */
 .card-list {
   width: auto;
   max-width: 55vw;
@@ -102,7 +102,7 @@ img {
   text-decoration: none;
 }
 .card-header a:hover {
-  color: #ff6600;
+  text-decoration: none;
 }
 
 .card-header p {
@@ -116,17 +116,12 @@ img {
 }
 
 .icon-button {
-  border: 0;
-  background-color: whitesmoke;
+  background-color: transparent;
   border-radius: 50%;
+  border: 1.5px solid whitesmoke;
   width: 2.5rem;
   height: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-shrink: 0;
-  font-size: 25px;
-  font-weight: 100;
   transition: 0.25s ease;
   box-shadow: 0 0 0 1px rgba(#000, 0.05), 0 3px 8px 0 rgba(#000, 0.15);
   z-index: 1;
@@ -134,8 +129,7 @@ img {
   color: #565656;
 
   &:hover {
-    background-color: #ff6600;
-    color: #fff;
+    border: 1.5px solid #ff6600;
   }
 }
 

@@ -81,9 +81,9 @@ export default function AllVehicles() {
                       </p>
                     </div>
 
-                    <button className="icon-button">
+                    <Link to="/updateMileage" className="icon-button">
                       <MdSpeed />
-                    </button>
+                    </Link>
                   </div>
                   <div className="card-footer">
                     <p>{car.vin}</p>
@@ -118,9 +118,9 @@ export default function AllVehicles() {
                   </p>
                 </div>
 
-                <button className="icon-button">
+                <Link to={`/updateMileage`} className="icon-button">
                   <MdSpeed />
-                </button>
+                </Link>
               </div>
               <div className="card-footer">
                 <p>{car.vin}</p>

@@ -1,3 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+@font-face {
+  font-family: "longline";
+  src: url("https://assets.codepen.io/756881/Longline+Quart+FREE.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .build-parent {
   width: 85rem;
   height: 45rem;

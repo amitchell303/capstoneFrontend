@@ -13,7 +13,7 @@ function Build() {
           <div className="build-sect-3">
             <div className="dev-container">
               <div className="build-div1">
-                <span class="material-symbols-outlined">bolt</span>
+                <span className="material-symbols-outlined">bolt</span>
                 <div className="dev-icon-divider"></div>
                 <div>
                   <p>Alyssa</p> <h2>Mitchell</h2>
@@ -29,7 +29,7 @@ function Build() {
             </div>
             <div className="dev-container">
               <div className="build-div1">
-                <span class="material-symbols-outlined">local_cafe</span>
+                <span className="material-symbols-outlined">local_cafe</span>
                 <div className="dev-icon-divider"></div>
                 <div>
                   <p>Adrian</p> <h2>Tandiono</h2>
@@ -45,7 +45,7 @@ function Build() {
             </div>
             <div className="dev-container">
               <div className="build-div1">
-                <span class="material-symbols-outlined">star</span>
+                <span className="material-symbols-outlined">star</span>
                 <div className="dev-icon-divider"></div>
                 <div>
                   <p>Shaniqua</p> <h2>Whitley</h2>
@@ -61,7 +61,7 @@ function Build() {
             </div>
             <div className="dev-container">
               <div className="build-div1">
-                <span class="material-symbols-outlined">laptop_mac</span>
+                <span className="material-symbols-outlined">laptop_mac</span>
                 <div className="dev-icon-divider"></div>
                 <div>
                   <p>Nikhil</p> <h2>Patel</h2>
