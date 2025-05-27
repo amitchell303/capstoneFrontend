@@ -331,3 +331,9 @@ details[open] {
   background-color: #ff6600;
   align-self: center;
 }
+
+.comingSoon {
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+}

@@ -117,7 +117,7 @@ export default function VehiclePage() {
           {logs.length > 0 ? (
             logs.map((log) => (
               <li key={log.id}>
-                ${log.serviceCost || "No cost available"}_
+                ${log.serviceCost || "No cost available"}
                 {log.serviceType || "No description available"}
               </li>
             ))
