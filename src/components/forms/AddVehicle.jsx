@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { useAddVehicleMutation } from "../../app/carSlice";
+import {
+  useAddVehicleMutation,
+  useUpdateMileageMutation,
+} from "../../app/carSlice";
+
 import "../../App.css";
 
 const AddVehicleForm = () => {
@@ -12,6 +16,7 @@ const AddVehicleForm = () => {
   const [carImg, setCarImg] = useState("");
   const [userId, setUserId] = useState("");
   const [addVehicle, { isLoading, error }] = useAddVehicleMutation();
+  const [updateMiles] = useUpdateMileageMutation();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,6 +41,8 @@ const AddVehicleForm = () => {
       setModel("");
       setBodyClass("");
       setCarImg("");
+      const mileage = 0;
+      await updateMiles({ vin, mileage }).unwrap();
     } catch (err) {
       console.error("Error adding vehicle:", err);
       if (err.status === 422) {
