@@ -67,7 +67,7 @@ export default function AllVehicles() {
               {visibleCars.map(({ car, position }) => (
                 <article key={car.vin} className={`card ${position}`}>
                   <figure className="card-image">
-                    <img src={car.carImg} alt={`${car.make} ${car.model}`} />
+                    <img src={car.carImg || "/missingcarimg.png"} alt={`${car.make} ${car.model}`} />
                   </figure>
                   <div className="card-header">
                     <div>
