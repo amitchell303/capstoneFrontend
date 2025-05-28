@@ -1,5 +1,5 @@
 // This page displays all of the User's vehicles
-
+import { IoPeopleOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useGetMyCarsQuery } from "../../app/carSlice";
@@ -92,10 +92,6 @@ export default function AllVehicles() {
                       src={car.carImg || "/missingcarimg.png"}
                       alt={`${car.make} ${car.model}`}
                     />
-                    <img
-                      src={car.carImg || "/missingcarimg.png"}
-                      alt={`${car.make} ${car.model}`}
-                    />
                   </figure>
                   <div className="card-header">
                     <div>
@@ -106,10 +102,23 @@ export default function AllVehicles() {
                         {car.modelYear} {car.make} {car.model}{" "}
                       </p>
                     </div>
-
-                    <Link to="/updateMileage" className="icon-button">
+                    {/* {sharedCars?.find((c) => c.vin === car.vin) ? (
+                      <IoPeopleOutline />
+                    ) : (
+                      <Link to="/updateMileage" className="icon-button">
+                        <MdSpeed />
+                      </Link>
+                    )} */}
+                    {sharedCars?.data.some((c) => c.vin === car.vin) ? (
+                      <IoPeopleOutline className="icon-button"></IoPeopleOutline>
+                    ) : (
+                      <Link to="/updateMileage" className="icon-button">
+                        <MdSpeed />
+                      </Link>
+                    )}
+                    {/* <Link to="/updateMileage" className="icon-button">
                       <MdSpeed />
-                    </Link>
+                    </Link> */}
                   </div>
                   <div className="card-footer">
                     <p>{car.vin}</p>
