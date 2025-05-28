@@ -70,7 +70,7 @@
   grid-area: icon;
   font-size: 1.6rem;
   height: auto;
-  margin: 0 1rem;
+  margin: 0 1rem 0 0;
   /* border: 1px solid rgb(217, 2, 255); */
 }
 
@@ -102,6 +102,10 @@
   border: none;
   cursor: pointer;
   /* border: 1px solid rgb(217, 2, 255); */
+  & :hover {
+    color: #ff6600;
+    transition: 0.2s ease;
+  }
 }
 
 .slide-form {

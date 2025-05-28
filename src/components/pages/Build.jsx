@@ -20,8 +20,8 @@ function Build() {
                 </div>
               </div>
               <div className="build-div2">
-                <small>Commits</small>
-                <p>XXXX</p>
+                {/* <small>Specialty</small> */}
+                <p>UI / UX</p>
               </div>
               <div className="build-div3">
                 <img src="/pixel-AM.png" alt="dev" />
@@ -36,8 +36,8 @@ function Build() {
                 </div>
               </div>
               <div className="build-div2">
-                <small>Commits</small>
-                <p>XXXX</p>
+                {/* <small>Specialty</small> */}
+                <p>Backend</p>
               </div>
               <div className="build-div3">
                 <img src="/pixel-AT.png" alt="dev" />
@@ -52,8 +52,8 @@ function Build() {
                 </div>
               </div>
               <div className="build-div2">
-                <small>Commits</small>
-                <p>XXXX</p>
+                {/* <small>Commits</small> */}
+                <p>Flex</p>
               </div>
               <div className="build-div3">
                 <img src="/pixel-SW.png" alt="dev" />
@@ -68,8 +68,8 @@ function Build() {
                 </div>
               </div>
               <div className="build-div2">
-                <small>Commits</small>
-                <p>XXXX</p>
+                {/* <small>Specialty</small> */}
+                <p>Logic</p>
               </div>
               <div className="build-div3">
                 <img src="/pixel-NP.png" alt="dev" />
