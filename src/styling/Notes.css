@@ -50,7 +50,11 @@
   align-content: center;
   /* border: 1px solid red; */
 }
-
+.note-card-info h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 550;
+  letter-spacing: 0.75px;
+}
 .note-card-info p {
   margin: 10px;
 }
@@ -146,21 +150,4 @@
   margin: 0;
   background-color: #ff6600;
   align-self: center;
-}
-
-/* WebKit browsers (Chrome, Safari, Edge) */
-.notes-section-1b::-webkit-scrollbar {
-  width: 8px;
-}
-.notes-section-1b::-webkit-scrollbar-track {
-  background: transparent;
-}
-.notes-section-1b::-webkit-scrollbar-button {
-  height: 0;
-  width: 0;
-  display: none;
-}
-/* Only show WebKit scrollbar on hover */
-.notes-section-1b:not(:hover)::-webkit-scrollbar {
-  width: 0;
 }
