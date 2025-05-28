@@ -288,7 +288,7 @@ export default function AboutMe() {
               onClick={() => setIsNewPassword(true)}
             >
               {/* <span className="material-symbols-outlined">change_password</span> */}
-              <span class="material-symbols-outlined">password</span>
+              <span className="material-symbols-outlined">password</span>
             </button>
             <button
               className="delete-btn"
