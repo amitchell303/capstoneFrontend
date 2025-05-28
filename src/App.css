@@ -121,15 +121,21 @@ img {
   border: 1.5px solid whitesmoke;
   width: 2.5rem;
   height: 2.5rem;
+
   flex-shrink: 0;
   transition: 0.25s ease;
   box-shadow: 0 0 0 1px rgba(#000, 0.05), 0 3px 8px 0 rgba(#000, 0.15);
   z-index: 1;
   cursor: pointer;
-  color: #565656;
+  color: whitesmoke;
+  align-content: center;
 
   &:hover {
     border: 1.5px solid #ff6600;
+  }
+  svg {
+    margin: 0 auto;
+    width: 175%;
   }
 }
 

@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { useUpdateMileageMutation } from "../../app/carSlice";
 
-const UpdateMileage = ({ car }) => {
+const UpdateMileage = () => {
   const [mileage, setMileage] = useState("");
   const [updateMileage] = useUpdateMileageMutation();
+  const location = useLocation();
+  const car = location.state?.car;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,6 +16,8 @@ const UpdateMileage = ({ car }) => {
     }
 
     try {
+      // console.log("vin: ", car.vin);
+      // console.log("mileage: ", parseInt(mileage));
       const result = await updateMileage({
         vin: car.vin,
         mileage: parseInt(mileage),
