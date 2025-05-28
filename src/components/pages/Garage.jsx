@@ -35,12 +35,12 @@ export default function AllVehicles() {
   }, [token, navigate, data]);
   useEffect(() => {
     if (me) {
-      console.log("me: ", me);
+      // console.log("me: ", me);
     }
   }, [me]);
   useEffect(() => {
     if (sharedCars) {
-      console.log("shared: ", sharedCars.data);
+      // console.log("shared: ", sharedCars.data);
       const mergedArray = data.concat(sharedCars.data);
       setCars(mergedArray);
     }
@@ -102,23 +102,17 @@ export default function AllVehicles() {
                         {car.modelYear} {car.make} {car.model}{" "}
                       </p>
                     </div>
-                    {/* {sharedCars?.find((c) => c.vin === car.vin) ? (
-                      <IoPeopleOutline />
-                    ) : (
-                      <Link to="/updateMileage" className="icon-button">
-                        <MdSpeed />
-                      </Link>
-                    )} */}
                     {sharedCars?.data.some((c) => c.vin === car.vin) ? (
                       <IoPeopleOutline className="icon-button"></IoPeopleOutline>
                     ) : (
-                      <Link to="/updateMileage" className="icon-button">
+                      <Link
+                        to="/updateMileage"
+                        state={{ car }}
+                        className="icon-button"
+                      >
                         <MdSpeed />
                       </Link>
                     )}
-                    {/* <Link to="/updateMileage" className="icon-button">
-                      <MdSpeed />
-                    </Link> */}
                   </div>
                   <div className="card-footer">
                     <p>{car.vin}</p>
