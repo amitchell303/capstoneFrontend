@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useGetMyCarsQuery } from "../../app/carSlice"; //make Slice file for cars
+import { useGetMyCarsQuery } from "../../app/carSlice";
+import { useGetSharedCarsQuery } from "../../app/sharedVehiclesSlice";
+import { useAboutMeQuery } from "../../app/userSlice";
 import { BiSolidCarGarage, BiSolidBook } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import "../../App.css";
@@ -11,7 +13,14 @@ import "../../styling/Carousel.css";
 export default function AllVehicles() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
+
   const { data, error, isLoading } = useGetMyCarsQuery();
+  // const { data: sharedCars } = useGetSharedCarsQuery();
+  const { data: me } = useAboutMeQuery();
+  const userId = me?.user?.id;
+  const { data: sharedCars } = useGetSharedCarsQuery({
+    userId: userId,
+  });
   const [cars, setCars] = useState([]);
   const [currIndex, setCurrIndex] = useState(0);
 
@@ -24,6 +33,18 @@ export default function AllVehicles() {
       }
     }
   }, [token, navigate, data]);
+  useEffect(() => {
+    if (me) {
+      console.log("me: ", me);
+    }
+  }, [me]);
+  useEffect(() => {
+    if (sharedCars) {
+      console.log("shared: ", sharedCars.data);
+      const mergedArray = data.concat(sharedCars.data);
+      setCars(mergedArray);
+    }
+  }, [sharedCars]);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -67,7 +88,10 @@ export default function AllVehicles() {
               {visibleCars.map(({ car, position }) => (
                 <article key={car.vin} className={`card ${position}`}>
                   <figure className="card-image">
-                    <img src={car.carImg || "/missingcarimg.png"} alt={`${car.make} ${car.model}`} />
+                    <img
+                      src={car.carImg || "/missingcarimg.png"}
+                      alt={`${car.make} ${car.model}`}
+                    />
                   </figure>
                   <div className="card-header">
                     <div>
