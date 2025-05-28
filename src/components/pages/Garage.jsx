@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useGetMyCarsQuery } from "../../app/carSlice";
 import { useGetSharedCarsQuery } from "../../app/sharedVehiclesSlice";
 import { useAboutMeQuery } from "../../app/userSlice";
-import { BiSolidCarGarage, BiSolidBook } from "react-icons/bi";
+import { MdSpeed } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import "../../App.css";
 import "../../styling/Carousel.css";
@@ -92,6 +92,10 @@ export default function AllVehicles() {
                       src={car.carImg || "/missingcarimg.png"}
                       alt={`${car.make} ${car.model}`}
                     />
+                    <img
+                      src={car.carImg || "/missingcarimg.png"}
+                      alt={`${car.make} ${car.model}`}
+                    />
                   </figure>
                   <div className="card-header">
                     <div>
@@ -103,9 +107,9 @@ export default function AllVehicles() {
                       </p>
                     </div>
 
-                    <button className="icon-button">
-                      <span className="material-symbols-outlined">edit</span>
-                    </button>
+                    <Link to="/updateMileage" className="icon-button">
+                      <MdSpeed />
+                    </Link>
                   </div>
                   <div className="card-footer">
                     <p>{car.vin}</p>
@@ -140,9 +144,9 @@ export default function AllVehicles() {
                   </p>
                 </div>
 
-                <button className="icon-button">
-                  <span className="material-symbols-outlined">edit</span>
-                </button>
+                <Link to={`/updateMileage`} className="icon-button">
+                  <MdSpeed />
+                </Link>
               </div>
               <div className="card-footer">
                 <p>{car.vin}</p>

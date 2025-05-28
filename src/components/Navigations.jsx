@@ -40,7 +40,6 @@ export default function Navigations() {
         <div className="nav-group">
           <NavLink className="nav-link" to="/home">
             <FaCar className="icons" />
-
             <p className="nav-label">Garage</p>
           </NavLink>
         </div>
@@ -59,11 +58,9 @@ export default function Navigations() {
           </NavLink>
         </div>
       </div>
-      <div>
-        <button className="logout-btn" onClick={logout}>
-          <MdLogout />
-        </button>
-      </div>
+      <button className="logout-btn" onClick={logout}>
+        <MdLogout />
+      </button>
     </nav>
   );
 }

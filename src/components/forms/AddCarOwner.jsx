@@ -87,47 +87,37 @@ const AddCarOwner = () => {
       {isUser && (
         <section className="sp-sect-2">
           <h2>User Selection</h2>
-          <div className="sp-sect-2a">
-            <form onSubmit={handleSubmit}>
-              <select
-                value={userId}
-                onChange={(e) => setUserId(e.target.value)}
-              >
-                <option value="">User List</option>
-                {allUsers.map((user) => (
-                  <option key={user.id} value={user.id}>
-                    {user.firstname}
-                  </option>
-                ))}
-              </select>
-              <button type="submit" disabled={addingUser}>
-                {addingUser ? "Sharing..." : "Share"}
-              </button>
-            </form>
-          </div>
+          <form onSubmit={handleSubmit}>
+            <select value={userId} onChange={(e) => setUserId(e.target.value)}>
+              <option value="">User List</option>
+              {allUsers.map((user) => (
+                <option key={user.id} value={user.id}>
+                  {user.firstname}
+                </option>
+              ))}
+            </select>
+            <button type="submit" disabled={addingUser}>
+              {addingUser ? "Sharing..." : "Share"}
+            </button>
+          </form>
         </section>
       )}
       {isMechanic && (
         <section className="sp-sect-2">
           <h2>Mechanic Selection</h2>
-          <div className="sp-sect-2b">
-            <form onSubmit={handleSubmit}>
-              <select
-                value={userId}
-                onChange={(e) => setUserId(e.target.value)}
-              >
-                <option value="">Technician List</option>
-                {allMechanics.map((mechanic) => (
-                  <option key={mechanic.id} value={mechanic.id}>
-                    {mechanic.firstname}
-                  </option>
-                ))}
-              </select>
-              <button type="submit" disabled={addingUser}>
-                {addingUser ? "Sharing..." : "Share"}
-              </button>
-            </form>
-          </div>
+          <form onSubmit={handleSubmit}>
+            <select value={userId} onChange={(e) => setUserId(e.target.value)}>
+              <option value="">Technician List</option>
+              {allMechanics.map((mechanic) => (
+                <option key={mechanic.id} value={mechanic.id}>
+                  {mechanic.firstname}
+                </option>
+              ))}
+            </select>
+            <button type="submit" disabled={addingUser}>
+              {addingUser ? "Sharing..." : "Share"}
+            </button>
+          </form>
         </section>
       )}
     </main>

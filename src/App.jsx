@@ -17,6 +17,7 @@ import AddReminders from "./components/forms/AddNote.jsx";
 import DeleteVehicle from "./components/forms/DeleteVehicle.jsx";
 import EmptyGarage from "./components/garageViews/EmptyGarage.jsx";
 import AllReminders from "./components/garageViews//AllReminders.jsx";
+import UpdateMileage from "./components/forms/UpdateMileage.jsx";
 
 function App() {
   function logout() {
@@ -36,6 +37,7 @@ function App() {
           {/* Temporary routes for development */}
           <Route path="/empty" element={<EmptyGarage />} />
           <Route path="/addVehicle" element={<AddVehicle />} />
+          <Route path="/updateMileage" element={<UpdateMileage />} />
           <Route path="/editVehicle" element={<EditVehicleForm />} />
           <Route path="/deleteVehicle" element={<DeleteVehicle />} />
           <Route path="/vehicles/:vin" element={<VehiclePage />} />

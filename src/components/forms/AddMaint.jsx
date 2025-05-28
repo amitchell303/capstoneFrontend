@@ -61,7 +61,7 @@ function AddMaint({ vin }) {
     // <div className="garage-modal-container">
     <main className="garage-modal">
       <div className="glassmorphism-container">
-        <h1>Add Maint./Service</h1>
+        <h1>Add Service</h1>
         <div className="maintenance-addMaint">
           <form className="allForms" onSubmit={(e) => submitMaintenance(e)}>
             <div className="allForms-group">
@@ -91,14 +91,19 @@ function AddMaint({ vin }) {
                 onChange={(e) => setServiceType(e.target.value)}
               >
                 <option>Select</option>
-                <option>Oil Change</option>
-                <option>Tire Rotation</option>
-                <option>Replace Air Filter</option>
-                <option>Change Break Pads</option>
-                <option>Brake Fluid Flush</option>
-                <option>Replace Tires</option>
-                <option>Replace Battery</option>
-                <option>Replace Timing Belt</option>
+                <option>Routine Maintenance</option>
+                <option>Engine</option>
+                <option>Transmission</option>
+                <option>Brakes</option>
+                <option>Tires / Wheels</option>
+                <option>Suspension</option>
+                <option>Exhaust / Emissions</option>
+                <option>Fuel System</option>
+                <option>Electrical</option>
+                <option>Lighting</option>
+                <option>Heat / AC</option>
+                <option>Body / Exterior</option>
+                <option>Interior</option>
               </select>
             </div>
             <div className="allForms-group">

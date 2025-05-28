@@ -1,12 +1,9 @@
 /*  ----------  Navbar  ----------  */
 .navbar {
   color: whitesmoke;
-  height: 95vh;
   width: 90px;
-  margin: 1.5rem 0.55rem;
   padding: 0.75rem;
   background-color: transparent;
-  /* border: 1px solid white; */
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
@@ -19,13 +16,13 @@
   align-items: center;
   justify-content: space-between;
 
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  height: 100vh;
+  max-height: 100dvh;
 
-  /* width: 90px;
-  transition: width 0.3s ease;
-  overflow: hidden; */
+  overflow: hidden;
 }
 .navbar:hover {
   animation: ease-out 5s;
@@ -36,33 +33,34 @@
   text-decoration: none;
   transition: all 0.3s ease;
 }
+
 .nav-label {
   opacity: 0;
-  white-space: nowrap;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.25s ease-in-out;
+  text-align: center;
   color: whitesmoke;
-  font-size: 1rem;
+  font-size: 17px;
+  font-family: "Helvetica Neue", "Segoe UI", sans-serif;
+  text-align: center;
+  margin-top: 3px;
 }
 
 .nav-group:hover .nav-label {
   opacity: 1;
-  transform: scaleX(1);
 }
 
 .nav-sect-1 {
-  margin: 1.5rem 0;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  /* border: 1px solid red; */
+  width: 70px;
+  height: auto;
+  margin: 1rem 0;
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
 }
 
 .nav-sect-2 {
-  margin: 0 0 20rem 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  /* border: 1px solid red; */
+  flex-grow: 1;
 }
 
 .nav-group {
@@ -100,22 +98,27 @@
 }
 
 .logout-btn {
-  color: rgb(255, 255, 255);
-  background-color: transparent;
-  width: 3.5rem;
-  height: 3.5rem;
-  margin: 0 0 5px 0;
-  padding: 0.5rem;
-  border-radius: 25%;
-  border: none;
+  color: rgb(244, 244, 244);
+  width: 3.6rem;
+  height: 3.9rem;
+  margin: 5px auto;
+  padding: 1rem;
   font-size: 30px;
   text-decoration: none;
   cursor: pointer;
+  border-radius: 25%;
+  border: 1px solid transparent;
+  background-color: transparent;
   transition: all 0.2s ease;
 }
+
 .logout-btn:hover {
-  background-color: #f8fcf32f;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  color: rgb(255, 255, 255);
+  background-color: #6060605a;
+  border: 1px solid #ff6600;
+  box-shadow: 0 1px 3px #ff6600;
+  cursor: pointer;
+  transform: translateY(-2px);
 }
 .logout-btn:active {
   color: red;

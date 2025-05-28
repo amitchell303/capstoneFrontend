@@ -34,20 +34,26 @@ const DeleteVehicle = ({ car }) => {
   }, [isSuccess, navigate]);
 
   return (
-    <main className="rmVeh-page-container">
+    <main className="rmVeh-page">
       <h1>Remove Vehicle</h1>
       <div className="rmVeh-sect-1">
-        <img src={car.carImg} alt={`${car.make} ${car.model}`} />
-        <strong>
-          {car.make} {car.model} {car.vin}
-        </strong>
+        <div className="rmVeh-carCard">
+          <img src={car.carImg} alt={`${car.make} ${car.model}`} />
+          <div className="rmVeh-carCard-text">
+            <p>
+              {car.modelYear} {car.make} {car.model}
+            </p>
+            <p>{car.vin}</p>
+          </div>
+        </div>
         <form onSubmit={handleSubmit}>
-          <label>
+          <label className="custom-checkbox">
             <input
               type="checkbox"
               checked={confirmDelete}
               onChange={(e) => setConfirmDelete(e.target.checked)}
             />
+            <span className="checkmark"></span>
             Confirm
           </label>
         </form>

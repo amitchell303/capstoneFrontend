@@ -1,36 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+@font-face {
+  font-family: "longline";
+  src: url("https://assets.codepen.io/756881/Longline+Quart+FREE.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .build-parent {
   width: 85rem;
   height: 45rem;
+
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
 }
 
 .build-sect-1 {
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
-  gap: 20px;
-  justify-content: center;
   align-items: center;
-  padding: 1rem;
-  border: 1px solid rgb(0, 255, 51);
+  justify-content: center;
+  border: 1px solid rgb(229, 255, 0);
 }
 
 .build-sect-1 img {
-  width: 150px;
-  height: 150px;
+  width: auto;
+  height: 400px;
+  opacity: 95%;
 }
 
 .build-sect-2 {
-  grid-area: 2 / 1 / 3 / 2;
+  grid-area: 1 / 2 / 2 / 3;
   padding: 1rem;
-  border: 1px solid rgb(0, 255, 247);
+  border: 1px solid rgb(255, 0, 221);
 }
 
 .build-sect-3 {
-  grid-area: 1 / 2 / 3 / 3;
+  grid-area: 2 / 1 / 3 / 3;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem;
-  border: 1px solid rgb(255, 0, 242);
+  border: 1px solid rgb(0, 229, 255);
+}
+.build-sect-3 h2 {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.build-sect-3 img {
+  width: 100px;
+  height: auto;
+}
+
+.dev-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 35px;
+  grid-row-gap: 10px;
+
+  width: 300px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  border: none;
+  background: radial-gradient(circle at 100% 0%, #051f3c, transparent 60%),
+    linear-gradient(65deg, #0a242d, black 50%);
+}
+
+.build-div1 {
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  align-items: center;
+}
+
+.build-div1 span {
+  width: 30px;
+  height: auto;
+  font-size: 30px;
+}
+
+.dev-icon-divider {
+  width: 1px;
+  height: 85%;
+  margin: 10px;
+  background-color: #ffffff;
+  align-self: center;
+}
+
+.build-div2 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.build-div3 {
+  grid-area: 1 / 2 / 3 / 3;
+  width: 100px;
 }

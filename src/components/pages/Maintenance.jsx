@@ -1,14 +1,13 @@
 import "../../App.css";
+import "../../styling/Service.css";
 import { IoAdd } from "react-icons/io5";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import {
-  useGetLogsQuery,
-  useCreateLogMutation,
-} from "../../app/maintenanceSlice";
+import { useGetLogsQuery } from "../../app/maintenanceSlice";
 import { useGetUpcomingServicesQuery } from "../../app/upcomingServiceSlice";
 import { useGetPastDueQuery } from "../../app/pastDueSlice";
 import { useGetAllUsersQuery } from "../../app/userSlice";
+import { GiAutoRepair } from "react-icons/gi";
 import AddMaint from "../forms/AddMaint";
 
 export default function VehiclePage() {
@@ -40,43 +39,6 @@ export default function VehiclePage() {
   if (isLoading || loading2) return <h2>Loading...</h2>;
   if (error || error2) return <h2>There was an error loading your data.</h2>;
 
-  // --- FORM REMOVED FROM PAGE; THIS FUNCTION IS NOT USED ---
-  // async function submitMaintenance(e) {
-  //   e.preventDefault();
-  //   try {
-  //     const mechanicId = allMechanics.find(
-  //       (mech) => mech.firstname == mechanic
-  //     );
-  //     console.log(mechanicId.id);
-  //     const updatedData = {
-  //       mileage: milage,
-  //       serviceBy: mechanicId.id,
-  //       serviceType,
-  //       serviceCost: serviceCost,
-  //       serviceDetail,
-  //     };
-  //     console.log(updatedData);
-  //     const response = await createLog({
-  //       testVin: vin,
-  //       mileage: updatedData.mileage,
-  //       serviceBy: updatedData.serviceBy,
-  //       serviceType: updatedData.serviceType,
-  //       serviceCost: updatedData.serviceCost,
-  //       serviceDetail: updatedData.serviceDetail,
-  //     }).unwrap();
-  //     if (response) {
-  //       alert("Maintenace added successfully!");
-  //       setMilage("");
-  //       setMechanic("");
-  //       setServiceType("");
-  //       setServiceCost("");
-  //       setServiceDetail("");
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
-
   return (
     <div className="content-container">
       <main className="maintenance">
@@ -90,52 +52,68 @@ export default function VehiclePage() {
           </button>
         </div>
 
-        <div className="maint-section-2">
-          <div className="maint-2a">
-            <h1>Upcoming</h1>
-            {upcomingServices.data.length > 0 ? (
-              upcomingServices.data.map((upcomingService) => (
-                <li key={upcomingService.id}>
-                  <strong>{upcomingService.serviceType}</strong> at{" "}
-                  {upcomingService.targetMileage} miles
-                </li>
-              ))
-            ) : (
-              <p>Add mileage to see upcoming service reminders.</p>
-            )}
-          </div>
-          <div className="maint-2b">
-            <h1>Past Due</h1>
-            {pastDue?.length > 0 ? (
-              pastDue.data.map((serviceDue) => (
-                <li key={serviceDue.id}>
-                  <strong>{serviceDue.serviceType}</strong> at{" "}
-                  {serviceDue.targetMileage} miles
-                </li>
-              ))
-            ) : (
-              <p>No Services Due.</p>
-            )}
-          </div>
-          <div className={`slide-form ${showForm ? "active" : ""}`}>
-            <AddMaint vin={vin} />
-          </div>
+        <div className="maint-2a">
+          <h1>Upcoming</h1>
+          {upcomingServices.data.length > 0 ? (
+            upcomingServices.data.map((upcomingService) => (
+              <li key={upcomingService.id}>
+                <strong>{upcomingService.serviceType}</strong> at{" "}
+                {upcomingService.targetMileage} miles
+              </li>
+            ))
+          ) : (
+            <p>Add mileage to see upcoming service reminders.</p>
+          )}
+        </div>
+        <div className="maint-2b">
+          <h1>Past Due</h1>
+          {pastDue?.length > 0 ? (
+            pastDue.data.map((serviceDue) => (
+              <li key={serviceDue.id}>
+                <strong>{serviceDue.serviceType}</strong> at{" "}
+                {serviceDue.targetMileage} miles
+              </li>
+            ))
+          ) : (
+            <p>No Service Due.</p>
+          )}
+        </div>
+        <div className={`slide-form ${showForm ? "active" : ""}`}>
+          <AddMaint vin={vin} />
         </div>
 
         <div className="maint-section-3">
           <h1>Service History</h1>
-          {logs.length > 0 ? (
-            logs.map((log) => (
-              <li key={log.id}>
-                ${log.serviceCost || "No cost available"}_
-                {log.serviceType || "No description available"}
-              </li>
-            ))
-          ) : (
-            <li>No logs available.</li>
-          )}
+          <div className="serviceHistory">
+            {logs.length > 0 ? (
+              logs.map((log) => (
+                <div className="serviceCard" key={log.id}>
+                  <span className="serviceCard-icon">
+                    <GiAutoRepair />
+                  </span>
+                  <h3>{log.serviceType || "No description available"} </h3>
+                  <p className="serviceCard-miles">
+                    {" "}
+                    {log.mileage || "No mileage available"}mi
+                  </p>
+                  <p className="serviceCard-cost">
+                    {" "}
+                    ${log.serviceCost || "No cost available"}
+                  </p>
+                  <button>
+                    <span class="material-symbols-outlined">description</span>
+                  </button>
+                </div>
+              ))
+            ) : (
+              <li>No logs available.</li>
+            )}
+          </div>
         </div>
       </main>
     </div>
   );
 }
+
+// {log.mechanic || "No mechanic available";}
+// {log.serviceDetail || "No summary available";}

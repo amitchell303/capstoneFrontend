@@ -54,8 +54,16 @@
 }
 
 /* ---------- Edit Vehicle Form ---------- */
+.editVeh-form {
+  width: 50rem;
+  height: 30rem;
+  animation: modalFadeIn 0.4s ease-out forwards;
+}
+
 .section-1 {
-  max-width: 300px;
+  display: flex;
+  gap: 15px;
+  /* max-width: 300px; */
 }
 .section-2 {
   display: flex;
@@ -108,26 +116,107 @@
 } */
 
 /* ----- Remove Vehicle ----- */
-.rmVeh-page-container {
+.rmVeh-page {
   width: 50rem;
   height: 30rem;
   margin: 0 auto;
-  padding: 1rem;
+  /* padding: 1rem; */
 
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   animation: modalFadeIn 0.4s ease-out forwards;
 }
 
 .rmVeh-sect-1 {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin: 2rem;
   padding: 1rem;
-  border: 1px solid rgb(248, 219, 0);
+  border: 2px solid #555;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.rmVeh-carCard {
+  display: flex;
+  gap: 1rem;
+  /* border: 1px solid rgb(255, 0, 242); */
+}
+
+.rmVeh-carCard-text {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  /* border: 1px solid rgb(248, 219, 0); */
 }
 
 .rmVeh-sect-1 img {
-  width: 150px;
+  width: 180px;
   height: auto;
+  /* border: 1px solid rgb(19, 2, 255); */
+}
+
+.rmVeh-page button {
+  color: rgb(245, 245, 245);
+  text-shadow: #f4f4f4;
+  font-size: 16px;
+  padding: 15px 30px;
+  margin: 2rem auto;
+  border: 1px solid #ff6600;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.032);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.rmVeh-page button:hover {
+  background: #ff6600db;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.custom-checkbox {
+  color: #ffffff;
+  font-size: 18px;
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.rmVeh-sect-1 input[type="checkbox"] {
+  display: none;
+}
+
+.rmVeh-sect-1 .checkmark {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ff6600cb;
+  border-radius: 4px;
+  margin-right: 8px;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.rmVeh-sect-1 input[type="checkbox"]:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 6px;
+  height: 12px;
+  border: solid whitesmoke;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  transition: all 0.2s ease;
 }
