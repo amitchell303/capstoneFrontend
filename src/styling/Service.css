@@ -10,7 +10,7 @@
   grid-row-gap: 5px;
   /* position: relative; */
   animation: modalFadeIn 0.4s ease-out forwards;
-  border: 1px solid rgb(241, 8, 8);
+  /* border: 1px solid rgb(241, 8, 8); */
 }
 .maint-section-1 {
   grid-area: 1 / 1 / 2 / 3;
@@ -26,6 +26,7 @@
   border: 1px solid rgb(35, 8, 241);
   height: 10rem;
   padding: 1rem;
+  overflow-x: hidden;
 }
 .maint-2b {
   grid-area: 2 / 2 / 3 / 3;
@@ -35,46 +36,67 @@
 
 .maint-section-3 {
   grid-area: 3 / 1 / 4 / 3;
-  border: 1px solid rgb(217, 2, 255);
+
+  h1 {
+    margin-left: 20px;
+  }
 }
+
 .serviceHistory {
   height: 20rem;
-  overflow-x: hidden;
-  scrollbar-width: thin;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  &:hover {
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
 }
+
 .serviceCard {
-  width: 85%;
-  padding: 1.5rem;
+  width: 80%;
+  padding: 1.35rem;
   margin: 0 auto;
   border-bottom: 1px solid rgba(245, 245, 245, 0.236);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-template-columns: auto 2fr 1fr 1fr auto;
+  grid-template-areas: "icon title miles cost link";
+  align-items: center;
 }
+.serviceCard-icon {
+  grid-area: icon;
+  font-size: 1.6rem;
+  height: auto;
+  margin: 0 1rem;
+  /* border: 1px solid rgb(217, 2, 255); */
+}
+
 .serviceCard h3 {
+  grid-area: title;
   font-size: 20px;
   font-weight: 100;
   font-family: Arial, Helvetica, sans-serif;
   /* border: 1px solid rgb(217, 2, 255); */
 }
-.serviceCard p {
+.serviceCard-miles {
+  grid-area: miles;
   font-size: 15px;
-  color: rgba(225, 225, 225, 0.727);
-  margin: 0 auto;
+  color: rgba(225, 225, 225, 0.771);
   /* border: 1px solid rgb(217, 2, 255); */
 }
-.serviceCard a {
-  width: 30px;
-  height: auto;
-  margin: 0 0 0 10rem;
-  color: rgba(245, 245, 245, 0.336);
-  /* border: 1px solid rgb(217, 2, 255); */
+.serviceCard-cost {
+  grid-area: cost;
+  font-size: 15px;
+  color: rgba(225, 225, 225, 0.771);
 }
 
-.serviceCard a:active {
-  color: rgba(245, 245, 245, 0.858);
+.serviceCard button {
+  grid-area: link;
+  width: 30px;
+  height: auto;
+  color: rgba(245, 245, 245, 0.877);
+  background: none;
+  border: none;
+  /* border: 1px solid rgb(217, 2, 255); */
 }
 
 .slide-form {

@@ -7,6 +7,7 @@ import { useGetLogsQuery } from "../../app/maintenanceSlice";
 import { useGetUpcomingServicesQuery } from "../../app/upcomingServiceSlice";
 import { useGetPastDueQuery } from "../../app/pastDueSlice";
 import { useGetAllUsersQuery } from "../../app/userSlice";
+import { GiAutoRepair } from "react-icons/gi";
 import AddMaint from "../forms/AddMaint";
 
 export default function VehiclePage() {
@@ -87,12 +88,21 @@ export default function VehiclePage() {
             {logs.length > 0 ? (
               logs.map((log) => (
                 <div className="serviceCard" key={log.id}>
+                  <span className="serviceCard-icon">
+                    <GiAutoRepair />
+                  </span>
                   <h3>{log.serviceType || "No description available"} </h3>
-                  <p> {log.mileage || "No mileage available"}mi</p>
-                  <p> ${log.serviceCost || "No cost available"}</p>
-                  <Link to="/addVehicle">
-                    <span class="material-symbols-outlined">summarize</span>
-                  </Link>
+                  <p className="serviceCard-miles">
+                    {" "}
+                    {log.mileage || "No mileage available"}mi
+                  </p>
+                  <p className="serviceCard-cost">
+                    {" "}
+                    ${log.serviceCost || "No cost available"}
+                  </p>
+                  <button>
+                    <span class="material-symbols-outlined">description</span>
+                  </button>
                 </div>
               ))
             ) : (
