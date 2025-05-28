@@ -17,7 +17,7 @@ import AddReminders from "./components/forms/AddNote.jsx";
 import DeleteVehicle from "./components/forms/DeleteVehicle.jsx";
 import EmptyGarage from "./components/garageViews/EmptyGarage.jsx";
 import AllReminders from "./components/garageViews//AllReminders.jsx";
-import UpdateMileage from "./components/forms/updateMileage.jsx";
+import UpdateMileage from "./components/forms/UpdateMileage.jsx";
 
 function App() {
   function logout() {
