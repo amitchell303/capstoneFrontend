@@ -45,7 +45,9 @@
 }
 
 .serviceHistory {
-  /* height: 20rem; */
+  height: 32rem;
+  /* border: 1px solid rgb(13, 227, 24); */
+  margin-top: 1rem;
   overflow-y: hidden;
   scrollbar-width: none;
   &:hover {
@@ -118,7 +120,7 @@
 
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .slide-form.active {
@@ -146,4 +148,11 @@
 
 .AMF-btn.rotated {
   transform: rotate(45deg);
+}
+
+/* ----- Service Summary ----- */
+
+.summ-content {
+  display: flex;
+  flex-direction: column;
 }
