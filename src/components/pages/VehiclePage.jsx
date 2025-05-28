@@ -3,6 +3,8 @@
 
 import { useParams } from "react-router-dom";
 import { useGetMyCarsQuery } from "../../app/carSlice.js";
+import { useGetSharedCarsQuery } from "../../app/sharedVehiclesSlice";
+import { useAboutMeQuery } from "../../app/userSlice";
 import { useState } from "react";
 import Overview from "../garageViews/Overview.jsx";
 import VehicleDetails from "../garageViews/VehicleDetails.jsx";
@@ -15,9 +17,25 @@ export default function VehiclePage() {
   const [activeComp, setActiveComp] = useState("overview");
   const { data: cars } = useGetMyCarsQuery();
   const { vin } = useParams();
-
+  const { data: me } = useAboutMeQuery();
+  const userId = me?.user?.id;
+  const { data: sharedCars } = useGetSharedCarsQuery({
+    userId: userId,
+  });
   const car = cars?.find((car) => car.vin === vin);
-  if (!car) return <p>Vehicle not found.</p>;
+  const sharedCar = sharedCars?.data.find((car) => car.vin === vin);
+  if (!car && !sharedCar) {
+    return <p>Vehicle not found.</p>;
+  } else if (sharedCar) {
+    console.log("Shared Car: ", sharedCar);
+    return (
+      <div className="vehiclePage">
+        <div className="glassmorphism-container">
+          <Maintenance />
+        </div>
+      </div>
+    );
+  }
 
   // switch statement utilized to switch between imported component displays upon nav btn click
   // TO-DO: make and import components
