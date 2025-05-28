@@ -83,20 +83,22 @@ export default function VehiclePage() {
 
         <div className="maint-section-3">
           <h1>Service History</h1>
-          {logs.length > 0 ? (
-            logs.map((log) => (
-              <div className="serviceCard" key={log.id}>
-                <h3>{log.serviceType || "No description available"} </h3>
-                <p> {log.mileage || "No mileage available"}</p>
-                <p> ${log.serviceCost || "No cost available"}</p>
-                <Link>
-                  <span class="material-symbols-outlined">summarize</span>
-                </Link>
-              </div>
-            ))
-          ) : (
-            <li>No logs available.</li>
-          )}
+          <div className="serviceHistory">
+            {logs.length > 0 ? (
+              logs.map((log) => (
+                <div className="serviceCard" key={log.id}>
+                  <h3>{log.serviceType || "No description available"} </h3>
+                  <p> {log.mileage || "No mileage available"}mi</p>
+                  <p> ${log.serviceCost || "No cost available"}</p>
+                  <Link to="/addVehicle">
+                    <span class="material-symbols-outlined">summarize</span>
+                  </Link>
+                </div>
+              ))
+            ) : (
+              <li>No logs available.</li>
+            )}
+          </div>
         </div>
       </main>
     </div>

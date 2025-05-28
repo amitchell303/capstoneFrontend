@@ -61,7 +61,7 @@ function AddMaint({ vin }) {
     // <div className="garage-modal-container">
     <main className="garage-modal">
       <div className="glassmorphism-container">
-        <h1>Add Maint./Service</h1>
+        <h1>Add Service</h1>
         <div className="maintenance-addMaint">
           <form className="allForms" onSubmit={(e) => submitMaintenance(e)}>
             <div className="allForms-group">
