@@ -146,10 +146,17 @@ export default function AllVehicles() {
                     {car.modelYear} {car.make} {car.model}{" "}
                   </p>
                 </div>
-
-                <Link to={`/updateMileage`} className="icon-button">
-                  <MdSpeed />
-                </Link>
+                {sharedCars?.data.some((c) => c.vin === car.vin) ? (
+                  <IoPeopleOutline className="icon-button"></IoPeopleOutline>
+                ) : (
+                  <Link
+                    to="/updateMileage"
+                    state={{ car }}
+                    className="icon-button"
+                  >
+                    <MdSpeed />
+                  </Link>
+                )}
               </div>
               <div className="card-footer">
                 <p>{car.vin}</p>

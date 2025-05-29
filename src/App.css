@@ -133,9 +133,14 @@ img {
   &:hover {
     border: 1.5px solid #ff6600;
   }
+  & svg:hover {
+    color: #ff6600;
+  }
+
   svg {
     margin: 0 auto;
-    width: 175%;
+    width: 170%;
+    padding: 2px;
   }
 }
 

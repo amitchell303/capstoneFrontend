@@ -2,17 +2,48 @@ import React from "react";
 
 export default function MaintSumm() {
   return (
-    <main className="garage-modal">
-      <div className="glassmorphism-container">
-        <h1>ServType as Title</h1>
-        <summary className="summ-content">
-          <label>Date:</label>
-          <label>Mileage:</label>
-          <label>Serivce Performed By:</label>
-          <label>Summary:</label>
-          <label>Cost:</label>
-        </summary>
-      </div>
-    </main>
+    <div className="glassmorphism-container">
+      <main className="summary-container">
+        <section className="summ-div1">
+          <div className="summ-header-group">
+            <h1>Routine Maintenance</h1>
+            <span class="material-symbols-outlined">download</span>
+          </div>
+          <div className="summ-heading-divider"></div>
+        </section>
+        <section className="summ-div2">
+          <div className="summ-divider"></div>
+          <div className="summ-group">
+            <div className="summ-group-item">
+              <small>Date</small>
+              <p>05/28/25</p>
+            </div>
+            <div className="summ-group-item">
+              <small>Mileage</small>
+              <p>85,773</p>
+            </div>
+          </div>
+        </section>
+        <section className="summ-div3">
+          <div className="summ-divider"></div>
+          <div className="summ-group">
+            <div className="summ-group-item">
+              <small>Cost</small>
+              <p>$130.00</p>
+            </div>
+            <div className="summ-group-item">
+              <small>Serviced By</small>
+              <p>Paddock Imports</p>
+            </div>
+          </div>
+        </section>
+        <section className="summ-div4">
+          <label>Summary</label>
+          <div className="summ-details">
+            <p>Oil housing gasket replaced, and oil changed.</p>
+          </div>
+        </section>
+      </main>
+    </div>
   );
 }

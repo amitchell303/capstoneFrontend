@@ -70,7 +70,7 @@
   grid-area: icon;
   font-size: 1.6rem;
   height: auto;
-  margin: 0 1rem;
+  margin: 0 1rem 0 0;
   /* border: 1px solid rgb(217, 2, 255); */
 }
 
@@ -102,6 +102,10 @@
   border: none;
   cursor: pointer;
   /* border: 1px solid rgb(217, 2, 255); */
+  & :hover {
+    color: #ff6600;
+    transition: 0.2s ease;
+  }
 }
 
 .slide-form {
@@ -152,7 +156,71 @@
 
 /* ----- Service Summary ----- */
 
-.summ-content {
+.summary-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.summ-divider {
+  width: 1px;
+  height: 90%;
+  background-color: rgba(245, 245, 245, 0.629);
+}
+
+.summ-group {
   display: flex;
   flex-direction: column;
+  gap: 30px;
+  margin: 10px;
+}
+
+.summ-div1 {
+  grid-area: 1 / 1 / 2 / 3;
+  width: 95%;
+  /* border: 1px solid rgb(28, 162, 1); */
+}
+.summ-header-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.summ-heading-divider {
+  width: 98%;
+  height: 1.5px;
+  background-color: rgba(245, 245, 245, 0.792);
+  margin: 0 15px;
+}
+
+.summ-div2 {
+  grid-area: 2 / 1 / 4 / 2;
+  display: flex;
+  align-items: center;
+  margin: 10px 30px;
+  /* border: 1px solid rgb(0, 223, 223); */
+}
+.summ-div3 {
+  grid-area: 2 / 2 / 4 / 3;
+  display: flex;
+  align-items: center;
+  margin: 10px 30px;
+  /* border: 1px solid rgb(0, 11, 128); */
+}
+.summ-div4 {
+  grid-area: 4 / 1 / 6 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 1px solid purple; */
+}
+.summ-div4 label {
+  margin: 10px;
+}
+.summ-details {
+  border: 1px solid rgba(245, 245, 245, 0.629);
+  border-radius: 16px;
+  height: 100px;
+  padding: 1rem;
 }
