@@ -11,8 +11,8 @@ const DeleteVehicle = ({ car }) => {
   const { vin } = useParams();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-
+    // e.preventDefault();
+    console.log("on click");
     if (!confirmDelete) {
       alert("Please confirm deletion by checking the box.");
       return;
@@ -58,7 +58,7 @@ const DeleteVehicle = ({ car }) => {
           </label>
         </form>
       </div>
-      <button type="submit" disabled={isLoading}>
+      <button type="submit" disabled={isLoading} onClick={() => handleSubmit()}>
         {isLoading ? "Removing..." : "Remove"}
       </button>
       {isSuccess && <p>Vehicle successfully deleted.</p>}
