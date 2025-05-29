@@ -90,7 +90,7 @@ function Home() {
       <main>
         {cars.length > 0 ? (
           <AllVehicles />
-        ) : sharedCars.data.length > 0 ? (
+        ) : sharedCars?.data?.length > 0 ? (
           <AllVehicles />
         ) : (
           <EmptyGarage />
