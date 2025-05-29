@@ -198,14 +198,14 @@
   grid-area: 2 / 1 / 4 / 2;
   display: flex;
   align-items: center;
-  margin: 10px 0 10px 10px;
+  margin: 10px 30px;
   /* border: 1px solid rgb(0, 223, 223); */
 }
 .summ-div3 {
   grid-area: 2 / 2 / 4 / 3;
   display: flex;
   align-items: center;
-  margin: 10px 0;
+  margin: 10px 30px;
   /* border: 1px solid rgb(0, 11, 128); */
 }
 .summ-div4 {
@@ -222,4 +222,5 @@
   border: 1px solid rgba(245, 245, 245, 0.629);
   border-radius: 16px;
   height: 100px;
+  padding: 1rem;
 }
