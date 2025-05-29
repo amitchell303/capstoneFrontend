@@ -1,6 +1,8 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useGetMyCarsQuery } from "../../app/carSlice"; //make Slice file for cars
+import { useGetSharedCarsQuery } from "../../app/sharedVehiclesSlice";
+import { useAboutMeQuery } from "../../app/userSlice";
 import {
   useUpdateUserMutation,
   useDeleteUserMutation,
@@ -12,9 +14,14 @@ import "../../App.css";
 function Home() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-
+  const { data: me } = useAboutMeQuery();
+  const userId = me?.user?.id;
+  const { data: sharedCars } = useGetSharedCarsQuery({
+    userId: userId,
+  });
   //const { data, error, isLoading } = useGetAllUsersQuery();
   const { data, error, isLoading } = useGetMyCarsQuery(); //create to grab all of user's cars
+
   const [updateAUser] = useUpdateUserMutation();
   const [deleteAUser] = useDeleteUserMutation();
   const [cars, setCars] = useState([]);
