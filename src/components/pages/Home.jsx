@@ -87,7 +87,15 @@ function Home() {
 
   return (
     <div className="content-container1">
-      <main>{cars.length > 0 ? <AllVehicles /> : <EmptyGarage />}</main>
+      <main>
+        {cars.length > 0 ? (
+          <AllVehicles />
+        ) : sharedCars.data.length > 0 ? (
+          <AllVehicles />
+        ) : (
+          <EmptyGarage />
+        )}
+      </main>
     </div>
   );
 }
