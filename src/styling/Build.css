@@ -29,8 +29,9 @@
 
 .build-sect-1 img {
   width: auto;
-  height: 120%;
+  height: 140%;
   opacity: 95%;
+  margin-top: 80px;
 }
 
 .build-sect-3 {
@@ -41,6 +42,10 @@
   align-items: center;
   padding: 1rem;
   /* border: 1px solid rgb(0, 229, 255); */
+  height: 19rem;
+  background-color: rgba(0, 0, 0, 0.275);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
 }
 .build-sect-3 h2 {
   font-size: 20px;
@@ -59,6 +64,7 @@
   grid-column-gap: 35px;
   grid-row-gap: 10px;
 
+  margin-top: 90px;
   width: 300px;
   padding: 20px;
   border-radius: 20px;

@@ -69,7 +69,7 @@ function Build() {
               </div>
               <div className="build-div2">
                 {/* <small>Specialty</small> */}
-                <p>Logic</p>
+                <p>Polymath</p>
               </div>
               <div className="build-div3">
                 <img src="/pixel-NP.png" alt="dev" />
