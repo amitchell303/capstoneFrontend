@@ -3,9 +3,9 @@ export default function VehicleDetails({ car }) {
 
   return (
     <div className="vehicleDetails">
-      {/* <div className="underCon">
+      <div className="underCon">
         <img src="/under.png" alt="Page coming soon" />
-      </div> */}
+      </div>
       {/* WIP- NEED API THAT PROVIDES LISTED FIELDS */}
       <div className="vehicleDetails">
         <section className="vd-section-1">
