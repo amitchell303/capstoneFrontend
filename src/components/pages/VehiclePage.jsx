@@ -43,11 +43,8 @@ export default function VehiclePage() {
     switch (activeComp) {
       case "overview":
         return (
-          // <div>
-          //   <Overview />
-          // </div>
-          <div className="glassmorphism-container">
-            <VehicleDetails car={car} />
+          <div>
+            <Overview />
           </div>
         );
       case "details":
@@ -92,7 +89,7 @@ export default function VehiclePage() {
                 Overview
               </button>
             </li>
-            {/* <li>
+            <li>
               <button
                 className={`btn-link ${
                   activeComp === "details" ? "active-link" : ""
@@ -101,7 +98,7 @@ export default function VehiclePage() {
               >
                 Details
               </button>
-            </li> */}
+            </li>
             <li>
               <button
                 className={`btn-link ${
