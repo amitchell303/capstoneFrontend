@@ -9,8 +9,8 @@
 }
 
 .build-parent {
-  width: 85rem;
-  height: 45rem;
+  width: 80rem;
+  height: 40rem;
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
